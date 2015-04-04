@@ -82,7 +82,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
     private static final String USERS_DATABASE_CREATE="CREATE TABLE "
             + TABLE_USERS +"(" + COLUMN_USER_ID
-            + " integer primary key, "+ COLUMN_USERNAME
+            + " integer primary key autoincrement, "+ COLUMN_USERNAME
             + " text not null, "+ COLUMN_EMAIL
             + " text not null, "+ COLUMN_PASS
             + " text not null, "+ COLUMN_AVATAR
@@ -323,6 +323,16 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_USERS_ACT);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_QUESTIONS);
         onCreate(db);
+    }
+
+
+    public void addUser(UserClass user){
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_USERNAME, user.getUsername());
+        values.put(COLUMN_EMAIL, user.getEmail());
+        values.put(COLUMN_PASS, user.getPass());
+        values.put(COLUMN_AVATAR, user.getAvatar());
+        database.insert(TABLE_USERS, null, values);
     }
 
 

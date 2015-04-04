@@ -5,7 +5,7 @@ package com.example.kelly.logeasyfinal;
  */
 public class UserClass {
 
-    private int user_id;
+    private long user_id;
     private String username;
     private String email;
     private String pass;
@@ -19,15 +19,14 @@ public class UserClass {
         avatar="";
     }
 
-    public UserClass(int u_id, String user, String user_email, String user_password, String user_avatar){
-        user_id=u_id;
+    public UserClass(String user, String user_email, String user_password, String user_avatar){
         username=user;
         email=user_email;
         pass=user_password;
         avatar=user_avatar;
     }
 
-    public int getUser_id() {
+    public long getUser_id() {
         return user_id;
     }
 
@@ -47,7 +46,7 @@ public class UserClass {
         return pass;
     }
 
-    public void setUser_id(int user_id) {
+    public void setUser_id(long user_id) {
         this.user_id = user_id;
     }
 
