@@ -2,17 +2,22 @@ package com.example.kelly.logeasyfinal;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
 public class LessonActivity extends Activity {
     TextView txtLesson;
     Button btnPlay;
+    ImageView ImgAvatar;
+    Drawable draw;
     MySQLiteHelper db = new MySQLiteHelper(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +25,8 @@ public class LessonActivity extends Activity {
         setContentView(R.layout.activity_lesson);
         txtLesson =(TextView)findViewById(R.id.txtLesson);
         btnPlay=(Button)findViewById(R.id.btnPlay);
+        ImgAvatar = (ImageView)findViewById(R.id.imageViewAvatar);
+        setLesson();
         btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,8 +44,10 @@ public class LessonActivity extends Activity {
         return true;
     }
 
-    private void DBAccess(){
-
+    private void setLesson(){ //Method to take the lesson from the Lesson Class and from the User Class
+        //txtLesson.setText(.getQuestion_text());
+        //ImgAvatar.setImageDrawable();
+        //draw = (Drawable)image
     }
 
     @Override
