@@ -2,11 +2,9 @@ package com.example.kelly.logeasyfinal;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -17,10 +15,10 @@ import java.util.List;
 
 
 public class QuizActivity extends Activity {
-    List<Question> qList;
+    List<QuestionClass> qList;
     int score=0;
     int qid=0;
-    Question curQuest;
+    QuestionClass curQuest;
     TextView txtQuest;
     RadioButton rda, rdb, rdc;
     Button butNext;
