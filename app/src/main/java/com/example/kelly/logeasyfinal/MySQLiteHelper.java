@@ -344,6 +344,25 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         return qList;
     }
 
+    public List<UserClass> getAllUsers() {
+        List<UserClass> usersList = new ArrayList<>();
+        String selectQuery = "SELECT * FROM " + TABLE_USERS + ";";
+        database=this.getReadableDatabase();
+        Cursor cursor = database.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                UserClass user = new UserClass();
+                user.setUser_id(Integer.parseInt(cursor.getString(0)));
+                user.setUsername(cursor.getString(1));
+                user.setEmail(cursor.getString(2));
+                user.setPass(cursor.getString(3));
+                user.setAvatar(cursor.getString(4));
+                usersList.add(user);
+            } while (cursor.moveToNext());
+        }
+        return usersList;
+    }
+
     public int rowcount(){
         int row=0;
         String selectQuery="SELECT * FROM "+TABLE_QUESTIONS;
