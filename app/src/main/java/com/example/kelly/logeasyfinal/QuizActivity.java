@@ -22,6 +22,7 @@ public class QuizActivity extends Activity {
     TextView txtQuest;
     RadioButton rda, rdb, rdc;
     Button butNext;
+    Intent intent = new Intent();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,35 +32,52 @@ public class QuizActivity extends Activity {
         MySQLiteHelper db = new MySQLiteHelper(this);
         qList = db.getAllQuestions();
         curQuest = qList.get(qid);
-        txtQuest =(TextView)findViewById(R.id.question);
-        rda=(RadioButton)findViewById(R.id.a);
-        rdb=(RadioButton)findViewById(R.id.b);
-        rdc=(RadioButton)findViewById(R.id.c);
-        butNext=(Button)findViewById(R.id.next);
+        txtQuest =(TextView)findViewById(R.id.txtQuestion);
+        rda=(RadioButton)findViewById(R.id.radioA);
+        rdb=(RadioButton)findViewById(R.id.radioB);
+        rdc=(RadioButton)findViewById(R.id.radioC);
+        butNext=(Button)findViewById(R.id.btnNext);
         setQuestionView();
         butNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RadioGroup grp=(RadioGroup)findViewById(R.id.answers);
-                RadioButton answer=(RadioButton)findViewById(grp.getCheckedRadioButtonId());
+                RadioGroup grp=(RadioGroup)findViewById(R.id.radioGroupAnswers);
+                RadioButton answer = (RadioButton)findViewById(grp.getCheckedRadioButtonId());
                 Log.d("yourans", curQuest.getRight_answer() + " " + answer.getText());
                 if(curQuest.getRight_answer().equals(answer.getText()))
                 {
                     score++;
-                    Log.d("score", "Your score"+score);
+                    Log.d("score", "Your score" + score);
                 }
-                if(qid<5){
+
+                switch (v.getId()) {
+                    case R.id.btnLesson:
+                        intent.setClass(QuizActivity.this, LessonActivity.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.btnHint:
+                        intent.setClass(QuizActivity.this, HintActivity.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.btnNext:
+                        intent.setClass(QuizActivity.this, QuizActivity.class);
+                        startActivity(intent);
+                        finish();
+                        break;
+                }
+            }
+                /*if(qid<5){
                     curQuest = qList.get(qid);
                     setQuestionView();
                 }else{
+                    if(v.findViewById(R.id.btnLesson){}
                     Intent intent = new Intent(QuizActivity.this, ResultActivity.class);
                     Bundle bu = new Bundle();
                     bu.putInt("score", score); //Your score
                     intent.putExtras(bu); //Put your score to your next Intent
                     startActivity(intent);
                     finish();
-                }
-            }
+                 }*/
         });
     }
 
