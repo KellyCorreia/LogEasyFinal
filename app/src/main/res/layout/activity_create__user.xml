@@ -70,7 +70,6 @@
                         android:layout_width="93dp"
                         android:layout_height="62dp"
                         android:id="@+id/imageView"
-                        android:src="@drawable/sample_2"
                         android:layout_gravity="left"
                         android:layout_marginRight="15dp" />
 
@@ -84,7 +83,6 @@
                         android:layout_width="93dp"
                         android:layout_height="62dp"
                         android:id="@+id/imageView2"
-                        android:src="@drawable/sample_2"
                         android:layout_gravity="right" />
                 </LinearLayout>
 
@@ -104,7 +102,6 @@
                         android:layout_width="93dp"
                         android:layout_height="62dp"
                         android:id="@+id/imageView3"
-                        android:src="@drawable/sample_2"
                         android:layout_gravity="left"
                         android:layout_marginRight="15dp" />
 
@@ -112,103 +109,104 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/rbtAvatar4"
-                        android:layout_gravity="right" />
+                        android:layout_gravity="right"
+                        android:checked="false" />
 
                     <ImageView
                         android:layout_width="93dp"
                         android:layout_height="62dp"
                         android:id="@+id/imageView4"
-                        android:src="@drawable/sample_2"
                         android:layout_gravity="right" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:id="@+id/textView5"
+                            android:text="User Name:"
+                            android:textSize="23sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:text="E-mail:"
+                            android:id="@+id/textView6"
+                            android:textSize="23sp"
+                            android:layout_marginTop="15dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:text="Password:"
+                            android:id="@+id/textView7"
+                            android:textSize="23sp"
+                            android:layout_marginTop="15dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp">
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/txtusername"
+                            android:layout_gravity="right" />
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textEmailAddress"
+                            android:ems="10"
+                            android:id="@+id/txtemail"
+                            android:layout_gravity="right" />
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPassword"
+                            android:ems="10"
+                            android:id="@+id/txtpassword"
+                            android:layout_gravity="right" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|right"
+                    android:layout_marginTop="25dp">
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Create"
+                        android:id="@+id/btncreateuser"
+                        android:layout_gravity="center_vertical|right"
+                        android:textSize="25dp"
+                        android:onClick="btnCreateOnClick" />
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp">
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:id="@+id/textView5"
-                android:text="User Name:"
-                android:textSize="23sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="E-mail:"
-                android:id="@+id/textView6"
-                android:textSize="23sp"
-                android:layout_marginTop="15dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Password:"
-                android:id="@+id/textView7"
-                android:textSize="23sp"
-                android:layout_marginTop="15dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="1dp">
-
-            <EditText
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/txtusername"
-                android:layout_gravity="right" />
-
-            <EditText
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:ems="10"
-                android:id="@+id/txtemail"
-                android:layout_gravity="right" />
-
-            <EditText
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:ems="10"
-                android:id="@+id/txtpassword"
-                android:layout_gravity="right" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="fill_parent"
-        android:layout_gravity="right">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Create"
-            android:id="@+id/btncreateuser"
-            android:layout_gravity="center_vertical|right"
-            android:textSize="25dp"
-            android:onClick="btnCreateOnClick" />
     </LinearLayout>
 
 </LinearLayout>
