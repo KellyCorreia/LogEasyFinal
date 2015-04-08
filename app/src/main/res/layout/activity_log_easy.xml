@@ -25,7 +25,7 @@
             android:layout_height="125dp"
             android:id="@+id/logo"
             android:focusable="false"
-            android:src="@drawable/logo"
+            android:src="@drawable/logeasylogo"
             android:layout_gravity="top|center_horizontal"
             android:contentDescription="LogEasy"
             android:layout_marginTop="30dp" />
