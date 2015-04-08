@@ -1,7 +1,7 @@
 package com.example.kelly.logeasyfinal;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,7 +12,7 @@ import android.widget.GridView;
 import android.widget.Toast;
 
 
-public class Choose_Player extends ActionBarActivity {
+public class Choose_Player extends Activity {
     private Button btnnewuser;
     private GridView gridviewusers;
 
