@@ -3,6 +3,7 @@ package com.example.kelly.logeasyfinal;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,30 +12,55 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Choose_Player extends Activity {
     private Button btnnewuser;
-    private GridView gridviewusers;
+    private GridView grid;
+    private List<String> web = new ArrayList<String>();
+    private List<Integer> imageId = new ArrayList<Integer>();
+    private List<UserClass> users;
+
+    public void addContentGrid(){
+        MySQLiteHelper db = new MySQLiteHelper(this);
+        users = db.getAllUsers();
+        String imageAvatar;
+        for (int i=0; i<users.size();i++){
+            imageAvatar = users.get(i).getAvatar();
+            if(imageAvatar.equals("Avatar1")){
+                imageId.add(i,R.drawable.sample_1);
+            }else if(imageAvatar.equals("Avatar2")){
+                imageId.add(i,R.drawable.sample_2);
+            } else if(imageAvatar.equals("Avatar3")){
+                imageId.add(i,R.drawable.sample_3);
+            }else if(imageAvatar.equals("Avatar4")){
+                imageId.add(i,R.drawable.sample_4);
+            }
+            web.add(i,users.get(i).getUsername());
+        }
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose__player);
 
-        //these part of this method refer only to the GridView component.
-        gridviewusers = (GridView) findViewById(R.id.gridview);
-        gridviewusers.setAdapter(new ImageAdapter(this));
-        gridviewusers.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-                Toast.makeText(Choose_Player.this, "" + position,
-                        Toast.LENGTH_SHORT).show();
+        addContentGrid();
+        //Log.d("Insert: ", "values from db" + web[0] + "  " + web[1]);
+       // Toast.makeText(Choose_Player.this, "Teste quantidade " + web.get(0) + "  " +web.get(1), Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(Choose_Player.this, LoginActivity.class);
-                //These lines refer to the data which need to be passed to login page(image, name and id of the user)
-                /*Bundle bu = new Bundle();
-                bu.putInt("score", score); //Your score
-                intent.putExtras(bu); //Put your score to your next Intent
-                */
+        CustomGrid gridAdapter = new CustomGrid(Choose_Player.this, web, imageId);
+        grid=(GridView)findViewById(R.id.grid);
+        grid.setAdapter(gridAdapter);
+        grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //Toast.makeText(Choose_Player.this, "Voce clicou em " + web.get(position), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Choose_Player.this, Create_User.class);
+                intent.putExtra(users.get(position).getUsername(), users.get(position).getAvatar());//now I have to get the data in log in
                 startActivity(intent);
                 finish();
             }
