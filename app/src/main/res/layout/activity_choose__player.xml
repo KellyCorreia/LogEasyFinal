@@ -2,63 +2,79 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.example.kelly.logeasyfinal.Choose_Player">
+    android:layout_height="match_parent"
+    tools:context="com.example.kelly.logeasyfinal.Choose_Player"
+    android:background="#ffffe48f"
+    android:padding="15dp">
+
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_marginTop="10dp">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="false"
+        android:gravity="top|start|center_horizontal"
+        android:layout_alignParentTop="true"
+        android:id="@+id/layoutTopLogin"
+        android:layout_centerHorizontal="true">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Choose your Avatar"
-            android:id="@+id/textView2"
-            android:layout_gravity="center_horizontal"
-            android:textSize="30dp" />
+        <ImageView
+            android:layout_width="290dp"
+            android:layout_height="58dp"
+            android:id="@+id/imvTop"
+            android:src="@drawable/toploginpage"
+            android:layout_gravity="top|center_horizontal" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_vertical"
+        android:id="@+id/layoutCenterLogin"
+        android:layout_centerVertical="true">
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="45dp"
-            android:layout_gravity="center">
+        <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/gridview"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:columnWidth="150dp"
+            android:numColumns="auto_fit"
+            android:verticalSpacing="7dp"
+            android:horizontalSpacing="7dp"
+            android:stretchMode="columnWidth"
+            android:layout_gravity="top|center_horizontal"
+            android:gravity="top"
+            android:background="#ffffffff" />
 
-            <GridView xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/gridview"
-                android:layout_width="wrap_content"
-                android:layout_height="243dp"
-                android:columnWidth="150dp"
-                android:numColumns="auto_fit"
-                android:verticalSpacing="7dp"
-                android:horizontalSpacing="7dp"
-                android:stretchMode="columnWidth"
-                android:gravity="center" />
-        </LinearLayout>
+        <Button
+            android:layout_width="95dp"
+            android:layout_height="34dp"
+            android:id="@+id/btnnewuser"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@drawable/buttonred"
+            android:gravity="bottom"
+            android:layout_marginTop="20dp" />
+    </LinearLayout>
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|right"
-            android:layout_marginTop="40dp">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom|end|center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/layoutBottompLogin"
+        android:layout_centerHorizontal="true">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="70dp"
-                android:text="New User"
-                android:id="@+id/btnnewuser"
-                android:layout_gravity="center_horizontal"
-                android:textSize="25dp"
-                android:textStyle="normal|bold" />
-        </LinearLayout>
-
+        <ImageView
+            android:layout_width="290dp"
+            android:layout_height="58dp"
+            android:id="@+id/imvBottom"
+            android:src="@drawable/bottomloginpage"
+            android:baselineAlignBottom="false"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="bottom|center_horizontal" />
     </LinearLayout>
 
 </RelativeLayout>
