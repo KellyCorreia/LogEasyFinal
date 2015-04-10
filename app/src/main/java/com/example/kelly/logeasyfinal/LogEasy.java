@@ -25,7 +25,7 @@ public class LogEasy extends Activity {
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent = new Intent(LogEasy.this,Choose_Player.class);
+                intent = new Intent(LogEasy.this,Create_User.class);
                 startActivity(intent);
                 finish();
             }
