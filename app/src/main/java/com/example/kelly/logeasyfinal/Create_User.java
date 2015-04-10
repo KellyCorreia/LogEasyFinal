@@ -1,8 +1,8 @@
 package com.example.kelly.logeasyfinal;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,7 +13,7 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 
-public class Create_User extends ActionBarActivity {
+public class Create_User extends Activity {
     private Button btnsave;
     private String AvatarSelected;
     private String UserName;
