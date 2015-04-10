@@ -43,11 +43,12 @@
             android:layout_gravity="top|center_horizontal"
             android:background="#ffffffff"
             android:padding="3dp"
-            android:gravity="top|center_horizontal">
+            android:gravity="top|center_horizontal"
+            android:layout_marginTop="10dp">
 
             <ImageView
-                android:layout_width="177dp"
-                android:layout_height="29dp"
+                android:layout_width="250dp"
+                android:layout_height="27dp"
                 android:id="@+id/imvChooseAvatar"
                 android:src="@drawable/chooseaguide"
                 android:layout_gravity="center_horizontal" />
@@ -93,8 +94,8 @@
                             android:checked="true" />
 
                         <ImageView
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
                             android:id="@+id/imvAvatar1"
                             android:layout_gravity="top|left|center_horizontal"
                             android:src="@drawable/avatar1" />
@@ -125,8 +126,8 @@
                             />
 
                         <ImageView
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
                             android:id="@+id/imvAvatar2"
                             android:layout_gravity="center_horizontal"
                             android:src="@drawable/avatar2" />
@@ -156,8 +157,8 @@
                             />
 
                         <ImageView
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
                             android:id="@+id/imvAvatar3"
                             android:layout_gravity="top|left|center_horizontal"
                             android:src="@drawable/avatar3" />
@@ -189,8 +190,8 @@
                             />
 
                         <ImageView
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
                             android:id="@+id/imvAvatar4"
                             android:layout_gravity="top|right|center_horizontal"
                             android:src="@drawable/avatar4" />
