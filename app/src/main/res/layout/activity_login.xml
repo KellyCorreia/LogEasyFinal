@@ -84,19 +84,10 @@
                     android:layout_margin="10dp" />
 
                 <Button android:id="@+id/btnLogin"
-                    android:hint="@string/prompt_password"
                     android:layout_width="95dp" android:layout_height="35dp"
                     android:layout_gravity="bottom|center_horizontal"
                     android:background="@drawable/buttonlogin"
                     android:layout_margin="10dp" />
-
-
-
-
-
-
-
-
             </LinearLayout>
 
         </LinearLayout>

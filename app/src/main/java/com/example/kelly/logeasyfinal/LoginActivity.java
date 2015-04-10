@@ -60,7 +60,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         setContentView(R.layout.activity_login);
 
         Bundle extras = getIntent().getExtras();
-        UserClass users = (UserClass) extras.getParcelable("chosenUser");
+      //  UserClass users = (UserClass) extras.getParcelable("chosenUser");
 
         // Set up the login form.
        /* mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
