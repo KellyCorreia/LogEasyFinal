@@ -1,9 +1,12 @@
 package com.example.kelly.logeasyfinal;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by oanacozma on 04/04/15.
  */
-public class UserClass {
+public class UserClass implements Parcelable {
 
     private long user_id;
     private String username;
@@ -11,19 +14,23 @@ public class UserClass {
     private String pass;
     private String avatar;
 
-    public UserClass(){
+    public UserClass() {
         user_id = 0;
-        username="";
-        email="";
-        pass="";
-        avatar="";
+        username = "";
+        email = "";
+        pass = "";
+        avatar = "";
     }
 
-    public UserClass(String user, String user_email, String user_password, String user_avatar){
-        username=user;
-        email=user_email;
-        pass=user_password;
-        avatar=user_avatar;
+    public UserClass(Parcel in) {
+        readFromParcel(in);
+    }
+
+    public UserClass(String user, String user_email, String user_password, String user_avatar) {
+        username = user;
+        email = user_email;
+        pass = user_password;
+        avatar = user_avatar;
     }
 
     public long getUser_id() {
@@ -65,4 +72,39 @@ public class UserClass {
     public void setAvatar(String avatar) {
         this.avatar = avatar;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel out, int flags) {
+        out.writeLong(user_id);
+        out.writeString(username);
+        out.writeString(email);
+        out.writeString(pass);
+        out.writeString(avatar);
+    }
+
+    private void readFromParcel(Parcel in) {
+
+        user_id = in.readLong();
+        username = in.readString();
+        email = in.readString();
+        pass = in.readString();
+        avatar = in.readString();
+    }
+
+    @SuppressWarnings("unchecked")
+    public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
+        public UserClass createFromParcel(Parcel in) {
+            return new UserClass(in);
+        }
+
+        public UserClass[] newArray(int size) {
+            return new UserClass[size];
+        }
+    };
 }
+

@@ -30,13 +30,13 @@ public class Choose_Player extends Activity {
         for (int i=0; i<users.size();i++){
             imageAvatar = users.get(i).getAvatar();
             if(imageAvatar.equals("Avatar1")){
-                imageId.add(i,R.drawable.sample_1);
+                imageId.add(i,R.drawable.avatar1);
             }else if(imageAvatar.equals("Avatar2")){
-                imageId.add(i,R.drawable.sample_2);
+                imageId.add(i,R.drawable.avatar2);
             } else if(imageAvatar.equals("Avatar3")){
-                imageId.add(i,R.drawable.sample_3);
+                imageId.add(i,R.drawable.avatar3);
             }else if(imageAvatar.equals("Avatar4")){
-                imageId.add(i,R.drawable.sample_4);
+                imageId.add(i,R.drawable.avatar4);
             }
             web.add(i,users.get(i).getUsername());
         }
@@ -60,7 +60,8 @@ public class Choose_Player extends Activity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //Toast.makeText(Choose_Player.this, "Voce clicou em " + web.get(position), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(Choose_Player.this, Create_User.class);
-                intent.putExtra(users.get(position).getUsername(), users.get(position).getAvatar());//now I have to get the data in log in
+                intent.putExtra("chosenUser", users.get(position));
+                //intent.putExtra(users.get(position).getUsername(), users.get(position).getAvatar());//now I have to get the data in log in
                 startActivity(intent);
                 finish();
             }
