@@ -58,7 +58,8 @@
                 android:id="@+id/svwAvatarsOptions"
                 android:background="#ffffffff"
                 android:layout_gravity="center_horizontal"
-                android:focusableInTouchMode="false">
+                android:focusableInTouchMode="false"
+                android:layout_margin="5dp">
 
                 <LinearLayout
                     android:orientation="horizontal"

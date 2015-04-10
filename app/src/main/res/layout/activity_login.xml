@@ -54,8 +54,7 @@
                     android:textIsSelectable="false"
                     android:singleLine="true"
                     android:textColor="#ff8c0000"
-                    android:layout_gravity="top|center_horizontal"
-                    android:layout_marginTop="5dp" />
+                    android:layout_gravity="top|center_horizontal" />
 
                 <ImageView
                     android:layout_width="172dp"
