@@ -58,14 +58,17 @@ public class Create_User extends Activity {
        txtpass = (EditText)findViewById(R.id.txtpassword);
        Password = txtpass.getText().toString();
 
-       NewUser = new UserClass(UserName, Email, Password, AvatarSelected);
-       dbHelper = new MySQLiteHelper(this);
-       dbHelper.addUser(NewUser);
+       if ((UserName!=null) && (Email!=null) && (Password!=null) && (AvatarSelected!=null)) {
 
-       Toast.makeText(Create_User.this, AvatarSelected + " , " + UserName + " , " + Email + " , " + Password, Toast.LENGTH_SHORT).show();
-       Intent intent = new Intent(Create_User.this, LoginActivity.class);
-       startActivity(intent);
-       finish();
+           NewUser = new UserClass(UserName, Email, Password, AvatarSelected);
+           dbHelper = new MySQLiteHelper(this);
+           dbHelper.addUser(NewUser);
+
+           Toast.makeText(Create_User.this, AvatarSelected + " , " + UserName + " , " + Email + " , " + Password, Toast.LENGTH_SHORT).show();
+           Intent intent = new Intent(Create_User.this, LoginActivity.class);
+           startActivity(intent);
+           finish();
+       }
 
     }
 

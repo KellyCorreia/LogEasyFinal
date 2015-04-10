@@ -26,20 +26,24 @@ public class Choose_Player extends Activity {
     public void addContentGrid(){
         MySQLiteHelper db = new MySQLiteHelper(this);
         users = db.getAllUsers();
-        String imageAvatar;
-        for (int i=0; i<users.size();i++){
-            imageAvatar = users.get(i).getAvatar();
-            if(imageAvatar.equals("Avatar1")){
-                imageId.add(i,R.drawable.avatar1);
-            }else if(imageAvatar.equals("Avatar2")){
-                imageId.add(i,R.drawable.avatar2);
-            } else if(imageAvatar.equals("Avatar3")){
-                imageId.add(i,R.drawable.avatar3);
-            }else if(imageAvatar.equals("Avatar4")){
-                imageId.add(i,R.drawable.avatar4);
+        if(users.size()!=0) {
+
+            String imageAvatar;
+            for (int i = 0; i < users.size(); i++) {
+                imageAvatar = users.get(i).getAvatar();
+                if (imageAvatar.equals("Avatar1")) {
+                    imageId.add(i, R.drawable.avatar1);
+                } else if (imageAvatar.equals("Avatar2")) {
+                    imageId.add(i, R.drawable.avatar2);
+                } else if (imageAvatar.equals("Avatar3")) {
+                    imageId.add(i, R.drawable.avatar3);
+                } else if (imageAvatar.equals("Avatar4")) {
+                    imageId.add(i, R.drawable.avatar4);
+                }
+                web.add(i, users.get(i).getUsername());
             }
-            web.add(i,users.get(i).getUsername());
         }
+
     }
 
     @Override

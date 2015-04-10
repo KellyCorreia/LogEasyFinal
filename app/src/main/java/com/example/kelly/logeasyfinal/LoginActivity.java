@@ -59,7 +59,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-       // UserClass users = (UserClass) extras.getParcelable("usuario");
+        Bundle extras = getIntent().getExtras();
+        UserClass users = (UserClass) extras.getParcelable("chosenUser");
 
         // Set up the login form.
        /* mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
@@ -77,7 +78,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             }
         });
 
-        Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
+        Button mEmailSignInButton = (Button) findViewById(R.id.btnLogin);
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
