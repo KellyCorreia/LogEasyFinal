@@ -124,6 +124,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         addQuestions();
         addAnswers();
         addLevels();
+        addUsers();
         //db.close();
     }
 
@@ -287,6 +288,20 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         this.addAnswer(a36);
 
 
+    }
+
+    private void addUsers(){
+        UserClass user1;
+        user1 = new UserClass("user1","user1@gmail.com","dodododo1","Avatar4");
+        this.addUser(user1);
+        user1 = new UserClass("user2","user2@gmail.com","dodododo2","Avatar3");
+        this.addUser(user1);
+        user1 = new UserClass("user3","user3@gmail.com","dodododo3","Avatar4");
+        this.addUser(user1);
+        user1 = new UserClass("user4","user4@gmail.com","dodododo4","Avatar2");
+        this.addUser(user1);
+        user1 = new UserClass("user5","user5@gmail.com","dodododo5","Avatar1");
+        this.addUser(user1);
     }
 
     // Adding new question

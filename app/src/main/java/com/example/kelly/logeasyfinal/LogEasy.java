@@ -8,9 +8,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-
-
-
 public class LogEasy extends Activity {
     Button btnStart;
     Button btnInfo;
@@ -25,7 +22,7 @@ public class LogEasy extends Activity {
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent = new Intent(LogEasy.this,Create_User.class);
+                intent = new Intent(LogEasy.this,Choose_Player.class);
                 startActivity(intent);
                 finish();
             }
@@ -34,7 +31,7 @@ public class LogEasy extends Activity {
         btnInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LogEasy.this,Choose_Player.class);
+                Intent intent = new Intent(LogEasy.this,Create_User.class);
                 startActivity(intent);
                 finish();
             }
