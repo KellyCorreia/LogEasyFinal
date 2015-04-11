@@ -59,11 +59,16 @@ public class Choose_Player extends Activity {
         CustomGrid gridAdapter = new CustomGrid(Choose_Player.this, web, imageId);
         grid=(GridView)findViewById(R.id.grid);
         grid.setAdapter(gridAdapter);
+
+        /*for (int i = 0; i < users.size(); i++) {
+            Toast.makeText(Choose_Player.this, " " + users.get(i).getUsername() + " , " + users.get(i).getAvatar(), Toast.LENGTH_LONG).show();
+        }*/
+
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //Toast.makeText(Choose_Player.this, "Voce clicou em " + web.get(position), Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(Choose_Player.this, Create_User.class);
+                Intent intent = new Intent(Choose_Player.this, LoginActivity.class);
                 intent.putExtra("chosenUser", users.get(position));
                 //intent.putExtra(users.get(position).getUsername(), users.get(position).getAvatar());//now I have to get the data in log in
                 startActivity(intent);

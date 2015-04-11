@@ -291,17 +291,15 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     }
 
     private void addUsers(){
-        UserClass user1;
-        user1 = new UserClass("user1","user1@gmail.com","dodododo1","Avatar4");
-        this.addUser(user1);
-        user1 = new UserClass("user2","user2@gmail.com","dodododo2","Avatar3");
-        this.addUser(user1);
-        user1 = new UserClass("user3","user3@gmail.com","dodododo3","Avatar4");
-        this.addUser(user1);
-        user1 = new UserClass("user4","user4@gmail.com","dodododo4","Avatar2");
-        this.addUser(user1);
-        user1 = new UserClass("user5","user5@gmail.com","dodododo5","Avatar1");
-        this.addUser(user1);
+        UserClass user;
+        user = new UserClass("user1","user1@gmail.com","111","Avatar2");
+        this.addUser(user);
+        user = new UserClass("user2","user2@gmail.com","222","Avatar3");
+        this.addUser(user);
+        user = new UserClass("user3","user3@gmail.com","333","Avatar1");
+        this.addUser(user);
+        user = new UserClass("user4","user4@gmail.com","444","Avatar4");
+        this.addUser(user);
     }
 
     // Adding new question
@@ -341,13 +339,14 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     }
 
 
-    public void addUser(UserClass user){
+    public boolean addUser(UserClass user){
         ContentValues values = new ContentValues();
         values.put(COLUMN_USERNAME, user.getUsername());
         values.put(COLUMN_EMAIL, user.getEmail());
         values.put(COLUMN_PASS, user.getPass());
         values.put(COLUMN_AVATAR, user.getAvatar());
         database.insert(TABLE_USERS, null, values);
+        return true;
     }
 
 
