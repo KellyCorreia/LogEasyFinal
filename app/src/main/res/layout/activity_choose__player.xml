@@ -10,20 +10,15 @@
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="305dp"
+        android:layout_height="61dp"
         android:layout_alignParentStart="false"
         android:gravity="top|start|center_horizontal"
         android:layout_alignParentTop="true"
         android:id="@+id/layoutTopLogin"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/toploginpage">
 
-        <ImageView
-            android:layout_width="290dp"
-            android:layout_height="58dp"
-            android:id="@+id/imvTop"
-            android:src="@drawable/toploginpage"
-            android:layout_gravity="top|center_horizontal" />
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
@@ -59,22 +54,14 @@
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="305dp"
+        android:layout_height="61dp"
         android:gravity="bottom|end|center_horizontal"
         android:layout_alignParentBottom="true"
         android:id="@+id/layoutBottompLogin"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/bottomloginpage">
 
-        <ImageView
-            android:layout_width="290dp"
-            android:layout_height="58dp"
-            android:id="@+id/imvBottom"
-            android:src="@drawable/bottomloginpage"
-            android:baselineAlignBottom="false"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_gravity="bottom|center_horizontal" />
     </LinearLayout>
 
 </RelativeLayout>

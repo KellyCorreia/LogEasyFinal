@@ -8,23 +8,15 @@
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="290dp"
+        android:layout_height="148dp"
         android:weightSum="1"
         android:layout_gravity="top"
         android:id="@+id/LayoutLogo"
         android:focusable="false"
         android:gravity="fill_horizontal|top|start|center_horizontal"
-        android:layout_marginTop="60dp">
-
-        <ImageView
-            android:layout_width="290dp"
-            android:layout_height="148dp"
-            android:id="@+id/ImvLogo"
-            android:focusable="false"
-            android:src="@drawable/logeasylogo"
-            android:layout_gravity="top|center_horizontal"
-            android:layout_weight="1" />
+        android:layout_marginTop="60dp"
+        android:background="@drawable/logeasylogo">
 
     </LinearLayout>
 
