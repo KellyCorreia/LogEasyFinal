@@ -300,6 +300,8 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         this.addUser(user);
         user = new UserClass("user4","user4@gmail.com","444","Avatar4");
         this.addUser(user);
+
+
     }
 
     // Adding new question
@@ -346,6 +348,24 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         values.put(COLUMN_PASS, user.getPass());
         values.put(COLUMN_AVATAR, user.getAvatar());
         database.insert(TABLE_USERS, null, values);
+
+        String selectQuery = "SELECT LAST_INSERT_ID();";
+        database = this.getReadableDatabase();
+        Cursor cursor = database.rawQuery(selectQuery, null);
+        int iduser = 00;
+        if (cursor.moveToFirst()) {
+            do{
+                iduser = cursor.getInt(0);
+            }while (cursor.moveToNext());
+        }
+
+        values = new ContentValues();
+        values.put(COLUMN_USER_ID, iduser);
+        values.put(COLUMN_POINTS, 00);
+        values.put(COLUMN_WRONG_PERCENT, 00);
+        values.put(COLUMN_LEVEL_ID, "L01");
+        database.insert(TABLE_SCOREBOARD, null, values);
+
         return true;
     }
 
@@ -387,6 +407,24 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         return usersList;
     }
 
+    public List<LevelClass> getAllLevels(){
+        List<LevelClass> levelslist = new ArrayList<>();
+        String selectQuery = "SELECT * FROM " + TABLE_LEVEL + ";";
+        database=this.getReadableDatabase();
+        Cursor cursor = database.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                LevelClass level = new LevelClass();
+                level.setLevel_id(cursor.getString(0));
+                level.setLevelname(cursor.getString(1));
+                level.setLesson(cursor.getString(2));
+                level.setTip(cursor.getString(3));
+                levelslist.add(level);
+            } while (cursor.moveToNext());
+        }
+        return levelslist;
+    }
+
     public int rowcount(){
         int row=0;
         String selectQuery="SELECT * FROM "+TABLE_QUESTIONS;
@@ -394,6 +432,40 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         Cursor cursor=db.rawQuery(selectQuery, null);
         row=cursor.getCount();
         return row;
+    }
+
+    public LevelClass getCommand(String command){
+        LevelClass levelobj = new LevelClass();
+        Cursor cursor;
+        database = this.getReadableDatabase();
+        cursor = database.rawQuery(command, null);
+        if(cursor.moveToFirst()){
+            levelobj.setLevel_id(cursor.getString(0));
+            levelobj.setLevelname(cursor.getString(1));
+            levelobj.setLesson(cursor.getString(2));
+            levelobj.setTip(cursor.getString(3));
+        } while (cursor.moveToNext());
+
+        return levelobj;
+
+    }
+
+    public List<ScoreboardClass> getAllScoreboard(){
+        List<ScoreboardClass> Scorelist = new ArrayList<>();
+        String selectQuery = "SELECT * FROM " + TABLE_SCOREBOARD + ";";
+        database=this.getReadableDatabase();
+        Cursor cursor = database.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                ScoreboardClass score = new ScoreboardClass();
+                score.setPoints(cursor.getInt(0));
+                score.setUser_id(cursor.getInt(1));
+                score.setLevel_id(cursor.getString(2));
+                score.setWrong_percent(cursor.getInt(3));
+                Scorelist.add(score);
+            } while (cursor.moveToNext());
+        }
+        return Scorelist;
     }
 
 }

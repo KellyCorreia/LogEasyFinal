@@ -12,6 +12,8 @@ public class LevelClass {
     private String lesson;
     private String tip;
 
+
+
     public LevelClass(){
         level_id="";
         levelname="";
@@ -58,4 +60,5 @@ public class LevelClass {
     public void setTip(String tip) {
         this.tip = tip;
     }
+
 }

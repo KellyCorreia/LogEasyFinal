@@ -1,18 +1,38 @@
 package com.example.kelly.logeasyfinal;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 
 public class HintActivity extends Activity {
+    TextView txtLesson;
+    Button btnPlay;
+    ImageView ImgAvatar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hint);
+        txtLesson =(TextView)findViewById(R.id.txtLesson);
+        btnPlay=(Button)findViewById(R.id.btnPlay);
+        ImgAvatar = (ImageView)findViewById(R.id.imageViewAvatar);
+        setHint();
+        btnPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HintActivity.this, QuizActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
@@ -36,5 +56,11 @@ public class HintActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void setHint(){ //Method to take the hint from the Level Class and from the User Class
+        //txtLesson.setText(.getQuestion_text());
+        //ImgAvatar.setImageDrawable();
+        //draw = (Drawable)image
     }
 }

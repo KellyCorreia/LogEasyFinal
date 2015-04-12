@@ -52,6 +52,7 @@ public class QuizActivity extends Activity {
 
                 switch (v.getId()) {
                     case R.id.btnLesson:
+
                         intent.setClass(QuizActivity.this, LessonActivity.class);
                         startActivity(intent);
                         break;

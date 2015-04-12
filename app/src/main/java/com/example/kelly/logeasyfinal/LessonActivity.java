@@ -12,21 +12,38 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class LessonActivity extends Activity {
+    TextView txtPoints;
     TextView txtLesson;
     Button btnPlay;
     ImageView ImgAvatar;
-    Drawable draw;
     MySQLiteHelper db = new MySQLiteHelper(this);
+    LevelClass curLevel;
+    UserClass User;
+    ScoreboardClass Score;
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson);
+
+        Bundle extras = getIntent().getExtras();
+        User = (UserClass) extras.getParcelable("chosenUser");
+
+        txtPoints = (TextView)findViewById(R.id.txtPoints);
         txtLesson =(TextView)findViewById(R.id.txtLesson);
         btnPlay=(Button)findViewById(R.id.btnPlay);
         ImgAvatar = (ImageView)findViewById(R.id.imageViewAvatar);
+        getCurrentLevel();
         setLesson();
+
         btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,18 +53,46 @@ public class LessonActivity extends Activity {
         });
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_lesson, menu);
-        return true;
+    private void setLesson(){ //Method to take the lesson from the Level Class and from the User Class
+        txtPoints.setText(Score.getPoints());
+        txtLesson.setText(curLevel.getLesson());
+        switch (User.getAvatar()){
+            case "Avatar1":
+                ImgAvatar.setImageResource(R.drawable.avatar1);
+                break;
+            case "Avatar2":
+                ImgAvatar.setImageResource(R.drawable.avatar2);
+                break;
+            case "Avatar3":
+                ImgAvatar.setImageResource(R.drawable.avatar3);
+                break;
+            case "Avatar4":
+                ImgAvatar.setImageResource(R.drawable.avatar4);
+                break;
+        }
     }
 
-    private void setLesson(){ //Method to take the lesson from the Lesson Class and from the User Class
-        //txtLesson.setText(.getQuestion_text());
-        //ImgAvatar.setImageDrawable();
-        //draw = (Drawable)image
+    private void getCurrentLevel(){
+        List<LevelClass> levelslist = new ArrayList<>();
+        List<ScoreboardClass> scorelist = new ArrayList<>();
+        String levelUser = "L01";
+
+        levelslist = db.getAllLevels();
+        scorelist = db.getAllScoreboard();
+        for(int i=0;i < scorelist.size();i++){
+            if(scorelist.get(i).getUser_id() == User.getUser_id()) {
+                levelUser = scorelist.get(i).getLevel_id();
+                Score = scorelist.get(i);
+                break;
+            }
+        }
+
+        for(int i=0; i<levelslist.size();i++){
+            if(levelslist.get(i).getLevel_id() == levelUser){
+                curLevel = levelslist.get(i);
+                break;
+            }
+        }
     }
 
     @Override
