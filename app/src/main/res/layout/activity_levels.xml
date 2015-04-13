@@ -25,8 +25,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Medium Text"
-                android:id="@+id/txtvUsername" />
+                android:id="@+id/txtvUsername"
+                android:layout_gravity="center"
+                android:gravity="center_vertical|center_horizontal"
+                android:typeface="monospace"
+                android:layout_marginTop="5dp"
+                android:hint="@string/username"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
@@ -40,10 +45,37 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Medium Text"
-                android:id="@+id/txtvLevel" />
+                android:hint="@string/levels"
+                android:id="@+id/txtvLevel"
+                android:layout_gravity="center"
+                android:gravity="center_vertical|center_horizontal"
+                android:typeface="monospace"
+                android:layout_marginTop="5dp"
+                android:textStyle="bold" />
+
         </LinearLayout>
     </LinearLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/levelboard"
+        android:id="@+id/boardLevel"
+        android:layout_below="@+id/topLevelsPage"
+        android:orientation="vertical"
+        android:layout_above="@+id/bottomLevelsPage">
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"></TableRow>
+    </TableLayout>
 
     <LinearLayout
         android:orientation="horizontal"
@@ -66,8 +98,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Medium Text"
-                android:id="@+id/txtvPoints" />
+                android:id="@+id/txtvPoints"
+                android:layout_gravity="center"
+                android:gravity="center_vertical|center_horizontal"
+                android:typeface="monospace"
+                android:layout_marginTop="5dp"
+                android:textColor="#ffffffff"
+                android:hint="@string/points"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
@@ -80,9 +118,14 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="New Button"
+                android:hint="@string/scoreboard"
                 android:id="@+id/button"
-                android:background="#ffffe48f" />
+                android:background="#ffffe48f"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:typeface="monospace"
+                android:textColor="#ff192030"
+                android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
+
 </RelativeLayout>

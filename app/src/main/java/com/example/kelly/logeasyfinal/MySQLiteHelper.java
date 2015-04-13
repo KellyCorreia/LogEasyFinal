@@ -445,7 +445,6 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             levelobj.setLesson(cursor.getString(2));
             levelobj.setTip(cursor.getString(3));
         } while (cursor.moveToNext());
-
         return levelobj;
 
     }
