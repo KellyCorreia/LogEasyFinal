@@ -347,14 +347,23 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         values.put(COLUMN_EMAIL, user.getEmail());
         values.put(COLUMN_PASS, user.getPass());
         values.put(COLUMN_AVATAR, user.getAvatar());
+
         long iduser = database.insert(TABLE_USERS, null, values);
 
+        ScoreboardClass score = new ScoreboardClass((int)iduser, 00, 00, "L01");
+        this.addScore(score);
 
+        return true;
+    }
+
+    public boolean addScore(ScoreboardClass score){
+
+        ContentValues values = new ContentValues();
         values = new ContentValues();
-        values.put(COLUMN_USER_ID, iduser);
-        values.put(COLUMN_POINTS, 00);
-        values.put(COLUMN_WRONG_PERCENT, 00);
-        values.put(COLUMN_LEVEL_ID, "L01");
+        values.put(COLUMN_USER_ID, score.getUser_id());
+        values.put(COLUMN_POINTS, score.getPoints());
+        values.put(COLUMN_WRONG_PERCENT, score.getWrong_percent());
+        values.put(COLUMN_LEVEL_ID, score.getLevel_id());
         database.insert(TABLE_SCOREBOARD, null, values);
 
         return true;
@@ -418,7 +427,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
     public int rowcount(){
         int row=0;
-        String selectQuery="SELECT * FROM "+TABLE_QUESTIONS;
+        String selectQuery="SELECT * FROM " + TABLE_QUESTIONS + ";";
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor=db.rawQuery(selectQuery, null);
         row=cursor.getCount();
@@ -457,6 +466,23 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
         }
         return Scorelist;
+    }
+
+    public List<AnswerClass> getAnswer(String qid){
+        List<AnswerClass> Answerlist = new ArrayList<>();
+        String selectQuery = "SELECT * FROM " + TABLE_ANSWERS + "WHERE" + COLUMN_QUESTION_ID + "=" + qid +";";
+        database=this.getReadableDatabase();
+        Cursor cursor = database.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                AnswerClass answers = new AnswerClass();
+                answers.setAnswer_id(cursor.getString(0));
+                answers.setAnswer_text(cursor.getString(1));
+                answers.setQuestion_id(cursor.getString(2));
+                Answerlist.add(answers);
+            } while (cursor.moveToNext());
+        }
+        return Answerlist;
     }
 
 }

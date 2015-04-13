@@ -16,27 +16,33 @@ import java.util.List;
 
 public class QuizActivity extends Activity {
     List<QuestionClass> qList;
-    int score=0;
-    int qid=0;
     QuestionClass curQuest;
     TextView txtQuest;
     RadioButton rda, rdb, rdc;
     Button butNext;
+    MySQLiteHelper db = new MySQLiteHelper(this);
+    ScoreboardClass scoreUser;
+
+    int score = 0;
+    int qid = 0;
     Intent intent = new Intent();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
-        MySQLiteHelper db = new MySQLiteHelper(this);
-        qList = db.getAllQuestions();
-        curQuest = qList.get(qid);
+
+        Bundle extras = getIntent().getExtras();
+        scoreUser = (ScoreboardClass) extras.getParcelable("LessonUser");
+
         txtQuest =(TextView)findViewById(R.id.txtQuestion);
         rda=(RadioButton)findViewById(R.id.radioA);
         rdb=(RadioButton)findViewById(R.id.radioB);
         rdc=(RadioButton)findViewById(R.id.radioC);
         butNext=(Button)findViewById(R.id.btnNext);
+
+        setQuestion();
+
         setQuestionView();
         butNext.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,6 +102,13 @@ public class QuizActivity extends Activity {
         //rdb.setText(curQuest.getOb());
         //rdc.setText(curQuest.getOc());
         qid++;
+    }
+
+    private void setQuestion(){
+        qList = db.getAllQuestions();
+
+
+        curQuest = qList.get(qid);
     }
 
 
