@@ -449,6 +449,23 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
     }
 
+    public List<AnswerClass> getAnswer(String qid){
+        List<AnswerClass> Answerlist = new ArrayList<>();
+        String selectQuery = "SELECT * FROM " + TABLE_ANSWERS + "WHERE" + COLUMN_QUESTION_ID + "=" + qid +";";
+        database=this.getReadableDatabase();
+        Cursor cursor = database.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                AnswerClass answers = new AnswerClass();
+                answers.setAnswer_id(cursor.getString(0));
+                answers.setAnswer_text(cursor.getString(1));
+                answers.setQuestion_id(cursor.getString(2));
+                Answerlist.add(answers);
+            } while (cursor.moveToNext());
+        }
+        return Answerlist;
+    }
+
     public List<ScoreboardClass> getAllScoreboard(){
         List<ScoreboardClass> Scorelist = new ArrayList<>();
         String selectQuery = "SELECT * FROM " + TABLE_SCOREBOARD + ";";
@@ -465,23 +482,6 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
         }
         return Scorelist;
-    }
-
-    public List<AnswerClass> getAnswer(String qid){
-        List<AnswerClass> Answerlist = new ArrayList<>();
-        String selectQuery = "SELECT * FROM " + TABLE_ANSWERS + "WHERE" + COLUMN_QUESTION_ID + "=" + qid +";";
-        database=this.getReadableDatabase();
-        Cursor cursor = database.rawQuery(selectQuery, null);
-        if (cursor.moveToFirst()) {
-            do {
-                AnswerClass answers = new AnswerClass();
-                answers.setAnswer_id(cursor.getString(0));
-                answers.setAnswer_text(cursor.getString(1));
-                answers.setQuestion_id(cursor.getString(2));
-                Answerlist.add(answers);
-            } while (cursor.moveToNext());
-        }
-        return Answerlist;
     }
 
 }
