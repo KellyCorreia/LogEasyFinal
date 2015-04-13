@@ -4,14 +4,29 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 
 public class LevelsActivity extends Activity {
+    private View usernameView;
+    private View levelView;
+    private View pointsView;
+    private UserClass user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_levels);
+
+        //Getting the object user from the previous screen
+        Bundle extras = getIntent().getExtras();
+        user = (UserClass) extras.getParcelable("chosenUser");
+
+        //Setting the Label with the userName
+        TextView txtViewUser = (TextView) findViewById(R.id.txtvUsername);
+        txtViewUser.setText(user.getUsername());
     }
 
 
