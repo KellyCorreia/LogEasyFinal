@@ -75,7 +75,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
     private static final String ANSWERS_DATABASE_CREATE="CREATE TABLE "
             + TABLE_ANSWERS + "(" + COLUMN_ANSWER_ID
-            + " integer primary key, " + COLUMN_ANSWER_TEXT
+            + " text primary key, " + COLUMN_ANSWER_TEXT
             + " text not null, "+ COLUMN_QUESTION_ID
             + " text not null);";
 

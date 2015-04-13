@@ -21,13 +21,10 @@ public class LessonActivity extends Activity {
     TextView txtLesson;
     Button btnPlay;
     ImageView ImgAvatar;
-    MySQLiteHelper db = new MySQLiteHelper(this);
     LevelClass curLevel;
     UserClass User;
     ScoreboardClass Score;
-    UserClass user2;
-
-
+    MySQLiteHelper db = new MySQLiteHelper(this);
 
 
     @Override
@@ -36,12 +33,13 @@ public class LessonActivity extends Activity {
         setContentView(R.layout.activity_lesson);
 
         Bundle extras = getIntent().getExtras();
-        User = (UserClass) extras.getParcelable("chosenUser");
+        User = extras.getParcelable("chosenUser");
 
         txtPoints = (TextView)findViewById(R.id.txtPoints);
         txtLesson =(TextView)findViewById(R.id.txtLesson);
         btnPlay=(Button)findViewById(R.id.btnPlay);
         ImgAvatar = (ImageView)findViewById(R.id.imageViewAvatar);
+
         getCurrentLevel();
         setLesson();
 
@@ -89,26 +87,11 @@ public class LessonActivity extends Activity {
             }
         }
 
-        for(int i=0; i<levelslist.size();i++){
-            if(levelslist.get(i).getLevel_id() == levelUser){
-                curLevel = levelslist.get(i);
+        for(int j=0; j<levelslist.size();j++){
+            if(levelslist.get(j).getLevel_id() == levelUser){
+                curLevel = levelslist.get(j);
                 break;
             }
         }
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }

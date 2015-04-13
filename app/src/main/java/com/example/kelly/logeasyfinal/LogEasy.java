@@ -31,7 +31,7 @@ public class LogEasy extends Activity {
         btnInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LogEasy.this,LoginActivity.class);
+                Intent intent = new Intent(LogEasy.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
             }
