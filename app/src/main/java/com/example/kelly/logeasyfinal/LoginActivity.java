@@ -80,7 +80,8 @@ public class LoginActivity extends Activity {
                 if(password.equals(user.getPass())){
                     passwordIsValid = true;
                     //showProgress(true);
-                    Intent intent = new Intent(LoginActivity.this, QuizActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, LessonActivity.class);
+                    intent.putExtra("chosenUser", user);
                     startActivity(intent);
                     finish();
                 }else{

@@ -12,15 +12,15 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import java.util.List;
+
 
 public class Create_User extends Activity {
-    private Button btnsave;
     private String AvatarSelected;
     private String UserName;
     private String Email;
     private String Password;
-    private UserClass NewUser;
-    private MySQLiteHelper dbHelper;
+    MySQLiteHelper dbHelper;
     RadioButton rb1;
     RadioButton rb2;
     RadioButton rb3;
@@ -48,19 +48,23 @@ public class Create_User extends Activity {
        }else if(rb4.isChecked()){
            AvatarSelected = "Avatar4";
        }
+
        EditText txtname;
        txtname = (EditText)findViewById(R.id.txtusername);
-       UserName = txtname.getText().toString();
        EditText txtemail;
        txtemail = (EditText)findViewById(R.id.txtemail);
-       Email = txtemail.getText().toString();
        EditText txtpass;
        txtpass = (EditText)findViewById(R.id.txtpassword);
-       Password = txtpass.getText().toString();
 
+       UserClass user = this.validateFields(txtname, txtemail, txtpass, AvatarSelected);
+       if (user != null){
+
+       }
+
+       /*
        if ((UserName!=null) && (Email!=null) && (Password!=null) && (AvatarSelected!=null)) {
 
-           Toast.makeText(Create_User.this, AvatarSelected + " , " + UserName + " , " + Email + " , " + Password, Toast.LENGTH_SHORT).show();
+           //Toast.makeText(Create_User.this, AvatarSelected + " , " + UserName + " , " + Email + " , " + Password, Toast.LENGTH_SHORT).show();
            NewUser = new UserClass(UserName, Email, Password, AvatarSelected);
            dbHelper = new MySQLiteHelper(this);
            if (dbHelper.addUser(NewUser)){
@@ -70,6 +74,41 @@ public class Create_User extends Activity {
                finish();
            }
        }
+       */
+
+    }
+
+    private UserClass validateFields(EditText txtName, EditText txtEmail, EditText txtPassword, String avatar) {
+        boolean nameFound = false;
+        boolean emailFound = false;
+        List<UserClass> listUsers;
+        UserClass user;
+
+        UserName = txtName.getText().toString();
+        Email = txtEmail.getText().toString();
+        Password = txtPassword.getText().toString();
+
+        listUsers = dbHelper.getAllUsers();
+        for (int i = 0; i < listUsers.size(); i++) {
+            if (UserName.equals(listUsers.get(i).getUsername())) {
+                nameFound = true;
+            }
+            if (Email.equals(listUsers.get(i).getEmail())) {
+                emailFound = true;
+            }
+        }
+
+        if (UserName == null || nameFound == true) {
+            txtName.setError("Choose another User Name!");
+            return null;
+        } else if (Email == null || emailFound == true) {
+            txtEmail.setError("Email not accepted!");
+            return null;
+        }
+
+        user = new UserClass(UserName, Email, Password, avatar);
+
+        return user;
 
     }
 
