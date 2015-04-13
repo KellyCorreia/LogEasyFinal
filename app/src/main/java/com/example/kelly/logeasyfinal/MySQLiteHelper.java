@@ -406,6 +406,16 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         }
         return usersList;
     }
+    public String getUserLevel(Integer userID){
+        String selectQuery = "SELECT "+COLUMN_LEVEL_NAME+" FROM "+TABLE_LEVEL+" WHERE "+COLUMN_LEVEL_ID+" IN ( SELECT "+COLUMN_LEVEL_ID+" FROM "+TABLE_SCOREBOARD+" WHERE "+COLUMN_USER_ID+" = "+ userID.toString()+");";
+        database=this.getReadableDatabase();
+        Cursor cursor = database.rawQuery(selectQuery, null);
+        String levelName = "vazio";
+        if (cursor.moveToFirst()) {
+            levelName = cursor.getString(0);
+        }
+        return levelName;
+    }
 
     public List<LevelClass> getAllLevels(){
         List<LevelClass> levelslist = new ArrayList<>();
