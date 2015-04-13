@@ -347,17 +347,8 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         values.put(COLUMN_EMAIL, user.getEmail());
         values.put(COLUMN_PASS, user.getPass());
         values.put(COLUMN_AVATAR, user.getAvatar());
-        database.insert(TABLE_USERS, null, values);
+        long iduser = database.insert(TABLE_USERS, null, values);
 
-        String selectQuery = "SELECT LAST_INSERT_ID();";
-        database = this.getReadableDatabase();
-        Cursor cursor = database.rawQuery(selectQuery, null);
-        int iduser = 00;
-        if (cursor.moveToFirst()) {
-            do{
-                iduser = cursor.getInt(0);
-            }while (cursor.moveToNext());
-        }
 
         values = new ContentValues();
         values.put(COLUMN_USER_ID, iduser);
