@@ -19,14 +19,30 @@
             android:layout_width="160dp"
             android:layout_height="34dp"
             android:id="@+id/LevelsPageUsername"
-            android:background="#ff192030"></LinearLayout>
+            android:background="#ff192030">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Medium Text"
+                android:id="@+id/txtvUsername" />
+        </LinearLayout>
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="160dp"
             android:layout_height="34dp"
             android:id="@+id/LevelsPageLevel"
-            android:background="#ff214726"></LinearLayout>
+            android:background="#ff214726">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Medium Text"
+                android:id="@+id/txtvLevel" />
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -44,19 +60,29 @@
             android:layout_height="34dp"
             android:id="@+id/LevelsPagePoints"
             android:longClickable="false"
-            android:background="#ff8c0000"></LinearLayout>
+            android:background="#ff8c0000">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Medium Text"
+                android:id="@+id/txtvPoints" />
+        </LinearLayout>
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="160dp"
             android:layout_height="34dp"
-            android:id="@+id/LevelsPageScoreboard">
+            android:id="@+id/LevelsPageScoreboard"
+            android:background="#ffffe48f">
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="New Button"
-                android:id="@+id/button" />
+                android:id="@+id/button"
+                android:background="#ffffe48f" />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
