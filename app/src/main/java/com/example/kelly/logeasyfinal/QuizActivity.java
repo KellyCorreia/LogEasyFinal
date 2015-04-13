@@ -22,6 +22,7 @@ public class QuizActivity extends Activity {
     Button butNext;
     MySQLiteHelper db = new MySQLiteHelper(this);
     ScoreboardClass scoreUser;
+    UserClass user2;
 
     int score = 0;
     int qid = 0;

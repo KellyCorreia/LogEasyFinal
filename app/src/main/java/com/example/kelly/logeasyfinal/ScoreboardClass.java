@@ -90,6 +90,7 @@ public class ScoreboardClass implements Parcelable {
         }
 
         public ScoreboardClass[] newArray(int size) {
+            UserClass user2;
             return new ScoreboardClass[size];
         }
     };

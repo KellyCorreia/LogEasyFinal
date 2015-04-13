@@ -25,6 +25,7 @@ public class LessonActivity extends Activity {
     LevelClass curLevel;
     UserClass User;
     ScoreboardClass Score;
+    UserClass user2;
 
 
 
