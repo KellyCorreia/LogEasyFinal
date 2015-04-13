@@ -14,9 +14,11 @@
         android:layout_gravity="top"
         android:id="@+id/LayoutLogo"
         android:focusable="false"
-        android:gravity="fill_horizontal|top|start|center_horizontal"
+        android:gravity="top|start|center_horizontal"
         android:layout_marginTop="60dp"
-        android:background="@drawable/logeasylogo">
+        android:background="@drawable/logeasylogo"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
 
     </LinearLayout>
 
