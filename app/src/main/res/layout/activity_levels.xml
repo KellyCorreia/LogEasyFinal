@@ -25,8 +25,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Medium Text"
-                android:id="@+id/txtvUsername" />
+                android:id="@+id/txtvUsername"
+                android:layout_gravity="center"
+                android:gravity="center_vertical|center_horizontal"
+                android:typeface="monospace"
+                android:layout_marginTop="5dp"
+                android:hint="@string/username"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
@@ -40,10 +45,134 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Medium Text"
-                android:id="@+id/txtvLevel" />
+                android:hint="@string/levels"
+                android:id="@+id/txtvLevel"
+                android:layout_gravity="center"
+                android:gravity="center_vertical|center_horizontal"
+                android:typeface="monospace"
+                android:layout_marginTop="5dp"
+                android:textStyle="bold" />
+
         </LinearLayout>
     </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/levelboard"
+        android:id="@+id/boardLevel"
+        android:layout_below="@+id/topLevelsPage"
+        android:orientation="vertical"
+        android:layout_above="@+id/bottomLevelsPage">
+
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/imbLevel1"
+            android:background="@drawable/level1"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp" />
+
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/imbLevel2"
+            android:background="@drawable/level2"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginStart="13dp"
+            android:layout_below="@+id/imbLevel1"
+            android:layout_alignLeft="@+id/imbLevel1"
+            android:layout_alignStart="@+id/imbLevel1" />
+
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/imbLevel3"
+            android:background="@drawable/level3"
+            android:layout_marginTop="13dp"
+            android:layout_alignTop="@+id/imbLevel2"
+            android:layout_toLeftOf="@+id/imbLevel6"
+            android:layout_toStartOf="@+id/imbLevel6" />
+
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/imbLevel4"
+            android:background="@drawable/level4"
+            android:layout_marginTop="18dp"
+            android:layout_alignTop="@+id/imbLevel3"
+            android:layout_toRightOf="@+id/imbLevel3"
+            android:layout_toEndOf="@+id/imbLevel3"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp" />
+
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/imbLevel5"
+            android:background="@drawable/level5"
+            android:layout_below="@+id/imbLevel4"
+            android:layout_toRightOf="@+id/imbLevel6"
+            android:layout_toEndOf="@+id/imbLevel6" />
+
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/imbLevel6"
+            android:background="@drawable/level6"
+            android:layout_alignTop="@+id/imbLevel5"
+            android:layout_toRightOf="@+id/imbLevel7"
+            android:layout_toEndOf="@+id/imbLevel7"
+            android:layout_marginTop="33dp" />
+
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/imbLevel7"
+            android:background="@drawable/level7"
+            android:layout_marginLeft="19dp"
+            android:layout_marginStart="19dp"
+            android:layout_below="@+id/imbLevel5"
+            android:layout_toRightOf="@+id/imbLevel2"
+            android:layout_toEndOf="@+id/imbLevel2"
+            android:layout_marginTop="11dp" />
+
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/imbLevel8"
+            android:background="@drawable/level8"
+            android:layout_marginTop="11dp"
+            android:layout_below="@+id/imbLevel7"
+            android:layout_centerHorizontal="true" />
+
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/imbLevel9"
+            android:background="@drawable/level9"
+            android:layout_marginBottom="22dp"
+            android:layout_alignBottom="@+id/imbLevel10"
+            android:layout_toRightOf="@+id/imbLevel8"
+            android:layout_toEndOf="@+id/imbLevel8" />
+
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/imbLevel10"
+            android:background="@drawable/level10"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/imbLevel9"
+            android:layout_toEndOf="@+id/imbLevel9"
+            android:layout_marginBottom="12dp" />
+
+    </RelativeLayout>
 
     <LinearLayout
         android:orientation="horizontal"
@@ -66,8 +195,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Medium Text"
-                android:id="@+id/txtvPoints" />
+                android:id="@+id/txtvPoints"
+                android:layout_gravity="center"
+                android:gravity="center_vertical|center_horizontal"
+                android:typeface="monospace"
+                android:layout_marginTop="5dp"
+                android:textColor="#ffffffff"
+                android:hint="@string/points"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
@@ -80,9 +215,14 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="New Button"
+                android:hint="@string/scoreboard"
                 android:id="@+id/button"
-                android:background="#ffffe48f" />
+                android:background="#ffffe48f"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:typeface="monospace"
+                android:textColor="#ff192030"
+                android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
+
 </RelativeLayout>
