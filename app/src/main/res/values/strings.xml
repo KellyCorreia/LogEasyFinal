@@ -9,5 +9,6 @@
     <string name="title_activity_lesson">LessonActivity</string>
     <string name="title_activity_hint">HintActivity</string>
     <string name="title_activity_log_easy">LogEasy</string>
+    <string name="title_activity_levels">LevelsActivity</string>
 
 </resources>

@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.kelly.logeasyfinal.LevelsActivity"
+    android:background="#fff7ebcf">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/topLevelsPage"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentStart="true"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="160dp"
+            android:layout_height="34dp"
+            android:id="@+id/LevelsPageUsername"
+            android:background="#ff192030"></LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="160dp"
+            android:layout_height="34dp"
+            android:id="@+id/LevelsPageLevel"
+            android:background="#ff214726"></LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottomLevelsPage"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="160dp"
+            android:layout_height="34dp"
+            android:id="@+id/LevelsPagePoints"
+            android:longClickable="false"
+            android:background="#ff8c0000"></LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="160dp"
+            android:layout_height="34dp"
+            android:id="@+id/LevelsPageScoreboard">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="New Button"
+                android:id="@+id/button" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
