@@ -22,9 +22,10 @@ public class LessonActivity extends Activity {
     TextView txtLesson;
     Button btnPlay;
     ImageView ImgAvatar;
-    LevelClass curLevel = new LevelClass();
-    UserClass User = new UserClass();
-    ScoreboardClass Score = new ScoreboardClass();
+    String selecLevel, userLevel;
+    LevelClass curLevel;
+    UserClass User;
+    ScoreboardClass Score;
 
 
     @Override
@@ -34,6 +35,9 @@ public class LessonActivity extends Activity {
 
         Bundle extras = getIntent().getExtras();
         User = extras.getParcelable("chosenUser");
+        selecLevel = extras.getString("chosenLevel");
+        userLevel = extras.getString("userLevel");
+
 
         txtPoints = (TextView)findViewById(R.id.txtPoints);
         txtLesson =(TextView)findViewById(R.id.txtLesson);
@@ -83,6 +87,7 @@ public class LessonActivity extends Activity {
         for(int i=0;i < scorelist.size();i++){
             if(scorelist.get(i).getUser_id() == User.getUser_id()) {
                 levelUser = scorelist.get(i).getLevel_id();
+                Score = scorelist.get(i);
                 Score.setPoints(scorelist.get(i).getPoints());
                 Score.setWrong_percent(scorelist.get(i).getWrong_percent());
                 Score.setLevel_id(scorelist.get(i).getLevel_id());
