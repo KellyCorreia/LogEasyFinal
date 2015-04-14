@@ -75,7 +75,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
     private static final String ANSWERS_DATABASE_CREATE="CREATE TABLE "
             + TABLE_ANSWERS + "(" + COLUMN_ANSWER_ID
-            + " integer primary key, " + COLUMN_ANSWER_TEXT
+            + " text primary key, " + COLUMN_ANSWER_TEXT
             + " text not null, "+ COLUMN_QUESTION_ID
             + " text not null);";
 
@@ -407,6 +407,28 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         return usersList;
     }
 
+    public String getUserLevel(Integer userID){
+        String selectQuery = "SELECT "+COLUMN_LEVEL_NAME+" FROM "+TABLE_LEVEL+" WHERE "+COLUMN_LEVEL_ID+" IN ( SELECT "+COLUMN_LEVEL_ID+" FROM "+TABLE_SCOREBOARD+" WHERE "+COLUMN_USER_ID+" = "+ userID.toString()+");";
+        database=this.getReadableDatabase();
+        Cursor cursor = database.rawQuery(selectQuery, null);
+        String levelName = "vazio";
+        if (cursor.moveToFirst()) {
+            levelName = cursor.getString(0);
+        }
+        return levelName;
+    }
+    public String getUserPoints(Integer userID){
+        String selectQuery = "SELECT "+COLUMN_POINTS+" FROM "+TABLE_SCOREBOARD+" WHERE "+COLUMN_USER_ID+" = "+ userID.toString()+");";
+        database=this.getReadableDatabase();
+        Cursor cursor = database.rawQuery(selectQuery, null);
+        String pointsN = "vazio";
+        if (cursor.moveToFirst()) {
+            Integer points = Integer.parseInt(cursor.getString(0));
+            pointsN = points.toString();
+        }
+        return pointsN;
+    }
+
     public List<LevelClass> getAllLevels(){
         List<LevelClass> levelslist = new ArrayList<>();
         String selectQuery = "SELECT * FROM " + TABLE_LEVEL + ";";
@@ -484,6 +506,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         }
         return Answerlist;
     }
+
 
 }
 

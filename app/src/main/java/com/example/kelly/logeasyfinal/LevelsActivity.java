@@ -5,13 +5,13 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 
 
 public class LevelsActivity extends Activity {
-    private View usernameView;
-    private View levelView;
+
     private View pointsView;
     private UserClass user;
 
@@ -25,8 +25,18 @@ public class LevelsActivity extends Activity {
         user = (UserClass) extras.getParcelable("chosenUser");
 
         //Setting the Label with the userName
-        TextView txtViewUser = (TextView) findViewById(R.id.txtvUsername);
-        txtViewUser.setText(user.getUsername());
+        TextView txtViewUsername = (TextView) findViewById(R.id.txtvUsername);
+        txtViewUsername.setText(user.getUsername());
+        MySQLiteHelper db = new MySQLiteHelper(this);
+        String levelName =  db.getUserLevel(Integer.valueOf((int)user.getUser_id()));
+        TextView levelView = (TextView) findViewById(R.id.txtvLevel);
+        levelView.setText(levelName);
+
+        String Points =  db.getUserPoints(Integer.valueOf((int)user.getUser_id()));
+        Toast.makeText(LevelsActivity.this, "Points" + Points, Toast.LENGTH_LONG).show();
+
+        //TextView pointsView = (TextView) findViewById(R.id.txtvPoints);
+        //pointsView.setText(Points);
     }
 
 
