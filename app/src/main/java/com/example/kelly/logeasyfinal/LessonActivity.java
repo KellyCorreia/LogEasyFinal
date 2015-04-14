@@ -22,9 +22,11 @@ public class LessonActivity extends Activity {
     TextView txtLesson;
     Button btnPlay;
     ImageView ImgAvatar;
-    LevelClass curLevel = new LevelClass();
-    UserClass User = new UserClass();
-    ScoreboardClass Score = new ScoreboardClass();
+    String selecLevel, userLevel;
+    LevelClass curLevel;
+    UserClass User;
+    ScoreboardClass Score;
+    MySQLiteHelper db = new MySQLiteHelper(this);
 
 
     @Override
@@ -34,28 +36,29 @@ public class LessonActivity extends Activity {
 
         Bundle extras = getIntent().getExtras();
         User = extras.getParcelable("chosenUser");
+        selecLevel = extras.getString("chosenLevel");
 
         txtPoints = (TextView)findViewById(R.id.txtPoints);
         txtLesson =(TextView)findViewById(R.id.txtLesson);
         btnPlay=(Button)findViewById(R.id.btnPlay);
         ImgAvatar = (ImageView)findViewById(R.id.imageViewAvatar);
 
-        this.getCurrentLevel();
+        this.getCurrent();
         this.setLesson();
 
         btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LessonActivity.this, QuizActivity.class);
-                intent.putExtra("LessonUser", Score);
-                startActivity(intent);
+               // Intent intent = new Intent(LessonActivity.this, QuizActivity.class);
+                //intent.putExtra("LessonUser", Score);
+               // startActivity(intent);
             }
         });
     }
 
     private void setLesson(){ //Method to take the lesson from the Level Class and from the User Class
-        txtPoints.setText(Score.getPoints());
-        txtLesson.setText(curLevel.getLesson());
+        txtPoints.setText(Integer.toString(db.getScore(User.getUser_id())));
+        txtLesson.setText((String)curLevel.getLesson());
         switch (User.getAvatar()){
             case "Avatar1":
                 ImgAvatar.setImageResource(R.drawable.avatar1);
@@ -72,30 +75,11 @@ public class LessonActivity extends Activity {
         }
     }
 
-    private void getCurrentLevel(){
+    private void getCurrent(){
         MySQLiteHelper db = new MySQLiteHelper(this);
-        List<LevelClass> levelslist = new ArrayList<>();
-        List<ScoreboardClass> scorelist = new ArrayList<>();
-        String levelUser = "L01";
 
-        levelslist = db.getAllLevels();
-        scorelist = db.getAllScoreboard();
-        for(int i=0;i < scorelist.size();i++){
-            if(scorelist.get(i).getUser_id() == User.getUser_id()) {
-                levelUser = scorelist.get(i).getLevel_id();
-                Score.setPoints(scorelist.get(i).getPoints());
-                Score.setWrong_percent(scorelist.get(i).getWrong_percent());
-                Score.setLevel_id(scorelist.get(i).getLevel_id());
-                Score.setUser_id(scorelist.get(i).getUser_id());
-                break;
-            }
-        }
-
-        for(int j=0; j<levelslist.size();j++){
-            if(levelslist.get(j).getLevel_id() == levelUser){
-                curLevel = levelslist.get(j);
-                break;
-            }
-        }
+        curLevel = db.getLevel(selecLevel);
+        //Score = db.getScore(User.getUser_id());
     }
+
 }
