@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,11 +17,13 @@ import java.util.List;
 
 
 public class Create_User extends Activity {
+    private Button btnsave;
     private String AvatarSelected;
     private String UserName;
     private String Email;
     private String Password;
-    MySQLiteHelper dbHelper;
+    private UserClass NewUser;
+    private MySQLiteHelper dbHelper;
     RadioButton rb1;
     RadioButton rb2;
     RadioButton rb3;
@@ -48,69 +51,62 @@ public class Create_User extends Activity {
        }else if(rb4.isChecked()){
            AvatarSelected = "Avatar4";
        }
-
        EditText txtname;
        txtname = (EditText)findViewById(R.id.txtusername);
+       UserName = txtname.getText().toString();
        EditText txtemail;
        txtemail = (EditText)findViewById(R.id.txtemail);
+       Email = txtemail.getText().toString();
        EditText txtpass;
        txtpass = (EditText)findViewById(R.id.txtpassword);
+       Password = txtpass.getText().toString();
 
-       UserClass user = this.validateFields(txtname, txtemail, txtpass, AvatarSelected);
-       if (user != null){
-
+       //if ((UserName!=null) || (Email!=null) || (Password!=null) || (AvatarSelected!=null)) {
+       //while (TextUtils.isEmpty(UserName) || TextUtils.isEmpty(Email) ||TextUtils.isEmpty(Password)) {
+           if (TextUtils.isEmpty(UserName)) {
+               txtname.setError(getString(R.string.error_empty_field));
+           }
+           if (TextUtils.isEmpty(Email)) {
+               txtemail.setError(getString(R.string.error_empty_field));
+           }
+           if (TextUtils.isEmpty(Password)) {
+               txtpass.setError(getString(R.string.error_empty_field));
+           }
+       /* tried to get the users to avoid duplicated usernames or emails on the database,
+       *but it does not work, I always get an error and the app closes
+       *
+       List<UserClass> users;
+       users = dbHelper.getAllUsers();
+       boolean namefound = false, emailfound = false;
+       for(int i = 0; i < users.size();i++){
+           if (UserName.equals(users.get(i).getUsername())){
+               namefound = true;
+           }
+           if (Email.equals(users.get(i).getEmail())){
+               emailfound = true;
+           }
        }
 
-       /*
-       if ((UserName!=null) && (Email!=null) && (Password!=null) && (AvatarSelected!=null)) {
+       if (namefound == true){
+           txtname.setError(getString(R.string.error_duplicated_username));
+       }
+       if(emailfound == true){
+           txtemail.setError(getString(R.string.error_duplicated_email));
+       }*/
 
+       if((!TextUtils.isEmpty(UserName)) && (!TextUtils.isEmpty(Email)) && (!TextUtils.isEmpty(Password)) /*&& (namefound == false) && (emailfound ==false)*/) {
            //Toast.makeText(Create_User.this, AvatarSelected + " , " + UserName + " , " + Email + " , " + Password, Toast.LENGTH_SHORT).show();
            NewUser = new UserClass(UserName, Email, Password, AvatarSelected);
            dbHelper = new MySQLiteHelper(this);
-           if (dbHelper.addUser(NewUser)){
+           if (dbHelper.addUser(NewUser)) {
                Intent intent = new Intent(Create_User.this, LoginActivity.class);
                intent.putExtra("chosenUser", NewUser);
                startActivity(intent);
                finish();
            }
        }
-       */
-
     }
 
-    private UserClass validateFields(EditText txtName, EditText txtEmail, EditText txtPassword, String avatar) {
-        boolean nameFound = false;
-        boolean emailFound = false;
-        List<UserClass> listUsers;
-        UserClass user;
-
-        UserName = txtName.getText().toString();
-        Email = txtEmail.getText().toString();
-        Password = txtPassword.getText().toString();
-
-        listUsers = dbHelper.getAllUsers();
-        for (int i = 0; i < listUsers.size(); i++) {
-            if (UserName.equals(listUsers.get(i).getUsername())) {
-                nameFound = true;
-            }
-            if (Email.equals(listUsers.get(i).getEmail())) {
-                emailFound = true;
-            }
-        }
-
-        if (UserName == null || nameFound == true) {
-            txtName.setError("Choose another User Name!");
-            return null;
-        } else if (Email == null || emailFound == true) {
-            txtEmail.setError("Email not accepted!");
-            return null;
-        }
-
-        user = new UserClass(UserName, Email, Password, avatar);
-
-        return user;
-
-    }
 
 
     @Override
