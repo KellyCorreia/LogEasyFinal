@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -72,29 +73,23 @@ public class Create_User extends Activity {
            if (TextUtils.isEmpty(Password)) {
                txtpass.setError(getString(R.string.error_empty_field));
            }
-       /* tried to get the users to avoid duplicated usernames or emails on the database,
-       *but it does not work, I always get an error and the app closes
-       *
+       /* Code to avoid duplicated usernames or emails on the database.*/
+       dbHelper = new MySQLiteHelper(this);
        List<UserClass> users;
        users = dbHelper.getAllUsers();
        boolean namefound = false, emailfound = false;
        for(int i = 0; i < users.size();i++){
-           if (UserName.equals(users.get(i).getUsername())){
+           if (UserName.equals(users.get(0).getUsername())){
                namefound = true;
+               txtname.setError(getString(R.string.error_duplicated_username));
            }
-           if (Email.equals(users.get(i).getEmail())){
+           if (Email.equals(users.get(0).getEmail())){
                emailfound = true;
+               txtemail.setError(getString(R.string.error_duplicated_email));
            }
        }
 
-       if (namefound == true){
-           txtname.setError(getString(R.string.error_duplicated_username));
-       }
-       if(emailfound == true){
-           txtemail.setError(getString(R.string.error_duplicated_email));
-       }*/
-
-       if((!TextUtils.isEmpty(UserName)) && (!TextUtils.isEmpty(Email)) && (!TextUtils.isEmpty(Password)) /*&& (namefound == false) && (emailfound ==false)*/) {
+       if((!TextUtils.isEmpty(UserName)) && (!TextUtils.isEmpty(Email)) && (!TextUtils.isEmpty(Password)) && (namefound == false) && (emailfound == false)) {
            //Toast.makeText(Create_User.this, AvatarSelected + " , " + UserName + " , " + Email + " , " + Password, Toast.LENGTH_SHORT).show();
            NewUser = new UserClass(UserName, Email, Password, AvatarSelected);
            dbHelper = new MySQLiteHelper(this);
