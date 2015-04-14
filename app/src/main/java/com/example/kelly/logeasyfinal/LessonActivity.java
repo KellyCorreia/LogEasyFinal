@@ -40,8 +40,8 @@ public class LessonActivity extends Activity {
         btnPlay=(Button)findViewById(R.id.btnPlay);
         ImgAvatar = (ImageView)findViewById(R.id.imageViewAvatar);
 
-        getCurrentLevel();
-        setLesson();
+        this.getCurrentLevel();
+        this.setLesson();
 
         btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
