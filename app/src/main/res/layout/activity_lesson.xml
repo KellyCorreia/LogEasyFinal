@@ -3,7 +3,7 @@
     android:layout_height="match_parent"
     tools:context="com.example.kelly.logeasyfinal.LessonActivity"
     android:id="@+id/relativeLayoutLesson"
-    android:background="@drawable/backgroundLevel1">
+    android:background="@drawable/backgroundlevel1">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -29,27 +29,31 @@
             android:id="@+id/layoutLevelPoIntsRight">
 
             <TextView
-                android:layout_width="160dp"
-                android:layout_height="35dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Large Text"
-                android:id="@+id/txtPoints" />
+                android:id="@+id/txtPoints"
+                android:textAlignment="textEnd"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginTop="5dp" />
         </LinearLayout>
 
     </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="260dp"
+        android:layout_height="252dp"
         android:layout_weight="0.71"
-        android:weightSum="1"
         android:id="@+id/linearLayoutMiddle"
-        android:layout_centerInParent="true">
+        android:background="@drawable/ballonlevel1"
+        android:layout_below="@+id/linearLayoutFirst"
+        android:layout_alignParentRight="true">
 
         <ScrollView
-            android:layout_width="71dp"
-            android:layout_height="176dp"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
             android:id="@+id/scrollView"
             android:layout_weight="0.94"
             android:fillViewport="false">
