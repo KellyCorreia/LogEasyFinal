@@ -418,7 +418,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         return levelName;
     }
     public String getUserPoints(Integer userID){
-        String selectQuery = "SELECT "+COLUMN_POINTS+" FROM "+TABLE_SCOREBOARD+" WHERE "+COLUMN_USER_ID+" = "+ userID.toString()+");";
+        String selectQuery = "SELECT "+COLUMN_POINTS+" FROM "+TABLE_SCOREBOARD+" WHERE "+COLUMN_USER_ID+" = "+ userID.toString()+" ;";
         database=this.getReadableDatabase();
         Cursor cursor = database.rawQuery(selectQuery, null);
         String pointsN = "vazio";
