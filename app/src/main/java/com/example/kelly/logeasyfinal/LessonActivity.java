@@ -54,7 +54,7 @@ public class LessonActivity extends Activity {
     }
 
     private void setLesson(){ //Method to take the lesson from the Level Class and from the User Class
-        txtPoints.setText(Score.getPoints());
+        txtPoints.setText(Integer.toString(Score.getPoints()));
         txtLesson.setText(curLevel.getLesson());
         switch (User.getAvatar()){
             case "Avatar1":
