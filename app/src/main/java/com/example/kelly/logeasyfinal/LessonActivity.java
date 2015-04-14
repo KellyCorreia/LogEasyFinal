@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,10 +22,9 @@ public class LessonActivity extends Activity {
     TextView txtLesson;
     Button btnPlay;
     ImageView ImgAvatar;
-    LevelClass curLevel;
-    UserClass User;
-    ScoreboardClass Score;
-    MySQLiteHelper db = new MySQLiteHelper(this);
+    LevelClass curLevel = new LevelClass();
+    UserClass User = new UserClass();
+    ScoreboardClass Score = new ScoreboardClass();
 
 
     @Override
@@ -73,6 +73,7 @@ public class LessonActivity extends Activity {
     }
 
     private void getCurrentLevel(){
+        MySQLiteHelper db = new MySQLiteHelper(this);
         List<LevelClass> levelslist = new ArrayList<>();
         List<ScoreboardClass> scorelist = new ArrayList<>();
         String levelUser = "L01";
@@ -82,7 +83,10 @@ public class LessonActivity extends Activity {
         for(int i=0;i < scorelist.size();i++){
             if(scorelist.get(i).getUser_id() == User.getUser_id()) {
                 levelUser = scorelist.get(i).getLevel_id();
-                Score = scorelist.get(i);
+                Score.setPoints(scorelist.get(i).getPoints());
+                Score.setWrong_percent(scorelist.get(i).getWrong_percent());
+                Score.setLevel_id(scorelist.get(i).getLevel_id());
+                Score.setUser_id(scorelist.get(i).getUser_id());
                 break;
             }
         }

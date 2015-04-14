@@ -358,7 +358,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
     public boolean addScore(ScoreboardClass score){
 
-        ContentValues values = new ContentValues();
+        ContentValues values;
         values = new ContentValues();
         values.put(COLUMN_USER_ID, score.getUser_id());
         values.put(COLUMN_POINTS, score.getPoints());
@@ -480,10 +480,10 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 ScoreboardClass score = new ScoreboardClass();
-                score.setPoints(cursor.getInt(0));
-                score.setUser_id(cursor.getInt(1));
-                score.setLevel_id(cursor.getString(2));
-                score.setWrong_percent(cursor.getInt(3));
+                score.setUser_id(cursor.getInt(0));
+                score.setPoints(cursor.getInt(1));
+                score.setWrong_percent(cursor.getInt(2));
+                score.setLevel_id(cursor.getString(3));
                 Scorelist.add(score);
             } while (cursor.moveToNext());
         }
