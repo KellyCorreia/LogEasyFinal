@@ -85,7 +85,6 @@ public class LoginActivity extends Activity {
                     finish();
                 }else{
                     mPasswordView.setError(getString(R.string.error_invalid_password));
-                    //Toast.makeText(LoginActivity.this, "Screen Password" + password + "DB Password" + user.getPass(), Toast.LENGTH_LONG).show();
                 }
             }
         });
