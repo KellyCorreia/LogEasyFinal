@@ -43,19 +43,21 @@
 
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="260dp"
-        android:layout_height="252dp"
+        android:layout_width="245dp"
+        android:layout_height="245dp"
         android:layout_weight="0.71"
         android:id="@+id/linearLayoutMiddle"
-        android:background="@drawable/ballonlevel1"
-        android:layout_below="@+id/linearLayoutFirst"
-        android:layout_alignParentRight="true">
+        android:background="@drawable/ballonlevel"
+        android:layout_alignParentRight="true"
+        android:layout_above="@+id/linearLayoutBottom"
+        android:layout_marginRight="10dp"
+        android:gravity="center_vertical|right|center_horizontal">
 
         <ScrollView
-            android:layout_width="220dp"
-            android:layout_height="220dp"
+            android:layout_width="210dp"
+            android:layout_height="210dp"
             android:id="@+id/scrollView"
-            android:layout_weight="0.94"
+            android:layout_weight="0.48"
             android:fillViewport="false">
 
             <TextView
@@ -77,17 +79,25 @@
         android:layout_alignParentEnd="true">
 
         <ImageView
-            android:layout_width="148dp"
-            android:layout_height="189dp"
-            android:id="@+id/imageViewAvatar" />
+            android:layout_width="140dp"
+            android:layout_height="180dp"
+            android:id="@+id/imageViewAvatar"
+            android:src="@drawable/avatar22"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="left|bottom"
+            android:layout_marginBottom="5dp" />
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Play"
+            android:layout_width="116dp"
+            android:layout_height="34dp"
             android:id="@+id/btnPlay"
-            android:layout_gravity="center_horizontal"
-            android:onClick= "OnClick"/>
+            android:onClick= "OnClick"
+            android:singleLine="false"
+            android:background="@drawable/buttomlevel"
+            android:layout_gravity="bottom|right"
+            android:gravity="bottom|right"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="10dp" />
     </LinearLayout>
 
 </RelativeLayout>
