@@ -96,7 +96,7 @@
             android:background="@drawable/buttomlevel"
             android:layout_gravity="bottom|right"
             android:gravity="bottom|right"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="30dp"
             android:layout_marginBottom="10dp" />
     </LinearLayout>
 
