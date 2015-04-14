@@ -6,6 +6,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+
 
 
 public class LevelsActivity extends Activity {
@@ -30,6 +32,11 @@ public class LevelsActivity extends Activity {
         TextView levelView = (TextView) findViewById(R.id.txtvLevel);
         levelView.setText(levelName);
 
+        String Points =  db.getUserPoints(Integer.valueOf((int)user.getUser_id()));
+        Toast.makeText(LevelsActivity.this, "Points" + Points, Toast.LENGTH_LONG).show();
+
+        //TextView pointsView = (TextView) findViewById(R.id.txtvPoints);
+        //pointsView.setText(Points);
     }
 
 

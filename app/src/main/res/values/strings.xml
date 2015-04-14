@@ -18,4 +18,7 @@
     <string name="prompt_email">Email</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="error_invalid_password">This password is wrong!</string>
+    <string name="error_empty_field">This field is required!</string>
+    <string name="error_duplicated_username">This username is already registered!</string>
+    <string name="error_duplicated_email">This email is already registered!</string>
 </resources>
