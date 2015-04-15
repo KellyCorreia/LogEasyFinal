@@ -62,8 +62,6 @@ public class Create_User extends Activity {
        txtpass = (EditText)findViewById(R.id.txtpassword);
        Password = txtpass.getText().toString();
 
-       //if ((UserName!=null) || (Email!=null) || (Password!=null) || (AvatarSelected!=null)) {
-       //while (TextUtils.isEmpty(UserName) || TextUtils.isEmpty(Email) ||TextUtils.isEmpty(Password)) {
            if (TextUtils.isEmpty(UserName)) {
                txtname.setError(getString(R.string.error_empty_field));
            }
