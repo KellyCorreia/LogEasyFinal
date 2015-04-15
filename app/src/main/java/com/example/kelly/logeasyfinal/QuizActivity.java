@@ -2,13 +2,15 @@ package com.example.kelly.logeasyfinal;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,22 +26,23 @@ public class QuizActivity extends Activity {
     RadioGroup grp;
     RadioButton rda, rdb, rdc;
     Button butNext, btnLesson, btnHint;
+    RelativeLayout layout;
+    LinearLayout firstLayout;
+    RadioButton rightAnswer,userAnswer;
     ScoreboardClass Score;
     UserClass User;
     LevelClass selecLevel;
-    RadioButton rightAnswer,userAnswer;
+    Intent intent = new Intent();
+    MySQLiteHelper db;
 
     int score = 0;
-    MySQLiteHelper db = new MySQLiteHelper(this);
     int rdQ;
-    int qid = 0;
-    Intent intent = new Intent();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
+        db = new MySQLiteHelper(this);
 
         Bundle extras = getIntent().getExtras();
         User = (UserClass)extras.getParcelable("chosenUser");
@@ -56,6 +59,8 @@ public class QuizActivity extends Activity {
         butNext=(Button)findViewById(R.id.btnNext);
         btnHint = (Button)findViewById(R.id.btnHint);
         btnLesson = (Button)findViewById(R.id.btnLesson);
+        layout = (RelativeLayout)findViewById(R.id.RelativeLayout);
+        firstLayout = (LinearLayout)findViewById(R.id.LinearLayout);
 
         setQuestionView();
 
@@ -64,60 +69,18 @@ public class QuizActivity extends Activity {
             public void onClick(View v) {
                 userAnswer = (RadioButton)findViewById(grp.getCheckedRadioButtonId());
                 qList.remove(rdQ);
+
                 if(userAnswer == rightAnswer){
                     Toast.makeText(QuizActivity.this, "Right Answer!", Toast.LENGTH_SHORT).show();
-                    score += 10;
-                    //db.updatingScore(score, User);
-                    //Score = db.getScore(User.getUser_id());
-                    switch(score){
-                        case 50:
-                            Toast.makeText(QuizActivity.this, "Congratulations! You master the Wind element!", Toast.LENGTH_SHORT).show();
-                            db.updatingScore(score, User, "L02");
-                            break;
-                        case 100:
-                            Toast.makeText(QuizActivity.this, "Congratulations! You master the Sound element!", Toast.LENGTH_SHORT).show();
-                            db.updatingScore(score, User, "L03");
-                            break;
-                        case 150:
-                            Toast.makeText(QuizActivity.this, "Congratulations! You master the Metal element!", Toast.LENGTH_SHORT).show();
-                            db.updatingScore(score, User, "L04");
-                            break;
-                        case 200:
-                            Toast.makeText(QuizActivity.this, "Congratulations! You master the Sand element!", Toast.LENGTH_SHORT).show();
-                            db.updatingScore(score, User, "L05");
-                            break;
-                        case 250:
-                            Toast.makeText(QuizActivity.this, "Congratulations! You master the Snow element!", Toast.LENGTH_SHORT).show();
-                            db.updatingScore(score, User, "L06");
-                            break;
-                        case 300:
-                            Toast.makeText(QuizActivity.this, "Congratulations! You master the Plant element!", Toast.LENGTH_SHORT).show();
-                            db.updatingScore(score, User, "L07");
-                            break;
-                        case 350:
-                            Toast.makeText(QuizActivity.this, "Congratulations! You master the Lighting element!", Toast.LENGTH_SHORT).show();
-                            db.updatingScore(score, User, "L08");
-                            break;
-                        case 400:
-                            Toast.makeText(QuizActivity.this, "Congratulations! You master the Lava element!", Toast.LENGTH_SHORT).show();
-                            db.updatingScore(score, User, "L09");
-                            break;
-                        case 450:
-                            Toast.makeText(QuizActivity.this, "Congratulations! You defeated the Dark City!", Toast.LENGTH_SHORT).show();
-                            db.updatingScore(score, User, "L10");
-                            break;
-                        case 500:
-                            Toast.makeText(QuizActivity.this, "Congratulations! You are the master of the World!", Toast.LENGTH_SHORT).show();
-                            db.updatingScore(score, User, "L10");
-                            break;
-                        default:
-                            db.updatingScore(score, User, "L10");
-
-
+                    if(selecLevel.getLevel_id() == Score.getLevel_id()) {
+                        score += 10;
+                        setIntent();
                     }
-                    setQuestionView();
-
+                }else{
+                    Toast.makeText(QuizActivity.this, "Wrong answer!", Toast.LENGTH_SHORT).show();
                 }
+                setQuestionView();
+
                 //Log.d("yourans", curQuest.getRight_answer() + " " + answer.getText());
                 //if(curQuest.getRight_answer().equals(answer.getText()))
                 //{
@@ -161,25 +124,54 @@ public class QuizActivity extends Activity {
         });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_quiz, menu);
-        return true;
-    }
 
     private void setQuestionView(){
         Random rd = new Random();
-        MySQLiteHelper db = new MySQLiteHelper(this);
         int rdQ;
 
         if(qList.size() >= 0){
             qList = db.levelQuestion(selecLevel.getLevel_id());
         }
 
-        rdQ = rd.nextInt(qList.size());
+        //rdQ = rd.nextInt(qList.size());
         aList = db.getAnswer(qList.get(rdQ).getQuestion_id());
 
+        firstLayout.setBackgroundColor(Color.parseColor("#FF192030"));
+        switch(selecLevel.getLevel_id()){
+            case "L01":
+                layout.setBackgroundResource(R.drawable.backgroundlevel1);
+                break;
+            case "L02":
+                layout.setBackgroundResource(R.drawable.backgroundlevel2);
+                break;
+            case "L03":
+                layout.setBackgroundResource(R.drawable.backgroundlevel3);
+                break;
+            case "L04":
+                layout.setBackgroundResource(R.drawable.backgroundlevel4);
+                break;
+            case "L05":
+                layout.setBackgroundResource(R.drawable.backgroundlevel5);
+                break;
+            case "L06":
+                layout.setBackgroundResource(R.drawable.backgroundlevel6);
+                break;
+            case "L07":
+                layout.setBackgroundResource(R.drawable.backgroundlevel7);
+                break;
+            case "L08":
+                layout.setBackgroundResource(R.drawable.backgroundlevel8);
+                break;
+            case "L09":
+                layout.setBackgroundResource(R.drawable.backgroundlevel9);
+                break;
+            case "L10":
+                layout.setBackgroundResource(R.drawable.backgroundlevel10);
+                break;
+        }
+
+
+        txtPoints.setText(Integer.toString(Score.getPoints()));
         txtQuest.setText(qList.get(rdQ).getQuestion_text());
         rda.setText(aList.get(0).getAnswer_text());
         rdb.setText(aList.get(1).getAnswer_text());
@@ -193,7 +185,78 @@ public class QuizActivity extends Activity {
                 rightAnswer = rdc;
             }
         }
-        //qid++;
+    }
+
+    private void setIntent(){
+
+        intent.setClass(QuizActivity.this, LevelsActivity.class);
+        intent.putExtra("chosenUser", User);
+
+        switch (score) {
+            case 50:
+                Toast.makeText(QuizActivity.this, "Congratulations! You master the Wind element!", Toast.LENGTH_SHORT).show();
+                db.updatingScore(score, User, "L02");
+                startActivity(intent);
+                break;
+
+            case 100:
+                Toast.makeText(QuizActivity.this, "Congratulations! You master the Sound element!", Toast.LENGTH_SHORT).show();
+                db.updatingScore(score, User, "L03");
+                break;
+
+            case 150:
+                Toast.makeText(QuizActivity.this, "Congratulations! You master the Metal element!", Toast.LENGTH_SHORT).show();
+                db.updatingScore(score, User, "L04");
+                startActivity(intent);
+                break;
+
+            case 200:
+                Toast.makeText(QuizActivity.this, "Congratulations! You master the Sand element!", Toast.LENGTH_SHORT).show();
+                db.updatingScore(score, User, "L05");
+                startActivity(intent);
+                break;
+
+            case 250:
+                Toast.makeText(QuizActivity.this, "Congratulations! You master the Snow element!", Toast.LENGTH_SHORT).show();
+                db.updatingScore(score, User, "L06");
+                startActivity(intent);
+                break;
+
+            case 300:
+                Toast.makeText(QuizActivity.this, "Congratulations! You master the Plant element!", Toast.LENGTH_SHORT).show();
+                db.updatingScore(score, User, "L07");
+                startActivity(intent);
+                break;
+
+            case 350:
+                Toast.makeText(QuizActivity.this, "Congratulations! You master the Lighting element!", Toast.LENGTH_SHORT).show();
+                db.updatingScore(score, User, "L08");
+                startActivity(intent);
+                break;
+
+            case 400:
+                Toast.makeText(QuizActivity.this, "Congratulations! You master the Lava element!", Toast.LENGTH_SHORT).show();
+                db.updatingScore(score, User, "L09");
+                startActivity(intent);
+                break;
+
+            case 450:
+                Toast.makeText(QuizActivity.this, "Congratulations! You defeated the Dark City!", Toast.LENGTH_SHORT).show();
+                db.updatingScore(score, User, "L10");
+                startActivity(intent);
+                break;
+
+            case 500:
+                Toast.makeText(QuizActivity.this, "Congratulations! You are the master of the World!", Toast.LENGTH_SHORT).show();
+                db.updatingScore(score, User, "L10");
+                startActivity(intent);
+                break;
+
+            default:
+                db.updatingScore(score, User, Score.getLevel_id());
+                break;
+        }
+        Score = db.getScore(User.getUser_id());
     }
 
 

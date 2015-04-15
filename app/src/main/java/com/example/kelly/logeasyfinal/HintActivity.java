@@ -55,8 +55,8 @@ public class HintActivity extends Activity {
                 intent.putExtra("chosenUser", user);
                 intent.putExtra("chosenLevel", seleclevel);
                 intent.putExtra("userScore", score);
-
                 startActivity(intent);
+                finish();
             }
         });
     }
