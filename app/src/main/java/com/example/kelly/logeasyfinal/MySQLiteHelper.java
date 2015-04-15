@@ -176,6 +176,9 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
         LevelClass l3 = new LevelClass("L03", "Level 3 Name", "Lesson 3", "Tip 3");
         this.addLevel(l3);
+
+        LevelClass l4 = new LevelClass("L04", "Level 4 Name", "Lesson 4", "Tip 4");
+        this.addLevel(l4);
     }
 
     private void addAnswers() {
@@ -350,7 +353,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
         long iduser = database.insert(TABLE_USERS, null, values);
 
-        ScoreboardClass score = new ScoreboardClass((int)iduser, 02, 00, "L01");
+        ScoreboardClass score = new ScoreboardClass((int)iduser, 00, 00, "L01");
         this.addScore(score);
 
         return true;
@@ -443,7 +446,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     public LevelClass getLevel(String levelName){
         LevelClass levelobj = new LevelClass();
         Cursor cursor;
-        String selectQuery = "SELECT * FROM " + TABLE_LEVEL + " WHERE " + COLUMN_LEVEL_NAME + " = " + levelName +";";
+        String selectQuery = "SELECT * FROM " + TABLE_LEVEL + " WHERE " + COLUMN_LEVEL_NAME + " = " + (String)levelName + ";" ;
         database = this.getReadableDatabase();
         cursor = database.rawQuery(selectQuery, null);
         if(cursor.moveToFirst()){
@@ -455,10 +458,11 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         return levelobj;
     }
 
-    public Integer getScore(long UserID){
+    public ScoreboardClass getScore(long UserID){
         ScoreboardClass scoreobj = new ScoreboardClass();
         Cursor cursor;
-        String selectQuery = "SELECT * FROM " + TABLE_SCOREBOARD + " WHERE " + COLUMN_USER_ID + " = " + UserID + ";";
+        String UserString = Integer.toString((int)UserID);
+        String selectQuery = "SELECT * FROM " + TABLE_SCOREBOARD + " WHERE " + COLUMN_USER_ID + " = " + UserString + ";";
         database = this.getReadableDatabase();
         cursor = database.rawQuery(selectQuery, null);
         if(cursor.moveToFirst()){
@@ -467,7 +471,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             scoreobj.setWrong_percent(cursor.getInt(2));
             scoreobj.setLevel_id(cursor.getString(3));
         } while (cursor.moveToNext());
-        return cursor.getInt(1);
+        return scoreobj;
     }
 
     public List<AnswerClass> getAnswer(String qid){
@@ -485,6 +489,46 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
         }
         return Answerlist;
+    }
+
+    public List<QuestionClass> levelQuestion(String levelId) {
+        List<QuestionClass> questionsList = new ArrayList<>();
+        Cursor cursor;
+        String selectQuery = "SELECT * FROM " + TABLE_QUESTIONS + " WHERE " + COLUMN_LEVEL_ID + " = " + levelId + ";";
+        database = this.getReadableDatabase();
+        cursor = database.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            QuestionClass levelQuestion = new QuestionClass();
+            levelQuestion.setQuestion_id(cursor.getString(0));
+            levelQuestion.setQuestion_text(cursor.getString(1));
+            levelQuestion.setLevel_id(cursor.getString(2));
+            levelQuestion.setRight_answer(cursor.getString(3));
+            questionsList.add(levelQuestion);
+        }
+        while (cursor.moveToNext()) ;
+
+        return questionsList;
+    }
+
+    public boolean updatingScore(Integer score, UserClass User){
+        Cursor cursor;
+        String UserString = Integer.toString((int)User.getUser_id());
+        String selectQuery = "SELECT * FROM " + TABLE_SCOREBOARD + " WHERE " + COLUMN_USER_ID + " = " + UserString + ";";
+        database = this.getReadableDatabase();
+        cursor = database.rawQuery(selectQuery, null);
+        ContentValues values;
+        values = new ContentValues();
+        if(cursor.moveToFirst()){
+            values.put(COLUMN_USER_ID, cursor.getInt(0));
+            values.put(COLUMN_POINTS, score);
+            values.put(COLUMN_WRONG_PERCENT, cursor.getInt(2));
+            values.put(COLUMN_LEVEL_ID, cursor.getInt(3));
+        } while (cursor.moveToNext());
+
+        database = this.getWritableDatabase();
+        database.update(TABLE_SCOREBOARD,values, COLUMN_USER_ID + "= ?" + UserString, null);
+
+        return true;
     }
 
 }

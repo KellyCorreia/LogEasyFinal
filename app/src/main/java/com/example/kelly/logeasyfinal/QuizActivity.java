@@ -10,23 +10,29 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 
 public class QuizActivity extends Activity {
-    List<QuestionClass> qList;
-    QuestionClass curQuest;
-    TextView txtQuest;
+    List<QuestionClass> qList = new ArrayList<>();
+    List<AnswerClass> aList;
+    TextView txtQuest, txtPoints;
+    RadioGroup grp;
     RadioButton rda, rdb, rdc;
-    Button butNext;
-    MySQLiteHelper db = new MySQLiteHelper(this);
+    Button butNext, btnLesson, btnHint;
     ScoreboardClass scoreUser;
-    UserClass user2;
+    UserClass User;
+    String selecLevel;
+    RadioButton rightAnswer,userAnswer;
 
     int score = 0;
     int qid = 0;
     Intent intent = new Intent();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,45 +40,38 @@ public class QuizActivity extends Activity {
         setContentView(R.layout.activity_quiz);
 
         Bundle extras = getIntent().getExtras();
-        scoreUser = (ScoreboardClass) extras.getParcelable("LessonUser");
+        scoreUser = extras.getParcelable("LessonUser");
+        selecLevel = extras.getString("chosenLevel");
+        User = extras.getParcelable("User");
+        score = scoreUser.getPoints();
 
+        txtPoints = (TextView)findViewById(R.id.txtPoints);
         txtQuest =(TextView)findViewById(R.id.txtQuestion);
+        grp=(RadioGroup)findViewById(R.id.radioGroupAnswers);
         rda=(RadioButton)findViewById(R.id.radioA);
         rdb=(RadioButton)findViewById(R.id.radioB);
         rdc=(RadioButton)findViewById(R.id.radioC);
         butNext=(Button)findViewById(R.id.btnNext);
-
-        setQuestion();
+        btnHint = (Button)findViewById(R.id.btnHint);
+        btnLesson = (Button)findViewById(R.id.btnLesson);
 
         setQuestionView();
+
         butNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RadioGroup grp=(RadioGroup)findViewById(R.id.radioGroupAnswers);
-                RadioButton answer = (RadioButton)findViewById(grp.getCheckedRadioButtonId());
-                Log.d("yourans", curQuest.getRight_answer() + " " + answer.getText());
-                if(curQuest.getRight_answer().equals(answer.getText()))
-                {
-                    score++;
-                    Log.d("score", "Your score" + score);
-                }
+                userAnswer = (RadioButton)findViewById(grp.getCheckedRadioButtonId());
+                if(userAnswer == rightAnswer){
+                    Toast.makeText(QuizActivity.this, "Right Answer!", Toast.LENGTH_SHORT).show();
+                    score += 10;
 
-                switch (v.getId()) {
-                    case R.id.btnLesson:
-
-                        intent.setClass(QuizActivity.this, LessonActivity.class);
-                        startActivity(intent);
-                        break;
-                    case R.id.btnHint:
-                        intent.setClass(QuizActivity.this, HintActivity.class);
-                        startActivity(intent);
-                        break;
-                    case R.id.btnNext:
-                        intent.setClass(QuizActivity.this, QuizActivity.class);
-                        startActivity(intent);
-                        finish();
-                        break;
                 }
+                //Log.d("yourans", curQuest.getRight_answer() + " " + answer.getText());
+                //if(curQuest.getRight_answer().equals(answer.getText()))
+                //{
+                  //  score++;
+                    //Log.d("score", "Your score" + score);
+                //}
             }
                 /*if(qid<5){
                     curQuest = qList.get(qid);
@@ -87,6 +86,26 @@ public class QuizActivity extends Activity {
                     finish();
                  }*/
         });
+        btnHint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent.setClass(QuizActivity.this, HintActivity.class);
+                intent.putExtra("chosenLevel", selecLevel);
+                intent.putExtra("scoreUser", scoreUser.getPoints());
+                intent.putExtra("avatarUser",User.getAvatar());
+                startActivity(intent);
+            }
+        });
+
+        btnLesson.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent.setClass(QuizActivity.this, LessonActivity.class);
+                intent.putExtra("chosenLevel", selecLevel);
+                intent.putExtra("LessonUser", scoreUser);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -96,22 +115,34 @@ public class QuizActivity extends Activity {
         return true;
     }
 
-    private void setQuestionView()
-    {
-        txtQuest.setText(curQuest.getQuestion_text());
-        //rda.setText(curQuest.getOa());
-        //rdb.setText(curQuest.getOb());
-        //rdc.setText(curQuest.getOc());
+    private void setQuestionView(){
+        Random rd = new Random();
+        MySQLiteHelper db = new MySQLiteHelper(this);
+        int rdQ;
+
+        if(qList.size() >= 0){
+            qList = db.levelQuestion(selecLevel);
+        }
+
+        rdQ = rd.nextInt(qList.size());
+        aList = db.getAnswer(qList.get(rdQ).getQuestion_id());
+
+        txtQuest.setText(qList.get(rdQ).getQuestion_text());
+        rda.setText(aList.get(0).getAnswer_text());
+        rdb.setText(aList.get(1).getAnswer_text());
+        rdc.setText(aList.get(2).getAnswer_text());
+        if(qList.get(rdQ).getRight_answer() == aList.get(0).getAnswer_id()) {
+            rightAnswer = rda;
+        }else{
+            if(qList.get(rdQ).getRight_answer() == aList.get(1).getAnswer_id()){
+                rightAnswer = rdb;
+            }else{
+                rightAnswer = rdc;
+            }
+        }
+        //qList.remove(rdQ);
         qid++;
     }
-
-    private void setQuestion(){
-        qList = db.getAllQuestions();
-
-
-        curQuest = qList.get(qid);
-    }
-
 
 
 }
