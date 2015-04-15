@@ -463,7 +463,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
     public List<AnswerClass> getAnswer(String qid){
         List<AnswerClass> Answerlist = new ArrayList<>();
-        String selectQuery = "SELECT * FROM " + TABLE_ANSWERS + "WHERE" + COLUMN_QUESTION_ID + "= '" + qid +"' ;";
+        String selectQuery = "SELECT * FROM " + TABLE_ANSWERS + " WHERE " + COLUMN_QUESTION_ID + " = '" + qid + "' ;";
         database=this.getReadableDatabase();
         Cursor cursor = database.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
