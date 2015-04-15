@@ -44,8 +44,7 @@ public class LevelsActivity extends Activity {
         userScore = db.getScore(user.getUser_id());
 
         pointsU = userScore.getPoints();
-        levelName =  db.getUserLevel(Integer.valueOf((int)user.getUser_id()));
-
+        levelName =  db.getUserLevel(user.getUser_id());
 
         txtViewUsername = (TextView) findViewById(R.id.txtvUsername);
         txtViewUsername.setText(user.getUsername());
@@ -59,7 +58,7 @@ public class LevelsActivity extends Activity {
         pointsView.setText(pointsUser+" Points");
 
 
-
+        //db.updatingScore(60,user.getUser_id()):
         btnLevels = (Button)findViewById(R.id.imbLevel1);
         btnLevels.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -176,18 +175,6 @@ public class LevelsActivity extends Activity {
                 finish();
             }
         });
-
-        /*
-        btnLevels = (Button)findViewById(R.id.imbLevel10);
-        btnLevels.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (enoughPoints(9))
-                    setToast("9 of Dark City");
-                else
-                    setIntent(user, "L010");
-            }
-        });*/
 
         //welcome to the user
         Toast.makeText(LevelsActivity.this, "Welcome, " + user.getUsername()+" !", Toast.LENGTH_SHORT).show();

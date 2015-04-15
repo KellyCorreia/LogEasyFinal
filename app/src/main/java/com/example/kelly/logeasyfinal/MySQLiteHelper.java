@@ -511,7 +511,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     }
 
 
-    public boolean updatingScore(Integer score, UserClass User, String LevelID){
+    public boolean updatingScore(Integer score, UserClass User){
         Cursor cursor;
         String UserString = Integer.toString((int)User.getUser_id());
         String selectQuery = "SELECT * FROM " + TABLE_SCOREBOARD + " WHERE " + COLUMN_USER_ID + " = '" + UserString + "' ;";
@@ -523,31 +523,13 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             values.put(COLUMN_USER_ID, cursor.getInt(0));
             values.put(COLUMN_POINTS, score);
             values.put(COLUMN_WRONG_PERCENT, cursor.getInt(2));
-            values.put(COLUMN_LEVEL_ID, LevelID);
+            values.put(COLUMN_LEVEL_ID, cursor.getInt(3));
         } while (cursor.moveToNext());
 
         database = this.getWritableDatabase();
         database.update(TABLE_SCOREBOARD,values, COLUMN_USER_ID + "= ?" + UserString, null);
         return true;
     }
-
-    /*public UserClass getUser(Integer UserID){
-        Cursor cursor;
-        UserClass user = new UserClass();
-        String selectQuery = "SELECT * FROM " + TABLE_USERS + " WHERE " + COLUMN_USER_ID + " = '" + UserID.toString() + "' ;";
-        database = this.getReadableDatabase();
-        cursor = database.rawQuery(selectQuery, null);
-        if (cursor.moveToFirst()) {
-            user.setQuestion_id(cursor.getString(0));
-            levelQuestion.setQuestion_text(cursor.getString(1));
-            levelQuestion.setLevel_id(cursor.getString(2));
-            levelQuestion.setRight_answer(cursor.getString(3));
-            questionsList.add(levelQuestion);
-        }
-        while (cursor.moveToNext()) ;
-
-        return questionsList;
-    }*/
 
 }
 
