@@ -24,7 +24,7 @@ public class QuizActivity extends Activity {
     RadioGroup grp;
     RadioButton rda, rdb, rdc;
     Button butNext, btnLesson, btnHint;
-    ScoreboardClass scoreUser;
+    ScoreboardClass Score;
     UserClass User;
     LevelClass selecLevel;
     RadioButton rightAnswer,userAnswer;
@@ -40,9 +40,9 @@ public class QuizActivity extends Activity {
         setContentView(R.layout.activity_quiz);
 
         Bundle extras = getIntent().getExtras();
-        scoreUser = extras.getParcelable("LessonUser");
-        selecLevel = extras.getParcelable("chosenLevel");
-        User = extras.getParcelable("User");
+        User = (UserClass)extras.getParcelable("chosenUser");
+        selecLevel = (LevelClass)extras.getParcelable("chosenLevel");
+        Score = (ScoreboardClass)extras.getParcelable("userScore");
         score = scoreUser.getPoints();
 
         txtPoints = (TextView)findViewById(R.id.txtPoints);

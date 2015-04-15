@@ -58,9 +58,9 @@ public class LessonActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LessonActivity.this, QuizActivity.class);
+                intent.putExtra("chosenUser", User);
                 intent.putExtra("chosenLevel", selecLevel);
-                intent.putExtra("LessonUser", Score);
-                intent.putExtra("User", User);
+                intent.putExtra("userScore", Score);
                 startActivity(intent);
             }
         });
