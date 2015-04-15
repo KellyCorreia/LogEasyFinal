@@ -34,7 +34,7 @@ public class LessonActivity extends Activity {
     LevelClass curLevel;
     UserClass User;
     ScoreboardClass Score;
-    Random rd;
+    Random rd = new Random();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -145,7 +145,7 @@ public class LessonActivity extends Activity {
 
         switch(selecLevel){
             case "L01":
-                //layout.setBackgroundResource(R.drawable.backgroundlevel1);
+                layout.setBackgroundResource(R.drawable.backgroundlevel1);
                 firstLayout.setBackgroundColor(Color.BLUE);
                 btnPlay.setBackgroundResource(R.drawable.buttomlevel);
                 break;
