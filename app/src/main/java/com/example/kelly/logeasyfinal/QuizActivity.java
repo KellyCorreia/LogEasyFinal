@@ -26,7 +26,7 @@ public class QuizActivity extends Activity {
     Button butNext, btnLesson, btnHint;
     ScoreboardClass scoreUser;
     UserClass User;
-    String selecLevel;
+    LevelClass selecLevel;
     RadioButton rightAnswer,userAnswer;
 
     int score = 0;
@@ -41,7 +41,7 @@ public class QuizActivity extends Activity {
 
         Bundle extras = getIntent().getExtras();
         scoreUser = extras.getParcelable("LessonUser");
-        selecLevel = extras.getString("chosenLevel");
+        selecLevel = extras.getParcelable("chosenLevel");
         User = extras.getParcelable("User");
         score = scoreUser.getPoints();
 
