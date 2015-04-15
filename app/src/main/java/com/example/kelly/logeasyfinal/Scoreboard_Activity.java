@@ -20,41 +20,52 @@ import static com.example.kelly.logeasyfinal.Constant.FOURTH_COLUMN;
 
 
 public class Scoreboard_Activity extends Activity {
-    //private ScoreboardClass scoreBoard;
-    //private LevelClass userLevel;
-    //private UserClass user;
-    //private List<UserClass> userList;
-    //private MySQLiteHelper dbHelper;
-    //private ArrayList<HashMap> list;
+    private ScoreboardClass scoreBoard;
+    private UserClass user;
+    private List<UserClass> userList;
+    private MySQLiteHelper dbHelper;
+    private ArrayList<HashMap> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scoreboard_);
 
-        //list = new ArrayList<HashMap>();
-        //ListView lview = (ListView) findViewById(R.id.listview);
-        //populateList();
-        Toast.makeText(Scoreboard_Activity.this, "Está chamando o score board", Toast.LENGTH_SHORT).show();
-        //listviewAdapter adapter = new listviewAdapter(this, list);
-        //lview.setAdapter(adapter);
-
-        /*Code to get the values
-        dbHelper = new MySQLiteHelper(this);
-        userList = dbHelper.getAllUsers();
-
-        for (int i = 0; i < userList.size(); i++){
-            userList.get(i).getUser_id();
-        }*/
-
-
+        ListView lview = (ListView) findViewById(R.id.listview);
+        populateList();
+        //Toast.makeText(Scoreboard_Activity.this, "Está chamando o score board", Toast.LENGTH_SHORT).show();
+        listviewAdapter adapter = new listviewAdapter(this, list);
+        lview.setAdapter(adapter);
     }
 
-   /* private void populateList() {
+   private void populateList() {
+       String username, levelName;
+       int points, wrong;
+       long userId;
 
+       list = new ArrayList<HashMap>();
 
+       dbHelper = new MySQLiteHelper(this);
+       userList = dbHelper.getAllUsers();
 
-        HashMap temp = new HashMap();
+       for (int i = 0; i < userList.size(); i++){
+           user = userList.get(i);
+           userId = user.getUser_id();
+           username = user.getUsername();
+           levelName = dbHelper.getUserLevel(userId);
+           scoreBoard = dbHelper.getScore(userId);
+           points = scoreBoard.getPoints();
+           wrong = scoreBoard.getWrong_percent();
+
+           HashMap temp = new HashMap();
+           temp.put(FIRST_COLUMN, username);
+           temp.put(SECOND_COLUMN, "By NavNeet");
+           temp.put(THIRD_COLUMN, "Rs. 200");
+           temp.put(FOURTH_COLUMN, "Per Unit");
+           list.add(temp);
+
+       }
+        /*HashMap temp = new HashMap();
         temp.put(FIRST_COLUMN,"Colored Notebooks");
         temp.put(SECOND_COLUMN, "By NavNeet");
         temp.put(THIRD_COLUMN, "Rs. 200");
@@ -87,8 +98,8 @@ public class Scoreboard_Activity extends Activity {
         temp4.put(SECOND_COLUMN, "By TechnoTalaktive Pvt. Ltd.");
         temp4.put(THIRD_COLUMN, "Rs. 100");
         temp4.put(FOURTH_COLUMN, "Per Unit");
-        list.add(temp4);
-    }*/
+        list.add(temp4);*/
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
