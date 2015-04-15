@@ -1,11 +1,14 @@
 package com.example.kelly.logeasyfinal;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.logging.Level;
 
 /**
  * Created by oanacozma on 04/04/15.
  */
-public class LevelClass {
+public class LevelClass implements Parcelable {
 
     private String level_id;
     private String levelname;
@@ -20,6 +23,9 @@ public class LevelClass {
         lesson="";
         tip="";
 
+    }
+    public LevelClass(Parcel in) {
+        readFromParcel(in);
     }
 
     public LevelClass(String l_id, String l_name, String l_lesson, String l_tip){
@@ -61,4 +67,35 @@ public class LevelClass {
         this.tip = tip;
     }
 
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel out, int flags) {
+        out.writeString(level_id);
+        out.writeString(levelname);
+        out.writeString(lesson);
+        out.writeString(tip);
+    }
+
+    private void readFromParcel(Parcel in) {
+        level_id = in.readString();
+        levelname = in.readString();
+        lesson = in.readString();
+        tip = in.readString();
+    }
+
+    @SuppressWarnings("unchecked")
+    public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
+        public LevelClass createFromParcel(Parcel in) {
+            return new LevelClass(in);
+        }
+
+        public LevelClass[] newArray(int size) {
+            return new LevelClass[size];
+        }
+    };
 }

@@ -14,54 +14,57 @@ import android.widget.Toast;
 
 public class LevelsActivity extends Activity {
     private UserClass user;
-    private String levelName;
-    Intent intent = new Intent();
+    private ScoreboardClass userScore;
+    private LevelClass chosenLevel;
     private int pointsU;
+    MySQLiteHelper db = new MySQLiteHelper(this);
+    Intent intent = new Intent();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_levels);
 
+
         Button btnLevels;
         TextView pointsView;
         TextView levelView;
         TextView txtViewUsername;
+
         String pointsUser;
-
-        MySQLiteHelper db = new MySQLiteHelper(this);
-
+        String levelName;
 
 
         //Getting the object user from the previous screen
-
         Bundle extras = getIntent().getExtras();
         user = extras.getParcelable("chosenUser");
 
-        Toast.makeText(LevelsActivity.this, "Welcome, " + user.getUsername()+" !", Toast.LENGTH_SHORT).show();
-        Toast.makeText(LevelsActivity.this, "Choose a Level to start the challenge!", Toast.LENGTH_SHORT).show();
+        //Getting the scoreboard
+        userScore = db.getScore(user.getUser_id());
+
+        pointsU = userScore.getPoints();
+        levelName =  db.getUserLevel(Integer.valueOf((int)user.getUser_id()));
 
 
-        //Setting the Label with the userName
         txtViewUsername = (TextView) findViewById(R.id.txtvUsername);
         txtViewUsername.setText(user.getUsername());
 
-        levelName =  db.getUserLevel(Integer.valueOf((int)user.getUser_id()));
 
         levelView = (TextView) findViewById(R.id.txtvLevel);
         levelView.setText(levelName);
-        pointsU = db.getUserPoints(Integer.valueOf((int)user.getUser_id()));
-        pointsUser = Integer.toString(pointsU);
 
+        pointsUser = Integer.toString(pointsU);
         pointsView = (TextView) findViewById(R.id.txtvPoints);
         pointsView.setText(pointsUser+" Points");
 
-        btnLevels = (Button)findViewById(R.id.imbLevel1);
 
+
+        btnLevels = (Button)findViewById(R.id.imbLevel1);
         btnLevels.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setIntent(user, "Level 1 Name");
+                setIntent(user, "L01");
             }
         });
 
@@ -72,7 +75,7 @@ public class LevelsActivity extends Activity {
                 if (enoughPoints(1))
                     setToast("1 of Wind");
                 else
-                    setIntent(user, "Level 2 Name");
+                    setIntent(user, "L02");
             }
         });
 
@@ -83,7 +86,7 @@ public class LevelsActivity extends Activity {
                 if (enoughPoints(2))
                     setToast("2 of Sound");
                 else
-                    setIntent(user, "Level 3 Name");
+                    setIntent(user, "L03");
             }
         });
 
@@ -94,7 +97,7 @@ public class LevelsActivity extends Activity {
                 if (enoughPoints(3))
                     setToast("3 of Metal");
                 else
-                    setIntent(user, "Level 4 Name");
+                    setIntent(user, "L04");
             }
         });
 
@@ -105,7 +108,7 @@ public class LevelsActivity extends Activity {
                 if (enoughPoints(4))
                     setToast("4 of Sand");
                 else
-                    setIntent(user, "Level 5 Name");
+                    setIntent(user, "L05");
             }
         });
 
@@ -116,7 +119,7 @@ public class LevelsActivity extends Activity {
                 if (enoughPoints(5))
                     setToast("5 of Snow");
                 else
-                    setIntent(user, "Level 6 Name");
+                    setIntent(user, "L06");
             }
         });
 
@@ -127,7 +130,7 @@ public class LevelsActivity extends Activity {
                 if (enoughPoints(6))
                     setToast("6 of Plant");
                 else
-                    setIntent(user, "Level 7 Name");
+                    setIntent(user, "L07");
             }
         });
 
@@ -138,7 +141,7 @@ public class LevelsActivity extends Activity {
                 if (enoughPoints(7))
                     setToast("7 of Lightning");
                 else
-                    setIntent(user, "Level 8 Name");
+                    setIntent(user, "L08");
             }
         });
 
@@ -149,7 +152,7 @@ public class LevelsActivity extends Activity {
                 if (enoughPoints(8))
                     setToast("8 of Lava");
                 else
-                    setIntent(user, "Level 9 Name");
+                    setIntent(user, "L09");
             }
         });
 
@@ -160,9 +163,14 @@ public class LevelsActivity extends Activity {
                 if (enoughPoints(9))
                     setToast("9 of Dark City");
                 else
-                    setIntent(user, "Level 10 Name");
+                    setIntent(user, "L010");
             }
         });
+
+
+        //welcome to the user
+        Toast.makeText(LevelsActivity.this, "Welcome, " + user.getUsername()+" !", Toast.LENGTH_SHORT).show();
+        Toast.makeText(LevelsActivity.this, "Choose a Level to start the challenge!", Toast.LENGTH_SHORT).show();
     }
 
 
@@ -186,11 +194,12 @@ public class LevelsActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void setIntent(UserClass user, String chosenLevel){
+    public void setIntent(UserClass user, String chosenLevelID){
+        chosenLevel = db.getLevel(chosenLevelID);
         intent = new Intent(LevelsActivity.this, LessonActivity.class);
         intent.putExtra("chosenUser", user);
         intent.putExtra("chosenLevel", chosenLevel);
-        intent.putExtra("userLevel", levelName);
+        intent.putExtra("userScore", userScore);
         startActivity(intent);
     }
     public void setToast(String levelBefore){
