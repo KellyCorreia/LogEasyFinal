@@ -292,6 +292,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
 
     }
+
     public void addUserActivities(Long userID){
         UserActivityClass userActivity;
         userActivity = new UserActivityClass(userID,"Q001","A001a","yes");
