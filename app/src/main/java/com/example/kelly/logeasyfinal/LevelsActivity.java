@@ -25,40 +25,11 @@ public class LevelsActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_levels);
-        db = new MySQLiteHelper(this);
-
-        Button btnLevels;
-        TextView pointsView;
-        TextView levelView;
-        TextView txtViewUsername;
-
-        String pointsUser;
-        String levelName;
-
-
         //Getting the object user from the previous screen
         Bundle extras = getIntent().getExtras();
         user = extras.getParcelable("chosenUser");
-
-        //Getting the scoreboard
-        userScore = db.getScore(user.getUser_id());
-
-        pointsU = userScore.getPoints();
-        levelName =  db.getUserLevel(user.getUser_id());
-
-        txtViewUsername = (TextView) findViewById(R.id.txtvUsername);
-        txtViewUsername.setText(user.getUsername());
-
-
-        levelView = (TextView) findViewById(R.id.txtvLevel);
-        levelView.setText(levelName);
-
-        pointsUser = Integer.toString(pointsU);
-        pointsView = (TextView) findViewById(R.id.txtvPoints);
-        pointsView.setText(pointsUser+" Points");
-
-     //   db.addUserActivities(user.getUser_id());
-      //  db.updatingScore(60,user,"L02");
+        setlevelView();
+        Button btnLevels;
 
         btnLevels = (Button)findViewById(R.id.imbLevel1);
         btnLevels.setOnClickListener(new View.OnClickListener() {
@@ -72,6 +43,7 @@ public class LevelsActivity extends Activity {
         btnLevels.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if (enoughPoints(1))
                     setToast("1 of Wind");
                 else
@@ -83,9 +55,9 @@ public class LevelsActivity extends Activity {
         btnLevels.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (enoughPoints(2))
+                if (enoughPoints(2)) {
                     setToast("2 of Sound");
-                else
+                }else
                     setIntent(user, "L03");
             }
         });
@@ -205,15 +177,14 @@ public class LevelsActivity extends Activity {
 
     public void setIntent(UserClass user, String chosenLevelID){
         chosenLevel = db.getLevel(chosenLevelID);
-     //  if(db.lessonStart(chosenLevelID))
-            intent = new Intent(LevelsActivity.this, LessonActivity.class);
-       // else
-         //   intent = new Intent(LevelsActivity.this, QuizActivity.class);
+      if(db.lessonStart(chosenLevelID, user.getUser_id()))
+          intent = new Intent(LevelsActivity.this, LessonActivity.class);
+        else
+          intent = new Intent(LevelsActivity.this, QuizActivity.class);
 
         intent.putExtra("chosenUser", user);
         intent.putExtra("chosenLevel", chosenLevel);
         intent.putExtra("userScore", userScore);
-
         startActivity(intent);
     }
     public void setToast(String levelBefore){
@@ -225,5 +196,31 @@ public class LevelsActivity extends Activity {
             return true;
         else
             return false;
+    }
+    public void setlevelView(){
+        db = new MySQLiteHelper(this);
+
+        TextView pointsView;
+        TextView levelView;
+        TextView txtViewUsername;
+
+        String pointsUser;
+        String levelName;
+
+        //Getting the scoreboard
+        userScore = db.getScore(user.getUser_id());
+
+        pointsU = userScore.getPoints();
+        levelName =  db.getUserLevel(user.getUser_id());
+
+        txtViewUsername = (TextView) findViewById(R.id.txtvUsername);
+        txtViewUsername.setText(user.getUsername());
+
+        levelView = (TextView) findViewById(R.id.txtvLevel);
+        levelView.setText(levelName);
+
+        pointsUser = Integer.toString(pointsU);
+        pointsView = (TextView) findViewById(R.id.txtvPoints);
+        pointsView.setText(pointsUser+" Points");
     }
 }
