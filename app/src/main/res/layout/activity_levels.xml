@@ -216,7 +216,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="@string/scoreboard"
-                android:id="@+id/button"
+                android:id="@+id/btnScoreboard"
                 android:background="#ffffe48f"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:typeface="monospace"
