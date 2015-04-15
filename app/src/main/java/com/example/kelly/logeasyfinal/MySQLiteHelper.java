@@ -292,6 +292,32 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
 
     }
+    public void addUserActivities(Long userID){
+        UserActivityClass userActivity;
+        userActivity = new UserActivityClass(userID,"Q001","A001a","yes");
+        this.addUserActivity(userActivity);
+        userActivity = new UserActivityClass(userID,"Q002","A002a","yes");
+        this.addUserActivity(userActivity);
+        userActivity = new UserActivityClass(userID,"Q003","A003a","yes");
+        this.addUserActivity(userActivity);
+        userActivity = new UserActivityClass(userID,"Q004","A004a","yes");
+        this.addUserActivity(userActivity);
+        userActivity = new UserActivityClass(userID,"Q005","A005a","yes");
+        this.addUserActivity(userActivity);
+        userActivity = new UserActivityClass(userID,"Q006","A005a","yes");
+        this.addUserActivity(userActivity);
+    }
+
+    public boolean addUserActivity(UserActivityClass userActivity){
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_USER_ID, userActivity.getUser_id());
+        values.put(COLUMN_QUESTION_ID, userActivity.getQuestion_id());
+        values.put(COLUMN_ANSWER_ID, userActivity.getAnswer_id());
+        values.put(COLUMN_WRONG_YN, userActivity.getWrong_YN());
+        values.put(COLUMN_DATE, userActivity.getDate());
+        database.insert(TABLE_USERS_ACT, null, values);
+        return true;
+    }
 
     private void addUsers(){
         UserClass user;
@@ -420,19 +446,21 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         }
         return levelName;
     }
-/*
-    public boolean lessonStart(String chosenLevelID){
-        String selectQuery = "SELECT * FROM "+TABLE_LEVEL+" WHERE "+COLUMN_LEVEL_ID+" IN ( SELECT "+COLUMN_LEVEL_ID+" FROM "+TABLE_SCOREBOARD+" WHERE "+COLUMN_USER_ID+" = '"+ userID.toString()+"' );";
+
+    public boolean lessonStart(String chosenLevelID, String userID){
+        String selectQuery = "SELECT COUNT(*) FROM "+TABLE_USERS_ACT
+                +" AS u INNER JOIN "+TABLE_QUESTIONS+" AS q ON u."
+                +COLUMN_QUESTION_ID+" = q."+COLUMN_QUESTION_ID
+                +" INNER JOIN "+TABLE_LEVEL+" AS l ON q."
+                +COLUMN_LEVEL_ID+" = l."+COLUMN_LEVEL_ID
+                +" WHERE u."+COLUMN_USER_ID+" = "+userID+" AND l."+COLUMN_LEVEL_ID+" = "+chosenLevelID;
         database=this.getReadableDatabase();
         Cursor cursor = database.rawQuery(selectQuery, null);
-        String levelName = "vazio";
-        if (cursor.moveToFirst()) {
-            levelName = cursor.getString(0);
+        if(cursor == null){
+            return false;
         }
-
-
         return true;
-    }*/
+    }
 ///fim
     public int rowcount(){
         int row=0;
