@@ -43,7 +43,7 @@ public class QuizActivity extends Activity {
         User = (UserClass)extras.getParcelable("chosenUser");
         selecLevel = (LevelClass)extras.getParcelable("chosenLevel");
         Score = (ScoreboardClass)extras.getParcelable("userScore");
-        score = scoreUser.getPoints();
+        score = Score.getPoints();
 
         txtPoints = (TextView)findViewById(R.id.txtPoints);
         txtQuest =(TextView)findViewById(R.id.txtQuestion);
@@ -91,7 +91,7 @@ public class QuizActivity extends Activity {
             public void onClick(View v) {
                 intent.setClass(QuizActivity.this, HintActivity.class);
                 intent.putExtra("chosenLevel", selecLevel);
-                intent.putExtra("scoreUser", scoreUser);
+                intent.putExtra("scoreUser", Score);
                 intent.putExtra("avatarUser",User);
                 startActivity(intent);
             }
@@ -102,7 +102,7 @@ public class QuizActivity extends Activity {
             public void onClick(View v) {
                 intent.setClass(QuizActivity.this, LessonActivity.class);
                 intent.putExtra("chosenLevel", selecLevel);
-                intent.putExtra("LessonUser", scoreUser);
+                intent.putExtra("LessonUser", Score);
                 startActivity(intent);
             }
         });
@@ -121,7 +121,7 @@ public class QuizActivity extends Activity {
         int rdQ;
 
         if(qList.size() >= 0){
-            qList = db.levelQuestion(selecLevel);
+            qList = db.levelQuestion(selecLevel.getLevel_id());
         }
 
         rdQ = rd.nextInt(qList.size());
