@@ -26,10 +26,10 @@ import android.widget.TextView;
  */
 public class listviewAdapter extends BaseAdapter
 {
-    public ArrayList<HashMap> list;
+    public ArrayList<ScoreboardScreen> list;
     Activity activity;
 
-    public listviewAdapter(Activity activity, ArrayList<HashMap> list) {
+    public listviewAdapter(Activity activity, ArrayList<ScoreboardScreen> list) {
         super();
         this.activity = activity;
         this.list = list;
@@ -83,11 +83,11 @@ public class listviewAdapter extends BaseAdapter
             holder = (ViewHolder) convertView.getTag();
         }
 
-        HashMap map = list.get(position);
-        holder.txtFirst.setText((CharSequence) map.get(FIRST_COLUMN));
-        holder.txtSecond.setText((CharSequence) map.get(SECOND_COLUMN));
-        holder.txtThird.setText((CharSequence) map.get(THIRD_COLUMN));
-        holder.txtFourth.setText((CharSequence) map.get(FOURTH_COLUMN));
+        ScoreboardScreen scoreboard = list.get(position);
+        holder.txtFirst.setText(scoreboard.getUserName());
+        holder.txtSecond.setText(scoreboard.getLevelName());
+        holder.txtThird.setText(Integer.toString(scoreboard.getPoints()));
+        holder.txtFourth.setText(Double.toString(scoreboard.getWrongPerc()));
 
         return convertView;
     }

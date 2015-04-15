@@ -51,11 +51,25 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     public static final String COLUMN_LESSON="lesson";
     public static final String COLUMN_TIP="tip";
 
+    public static final String TABLE_SCOREBOARD_SCREEN="table_scoreboard_screen";
+    public static final String COLUMN_USERNAME_SCOREBOARD="user_name";
+    public static final String COLUMN_LEVELNAME_SCOREBOARD="level_name";
+    public static final String COLUMN_POINTS_SCOREBOARD="user_points";
+    public static final String COLUMN_WRONGPERC_SCOREBOARD="user_wrongperc";
+
 
     private static final String DATABASE_NAME = "database.db";
     private static final int DATABASE_VERSION = 1;
 
     // Database creation sql statement
+
+    private static final String SCOREBOARD_SCREEN_DATABASE_CREATE = "create table "
+            + TABLE_SCOREBOARD_SCREEN + "(" + COLUMN_USERNAME_SCOREBOARD
+            + " text primary key, " + COLUMN_LEVELNAME_SCOREBOARD
+            + " text, "+ COLUMN_POINTS_SCOREBOARD
+            + " text, "+ COLUMN_WRONGPERC_SCOREBOARD
+            + " text);";
+
     private static final String QUESTIONS_DATABASE_CREATE = "create table "
             + TABLE_QUESTIONS + "(" + COLUMN_QUESTION_ID
             + " text primary key, " + COLUMN_QUESTION_TEXT
@@ -121,6 +135,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         db.execSQL(ANSWERS_DATABASE_CREATE);
         db.execSQL(SCOREBOARD_DATABASE_CREATE);
         db.execSQL(LEVEL_DATABASE_CREATE);
+        db.execSQL(SCOREBOARD_SCREEN_DATABASE_CREATE);
         addQuestions();
         addAnswers();
         addLevels();
@@ -395,6 +410,45 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         values.put(COLUMN_WRONG_PERCENT, score.getWrong_percent());
         values.put(COLUMN_LEVEL_ID, score.getLevel_id());
         database.insert(TABLE_SCOREBOARD, null, values);
+
+        return true;
+    }
+
+    public boolean addScoreboardScreen(ScoreboardScreen scoreboard){
+
+        ContentValues values;
+        values = new ContentValues();
+        values.put(COLUMN_USERNAME_SCOREBOARD, scoreboard.getUserName());
+        values.put(COLUMN_LEVELNAME_SCOREBOARD, scoreboard.getLevelName());
+        values.put(COLUMN_POINTS_SCOREBOARD, scoreboard.getPoints());
+        values.put(COLUMN_WRONGPERC_SCOREBOARD, scoreboard.getWrongPerc());
+        database.insert(TABLE_SCOREBOARD_SCREEN, null, values);
+
+        return true;
+    }
+
+    public ArrayList<ScoreboardScreen> getScoreboardTable(){
+        ArrayList<ScoreboardScreen> scoreList = new ArrayList<ScoreboardScreen>();
+        String selectQuery = "SELECT * FROM " + TABLE_SCOREBOARD_SCREEN + " ORDER BY " + COLUMN_POINTS_SCOREBOARD + " ASC, " + COLUMN_WRONGPERC_SCOREBOARD + " DESC ;";
+        database = this.getReadableDatabase();
+        Cursor cursor = database.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                ScoreboardScreen scoreboard = new ScoreboardScreen();
+                scoreboard.setUserName(cursor.getString(0));
+                scoreboard.setLevelName(cursor.getString(1));
+                scoreboard.setPoints(Integer.parseInt(cursor.getString(2)));
+                scoreboard.setWrongPerc(Double.parseDouble(cursor.getString(3)));
+                scoreList.add(scoreboard);
+            } while (cursor.moveToNext());
+        }
+        return scoreList;
+    }
+
+    public boolean deleteScoreboardTable(){
+        //String deleteQuery = "DELETE FROM " + TABLE_SCOREBOARD_SCREEN + ";";
+        //database = this.getReadableDatabase();
+        database.delete(TABLE_SCOREBOARD_SCREEN, null, null);
 
         return true;
     }

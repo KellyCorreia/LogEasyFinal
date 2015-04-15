@@ -24,7 +24,7 @@ public class Scoreboard_Activity extends Activity {
     private UserClass user;
     private List<UserClass> userList;
     private MySQLiteHelper dbHelper;
-    private ArrayList<HashMap> list;
+    private ArrayList<ScoreboardScreen> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,26 +33,28 @@ public class Scoreboard_Activity extends Activity {
 
         ListView lview = (ListView) findViewById(R.id.listview);
         populateList();
-        Toast.makeText(Scoreboard_Activity.this, "Está chamando o score board", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(Scoreboard_Activity.this, "Está chamando o score board", Toast.LENGTH_SHORT).show();
         listviewAdapter adapter = new listviewAdapter(this, list);
         lview.setAdapter(adapter);
     }
 
    private void populateList() {
-       String username, levelName;
+       String userName, levelName;
        int points, wrongNum, totalAnswers;
        long userId;
        double wrongPerc;
 
-       list = new ArrayList<HashMap>();
+       list = new ArrayList<ScoreboardScreen>();
 
        dbHelper = new MySQLiteHelper(this);
        userList = dbHelper.getAllUsers();
 
+       dbHelper.deleteScoreboardTable();
+
        for (int i = 0; i < userList.size(); i++){
            user = userList.get(i);
            userId = user.getUser_id();
-           username = user.getUsername();
+           userName = user.getUsername();
            levelName = dbHelper.getUserLevel(userId);
            scoreBoard = dbHelper.getScore(userId);
            points = scoreBoard.getPoints();
@@ -64,15 +66,20 @@ public class Scoreboard_Activity extends Activity {
                wrongPerc = wrongNum/(wrongNum + (points/10));
            }
 
-           String strPoints = String.valueOf(points);
-           String strwrong = String.valueOf(wrongPerc);
+           /*String strPoints = String.valueOf(points);
+           String strwrong = String.valueOf(wrongPerc);*/
 
-           HashMap temp = new HashMap();
+           ScoreboardScreen scoreboard = new ScoreboardScreen(userName, levelName, points, wrongPerc);
+
+           dbHelper.addScoreboardScreen(scoreboard);
+           list = dbHelper.getScoreboardTable();
+
+           /*HashMap temp = new HashMap();
            temp.put(FIRST_COLUMN, username);
            temp.put(SECOND_COLUMN, levelName);
            temp.put(THIRD_COLUMN, strPoints);
            temp.put(FOURTH_COLUMN, strwrong);
-           list.add(temp);
+           list.add(temp);*/
 
        }
 
