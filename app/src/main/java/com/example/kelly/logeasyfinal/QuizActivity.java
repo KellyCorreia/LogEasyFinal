@@ -80,21 +80,39 @@ public class QuizActivity extends Activity {
                             break;
                         case 150:
                             Toast.makeText(QuizActivity.this, "Congratulations! You master the Metal element!", Toast.LENGTH_SHORT).show();
-                            db.updatingScore(score, User, "L03");
+                            db.updatingScore(score, User, "L04");
                             break;
                         case 200:
                             Toast.makeText(QuizActivity.this, "Congratulations! You master the Sand element!", Toast.LENGTH_SHORT).show();
-                            db.updatingScore(score, User, "L04");
+                            db.updatingScore(score, User, "L05");
                             break;
                         case 250:
                             Toast.makeText(QuizActivity.this, "Congratulations! You master the Snow element!", Toast.LENGTH_SHORT).show();
-                            db.updatingScore(score, User, "L05");
+                            db.updatingScore(score, User, "L06");
                             break;
                         case 300:
                             Toast.makeText(QuizActivity.this, "Congratulations! You master the Plant element!", Toast.LENGTH_SHORT).show();
-                            db.updatingScore(score, User, "L06");
+                            db.updatingScore(score, User, "L07");
                             break;
-                        case 100:
+                        case 350:
+                            Toast.makeText(QuizActivity.this, "Congratulations! You master the Lighting element!", Toast.LENGTH_SHORT).show();
+                            db.updatingScore(score, User, "L08");
+                            break;
+                        case 400:
+                            Toast.makeText(QuizActivity.this, "Congratulations! You master the Lava element!", Toast.LENGTH_SHORT).show();
+                            db.updatingScore(score, User, "L09");
+                            break;
+                        case 450:
+                            Toast.makeText(QuizActivity.this, "Congratulations! You defeated the Dark City!", Toast.LENGTH_SHORT).show();
+                            db.updatingScore(score, User, "L10");
+                            break;
+                        case 500:
+                            Toast.makeText(QuizActivity.this, "Congratulations! You are the master of the World!", Toast.LENGTH_SHORT).show();
+                            db.updatingScore(score, User, "L10");
+                            break;
+                        default:
+                            db.updatingScore(score, User, "L10");
+
 
                     }
                     setQuestionView();
