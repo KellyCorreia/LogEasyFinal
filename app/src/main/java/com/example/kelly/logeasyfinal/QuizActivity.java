@@ -91,8 +91,8 @@ public class QuizActivity extends Activity {
             public void onClick(View v) {
                 intent.setClass(QuizActivity.this, HintActivity.class);
                 intent.putExtra("chosenLevel", selecLevel);
-                intent.putExtra("scoreUser", scoreUser.getPoints());
-                intent.putExtra("avatarUser",User.getAvatar());
+                intent.putExtra("scoreUser", scoreUser);
+                intent.putExtra("avatarUser",User);
                 startActivity(intent);
             }
         });
