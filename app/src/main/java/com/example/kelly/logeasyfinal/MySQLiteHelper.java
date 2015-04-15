@@ -5,9 +5,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
 import java.util.ArrayList;
 import java.util.List;
-
 
 /**
  * Created by Kelly on 03/04/2015.
@@ -292,20 +292,8 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
 
     }
-
-    private void addUsers(){
-        UserClass user;
-        user = new UserClass("user1","user1@gmail.com","111","Avatar2");
-        this.addUser(user);
-        user = new UserClass("user2","user2@gmail.com","222","Avatar3");
-        this.addUser(user);
-        user = new UserClass("user3","user3@gmail.com","333","Avatar1");
-        this.addUser(user);
-        user = new UserClass("user4","user4@gmail.com","444","Avatar4");
-        this.addUser(user);
-    }
-
-    private void addUserActivities(Long userID){
+/*
+    public void addUserActivities(Long userID){
         UserActivityClass userActivity;
         userActivity = new UserActivityClass(userID,"Q001","A001a","yes");
         this.addUserActivity(userActivity);
@@ -320,7 +308,8 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         userActivity = new UserActivityClass(userID,"Q006","A005a","yes");
         this.addUserActivity(userActivity);
     }
-
+*/
+   /*
     public boolean addUserActivity(UserActivityClass userActivity){
         ContentValues values = new ContentValues();
         values.put(COLUMN_USER_ID, userActivity.getUser_id());
@@ -331,22 +320,21 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         database.insert(TABLE_USERS_ACT, null, values);
         return true;
     }
+*/
+    private void addUsers(){
+        UserClass user;
+        user = new UserClass("user1","user1@gmail.com","111","Avatar2");
+        this.addUser(user);
+        user = new UserClass("user2","user2@gmail.com","222","Avatar3");
+        this.addUser(user);
+        user = new UserClass("user3","user3@gmail.com","333","Avatar1");
+        this.addUser(user);
+        user = new UserClass("user4","user4@gmail.com","444","Avatar4");
+        this.addUser(user);
 
 
-    public boolean addUser(UserClass user){
-        ContentValues values = new ContentValues();
-        values.put(COLUMN_USERNAME, user.getUsername());
-        values.put(COLUMN_EMAIL, user.getEmail());
-        values.put(COLUMN_PASS, user.getPass());
-        values.put(COLUMN_AVATAR, user.getAvatar());
-
-        long iduser = database.insert(TABLE_USERS, null, values);
-
-        ScoreboardClass score = new ScoreboardClass((int)iduser, 00, 00, "L01");
-        this.addScore(score);
-
-        return true;
     }
+
     // Adding new question
     public void addQuestion(QuestionClass q){
         ContentValues values = new ContentValues();
@@ -381,6 +369,22 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_USERS_ACT);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_QUESTIONS);
         onCreate(db);
+    }
+
+
+    public boolean addUser(UserClass user){
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_USERNAME, user.getUsername());
+        values.put(COLUMN_EMAIL, user.getEmail());
+        values.put(COLUMN_PASS, user.getPass());
+        values.put(COLUMN_AVATAR, user.getAvatar());
+
+        long iduser = database.insert(TABLE_USERS, null, values);
+
+        ScoreboardClass score = new ScoreboardClass((int)iduser, 00, 00, "L01");
+        this.addScore(score);
+
+        return true;
     }
 
     public boolean addScore(ScoreboardClass score){
@@ -433,7 +437,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         }
         return usersList;
     }
-    ///inicio
+///inicio
     public String getUserLevel(Long userID){
         String selectQuery = "SELECT "+COLUMN_LEVEL_NAME+" FROM "+TABLE_LEVEL+" WHERE "+COLUMN_LEVEL_ID+" IN ( SELECT "+COLUMN_LEVEL_ID+" FROM "+TABLE_SCOREBOARD+" WHERE "+COLUMN_USER_ID+" = '"+ userID.toString()+"' );";
         database=this.getReadableDatabase();
@@ -444,7 +448,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         }
         return levelName;
     }
-
+/*
     public boolean lessonStart(String chosenLevelID, String userID){
         String selectQuery = "SELECT COUNT(*) FROM "+TABLE_USERS_ACT
                 +" AS u INNER JOIN "+TABLE_QUESTIONS+" AS q ON u."
@@ -452,16 +456,14 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 +" INNER JOIN "+TABLE_LEVEL+" AS l ON q."
                 +COLUMN_LEVEL_ID+" = l."+COLUMN_LEVEL_ID
                 +" WHERE u."+COLUMN_USER_ID+" = "+userID+" AND l."+COLUMN_LEVEL_ID+" = "+chosenLevelID;
-
         database=this.getReadableDatabase();
         Cursor cursor = database.rawQuery(selectQuery, null);
         if(cursor == null){
             return false;
         }
         return true;
-    }
-
-    ///fim
+    }*/
+///fim
     public int rowcount(){
         int row=0;
         String selectQuery="SELECT * FROM " + TABLE_QUESTIONS + ";";
@@ -539,9 +541,9 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     }
 
 
-    public boolean updatingScore(Integer score, Long user){
+    public boolean updatingScore(Integer score, UserClass User, String levelID){
         Cursor cursor;
-        String UserString = user.toString();
+        String UserString = Integer.toString((int)User.getUser_id());
         String selectQuery = "SELECT * FROM " + TABLE_SCOREBOARD + " WHERE " + COLUMN_USER_ID + " = '" + UserString + "' ;";
         database = this.getReadableDatabase();
         cursor = database.rawQuery(selectQuery, null);
@@ -551,7 +553,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             values.put(COLUMN_USER_ID, cursor.getInt(0));
             values.put(COLUMN_POINTS, score);
             values.put(COLUMN_WRONG_PERCENT, cursor.getInt(2));
-            values.put(COLUMN_LEVEL_ID, cursor.getInt(3));
+            values.put(COLUMN_LEVEL_ID, levelID);
         } while (cursor.moveToNext());
 
         database = this.getWritableDatabase();
