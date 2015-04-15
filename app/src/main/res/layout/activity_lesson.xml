@@ -47,11 +47,11 @@
         android:layout_height="235dp"
         android:layout_weight="0.71"
         android:id="@+id/linearLayoutMiddle"
-        android:background="@drawable/ballonlevel"
         android:layout_alignParentRight="true"
         android:layout_above="@+id/linearLayoutBottom"
         android:layout_marginRight="10dp"
-        android:gravity="center_vertical|right|center_horizontal">
+        android:gravity="center_vertical|right|center_horizontal"
+        android:background="@drawable/ballonlevel">
 
         <ScrollView
             android:layout_width="210dp"
@@ -82,10 +82,10 @@
             android:layout_width="140dp"
             android:layout_height="180dp"
             android:id="@+id/imageViewAvatar"
-            android:src="@drawable/avatar22"
             android:layout_marginLeft="10dp"
             android:layout_gravity="left|bottom"
-            android:layout_marginBottom="5dp" />
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/avatar22" />
 
         <Button
             android:layout_width="116dp"
@@ -93,7 +93,6 @@
             android:id="@+id/btnPlay"
             android:onClick= "OnClick"
             android:singleLine="false"
-            android:background="@drawable/buttomlevel"
             android:layout_gravity="bottom|right"
             android:gravity="bottom|right"
             android:layout_marginLeft="30dp"

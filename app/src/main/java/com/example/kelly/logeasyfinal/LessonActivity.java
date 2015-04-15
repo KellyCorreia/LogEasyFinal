@@ -151,7 +151,9 @@ public class LessonActivity extends Activity {
                 firstLayout.setBackgroundColor(Color.BLUE);
                 btnPlay.setBackgroundResource(R.drawable.buttomlevel);
                 break;
-           /* case "L02":
+            case "L02":
+                Drawable fundo =
+                layout.setBackground();
                 layout.setBackgroundResource(R.drawable.backgroundlevel2);
                 firstLayout.setBackgroundColor(Color.BLUE);
                 btnPlay.setBackgroundResource(R.drawable.buttomlevel2);
@@ -195,139 +197,7 @@ public class LessonActivity extends Activity {
                 layout.setBackgroundResource(R.drawable.backgroundlevel10);
                 firstLayout.setBackgroundColor(Color.BLUE);
                 btnPlay.setBackgroundResource(R.drawable.buttomlevel10);
-                break; case "L02":
-                layout.setBackgroundResource(R.drawable.backgroundlevel2);
-                firstLayout.setBackgroundColor(Color.BLUE);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel2);
                 break;
-            case "L03":
-                layout.setBackgroundResource(R.drawable.backgroundlevel3);
-                firstLayout.setBackgroundColor(Color.BLUE);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel3);
-                break;
-            case "L04":
-                layout.setBackgroundResource(R.drawable.backgroundlevel4);
-                firstLayout.setBackgroundColor(Color.BLUE);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel4);
-                break;
-            case "L05":
-                layout.setBackgroundResource(R.drawable.backgroundlevel5);
-                firstLayout.setBackgroundColor(Color.BLUE);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel5);
-                break;
-            case "L06":
-                layout.setBackgroundResource(R.drawable.backgroundlevel6);
-                firstLayout.setBackgroundColor(Color.BLUE);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel6);
-                break;
-            case "L07":
-                layout.setBackgroundResource(R.drawable.backgroundlevel7);
-                firstLayout.setBackgroundColor(Color.BLUE);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel7);
-                break;
-            case "L08":
-                layout.setBackgroundResource(R.drawable.backgroundlevel8);
-                firstLayout.setBackgroundColor(Color.BLUE);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel8);
-                break;
-            case "L09":
-                layout.setBackgroundResource(R.drawable.backgroundlevel9);
-                firstLayout.setBackgroundColor(Color.BLUE);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel9);
-                break;
-            case "L10":
-                layout.setBackgroundResource(R.drawable.backgroundlevel10);
-                firstLayout.setBackgroundColor(Color.BLUE);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel10);
-                break; case "L02":
-                layout.setBackgroundResource(R.drawable.backgroundlevel2);
-                firstLayout.setBackgroundColor(Color.BLUE);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel2);
-                break;
-            case "L03":
-                layout.setBackgroundResource(R.drawable.backgroundlevel3);
-                firstLayout.setBackgroundColor(Color.BLUE);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel3);
-                break;
-            case "L04":
-                layout.setBackgroundResource(R.drawable.backgroundlevel4);
-                firstLayout.setBackgroundColor(Color.BLUE);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel4);
-                break;
-            case "L05":
-                layout.setBackgroundResource(R.drawable.backgroundlevel5);
-                firstLayout.setBackgroundColor(Color.BLUE);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel5);
-                break;
-            case "L06":
-                layout.setBackgroundResource(R.drawable.backgroundlevel6);
-                firstLayout.setBackgroundColor(Color.BLUE);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel6);
-                break;
-            case "L07":
-                layout.setBackgroundResource(R.drawable.backgroundlevel7);
-                firstLayout.setBackgroundColor(Color.BLUE);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel7);
-                break;
-            case "L08":
-                layout.setBackgroundResource(R.drawable.backgroundlevel8);
-                firstLayout.setBackgroundColor(Color.BLUE);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel8);
-                break;
-            case "L09":
-                layout.setBackgroundResource(R.drawable.backgroundlevel9);
-                firstLayout.setBackgroundColor(Color.BLUE);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel9);
-                break;
-            case "L10":
-                layout.setBackgroundResource(R.drawable.backgroundlevel10);
-                firstLayout.setBackgroundColor(Color.BLUE);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel10);
-                break; case "L02":
-                layout.setBackgroundResource(R.drawable.backgroundlevel2);
-                firstLayout.setBackgroundColor(Color.BLUE);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel2);
-                break;
-            case "L03":
-                layout.setBackgroundResource(R.drawable.backgroundlevel3);
-                firstLayout.setBackgroundColor(Color.BLUE);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel3);
-                break;
-            case "L04":
-                layout.setBackgroundResource(R.drawable.backgroundlevel4);
-                firstLayout.setBackgroundColor(Color.BLUE);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel4);
-                break;
-            case "L05":
-                layout.setBackgroundResource(R.drawable.backgroundlevel5);
-                firstLayout.setBackgroundColor(Color.BLUE);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel5);
-                break;
-            case "L06":
-                layout.setBackgroundResource(R.drawable.backgroundlevel6);
-                firstLayout.setBackgroundColor(Color.BLUE);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel6);
-                break;
-            case "L07":
-                layout.setBackgroundResource(R.drawable.backgroundlevel7);
-                firstLayout.setBackgroundColor(Color.BLUE);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel7);
-                break;
-            case "L08":
-                layout.setBackgroundResource(R.drawable.backgroundlevel8);
-                firstLayout.setBackgroundColor(Color.BLUE);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel8);
-                break;
-            case "L09":
-                layout.setBackgroundResource(R.drawable.backgroundlevel9);
-                firstLayout.setBackgroundColor(Color.BLUE);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel9);
-                break;
-            case "L10":
-                layout.setBackgroundResource(R.drawable.backgroundlevel10);
-                firstLayout.setBackgroundColor(Color.BLUE);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel10);
-                break;*/
         }
 
     }
