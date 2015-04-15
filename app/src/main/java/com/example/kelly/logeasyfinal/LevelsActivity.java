@@ -166,7 +166,17 @@ public class LevelsActivity extends Activity {
                     setIntent(user, "L010");
             }
         });
-
+        /*
+        btnLevels = (Button)findViewById(R.id.imbLevel10);
+        btnLevels.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (enoughPoints(9))
+                    setToast("9 of Dark City");
+                else
+                    setIntent(user, "L010");
+            }
+        });*/
 
         //welcome to the user
         Toast.makeText(LevelsActivity.this, "Welcome, " + user.getUsername()+" !", Toast.LENGTH_SHORT).show();
@@ -197,9 +207,11 @@ public class LevelsActivity extends Activity {
     public void setIntent(UserClass user, String chosenLevelID){
         chosenLevel = db.getLevel(chosenLevelID);
         intent = new Intent(LevelsActivity.this, LessonActivity.class);
+
         intent.putExtra("chosenUser", user);
         intent.putExtra("chosenLevel", chosenLevel);
         intent.putExtra("userScore", userScore);
+
         startActivity(intent);
     }
     public void setToast(String levelBefore){
