@@ -29,7 +29,6 @@ public class LessonActivity extends Activity {
     ImageView ImgAvatar;
     RelativeLayout layout;
     LinearLayout firstLayout, secondLayout;
-    ScrollView scrollLesson;
     String selecLevel;
     LevelClass curLevel;
     UserClass User;
@@ -44,7 +43,6 @@ public class LessonActivity extends Activity {
         Bundle extras = getIntent().getExtras();
         User = extras.getParcelable("chosenUser");
         selecLevel = extras.getString("chosenLevel");
-        String userLevel = extras.getString("userLevel");
 
         txtPoints = (TextView)findViewById(R.id.txtPoints);
         txtLesson =(TextView)findViewById(R.id.txtLesson);
@@ -74,7 +72,7 @@ public class LessonActivity extends Activity {
         txtPoints.setText(Integer.toString(Score.getPoints()));
         txtLesson.setText(curLevel.getLesson());
         secondLayout.setBackgroundResource(R.drawable.ballonlevel);
-        firstLayout.setBackgroundColor(Color.BLUE);
+        firstLayout.setBackgroundColor(Color.parseColor("#FF192030"));
 
         switch (User.getAvatar()){
             case "Avatar1":
