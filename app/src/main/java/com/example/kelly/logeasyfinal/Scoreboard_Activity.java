@@ -40,8 +40,9 @@ public class Scoreboard_Activity extends Activity {
 
    private void populateList() {
        String username, levelName;
-       int points, wrong;
+       int points, wrongNum, totalAnswers;
        long userId;
+       double wrongPerc;
 
        list = new ArrayList<HashMap>();
 
@@ -55,17 +56,27 @@ public class Scoreboard_Activity extends Activity {
            levelName = dbHelper.getUserLevel(userId);
            scoreBoard = dbHelper.getScore(userId);
            points = scoreBoard.getPoints();
-           wrong = scoreBoard.getWrong_percent();
-           wrong = wrong/(wrong + (points/10));
+           wrongNum = scoreBoard.getWrong_percent();
+           totalAnswers = wrongNum + (points/100);
+           if(totalAnswers == 0){
+               wrongPerc = 0.0;
+           }else{
+               wrongPerc = wrongNum/(wrongNum + (points/10));
+           }
+
+           String strPoints = String.valueOf(points);
+           String strwrong = String.valueOf(wrongPerc);
 
            HashMap temp = new HashMap();
            temp.put(FIRST_COLUMN, username);
            temp.put(SECOND_COLUMN, levelName);
-           temp.put(THIRD_COLUMN, points);
-           temp.put(FOURTH_COLUMN, wrong);
+           temp.put(THIRD_COLUMN, strPoints);
+           temp.put(FOURTH_COLUMN, strwrong);
            list.add(temp);
 
        }
+
+
         /*HashMap temp = new HashMap();
         temp.put(FIRST_COLUMN,"Colored Notebooks");
         temp.put(SECOND_COLUMN, "By NavNeet");

@@ -292,7 +292,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
 
     }
-/*
+
     public void addUserActivities(Long userID){
         UserActivityClass userActivity;
         userActivity = new UserActivityClass(userID,"Q001","A001a","yes");
@@ -308,8 +308,8 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         userActivity = new UserActivityClass(userID,"Q006","A005a","yes");
         this.addUserActivity(userActivity);
     }
-*/
-   /*
+
+
     public boolean addUserActivity(UserActivityClass userActivity){
         ContentValues values = new ContentValues();
         values.put(COLUMN_USER_ID, userActivity.getUser_id());
@@ -320,7 +320,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         database.insert(TABLE_USERS_ACT, null, values);
         return true;
     }
-*/
+
     private void addUsers(){
         UserClass user;
         user = new UserClass("user1","user1@gmail.com","111","Avatar2");
@@ -331,8 +331,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         this.addUser(user);
         user = new UserClass("user4","user4@gmail.com","444","Avatar4");
         this.addUser(user);
-
-
+        this.addUserActivities(user.getUser_id());
     }
 
     // Adding new question
@@ -448,21 +447,21 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         }
         return levelName;
     }
-/*
-    public boolean lessonStart(String chosenLevelID, String userID){
+
+    public boolean lessonStart(String chosenLevelID, Long userID){
         String selectQuery = "SELECT COUNT(*) FROM "+TABLE_USERS_ACT
                 +" AS u INNER JOIN "+TABLE_QUESTIONS+" AS q ON u."
                 +COLUMN_QUESTION_ID+" = q."+COLUMN_QUESTION_ID
                 +" INNER JOIN "+TABLE_LEVEL+" AS l ON q."
                 +COLUMN_LEVEL_ID+" = l."+COLUMN_LEVEL_ID
-                +" WHERE u."+COLUMN_USER_ID+" = "+userID+" AND l."+COLUMN_LEVEL_ID+" = "+chosenLevelID;
+                +" WHERE u."+COLUMN_USER_ID+" = "+userID.toString()+" AND l."+COLUMN_LEVEL_ID+" = '"+chosenLevelID+"' ";
         database=this.getReadableDatabase();
         Cursor cursor = database.rawQuery(selectQuery, null);
-        if(cursor == null){
+        if(cursor != null && cursor.getCount()>0){
+            return true;
+        }else
             return false;
-        }
-        return true;
-    }*/
+    }
 ///fim
     public int rowcount(){
         int row=0;
@@ -544,7 +543,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     public boolean updatingScore(Integer score, UserClass User, String levelID){
         Cursor cursor;
         String UserString = Integer.toString((int)User.getUser_id());
-        String selectQuery = "SELECT * FROM " + TABLE_SCOREBOARD + " WHERE " + COLUMN_USER_ID + " = '" + UserString + "' ;";
+        String selectQuery = "SELECT * FROM " + TABLE_SCOREBOARD + " WHERE " + COLUMN_USER_ID + " = '" + UserString + "' ";
         database = this.getReadableDatabase();
         cursor = database.rawQuery(selectQuery, null);
         ContentValues values;

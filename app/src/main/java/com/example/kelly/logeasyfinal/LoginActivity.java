@@ -43,11 +43,13 @@ public class LoginActivity extends Activity {
     private UserClass user;
     private String password;
     private boolean passwordIsValid = false;
+    MySQLiteHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        db = new MySQLiteHelper(this);
 
         //Getting the object user from the previous screen
         Bundle extras = getIntent().getExtras();
@@ -73,6 +75,7 @@ public class LoginActivity extends Activity {
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
+                db.updatingScore(60, user, "L02");
                 EditText mPasswordView;
                 mPasswordView = (EditText) findViewById(R.id.txtPassword);
                 //code to test the password
