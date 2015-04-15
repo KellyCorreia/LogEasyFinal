@@ -57,8 +57,7 @@ public class LevelsActivity extends Activity {
         pointsView = (TextView) findViewById(R.id.txtvPoints);
         pointsView.setText(pointsUser+" Points");
 
-
-        //db.updatingScore(60,user.getUser_id()):
+        db.updatingScore(60,user,user.getUser_id()):
         btnLevels = (Button)findViewById(R.id.imbLevel1);
         btnLevels.setOnClickListener(new View.OnClickListener() {
             @Override

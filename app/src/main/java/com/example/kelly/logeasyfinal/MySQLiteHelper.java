@@ -410,7 +410,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         return usersList;
     }
 ///inicio
-    public String getUserLevel(Integer userID){
+    public String getUserLevel(Long userID){
         String selectQuery = "SELECT "+COLUMN_LEVEL_NAME+" FROM "+TABLE_LEVEL+" WHERE "+COLUMN_LEVEL_ID+" IN ( SELECT "+COLUMN_LEVEL_ID+" FROM "+TABLE_SCOREBOARD+" WHERE "+COLUMN_USER_ID+" = '"+ userID.toString()+"' );";
         database=this.getReadableDatabase();
         Cursor cursor = database.rawQuery(selectQuery, null);
