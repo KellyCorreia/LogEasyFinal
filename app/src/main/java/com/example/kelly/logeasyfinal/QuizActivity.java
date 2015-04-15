@@ -133,7 +133,7 @@ public class QuizActivity extends Activity {
             qList = db.levelQuestion(selecLevel.getLevel_id());
         }
 
-        //rdQ = rd.nextInt(qList.size());
+        rdQ = rd.nextInt(qList.size());
         aList = db.getAnswer(qList.get(rdQ).getQuestion_id());
 
         firstLayout.setBackgroundColor(Color.parseColor("#FF192030"));
