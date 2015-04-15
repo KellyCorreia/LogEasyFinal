@@ -38,8 +38,8 @@ public class LevelsActivity extends Activity {
         Bundle extras = getIntent().getExtras();
         user = extras.getParcelable("chosenUser");
 
-        Toast.makeText(LevelsActivity.this, "Welcome, " + user.getUsername()+" !", Toast.LENGTH_LONG).show();
-        Toast.makeText(LevelsActivity.this, "Choose a Level to start the challenge!", Toast.LENGTH_LONG).show();
+        Toast.makeText(LevelsActivity.this, "Welcome, " + user.getUsername()+" !", Toast.LENGTH_SHORT).show();
+        Toast.makeText(LevelsActivity.this, "Choose a Level to start the challenge!", Toast.LENGTH_SHORT).show();
 
 
         //Setting the Label with the userName
@@ -195,7 +195,7 @@ public class LevelsActivity extends Activity {
     }
     public void setToast(String levelBefore){
         Toast.makeText(LevelsActivity.this, "Sorry, but you don't have enough points to access this level!", Toast.LENGTH_SHORT).show();
-        Toast.makeText(LevelsActivity.this, "Answer more question in the "+levelBefore, Toast.LENGTH_SHORT).show();
+        Toast.makeText(LevelsActivity.this, "Answer more question in the levels before!", Toast.LENGTH_SHORT).show();
     }
     public boolean enoughPoints(int level){
         if ((level*50)>= pointsU)
