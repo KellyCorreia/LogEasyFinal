@@ -514,7 +514,6 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
         database = this.getWritableDatabase();
         database.update(TABLE_SCOREBOARD,values, COLUMN_USER_ID + "= ?" + UserString, null);
-
         return true;
     }
 

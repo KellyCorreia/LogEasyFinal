@@ -17,7 +17,7 @@ public class LevelsActivity extends Activity {
     private ScoreboardClass userScore;
     private LevelClass chosenLevel;
     private int pointsU;
-    MySQLiteHelper db = new MySQLiteHelper(this);
+    MySQLiteHelper db;
     Intent intent = new Intent();
 
 
@@ -25,7 +25,7 @@ public class LevelsActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_levels);
-
+        db = new MySQLiteHelper(this);
 
         Button btnLevels;
         TextView pointsView;
