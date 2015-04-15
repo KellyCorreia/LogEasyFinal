@@ -422,14 +422,14 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     }
 
 
-    public String getUserPoints(Integer userID) {
+    public int getUserPoints(Integer userID) {
         String selectQuery = "SELECT " + COLUMN_POINTS + " FROM " + TABLE_SCOREBOARD + " WHERE " + COLUMN_USER_ID + " = " + userID.toString() + " ;";
         database = this.getReadableDatabase();
         Cursor cursor = database.rawQuery(selectQuery, null);
-        String pointsN = "vazio";
+        int pointsN = 0;
         if (cursor.moveToFirst()) {
             Integer points = Integer.parseInt(cursor.getString(0));
-            pointsN = points.toString();
+            pointsN = points.intValue();
         }
         return pointsN;
     }

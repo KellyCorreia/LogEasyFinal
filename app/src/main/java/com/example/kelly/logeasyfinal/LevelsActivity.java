@@ -16,6 +16,7 @@ public class LevelsActivity extends Activity {
     private UserClass user;
     private String levelName;
     Intent intent = new Intent();
+    private int pointsU;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +27,7 @@ public class LevelsActivity extends Activity {
         TextView pointsView;
         TextView levelView;
         TextView txtViewUsername;
-        String Points;
+        String pointsUser;
 
         MySQLiteHelper db = new MySQLiteHelper(this);
 
@@ -49,16 +50,18 @@ public class LevelsActivity extends Activity {
 
         levelView = (TextView) findViewById(R.id.txtvLevel);
         levelView.setText(levelName);
-        Points =  db.getUserPoints(Integer.valueOf((int)user.getUser_id()));
+        pointsU = db.getUserPoints(Integer.valueOf((int)user.getUser_id()));
+        pointsUser = Integer.toString(pointsU);
 
         pointsView = (TextView) findViewById(R.id.txtvPoints);
-        pointsView.setText(Points+" Points");
+        pointsView.setText(pointsUser+" Points");
 
         btnLevels = (Button)findViewById(R.id.imbLevel1);
+
         btnLevels.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setIntent(user,"Level 1 Name");
+                setIntent(user, "Level 1 Name");
             }
         });
 
@@ -66,7 +69,10 @@ public class LevelsActivity extends Activity {
         btnLevels.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setIntent(user, "Level 2 Name");
+                if (enoughPoints(1))
+                    setToast("1 of Wind");
+                else
+                    setIntent(user, "Level 2 Name");
             }
         });
 
@@ -74,7 +80,10 @@ public class LevelsActivity extends Activity {
         btnLevels.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setIntent(user, "Level 3 Name");
+                if (enoughPoints(2))
+                    setToast("2 of Sound");
+                else
+                    setIntent(user, "Level 3 Name");
             }
         });
 
@@ -82,7 +91,10 @@ public class LevelsActivity extends Activity {
         btnLevels.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setIntent(user, "Level 4 Name");
+                if (enoughPoints(3))
+                    setToast("3 of Metal");
+                else
+                    setIntent(user, "Level 4 Name");
             }
         });
 
@@ -90,7 +102,10 @@ public class LevelsActivity extends Activity {
         btnLevels.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setIntent(user, "Level 5 Name");
+                if (enoughPoints(4))
+                    setToast("4 of Sand");
+                else
+                    setIntent(user, "Level 5 Name");
             }
         });
 
@@ -98,7 +113,10 @@ public class LevelsActivity extends Activity {
         btnLevels.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setIntent(user, "Level 6 Name");
+                if (enoughPoints(5))
+                    setToast("5 of Snow");
+                else
+                    setIntent(user, "Level 6 Name");
             }
         });
 
@@ -106,7 +124,10 @@ public class LevelsActivity extends Activity {
         btnLevels.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setIntent(user, "Level 7 Name");
+                if (enoughPoints(6))
+                    setToast("6 of Plant");
+                else
+                    setIntent(user, "Level 7 Name");
             }
         });
 
@@ -114,7 +135,10 @@ public class LevelsActivity extends Activity {
         btnLevels.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setIntent(user, "Level 8 Name");
+                if (enoughPoints(7))
+                    setToast("7 of Lightning");
+                else
+                    setIntent(user, "Level 8 Name");
             }
         });
 
@@ -122,7 +146,10 @@ public class LevelsActivity extends Activity {
         btnLevels.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setIntent(user, "Level 9 Name");
+                if (enoughPoints(8))
+                    setToast("8 of Lava");
+                else
+                    setIntent(user, "Level 9 Name");
             }
         });
 
@@ -130,7 +157,10 @@ public class LevelsActivity extends Activity {
         btnLevels.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setIntent(user, "Level 10 Name");
+                if (enoughPoints(9))
+                    setToast("9 of Dark City");
+                else
+                    setIntent(user, "Level 10 Name");
             }
         });
     }
@@ -149,12 +179,10 @@ public class LevelsActivity extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -164,5 +192,15 @@ public class LevelsActivity extends Activity {
         intent.putExtra("chosenLevel", chosenLevel);
         intent.putExtra("userLevel", levelName);
         startActivity(intent);
+    }
+    public void setToast(String levelBefore){
+        Toast.makeText(LevelsActivity.this, "Sorry, but you don't have enough points to access this level!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(LevelsActivity.this, "Answer more question in the "+levelBefore, Toast.LENGTH_SHORT).show();
+    }
+    public boolean enoughPoints(int level){
+        if ((level*50)>= pointsU)
+            return true;
+        else
+            return false;
     }
 }
