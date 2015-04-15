@@ -420,6 +420,19 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         }
         return levelName;
     }
+/*
+    public boolean lessonStart(String chosenLevelID){
+        String selectQuery = "SELECT * FROM "+TABLE_LEVEL+" WHERE "+COLUMN_LEVEL_ID+" IN ( SELECT "+COLUMN_LEVEL_ID+" FROM "+TABLE_SCOREBOARD+" WHERE "+COLUMN_USER_ID+" = '"+ userID.toString()+"' );";
+        database=this.getReadableDatabase();
+        Cursor cursor = database.rawQuery(selectQuery, null);
+        String levelName = "vazio";
+        if (cursor.moveToFirst()) {
+            levelName = cursor.getString(0);
+        }
+
+
+        return true;
+    }*/
 ///fim
     public int rowcount(){
         int row=0;
@@ -463,7 +476,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
     public List<AnswerClass> getAnswer(String qid){
         List<AnswerClass> Answerlist = new ArrayList<>();
-        String selectQuery = "SELECT * FROM " + TABLE_ANSWERS + "WHERE" + COLUMN_QUESTION_ID + "= '" + qid +"' ;";
+        String selectQuery = "SELECT * FROM " + TABLE_ANSWERS + " WHERE " + COLUMN_QUESTION_ID + " = '" + qid + "' ;";
         database=this.getReadableDatabase();
         Cursor cursor = database.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
@@ -496,6 +509,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
         return questionsList;
     }
+
 
     public boolean updatingScore(Integer score, UserClass User){
         Cursor cursor;

@@ -19,15 +19,13 @@ import java.util.Random;
 
 
 public class HintActivity extends Activity {
-    TextView txtLesson, txtPoints;
+    TextView txtHint, txtPoints;
     Button btnPlay;
     ImageView ImgAvatar;
-    ScrollView scrolTip;
     LinearLayout layout, firstLayout, secondLayout;
-    String selecLevel;
     UserClass user;
     ScoreboardClass score;
-    LevelClass level;
+    LevelClass seleclevel;
     Random rd = new Random();
 
     @Override
@@ -36,15 +34,14 @@ public class HintActivity extends Activity {
         setContentView(R.layout.activity_hint);
 
         Bundle extras = getIntent().getExtras();
-        selecLevel = extras.getString("chosenUser");
-        score = extras.getParcelable("chosenLevel");
-        user = extras.getParcelable("avatarUser");
+        user = (UserClass)extras.getParcelable("chosenUser");
+        seleclevel = (LevelClass)extras.getParcelable("chosenLevel");
+        score = (ScoreboardClass)extras.getParcelable("userScore");
 
-        txtLesson =(TextView)findViewById(R.id.txtLesson);
-        btnPlay=(Button)findViewById(R.id.btnPlay);
-        ImgAvatar = (ImageView)findViewById(R.id.imageViewAvatar);
         txtPoints = (TextView)findViewById(R.id.txtPoints);
-        scrolTip = (ScrollView)findViewById(R.id.scrollView2);
+        txtHint =(TextView)findViewById(R.id.txtHint);
+        btnPlay=(Button)findViewById(R.id.btnPlay);
+        ImgAvatar = (ImageView)findViewById(R.id.imageAvatar);
         layout = (LinearLayout)findViewById(R.id.linearLayout5);
         firstLayout = (LinearLayout)findViewById(R.id.linearLayout3);
         secondLayout = (LinearLayout)findViewById(R.id.linearLayout4);
@@ -55,9 +52,10 @@ public class HintActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HintActivity.this, QuizActivity.class);
-                intent.putExtra("chosenLevel", selecLevel);
-                intent.putExtra("LessonUser", score);
-                intent.putExtra("User", user);
+                intent.putExtra("chosenUser", user);
+                intent.putExtra("chosenLevel", seleclevel);
+                intent.putExtra("userScore", score);
+
                 startActivity(intent);
             }
         });
@@ -74,11 +72,10 @@ public class HintActivity extends Activity {
     private void setHintView(){
         MySQLiteHelper db = new MySQLiteHelper(this);
 
-        level = db.getLevel(selecLevel);
         txtPoints.setText(Integer.toString(score.getPoints()));
-        txtLesson.setText(level.getTip());
+        txtHint.setText(seleclevel.getTip());
         secondLayout.setBackgroundResource(R.drawable.ballonlevel);
-        firstLayout.setBackgroundColor(Color.BLUE);
+        firstLayout.setBackgroundColor(Color.parseColor("#FF192030"));
 
         switch (user.getAvatar()){
             case "Avatar1":
@@ -150,8 +147,8 @@ public class HintActivity extends Activity {
                 break;
         }
 
-        switch(selecLevel){
-            case "Level 1 Name":
+        switch(seleclevel.getLevel_id()){
+            case "L01":
                 layout.setBackgroundResource(R.drawable.backgroundlevel1);
                 btnPlay.setBackgroundResource(R.drawable.buttomlevel);
                 break;
