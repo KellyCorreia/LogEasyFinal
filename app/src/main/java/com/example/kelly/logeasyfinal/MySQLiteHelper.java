@@ -430,10 +430,10 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         return row;
     }
 
-    public LevelClass getLevel(String levelName){
+    public LevelClass getLevel(String levelID){
         LevelClass levelobj = new LevelClass();
         Cursor cursor;
-        String selectQuery = "SELECT * FROM " + TABLE_LEVEL + " WHERE " + COLUMN_LEVEL_NAME + " = '" + (String)levelName + "' ; " ;
+        String selectQuery = "SELECT * FROM " + TABLE_LEVEL + " WHERE " + COLUMN_LEVEL_ID + " = '" + (String)levelID + "' ; " ;
         database = this.getReadableDatabase();
         cursor = database.rawQuery(selectQuery, null);
         if(cursor.moveToFirst()){

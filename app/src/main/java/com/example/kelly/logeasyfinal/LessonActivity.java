@@ -29,8 +29,7 @@ public class LessonActivity extends Activity {
     ImageView ImgAvatar;
     RelativeLayout layout;
     LinearLayout firstLayout, secondLayout;
-    String selecLevel;
-    LevelClass curLevel;
+    LevelClass selecLevel;
     UserClass User;
     ScoreboardClass Score;
     Random rd = new Random();
@@ -41,8 +40,9 @@ public class LessonActivity extends Activity {
         setContentView(R.layout.activity_lesson);
 
         Bundle extras = getIntent().getExtras();
-        User = extras.getParcelable("chosenUser");
-        selecLevel = extras.getString("chosenLevel");
+        User = (UserClass)extras.getParcelable("chosenUser");
+        selecLevel = (LevelClass)extras.getParcelable("chosenLevel");
+        Score = (ScoreboardClass)extras.getParcelable("userScore");
 
         txtPoints = (TextView)findViewById(R.id.txtPoints);
         txtLesson =(TextView)findViewById(R.id.txtLesson);
@@ -52,8 +52,6 @@ public class LessonActivity extends Activity {
         firstLayout = (LinearLayout)findViewById(R.id.linearLayoutFirst);
         secondLayout = (LinearLayout)findViewById(R.id.linearLayoutMiddle);
 
-
-        this.getCurrent();
         this.setLesson();
 
         btnPlay.setOnClickListener(new View.OnClickListener() {
@@ -70,7 +68,7 @@ public class LessonActivity extends Activity {
 
     private void setLesson(){ //Method to take the lesson from the Level Class and from the User Class
         txtPoints.setText(Integer.toString(Score.getPoints()));
-        txtLesson.setText(curLevel.getLesson());
+        txtLesson.setText(selecLevel.getLesson());
         secondLayout.setBackgroundResource(R.drawable.ballonlevel);
         firstLayout.setBackgroundColor(Color.parseColor("#FF192030"));
 
@@ -144,57 +142,49 @@ public class LessonActivity extends Activity {
                 break;
         }
 
-        switch(selecLevel){
-            case "Level 1 Name":
+        switch(selecLevel.getLevel_id()){
+            case "L01":
                 layout.setBackgroundResource(R.drawable.backgroundlevel1);
-
                 btnPlay.setBackgroundResource(R.drawable.buttomlevel);
                 break;
-            case "Level 2 Name":
+            case "L02":
                 layout.setBackgroundResource(R.drawable.backgroundlevel2);
                 btnPlay.setBackgroundResource(R.drawable.buttomlevel2);
                 break;
-            case "Level 3 Name":
+            case "L03":
                 layout.setBackgroundResource(R.drawable.backgroundlevel3);
                 btnPlay.setBackgroundResource(R.drawable.buttomlevel3);
                 break;
-            case "Level 4 Name":
+            case "L04":
                 layout.setBackgroundResource(R.drawable.backgroundlevel4);
                 btnPlay.setBackgroundResource(R.drawable.buttomlevel4);
                 break;
-            case "Level 5 Name":
+            case "L05":
                 layout.setBackgroundResource(R.drawable.backgroundlevel5);
                 btnPlay.setBackgroundResource(R.drawable.buttomlevel5);
                 break;
-            case "Level 6 Name":
+            case "L06":
                 layout.setBackgroundResource(R.drawable.backgroundlevel6);
                 btnPlay.setBackgroundResource(R.drawable.buttomlevel6);
                 break;
-            case "Level 7 Name":
+            case "L07":
                 layout.setBackgroundResource(R.drawable.backgroundlevel7);
                 btnPlay.setBackgroundResource(R.drawable.buttomlevel7);
                 break;
-            case "Level 8 Name":
+            case "L08":
                 layout.setBackgroundResource(R.drawable.backgroundlevel8);
                 btnPlay.setBackgroundResource(R.drawable.buttomlevel8);
                 break;
-            case "Level 9 Name":
+            case "L09":
                 layout.setBackgroundResource(R.drawable.backgroundlevel9);
                 btnPlay.setBackgroundResource(R.drawable.buttomlevel9);
                 break;
-            case "Level 10 Name":
+            case "L10":
                 layout.setBackgroundResource(R.drawable.backgroundlevel10);
                 btnPlay.setBackgroundResource(R.drawable.buttomlevel10);
                 break;
         }
 
-    }
-
-    private void getCurrent(){
-        MySQLiteHelper db = new MySQLiteHelper(this);
-
-        curLevel = db.getLevel(selecLevel);
-        Score = db.getScore(User.getUser_id());
     }
 
 }
