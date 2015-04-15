@@ -92,7 +92,7 @@ public class QuizActivity extends Activity {
                             break;
                         case 300:
                             Toast.makeText(QuizActivity.this, "Congratulations! You master the Plant element!", Toast.LENGTH_SHORT).show();
-                            db.updatingScore(score, User, "L0");
+                            db.updatingScore(score, User, "L06");
                             break;
                         case 100:
 

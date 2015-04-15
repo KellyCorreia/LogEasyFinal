@@ -511,7 +511,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     }
 
 
-    public boolean updatingScore(Integer score, UserClass User){
+    public boolean updatingScore(Integer score, UserClass User, String levelID){
         Cursor cursor;
         String UserString = Integer.toString((int)User.getUser_id());
         String selectQuery = "SELECT * FROM " + TABLE_SCOREBOARD + " WHERE " + COLUMN_USER_ID + " = '" + UserString + "' ;";
@@ -523,7 +523,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             values.put(COLUMN_USER_ID, cursor.getInt(0));
             values.put(COLUMN_POINTS, score);
             values.put(COLUMN_WRONG_PERCENT, cursor.getInt(2));
-            values.put(COLUMN_LEVEL_ID, cursor.getInt(3));
+            values.put(COLUMN_LEVEL_ID, levelID);
         } while (cursor.moveToNext());
 
         database = this.getWritableDatabase();
