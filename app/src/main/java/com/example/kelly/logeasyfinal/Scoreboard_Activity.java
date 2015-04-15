@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -23,17 +24,19 @@ public class Scoreboard_Activity extends ActionBarActivity {
     //private UserClass user;
     //private List<UserClass> userList;
     //private MySQLiteHelper dbHelper;
-    private ArrayList<HashMap> list;
+    //private ArrayList<HashMap> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scoreboard_);
 
-        ListView lview = (ListView) findViewById(R.id.listview);
-        populateList();
-        listviewAdapter adapter = new listviewAdapter(this, list);
-        lview.setAdapter(adapter);
+        //list = new ArrayList<HashMap>();
+        //ListView lview = (ListView) findViewById(R.id.listview);
+        //populateList();
+        Toast.makeText(Scoreboard_Activity.this, "Está chamando o score board", Toast.LENGTH_SHORT).show();
+        //listviewAdapter adapter = new listviewAdapter(this, list);
+        //lview.setAdapter(adapter);
 
         /*Code to get the values
         dbHelper = new MySQLiteHelper(this);
@@ -46,9 +49,9 @@ public class Scoreboard_Activity extends ActionBarActivity {
 
     }
 
-    private void populateList() {
+   /* private void populateList() {
 
-        list = new ArrayList<HashMap>();
+
 
         HashMap temp = new HashMap();
         temp.put(FIRST_COLUMN,"Colored Notebooks");
@@ -84,7 +87,7 @@ public class Scoreboard_Activity extends ActionBarActivity {
         temp4.put(THIRD_COLUMN, "Rs. 100");
         temp4.put(FOURTH_COLUMN, "Per Unit");
         list.add(temp4);
-    }
+    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
