@@ -166,6 +166,17 @@ public class LevelsActivity extends Activity {
                     setIntent(user, "L010");
             }
         });
+
+        Button btnScore = (Button) findViewById(R.id.btnScoreboard);
+        btnLevels.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LevelsActivity.this, Scoreboard_Activity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         /*
         btnLevels = (Button)findViewById(R.id.imbLevel10);
         btnLevels.setOnClickListener(new View.OnClickListener() {
