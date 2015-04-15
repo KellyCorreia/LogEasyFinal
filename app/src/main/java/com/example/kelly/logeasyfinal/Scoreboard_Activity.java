@@ -1,5 +1,6 @@
 package com.example.kelly.logeasyfinal;
 
+import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -18,7 +19,7 @@ import static com.example.kelly.logeasyfinal.Constant.FOURTH_COLUMN;
 
 
 
-public class Scoreboard_Activity extends ActionBarActivity {
+public class Scoreboard_Activity extends Activity {
     //private ScoreboardClass scoreBoard;
     //private LevelClass userLevel;
     //private UserClass user;
