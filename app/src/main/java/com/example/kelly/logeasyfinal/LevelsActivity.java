@@ -35,7 +35,7 @@ public class LevelsActivity extends Activity {
         //Getting the object user from the previous screen
 
         Bundle extras = getIntent().getExtras();
-        user = (UserClass) extras.getParcelable("chosenUser");
+        user = extras.getParcelable("chosenUser");
 
         Toast.makeText(LevelsActivity.this, "Welcome, " + user.getUsername()+" !", Toast.LENGTH_LONG).show();
         Toast.makeText(LevelsActivity.this, "Choose a Level to start the challenge!", Toast.LENGTH_LONG).show();
@@ -160,10 +160,9 @@ public class LevelsActivity extends Activity {
 
     public void setIntent(UserClass user, String chosenLevel){
         intent = new Intent(LevelsActivity.this, LessonActivity.class);
-        startActivity(intent);
         intent.putExtra("chosenUser", user);
         intent.putExtra("chosenLevel", chosenLevel);
         intent.putExtra("userLevel", levelName);
-        finish();
+        startActivity(intent);
     }
 }

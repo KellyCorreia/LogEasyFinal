@@ -20,19 +20,19 @@ import java.util.Random;
 public class QuizActivity extends Activity {
     List<QuestionClass> qList = new ArrayList<>();
     List<AnswerClass> aList;
-    QuestionClass curQuest;
     TextView txtQuest, txtPoints;
     RadioGroup grp;
     RadioButton rda, rdb, rdc;
     Button butNext, btnLesson, btnHint;
     ScoreboardClass scoreUser;
+    UserClass User;
     String selecLevel;
     RadioButton rightAnswer,userAnswer;
 
     int score = 0;
     int qid = 0;
     Intent intent = new Intent();
-    MySQLiteHelper db = new MySQLiteHelper(this);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +42,7 @@ public class QuizActivity extends Activity {
         Bundle extras = getIntent().getExtras();
         scoreUser = extras.getParcelable("LessonUser");
         selecLevel = extras.getString("chosenLevel");
+        User = extras.getParcelable("User");
         score = scoreUser.getPoints();
 
         txtPoints = (TextView)findViewById(R.id.txtPoints);
@@ -71,23 +72,6 @@ public class QuizActivity extends Activity {
                   //  score++;
                     //Log.d("score", "Your score" + score);
                 //}
-
-                switch (v.getId()) {
-                    case R.id.btnLesson:
-
-                        intent.setClass(QuizActivity.this, LessonActivity.class);
-                        startActivity(intent);
-                        break;
-                    case R.id.btnHint:
-                        intent.setClass(QuizActivity.this, HintActivity.class);
-                        startActivity(intent);
-                        break;
-                    case R.id.btnNext:
-                        intent.setClass(QuizActivity.this, QuizActivity.class);
-                        startActivity(intent);
-                        finish();
-                        break;
-                }
             }
                 /*if(qid<5){
                     curQuest = qList.get(qid);
@@ -102,6 +86,26 @@ public class QuizActivity extends Activity {
                     finish();
                  }*/
         });
+        btnHint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent.setClass(QuizActivity.this, HintActivity.class);
+                intent.putExtra("chosenLevel", selecLevel);
+                intent.putExtra("scoreUser", scoreUser.getPoints());
+                intent.putExtra("avatarUser",User.getAvatar());
+                startActivity(intent);
+            }
+        });
+
+        btnLesson.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent.setClass(QuizActivity.this, LessonActivity.class);
+                intent.putExtra("chosenLevel", selecLevel);
+                intent.putExtra("LessonUser", scoreUser);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -113,6 +117,7 @@ public class QuizActivity extends Activity {
 
     private void setQuestionView(){
         Random rd = new Random();
+        MySQLiteHelper db = new MySQLiteHelper(this);
         int rdQ;
 
         if(qList.size() >= 0){

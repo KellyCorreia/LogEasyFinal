@@ -34,7 +34,7 @@ public class LessonActivity extends Activity {
     LevelClass curLevel;
     UserClass User;
     ScoreboardClass Score;
-    Random rd;
+    Random rd = new Random();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +44,7 @@ public class LessonActivity extends Activity {
         Bundle extras = getIntent().getExtras();
         User = extras.getParcelable("chosenUser");
         selecLevel = extras.getString("chosenLevel");
+        String userLevel = extras.getString("userLevel");
 
         txtPoints = (TextView)findViewById(R.id.txtPoints);
         txtLesson =(TextView)findViewById(R.id.txtLesson);
@@ -62,6 +63,7 @@ public class LessonActivity extends Activity {
                 Intent intent = new Intent(LessonActivity.this, QuizActivity.class);
                 intent.putExtra("chosenLevel", selecLevel);
                 intent.putExtra("LessonUser", Score);
+                intent.putExtra("User", User);
                 startActivity(intent);
             }
         });
@@ -145,7 +147,7 @@ public class LessonActivity extends Activity {
 
         switch(selecLevel){
             case "L01":
-                //layout.setBackgroundResource(R.drawable.backgroundlevel1);
+                layout.setBackgroundResource(R.drawable.backgroundlevel1);
                 firstLayout.setBackgroundColor(Color.BLUE);
                 btnPlay.setBackgroundResource(R.drawable.buttomlevel);
                 break;
