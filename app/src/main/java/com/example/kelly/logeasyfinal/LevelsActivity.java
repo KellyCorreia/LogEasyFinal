@@ -57,7 +57,9 @@ public class LevelsActivity extends Activity {
         pointsView = (TextView) findViewById(R.id.txtvPoints);
         pointsView.setText(pointsUser+" Points");
 
-        db.updatingScore(60,user,user.getUser_id()):
+        db.addUserActivities(user.getUser_id());
+        db.updatingScore(60,user,"L02");
+
         btnLevels = (Button)findViewById(R.id.imbLevel1);
         btnLevels.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -203,10 +205,10 @@ public class LevelsActivity extends Activity {
 
     public void setIntent(UserClass user, String chosenLevelID){
         chosenLevel = db.getLevel(chosenLevelID);
-      //  if(db.lessonStart(chosenLevelID))
+       if(db.lessonStart(chosenLevelID))
             intent = new Intent(LevelsActivity.this, LessonActivity.class);
-        //else
-          //  intent = new Intent(LevelsActivity.this, QuizActivity.class);
+        else
+            intent = new Intent(LevelsActivity.this, QuizActivity.class);
 
         intent.putExtra("chosenUser", user);
         intent.putExtra("chosenLevel", chosenLevel);
