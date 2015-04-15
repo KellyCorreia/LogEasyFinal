@@ -30,6 +30,8 @@ public class QuizActivity extends Activity {
     RadioButton rightAnswer,userAnswer;
 
     int score = 0;
+    MySQLiteHelper db = new MySQLiteHelper(this);
+    int rdQ;
     int qid = 0;
     Intent intent = new Intent();
 
@@ -61,9 +63,13 @@ public class QuizActivity extends Activity {
             @Override
             public void onClick(View v) {
                 userAnswer = (RadioButton)findViewById(grp.getCheckedRadioButtonId());
+                qList.remove(rdQ);
                 if(userAnswer == rightAnswer){
                     Toast.makeText(QuizActivity.this, "Right Answer!", Toast.LENGTH_SHORT).show();
                     score += 10;
+                    db.updatingScore(score, User);
+                   // User = get
+                    setQuestionView();
 
                 }
                 //Log.d("yourans", curQuest.getRight_answer() + " " + answer.getText());
@@ -134,15 +140,14 @@ public class QuizActivity extends Activity {
         rdc.setText(aList.get(2).getAnswer_text());
         if(qList.get(rdQ).getRight_answer() == aList.get(0).getAnswer_id()) {
             rightAnswer = rda;
-        }else{
-            if(qList.get(rdQ).getRight_answer() == aList.get(1).getAnswer_id()){
+        }else {
+            if (qList.get(rdQ).getRight_answer() == aList.get(1).getAnswer_id()) {
                 rightAnswer = rdb;
-            }else{
+            } else {
                 rightAnswer = rdc;
             }
         }
-        //qList.remove(rdQ);
-        qid++;
+        //qid++;
     }
 
 

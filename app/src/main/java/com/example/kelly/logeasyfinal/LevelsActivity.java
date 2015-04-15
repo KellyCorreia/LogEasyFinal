@@ -167,7 +167,7 @@ public class LevelsActivity extends Activity {
         });
 
         Button btnScore = (Button) findViewById(R.id.btnScoreboard);
-        btnLevels.setOnClickListener(new View.OnClickListener() {
+        btnScore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LevelsActivity.this, Scoreboard_Activity.class);

@@ -62,6 +62,7 @@ public class LessonActivity extends Activity {
                 intent.putExtra("chosenLevel", selecLevel);
                 intent.putExtra("userScore", Score);
                 startActivity(intent);
+                finish();
             }
         });
     }
