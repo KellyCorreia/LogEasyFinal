@@ -292,7 +292,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
 
     }
-
+/*
     public void addUserActivities(Long userID){
         UserActivityClass userActivity;
         userActivity = new UserActivityClass(userID,"Q001","A001a","yes");
@@ -308,7 +308,8 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         userActivity = new UserActivityClass(userID,"Q006","A005a","yes");
         this.addUserActivity(userActivity);
     }
-
+*/
+   /*
     public boolean addUserActivity(UserActivityClass userActivity){
         ContentValues values = new ContentValues();
         values.put(COLUMN_USER_ID, userActivity.getUser_id());
@@ -319,7 +320,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         database.insert(TABLE_USERS_ACT, null, values);
         return true;
     }
-
+*/
     private void addUsers(){
         UserClass user;
         user = new UserClass("user1","user1@gmail.com","111","Avatar2");
@@ -447,7 +448,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         }
         return levelName;
     }
-
+/*
     public boolean lessonStart(String chosenLevelID, String userID){
         String selectQuery = "SELECT COUNT(*) FROM "+TABLE_USERS_ACT
                 +" AS u INNER JOIN "+TABLE_QUESTIONS+" AS q ON u."
@@ -461,7 +462,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             return false;
         }
         return true;
-    }
+    }*/
 ///fim
     public int rowcount(){
         int row=0;
