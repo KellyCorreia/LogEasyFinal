@@ -44,6 +44,7 @@ public class LessonActivity extends Activity {
         Bundle extras = getIntent().getExtras();
         User = extras.getParcelable("chosenUser");
         selecLevel = extras.getString("chosenLevel");
+        String userLevel = extras.getString("userLevel");
 
         txtPoints = (TextView)findViewById(R.id.txtPoints);
         txtLesson =(TextView)findViewById(R.id.txtLesson);
@@ -62,6 +63,7 @@ public class LessonActivity extends Activity {
                 Intent intent = new Intent(LessonActivity.this, QuizActivity.class);
                 intent.putExtra("chosenLevel", selecLevel);
                 intent.putExtra("LessonUser", Score);
+                intent.putExtra("User", User);
                 startActivity(intent);
             }
         });
