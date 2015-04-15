@@ -67,8 +67,36 @@ public class QuizActivity extends Activity {
                 if(userAnswer == rightAnswer){
                     Toast.makeText(QuizActivity.this, "Right Answer!", Toast.LENGTH_SHORT).show();
                     score += 10;
-                    db.updatingScore(score, User);
-                   // User = get
+                    //db.updatingScore(score, User);
+                    //Score = db.getScore(User.getUser_id());
+                    switch(score){
+                        case 50:
+                            Toast.makeText(QuizActivity.this, "Congratulations! You master the Wind element!", Toast.LENGTH_SHORT).show();
+                            db.updatingScore(score, User, "L02");
+                            break;
+                        case 100:
+                            Toast.makeText(QuizActivity.this, "Congratulations! You master the Sound element!", Toast.LENGTH_SHORT).show();
+                            db.updatingScore(score, User, "L03");
+                            break;
+                        case 150:
+                            Toast.makeText(QuizActivity.this, "Congratulations! You master the Metal element!", Toast.LENGTH_SHORT).show();
+                            db.updatingScore(score, User, "L03");
+                            break;
+                        case 200:
+                            Toast.makeText(QuizActivity.this, "Congratulations! You master the Sand element!", Toast.LENGTH_SHORT).show();
+                            db.updatingScore(score, User, "L04");
+                            break;
+                        case 250:
+                            Toast.makeText(QuizActivity.this, "Congratulations! You master the Snow element!", Toast.LENGTH_SHORT).show();
+                            db.updatingScore(score, User, "L05");
+                            break;
+                        case 300:
+                            Toast.makeText(QuizActivity.this, "Congratulations! You master the Plant element!", Toast.LENGTH_SHORT).show();
+                            db.updatingScore(score, User, "L06");
+                            break;
+                        case 100:
+
+                    }
                     setQuestionView();
 
                 }
