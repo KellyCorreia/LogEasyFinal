@@ -33,7 +33,7 @@ public class Scoreboard_Activity extends Activity {
 
         ListView lview = (ListView) findViewById(R.id.listview);
         populateList();
-        //Toast.makeText(Scoreboard_Activity.this, "Está chamando o score board", Toast.LENGTH_SHORT).show();
+        Toast.makeText(Scoreboard_Activity.this, "Está chamando o score board", Toast.LENGTH_SHORT).show();
         listviewAdapter adapter = new listviewAdapter(this, list);
         lview.setAdapter(adapter);
     }
@@ -56,12 +56,13 @@ public class Scoreboard_Activity extends Activity {
            scoreBoard = dbHelper.getScore(userId);
            points = scoreBoard.getPoints();
            wrong = scoreBoard.getWrong_percent();
+           wrong = wrong/(wrong + (points/10));
 
            HashMap temp = new HashMap();
            temp.put(FIRST_COLUMN, username);
-           temp.put(SECOND_COLUMN, "By NavNeet");
-           temp.put(THIRD_COLUMN, "Rs. 200");
-           temp.put(FOURTH_COLUMN, "Per Unit");
+           temp.put(SECOND_COLUMN, levelName);
+           temp.put(THIRD_COLUMN, points);
+           temp.put(FOURTH_COLUMN, wrong);
            list.add(temp);
 
        }
