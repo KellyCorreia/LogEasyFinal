@@ -411,7 +411,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     }
 ///inicio
     public String getUserLevel(Integer userID){
-        String selectQuery = "SELECT "+COLUMN_LEVEL_NAME+" FROM "+TABLE_LEVEL+" WHERE "+COLUMN_LEVEL_ID+" IN ( SELECT "+COLUMN_LEVEL_ID+" FROM "+TABLE_SCOREBOARD+" WHERE "+COLUMN_USER_ID+" = "+ userID.toString()+");";
+        String selectQuery = "SELECT "+COLUMN_LEVEL_NAME+" FROM "+TABLE_LEVEL+" WHERE "+COLUMN_LEVEL_ID+" IN ( SELECT "+COLUMN_LEVEL_ID+" FROM "+TABLE_SCOREBOARD+" WHERE "+COLUMN_USER_ID+" = '"+ userID.toString()+"' );";
         database=this.getReadableDatabase();
         Cursor cursor = database.rawQuery(selectQuery, null);
         String levelName = "vazio";
@@ -449,7 +449,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         ScoreboardClass scoreobj = new ScoreboardClass();
         Cursor cursor;
         String UserString = Integer.toString((int)UserID);
-        String selectQuery = "SELECT * FROM " + TABLE_SCOREBOARD + " WHERE " + COLUMN_USER_ID + " = " + UserString + ";";
+        String selectQuery = "SELECT * FROM " + TABLE_SCOREBOARD + " WHERE " + COLUMN_USER_ID + " = '" + UserString + "' ;";
         database = this.getReadableDatabase();
         cursor = database.rawQuery(selectQuery, null);
         if(cursor.moveToFirst()){
@@ -463,7 +463,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
     public List<AnswerClass> getAnswer(String qid){
         List<AnswerClass> Answerlist = new ArrayList<>();
-        String selectQuery = "SELECT * FROM " + TABLE_ANSWERS + "WHERE" + COLUMN_QUESTION_ID + "=" + qid +";";
+        String selectQuery = "SELECT * FROM " + TABLE_ANSWERS + "WHERE" + COLUMN_QUESTION_ID + "= '" + qid +"' ;";
         database=this.getReadableDatabase();
         Cursor cursor = database.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
@@ -481,7 +481,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     public List<QuestionClass> levelQuestion(String levelId) {
         List<QuestionClass> questionsList = new ArrayList<>();
         Cursor cursor;
-        String selectQuery = "SELECT * FROM " + TABLE_QUESTIONS + " WHERE " + COLUMN_LEVEL_ID + " = " + levelId + " ;";
+        String selectQuery = "SELECT * FROM " + TABLE_QUESTIONS + " WHERE " + COLUMN_LEVEL_ID + " = '" + levelId + "' ;";
         database = this.getReadableDatabase();
         cursor = database.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
@@ -500,7 +500,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     public boolean updatingScore(Integer score, UserClass User){
         Cursor cursor;
         String UserString = Integer.toString((int)User.getUser_id());
-        String selectQuery = "SELECT * FROM " + TABLE_SCOREBOARD + " WHERE " + COLUMN_USER_ID + " = " + UserString + ";";
+        String selectQuery = "SELECT * FROM " + TABLE_SCOREBOARD + " WHERE " + COLUMN_USER_ID + " = '" + UserString + "' ;";
         database = this.getReadableDatabase();
         cursor = database.rawQuery(selectQuery, null);
         ContentValues values;

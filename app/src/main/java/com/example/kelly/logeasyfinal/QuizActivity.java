@@ -90,9 +90,9 @@ public class QuizActivity extends Activity {
             @Override
             public void onClick(View v) {
                 intent.setClass(QuizActivity.this, HintActivity.class);
+                intent.putExtra("chosenUser", User);
                 intent.putExtra("chosenLevel", selecLevel);
-                intent.putExtra("scoreUser", Score);
-                intent.putExtra("avatarUser",User);
+                intent.putExtra("userScore", Score);
                 startActivity(intent);
             }
         });
@@ -101,8 +101,9 @@ public class QuizActivity extends Activity {
             @Override
             public void onClick(View v) {
                 intent.setClass(QuizActivity.this, LessonActivity.class);
+                intent.putExtra("chosenUser", User);
                 intent.putExtra("chosenLevel", selecLevel);
-                intent.putExtra("LessonUser", Score);
+                intent.putExtra("userScore", Score);
                 startActivity(intent);
             }
         });
