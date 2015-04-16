@@ -44,7 +44,7 @@ public class LessonActivity extends Activity {
         Bundle extras = getIntent().getExtras();
         User = (UserClass)extras.getParcelable("chosenUser");
         selecLevel = (LevelClass)extras.getParcelable("chosenLevel");
-        Score = (ScoreboardClass)extras.getParcelable("userScore");
+        Score = (ScoreboardClass)extras.getParcelable("userscore");
 
 
         bd = new MySQLiteHelper(this);
@@ -65,7 +65,7 @@ public class LessonActivity extends Activity {
                 Intent intent = new Intent(LessonActivity.this, QuizActivity.class);
                 intent.putExtra("chosenUser", User);
                 intent.putExtra("chosenLevel", selecLevel);
-                intent.putExtra("userScore", Score);
+                intent.putExtra("userscore", Score);
                 startActivity(intent);
                 finish();
             }

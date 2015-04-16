@@ -1,12 +1,12 @@
 package com.example.kelly.logeasyfinal;
 
 import android.app.Activity;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -30,6 +30,15 @@ public class Scoreboard_Activity extends Activity {
         populateList();
         listviewAdapter adapter = new listviewAdapter(this, list);
         lview.setAdapter(adapter);
+
+        Button btnScore = (Button) findViewById(R.id.btnBackLevels);
+        btnScore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+
+            }
+        });
 
     }
 
