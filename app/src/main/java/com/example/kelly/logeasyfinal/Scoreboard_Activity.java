@@ -10,13 +10,7 @@ import android.widget.Toast;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-
-import static com.example.kelly.logeasyfinal.Constant.FIRST_COLUMN;
-import static com.example.kelly.logeasyfinal.Constant.SECOND_COLUMN;
-import static com.example.kelly.logeasyfinal.Constant.THIRD_COLUMN;
-import static com.example.kelly.logeasyfinal.Constant.FOURTH_COLUMN;
 
 
 
@@ -36,6 +30,7 @@ public class Scoreboard_Activity extends Activity {
         populateList();
         listviewAdapter adapter = new listviewAdapter(this, list);
         lview.setAdapter(adapter);
+
     }
 
    private void populateList() {
@@ -62,7 +57,6 @@ public class Scoreboard_Activity extends Activity {
            if(totalAnswers != 0){
                wrongPerc = (wrongNum/totalAnswers)*100;
                wrongPerc = Double.parseDouble(new DecimalFormat("0.0").format(wrongPerc));
-              // Toast.makeText(Scoreboard_Activity.this, "num Erradas: " + wrongNum + " perc erradas: " + wrongPerc + "Total: " + totalAnswers, Toast.LENGTH_LONG).show();
            }
 
            //Toast.makeText(Scoreboard_Activity.this, "num Erradas: " + wrongNum + " perc erradas: " + wrongPerc + "Total: " + totalAnswers, Toast.LENGTH_LONG).show();
