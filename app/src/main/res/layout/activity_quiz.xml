@@ -2,95 +2,154 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.kelly.logeasyfinal.QuizActivity"
-    android:id="@+id/RelativeLayout">
+    android:id="@+id/layoutQuiz"
+    android:background="@drawable/backgroundlevel1">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:background="#ff192030"
+        android:id="@+id/layoutQuizTop">
+
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:weightSum="1"
-            android:id="@+id/linearLayout2">
+            android:layout_width="160dp"
+            android:layout_height="35dp"
+            android:background="@drawable/points"
+            android:id="@+id/layoutQuizLeft">
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.17"
-                android:id="@+id/LinearLayout">
+        </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="Large Text"
-                    android:id="@+id/txtPoints" />
-            </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="160dp"
+            android:layout_height="35dp"
+            android:id="@+id/layoutQuizRight">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Large Text"
-                android:id="@+id/txtQuestion" />
-
-            <RadioGroup
-                android:layout_width="366dp"
-                android:layout_height="152dp"
-                android:id="@+id/radioGroupAnswers">
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="New RadioButton"
-                    android:id="@+id/radioA" />
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="New RadioButton"
-                    android:id="@+id/radioB" />
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="New RadioButton"
-                    android:id="@+id/radioC" />
-            </RadioGroup>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="76dp"
-                android:layout_gravity="center_horizontal">
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Lesson"
-                    android:id="@+id/btnLesson"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:onClick= "OnClick"/>
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Hint"
-                    android:id="@+id/btnHint"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
-                    android:onClick= "OnClick"/>
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Next"
-                    android:id="@+id/btnNext"
-                    android:layout_alignTop="@+id/btnHint"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
-                    android:onClick= "OnClick"/>
-            </RelativeLayout>
-
+                android:textAlignment="textEnd"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginTop="5dp"
+                android:id="@+id/txtPoints" />
         </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layoutQuizTop"
+        android:layout_above="@+id/layoutQuizBottom"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="70dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/layoutQuizCenter"
+        android:background="#64ffffff">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Large Text"
+            android:id="@+id/txtQuestion"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:textAlignment="center"
+            android:typeface="sans"
+            android:gravity="center_horizontal"
+            android:textColor="#ff000000"
+            android:layout_marginTop="5dp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="152dp"
+            android:id="@+id/radioGroupAnswers"
+            android:layout_alignParentLeft="false"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentTop="false"
+            android:layout_marginTop="40dp"
+            android:layout_alignParentBottom="false"
+            android:layout_centerInParent="true">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New RadioButton"
+                android:id="@+id/radioA"
+                android:typeface="sans"
+                android:textColor="#ff1b2232" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New RadioButton"
+                android:id="@+id/radioB"
+                android:typeface="sans"
+                android:textColor="#ff1b2232" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New RadioButton"
+                android:id="@+id/radioC"
+                android:typeface="sans"
+                android:textColor="#ff1b2232" />
+        </RadioGroup>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layoutQuizBottom"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true">
+
+        <Button
+            android:layout_width="107dp"
+            android:layout_height="35dp"
+            android:id="@+id/btnLesson"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:onClick= "OnClick"
+            android:layout_gravity="left|bottom|center_vertical"
+            android:background="@drawable/lesson" />
+
+        <Button
+            android:layout_width="107dp"
+            android:layout_height="35dp"
+            android:id="@+id/btnHint"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:onClick= "OnClick"
+            android:layout_gravity="bottom|center"
+            android:background="@drawable/hint" />
+
+        <Button
+            android:layout_width="107dp"
+            android:layout_height="35dp"
+            android:id="@+id/btnNext"
+            android:layout_alignTop="@+id/btnHint"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:onClick= "OnClick"
+            android:layout_gravity="left|center_vertical"
+            android:background="@drawable/next" />
+    </LinearLayout>
 
 </RelativeLayout>
