@@ -1,6 +1,8 @@
 package com.example.kelly.logeasyfinal;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -149,6 +151,27 @@ public class LevelsActivity extends Activity {
                 startActivity(intent);
             }
         });
+
+        Button btnLogout = (Button) findViewById(R.id.btnLogout);
+        btnScore.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                AlertDialog alertDialog = new AlertDialog.Builder(LevelsActivity.this).create();
+                alertDialog.setTitle("Log Out");
+                alertDialog.setMessage("Proceed with Log Out?");
+                alertDialog.setButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                });
+                alertDialog.setButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                alertDialog.show();
+            }
+        });
+
 
         //welcome to the user
         Toast.makeText(LevelsActivity.this, "Welcome, " + user.getUsername()+" !", Toast.LENGTH_SHORT).show();
