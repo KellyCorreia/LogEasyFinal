@@ -67,7 +67,7 @@ public class QuizActivity extends Activity {
             public void onClick(View v) {
                 if ((rda.isChecked()) || (rdb.isChecked()) || (rdc.isChecked())) {
                     userAnswer = (RadioButton) findViewById(grp.getCheckedRadioButtonId());
-                    qList.remove(rdQ);
+                    qList.remove(0);
 
                     if (userAnswer == rightAnswer) {
                         Toast.makeText(QuizActivity.this, "Right Answer!", Toast.LENGTH_SHORT).show();
@@ -111,18 +111,11 @@ public class QuizActivity extends Activity {
 
 
     private void setQuestionView(){
-        Random rd = new Random();
-
-        if(qList.size() >= 0){
+        if(qList.size() == 0) {
             qList = db.levelQuestion(selecLevel.getLevel_id());
         }
 
-        for(int i = 0; i < qList.size(); i++){
-            Toast.makeText(QuizActivity.this, qList.get(i).getQuestion_text(), Toast.LENGTH_SHORT).show();
-        }
-
-        rdQ = rd.nextInt(qList.size());
-        aList = db.getAnswer(qList.get(rdQ).getQuestion_id());
+        aList = db.getAnswer(qList.get(0).getQuestion_id());
 
         switch(selecLevel.getLevel_id()){
             case "L01":
@@ -159,7 +152,7 @@ public class QuizActivity extends Activity {
 
 
         txtPoints.setText(Integer.toString(Score.getPoints()));
-        txtQuest.setText(qList.get(3).getQuestion_text());
+        txtQuest.setText(qList.get(0).getQuestion_text());
         rda.setText(aList.get(0).getAnswer_text());
         rdb.setText(aList.get(1).getAnswer_text());
         rdc.setText(aList.get(2).getAnswer_text());

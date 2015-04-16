@@ -224,10 +224,10 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         AnswerClass a9 = new AnswerClass("A003c", "Answer C", "Q003");
         this.addAnswer(a9);
 
-        AnswerClass a10 = new AnswerClass("A004a", "Answer A", "Q003");
+        AnswerClass a10 = new AnswerClass("A004a", "Answer A", "Q004");
         this.addAnswer(a10);
 
-        AnswerClass a11 = new AnswerClass("A004b", "Answer B", "Q003");
+        AnswerClass a11 = new AnswerClass("A004b", "Answer B", "Q004");
         this.addAnswer(a11);
 
         AnswerClass a12 = new AnswerClass("A004c", "Answer C", "Q004");
