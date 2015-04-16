@@ -23,7 +23,7 @@
             <Button
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:id="@+id/button"
+                android:id="@+id/btnLogout"
                 android:background="@drawable/buttonlogout"
                 android:gravity="center_vertical"
                 android:layout_marginLeft="5dp"
