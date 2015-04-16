@@ -228,4 +228,9 @@ public class LevelsActivity extends Activity {
         pointsView = (TextView) findViewById(R.id.txtvPoints);
         pointsView.setText(pointsUser+" Points");
     }
+
+    public void onRestart(){
+        super.onRestart();
+        setlevelView();
+    }
 }

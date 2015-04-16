@@ -34,7 +34,6 @@ public class QuizActivity extends Activity {
     MySQLiteHelper db;
 
     int score;
-    int rdQ = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -157,10 +156,10 @@ public class QuizActivity extends Activity {
         rdb.setText(aList.get(1).getAnswer_text());
         rdc.setText(aList.get(2).getAnswer_text());
 
-        if(qList.get(rdQ).getRight_answer() == aList.get(0).getAnswer_id()) {
+        if(qList.get(0).getRight_answer() == aList.get(0).getAnswer_id()) {
             rightAnswer = rda;
         }else {
-            if (qList.get(rdQ).getRight_answer() == aList.get(1).getAnswer_id()) {
+            if (qList.get(0).getRight_answer() == aList.get(1).getAnswer_id()) {
                 rightAnswer = rdb;
             } else {
                 rightAnswer = rdc;
@@ -173,67 +172,80 @@ public class QuizActivity extends Activity {
         intent.setClass(QuizActivity.this, LevelsActivity.class);
         intent.putExtra("chosenUser", User);
 
-
         switch(score) {
             case 50:
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Wind element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L02");
-
-                startActivity(intent);
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                finish();
                 break;
 
             case 100:
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Sound element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L03");
-                startActivity(intent);
+                finish();
+                //startActivity(intent);
                 break;
 
             case 150:
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Metal element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L04");
-                startActivity(intent);
+                finish();
+                //startActivity(intent);
                 break;
 
             case 200:
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Sand element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L05");
-                startActivity(intent);
+                finish();
+
+                //startActivity(intent);
                 break;
 
             case 250:
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Snow element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L06");
+                finish();
                 startActivity(intent);
                 break;
 
             case 300:
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Plant element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L07");
-                startActivity(intent);
+                finish();
+                //startActivity(intent);
                 break;
 
             case 350:
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Lighting element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L08");
-                startActivity(intent);
+                finish();
+                //startActivity(intent);
                 break;
 
             case 400:
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Lava element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L09");
-                startActivity(intent);
+                finish();
+                //startActivity(intent);
                 break;
 
             case 450:
                 Toast.makeText(QuizActivity.this, "Congratulations! You defeated the Dark City!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L10");
-                startActivity(intent);
+                finish();
+                //startActivity(intent);
                 break;
 
             case 500:
                 Toast.makeText(QuizActivity.this, "Congratulations! You are the master of the World!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L10");
-                startActivity(intent);
+                finish();
+                //startActivity(intent);
                 break;
 
             default:
