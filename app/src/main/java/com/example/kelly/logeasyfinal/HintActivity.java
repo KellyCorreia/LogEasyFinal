@@ -75,7 +75,6 @@ public class HintActivity extends Activity {
 
         txtPoints.setText(Integer.toString(score.getPoints()));
         txtHint.setText(seleclevel.getTip());
-        firstLayout.setBackgroundResource(R.drawable.ballonlevel);
 
         switch (user.getAvatar()){
             case "Avatar1":

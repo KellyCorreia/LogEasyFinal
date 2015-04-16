@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
+
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
@@ -16,7 +16,6 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 
 public class QuizActivity extends Activity {
@@ -68,6 +67,7 @@ public class QuizActivity extends Activity {
                 if ((rda.isChecked()) || (rdb.isChecked()) || (rdc.isChecked())) {
                     userAnswer = (RadioButton) findViewById(grp.getCheckedRadioButtonId());
                     qList.remove(0);
+                    createUserActivity();
 
                     if (userAnswer == rightAnswer) {
                         Toast.makeText(QuizActivity.this, "Right Answer!", Toast.LENGTH_SHORT).show();
@@ -156,6 +156,7 @@ public class QuizActivity extends Activity {
         rda.setText(aList.get(0).getAnswer_text());
         rdb.setText(aList.get(1).getAnswer_text());
         rdc.setText(aList.get(2).getAnswer_text());
+
         if(qList.get(rdQ).getRight_answer() == aList.get(0).getAnswer_id()) {
             rightAnswer = rda;
         }else {
@@ -163,7 +164,7 @@ public class QuizActivity extends Activity {
                 rightAnswer = rdb;
             } else {
                 rightAnswer = rdc;
-            }
+             }
         }
     }
 
@@ -172,7 +173,7 @@ public class QuizActivity extends Activity {
         intent.setClass(QuizActivity.this, LevelsActivity.class);
         intent.putExtra("chosenUser", User);
 
-        switch (score) {
+        switch(score) {
             case 50:
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Wind element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L02");
@@ -238,6 +239,24 @@ public class QuizActivity extends Activity {
                 break;
         }
         Score = db.getScore(User.getUser_id());
+    }
+
+    private void createUserActivity(){
+        UserActivityClass userActivity = new UserActivityClass();
+        String aID = "";
+
+        for(int i = 0; i < aList.size();i++){
+            if(userAnswer.getText() == aList.get(i).getAnswer_text()){
+                aID = aList.get(i).getAnswer_id();
+                break;
+            }
+        }
+
+        userActivity.setUser_id(User.getUser_id());
+        userActivity.setQuestion_id(qList.get(0).getQuestion_id());
+        userActivity.setAnswer_id(aID);
+        db.addUserActivity(userActivity);
+
     }
 
 

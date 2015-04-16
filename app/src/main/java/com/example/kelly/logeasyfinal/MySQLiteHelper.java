@@ -82,7 +82,6 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             + " integer primary key autoincrement, " + COLUMN_USER_ID
             + " integer not null, "+ COLUMN_QUESTION_ID
             + " text, "+ COLUMN_ANSWER_ID
-            + " text, "+ COLUMN_WRONG_YN
             + " text, "+ COLUMN_DATE
             + " text);";
 
@@ -310,15 +309,15 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
     public void addUserActivities(Long userID){
         UserActivityClass userActivity;
-        userActivity = new UserActivityClass(userID,"Q001","A001a","yes");
+        userActivity = new UserActivityClass(userID,"Q001","A001a");
         this.addUserActivity(userActivity);
-        userActivity = new UserActivityClass(userID,"Q002","A002a","yes");
+        userActivity = new UserActivityClass(userID,"Q002","A002a");
         this.addUserActivity(userActivity);
-        userActivity = new UserActivityClass(userID,"Q003","A003a","yes");
+        userActivity = new UserActivityClass(userID,"Q003","A003a");
         this.addUserActivity(userActivity);
-        userActivity = new UserActivityClass(userID,"Q004","A004a","yes");
+        userActivity = new UserActivityClass(userID,"Q004","A004a");
         this.addUserActivity(userActivity);
-        userActivity = new UserActivityClass(userID,"Q005","A005a","yes");
+        userActivity = new UserActivityClass(userID,"Q005","A005a");
         this.addUserActivity(userActivity);
 
     }
@@ -329,7 +328,6 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         values.put(COLUMN_USER_ID, userActivity.getUser_id());
         values.put(COLUMN_QUESTION_ID, userActivity.getQuestion_id());
         values.put(COLUMN_ANSWER_ID, userActivity.getAnswer_id());
-        values.put(COLUMN_WRONG_YN, userActivity.getWrong_YN());
         values.put(COLUMN_DATE, userActivity.getDate());
         database.insert(TABLE_USERS_ACT, null, values);
         return true;
