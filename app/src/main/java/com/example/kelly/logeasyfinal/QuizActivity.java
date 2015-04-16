@@ -33,7 +33,7 @@ public class QuizActivity extends Activity {
     Intent intent = new Intent();
     MySQLiteHelper db;
 
-    int score = 0;
+    int score;
     int rdQ = 0;
 
     @Override
@@ -66,14 +66,14 @@ public class QuizActivity extends Activity {
             public void onClick(View v) {
                 if ((rda.isChecked()) || (rdb.isChecked()) || (rdc.isChecked())) {
                     userAnswer = (RadioButton) findViewById(grp.getCheckedRadioButtonId());
-                    qList.remove(0);
                     createUserActivity();
 
                     if (userAnswer == rightAnswer) {
                         Toast.makeText(QuizActivity.this, "Right Answer!", Toast.LENGTH_SHORT).show();
-                        if (selecLevel.getLevel_id() == Score.getLevel_id()) {
+                        if (selecLevel.getLevel_id().equals(Score.getLevel_id())) {
+                            Toast.makeText(QuizActivity.this, Integer.toString(score), Toast.LENGTH_SHORT).show();
                             score += 10;
-                            setIntent();
+                            setScoreBoard();
                         }
                     }else {
                         Toast.makeText(QuizActivity.this, "Wrong answer!", Toast.LENGTH_SHORT).show();
@@ -111,6 +111,7 @@ public class QuizActivity extends Activity {
 
 
     private void setQuestionView(){
+
         if(qList.size() == 0) {
             qList = db.levelQuestion(selecLevel.getLevel_id());
         }
@@ -168,13 +169,15 @@ public class QuizActivity extends Activity {
         }
     }
 
-    private void setIntent(){
+    private void setScoreBoard(){
 
         intent.setClass(QuizActivity.this, LevelsActivity.class);
         intent.putExtra("chosenUser", User);
 
+
         switch(score) {
             case 50:
+                Toast.makeText(QuizActivity.this, Integer.toString(Score.getPoints()), Toast.LENGTH_SHORT).show();
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Wind element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L02");
                 startActivity(intent);
@@ -256,6 +259,7 @@ public class QuizActivity extends Activity {
         userActivity.setQuestion_id(qList.get(0).getQuestion_id());
         userActivity.setAnswer_id(aID);
         db.addUserActivity(userActivity);
+        qList.remove(0);
 
     }
 
