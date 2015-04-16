@@ -70,7 +70,6 @@ public class QuizActivity extends Activity {
                     if (userAnswer == rightAnswer) {
                         Toast.makeText(QuizActivity.this, "Right Answer!", Toast.LENGTH_SHORT).show();
                         if (selecLevel.getLevel_id().equals(Score.getLevel_id())) {
-                            Toast.makeText(QuizActivity.this, Integer.toString(score), Toast.LENGTH_SHORT).show();
                             score += 10;
                             setScoreBoard();
                         }
@@ -176,7 +175,6 @@ public class QuizActivity extends Activity {
 
         switch(score) {
             case 50:
-                Toast.makeText(QuizActivity.this, Integer.toString(Score.getPoints()), Toast.LENGTH_SHORT).show();
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Wind element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L02");
                 startActivity(intent);

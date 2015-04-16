@@ -24,7 +24,6 @@ public class LogEasy extends Activity {
             public void onClick(View v) {
                 intent = new Intent(LogEasy.this,Choose_Player.class);
                 startActivity(intent);
-                finish();
             }
         });
 
@@ -33,7 +32,6 @@ public class LogEasy extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(LogEasy.this, LoginActivity.class);
                 startActivity(intent);
-                finish();
             }
         });
 
