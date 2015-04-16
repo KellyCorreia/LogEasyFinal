@@ -33,7 +33,6 @@ public class Scoreboard_Activity extends Activity {
 
         ListView lview = (ListView) findViewById(R.id.listview);
         populateList();
-        //Toast.makeText(Scoreboard_Activity.this, "Está chamando o score board", Toast.LENGTH_SHORT).show();
         listviewAdapter adapter = new listviewAdapter(this, list);
         lview.setAdapter(adapter);
     }
@@ -43,8 +42,6 @@ public class Scoreboard_Activity extends Activity {
        int points, wrongNum, totalAnswers;
        long userId;
        double wrongPerc;
-
-       list = new ArrayList<ScoreboardScreen>();
 
        dbHelper = new MySQLiteHelper(this);
        userList = dbHelper.getAllUsers();
@@ -59,65 +56,18 @@ public class Scoreboard_Activity extends Activity {
            scoreBoard = dbHelper.getScore(userId);
            points = scoreBoard.getPoints();
            wrongNum = scoreBoard.getWrong_percent();
-           totalAnswers = wrongNum + (points/100);
-           if(totalAnswers == 0){
-               wrongPerc = 0.0;
-           }else{
-               wrongPerc = wrongNum/(wrongNum + (points/10));
+           totalAnswers = wrongNum + (points/10);
+           wrongPerc = 0.0;
+           if(totalAnswers != 0){
+               wrongPerc = wrongNum/totalAnswers;
            }
 
-           /*String strPoints = String.valueOf(points);
-           String strwrong = String.valueOf(wrongPerc);*/
-
+           Toast.makeText(Scoreboard_Activity.this, "num Erradas: " + wrongNum + " perc erradas: " + wrongPerc + "Total: " + totalAnswers, Toast.LENGTH_LONG).show();
            ScoreboardScreen scoreboard = new ScoreboardScreen(userName, levelName, points, wrongPerc);
 
            dbHelper.addScoreboardScreen(scoreboard);
            list = dbHelper.getScoreboardTable();
-
-           /*HashMap temp = new HashMap();
-           temp.put(FIRST_COLUMN, username);
-           temp.put(SECOND_COLUMN, levelName);
-           temp.put(THIRD_COLUMN, strPoints);
-           temp.put(FOURTH_COLUMN, strwrong);
-           list.add(temp);*/
-
        }
-
-
-        /*HashMap temp = new HashMap();
-        temp.put(FIRST_COLUMN,"Colored Notebooks");
-        temp.put(SECOND_COLUMN, "By NavNeet");
-        temp.put(THIRD_COLUMN, "Rs. 200");
-        temp.put(FOURTH_COLUMN, "Per Unit");
-        list.add(temp);
-
-        HashMap temp1 = new HashMap();
-        temp1.put(FIRST_COLUMN,"Diaries");
-        temp1.put(SECOND_COLUMN, "By Amee Products");
-        temp1.put(THIRD_COLUMN, "Rs. 400");
-        temp1.put(FOURTH_COLUMN, "Per Unit");
-        list.add(temp1);
-
-        HashMap temp2 = new HashMap();
-        temp2.put(FIRST_COLUMN,"Note Books and Stationery");
-        temp2.put(SECOND_COLUMN, "By National Products");
-        temp2.put(THIRD_COLUMN, "Rs. 600");
-        temp2.put(FOURTH_COLUMN, "Per Unit");
-        list.add(temp2);
-
-        HashMap temp3 = new HashMap();
-        temp3.put(FIRST_COLUMN,"Corporate Diaries");
-        temp3.put(SECOND_COLUMN, "By Devarsh Prakashan");
-        temp3.put(THIRD_COLUMN, "Rs. 800");
-        temp3.put(FOURTH_COLUMN, "Per Unit");
-        list.add(temp3);
-
-        HashMap temp4 = new HashMap();
-        temp4.put(FIRST_COLUMN,"Writing Pad");
-        temp4.put(SECOND_COLUMN, "By TechnoTalaktive Pvt. Ltd.");
-        temp4.put(THIRD_COLUMN, "Rs. 100");
-        temp4.put(FOURTH_COLUMN, "Per Unit");
-        list.add(temp4);*/
     }
 
     @Override
