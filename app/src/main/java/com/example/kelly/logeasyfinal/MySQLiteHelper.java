@@ -539,7 +539,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             levelobj.setLevelname(cursor.getString(1));
             levelobj.setLesson(cursor.getString(2));
             levelobj.setTip(cursor.getString(3));
-        } while (cursor.moveToNext());
+        }
         return levelobj;
     }
 
@@ -555,7 +555,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             scoreobj.setPoints(cursor.getInt(1));
             scoreobj.setWrong_percent(cursor.getInt(2));
             scoreobj.setLevel_id(cursor.getString(3));
-        } while (cursor.moveToNext());
+        }
         return scoreobj;
     }
 
@@ -583,14 +583,15 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         database = this.getReadableDatabase();
         cursor = database.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
-            QuestionClass levelQuestion = new QuestionClass();
-            levelQuestion.setQuestion_id(cursor.getString(0));
-            levelQuestion.setQuestion_text(cursor.getString(1));
-            levelQuestion.setLevel_id(cursor.getString(2));
-            levelQuestion.setRight_answer(cursor.getString(3));
-            questionsList.add(levelQuestion);
+            do {
+                QuestionClass levelQuestion = new QuestionClass();
+                levelQuestion.setQuestion_id(cursor.getString(0));
+                levelQuestion.setQuestion_text(cursor.getString(1));
+                levelQuestion.setLevel_id(cursor.getString(2));
+                levelQuestion.setRight_answer(cursor.getString(3));
+                questionsList.add(levelQuestion);
+            } while (cursor.moveToNext());
         }
-        while (cursor.moveToNext()) ;
 
         return questionsList;
     }
@@ -609,7 +610,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             values.put(COLUMN_POINTS, score);
             values.put(COLUMN_WRONG_PERCENT, cursor.getInt(2));
             values.put(COLUMN_LEVEL_ID, levelID);
-        } while (cursor.moveToNext());
+        }
 
         database = this.getWritableDatabase();
         database.update(TABLE_SCOREBOARD,values, COLUMN_USER_ID + "= ?" + UserString, null);

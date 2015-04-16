@@ -35,7 +35,7 @@ public class QuizActivity extends Activity {
     MySQLiteHelper db;
 
     int score = 0;
-    int rdQ;
+    int rdQ = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,12 +60,7 @@ public class QuizActivity extends Activity {
         btnLesson = (Button)findViewById(R.id.btnLesson);
         layout = (RelativeLayout)findViewById(R.id.layoutQuiz);
 
-
         setQuestionView();
-
-        for(int i = 0; i > qList.size(); i++){
-            Toast.makeText(QuizActivity.this, qList.get(i).getQuestion_text(), Toast.LENGTH_SHORT).show();
-        }
 
         butNext.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,11 +75,11 @@ public class QuizActivity extends Activity {
                             score += 10;
                             setIntent();
                         }
-                    } else {
+                    }else {
                         Toast.makeText(QuizActivity.this, "Wrong answer!", Toast.LENGTH_SHORT).show();
                     }
-                    setQuestionView();
                     grp.clearCheck();
+                    setQuestionView();
                 }else{
                     Toast.makeText(QuizActivity.this, "Select one option!", Toast.LENGTH_SHORT).show();
                 }
@@ -117,10 +112,13 @@ public class QuizActivity extends Activity {
 
     private void setQuestionView(){
         Random rd = new Random();
-        int rdQ;
 
         if(qList.size() >= 0){
             qList = db.levelQuestion(selecLevel.getLevel_id());
+        }
+
+        for(int i = 0; i < qList.size(); i++){
+            Toast.makeText(QuizActivity.this, qList.get(i).getQuestion_text(), Toast.LENGTH_SHORT).show();
         }
 
         rdQ = rd.nextInt(qList.size());
@@ -161,7 +159,7 @@ public class QuizActivity extends Activity {
 
 
         txtPoints.setText(Integer.toString(Score.getPoints()));
-        txtQuest.setText(qList.get(rdQ).getQuestion_text());
+        txtQuest.setText(qList.get(3).getQuestion_text());
         rda.setText(aList.get(0).getAnswer_text());
         rdb.setText(aList.get(1).getAnswer_text());
         rdc.setText(aList.get(2).getAnswer_text());
@@ -191,6 +189,7 @@ public class QuizActivity extends Activity {
             case 100:
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Sound element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L03");
+                startActivity(intent);
                 break;
 
             case 150:
