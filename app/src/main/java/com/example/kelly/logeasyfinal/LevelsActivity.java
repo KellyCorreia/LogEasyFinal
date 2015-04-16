@@ -1,8 +1,6 @@
 package com.example.kelly.logeasyfinal;
 
 import android.app.Activity;
-import android.app.DialogFragment;
-import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -187,7 +185,7 @@ public class LevelsActivity extends Activity {
 
         intent.putExtra("chosenUser", user);
         intent.putExtra("chosenLevel", chosenLevel);
-        intent.putExtra("userscore", userScore);
+        intent.putExtra("userScore", userScore);
         startActivity(intent);
     }
     public void setToast(String levelBefore){
@@ -231,4 +229,8 @@ public class LevelsActivity extends Activity {
         pointsView.setText(pointsUser+" Points");
     }
 
+    public void onRestart(){
+        super.onRestart();
+        setlevelView();
+    }
 }

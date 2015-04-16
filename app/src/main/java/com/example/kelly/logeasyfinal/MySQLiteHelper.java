@@ -182,6 +182,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     }
 
     private void addLevels(){
+
         LevelClass l1 = new LevelClass("L01", "Level 1 - Wind","Hello! This is " +
                 "the first level of your power conquest. On this level you are going to " +
                         "learn the concept of propositional logic and contradictory propositions. " +
@@ -206,10 +207,30 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                         "of ‘a’ and vice-versa. " + "\n", "Tip1");
         this.addLevel(l1);
 
-        LevelClass l2 = new LevelClass("L02", "Level 2 - Sound", "Lesson 2", "Tip2");
+        LevelClass l2 = new LevelClass("L02", "Level 2 - Sound", "Hello! This is the last level of " +
+                "your air power conquest. On this level you are going to learn the conjunctions. In " +
+                "the end of this level you will have the air power, but to finish the level 2 you have" +
+                " to prove your knowledge about sound as well as you proved about wind by answering 5" +
+                " questions right." + "\n" + "So, lets get started with the concepts:\n" + "The " +
+                "conjunctions use operators such as “and” or “but” to connect two simple propositions," +
+                " for example:" + "\n" + "“The wind is blowing hard and it is raining”." +  "\n" +
+                "To evaluate this proposition as true both propositions must be true, if one is false" +
+                " then the whole statement is false. The “and” operator can be also represented by “^”.\n", "Tip2");
         this.addLevel(l2);
 
-        LevelClass l3 = new LevelClass("L03", "Level 3 Name", "Lesson 3", "Tip 3");
+        LevelClass l3 = new LevelClass("L03", "Level 3 Name", "In order to master the Earth power " +
+                "you have to pass two levels (Metal and Sand). This is the first one that you have" +
+                " to pass, Metal. On this level you are going to learn the disjunctions and to " +
+                "complete the level 3 you have to prove your knowledge about metal by answering 5 " +
+                "questions right." + "\n" + "So, lets get started with the concepts:\n" + "The " +
+                "disjunctions use the “or” operator connects two simple propositions, for example:"+ "\n" +
+                "“Iron is a kind of metal or it is a kind of stone”. " + "\n" + "We have two kinds of " +
+                "disjunctions: Inclusive “or” and Exclusive “or”." + "\n" + "In the inclusive “or” the " +
+                "propositions are evaluated as true when any one of claims is true. The whole " +
+                "sentence will be false only if both propositions are false." + "\n" + "In the exclusive " +
+                "“or” the propositions are evaluated as true when only one of the claims is true. " +
+                "The whole statement is false when both claims have the same value, both false or " +
+                "both true." + "\n" + "The “or” operator can be also represented by “v”.\n", "Tip 3");
         this.addLevel(l3);
 
         LevelClass l4 = new LevelClass("L04", "Level 4 Name", "Lesson 4", "Tip 4");

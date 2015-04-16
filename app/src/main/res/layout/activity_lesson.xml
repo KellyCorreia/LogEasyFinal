@@ -51,7 +51,8 @@
         android:layout_above="@+id/linearLayoutBottom"
         android:gravity="center_vertical|right|center_horizontal"
         android:background="@drawable/ballonlevel"
-        android:layout_marginRight="20dp">
+        android:layout_marginRight="20dp"
+        android:weightSum="1">
 
         <ScrollView
             android:layout_width="200dp"
@@ -59,7 +60,8 @@
             android:id="@+id/scrollViewLesson"
             android:fillViewport="false"
             android:layout_margin="5dp"
-            android:layout_gravity="top|center_horizontal">
+            android:layout_gravity="top|center_horizontal"
+            android:layout_weight="0.56">
 
             <TextView
                 android:layout_width="wrap_content"
