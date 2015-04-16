@@ -16,7 +16,6 @@
         android:layout_height="60dp"
         android:id="@+id/layoutTopLoginUser"
         android:background="@drawable/toploginuser"
-        android:layout_alignParentStart="true"
         android:layout_centerHorizontal="true"/>
 
     <ScrollView android:id="@+id/login_form" android:layout_width="wrap_content"
@@ -24,7 +23,6 @@
         android:layout_gravity="center"
         android:layout_below="@+id/layoutTopLoginUser"
         android:layout_centerInParent="true"
-        android:layout_alignWithParentIfMissing="true"
         android:layout_above="@+id/layoutBottomLoginUser">
 
         <LinearLayout
@@ -98,7 +96,6 @@
         android:layout_height="40dp"
         android:id="@+id/layoutBottomLoginUser"
         android:layout_centerHorizontal="true"
-        android:layout_alignParentEnd="true"
         android:background="@drawable/bottomcreateuser"
         android:layout_alignParentBottom="true"/>
 
