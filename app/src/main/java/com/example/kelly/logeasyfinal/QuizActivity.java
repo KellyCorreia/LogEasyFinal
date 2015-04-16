@@ -21,13 +21,12 @@ import java.util.Random;
 
 public class QuizActivity extends Activity {
     List<QuestionClass> qList = new ArrayList<>();
-    List<AnswerClass> aList;
+    List<AnswerClass> aList = new ArrayList<>();
     TextView txtQuest, txtPoints;
     RadioGroup grp;
     RadioButton rda, rdb, rdc;
     Button butNext, btnLesson, btnHint;
     RelativeLayout layout;
-    RelativeLayout firstLayout;
     RadioButton rightAnswer,userAnswer;
     ScoreboardClass Score;
     UserClass User;
@@ -36,7 +35,7 @@ public class QuizActivity extends Activity {
     MySQLiteHelper db;
 
     int score = 0;
-    int rdQ;
+    int rdQ = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,47 +59,33 @@ public class QuizActivity extends Activity {
         btnHint = (Button)findViewById(R.id.btnHint);
         btnLesson = (Button)findViewById(R.id.btnLesson);
         layout = (RelativeLayout)findViewById(R.id.layoutQuiz);
-        firstLayout = (RelativeLayout)findViewById(R.id.layoutQuizCenter);
 
         setQuestionView();
 
         butNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                userAnswer = (RadioButton)findViewById(grp.getCheckedRadioButtonId());
-                qList.remove(rdQ);
+                if ((rda.isChecked()) || (rdb.isChecked()) || (rdc.isChecked())) {
+                    userAnswer = (RadioButton) findViewById(grp.getCheckedRadioButtonId());
+                    qList.remove(0);
 
-                if(userAnswer == rightAnswer){
-                    Toast.makeText(QuizActivity.this, "Right Answer!", Toast.LENGTH_SHORT).show();
-                    if(selecLevel.getLevel_id() == Score.getLevel_id()) {
-                        score += 10;
-                        setIntent();
+                    if (userAnswer == rightAnswer) {
+                        Toast.makeText(QuizActivity.this, "Right Answer!", Toast.LENGTH_SHORT).show();
+                        if (selecLevel.getLevel_id() == Score.getLevel_id()) {
+                            score += 10;
+                            setIntent();
+                        }
+                    }else {
+                        Toast.makeText(QuizActivity.this, "Wrong answer!", Toast.LENGTH_SHORT).show();
                     }
-                }else{
-                    Toast.makeText(QuizActivity.this, "Wrong answer!", Toast.LENGTH_SHORT).show();
-                }
-                setQuestionView();
-
-                //Log.d("yourans", curQuest.getRight_answer() + " " + answer.getText());
-                //if(curQuest.getRight_answer().equals(answer.getText()))
-                //{
-                  //  score++;
-                    //Log.d("score", "Your score" + score);
-                //}
-            }
-                /*if(qid<5){
-                    curQuest = qList.get(qid);
+                    grp.clearCheck();
                     setQuestionView();
                 }else{
-                    if(v.findViewById(R.id.btnLesson){}
-                    Intent intent = new Intent(QuizActivity.this, ResultActivity.class);
-                    Bundle bu = new Bundle();
-                    bu.putInt("score", score); //Your score
-                    intent.putExtras(bu); //Put your score to your next Intent
-                    startActivity(intent);
-                    finish();
-                 }*/
+                    Toast.makeText(QuizActivity.this, "Select one option!", Toast.LENGTH_SHORT).show();
+                }
+            }
         });
+
         btnHint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -126,17 +111,12 @@ public class QuizActivity extends Activity {
 
 
     private void setQuestionView(){
-        Random rd = new Random();
-        int rdQ;
-
-        if(qList.size() >= 0){
+        if(qList.size() == 0) {
             qList = db.levelQuestion(selecLevel.getLevel_id());
         }
 
-        rdQ = rd.nextInt(qList.size());
-        aList = db.getAnswer(qList.get(rdQ).getQuestion_id());
+        aList = db.getAnswer(qList.get(0).getQuestion_id());
 
-        firstLayout.setBackgroundColor(Color.parseColor("#FF192030"));
         switch(selecLevel.getLevel_id()){
             case "L01":
                 layout.setBackgroundResource(R.drawable.backgroundlevel1);
@@ -172,7 +152,7 @@ public class QuizActivity extends Activity {
 
 
         txtPoints.setText(Integer.toString(Score.getPoints()));
-        txtQuest.setText(qList.get(rdQ).getQuestion_text());
+        txtQuest.setText(qList.get(0).getQuestion_text());
         rda.setText(aList.get(0).getAnswer_text());
         rdb.setText(aList.get(1).getAnswer_text());
         rdc.setText(aList.get(2).getAnswer_text());
@@ -202,6 +182,7 @@ public class QuizActivity extends Activity {
             case 100:
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Sound element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L03");
+                startActivity(intent);
                 break;
 
             case 150:

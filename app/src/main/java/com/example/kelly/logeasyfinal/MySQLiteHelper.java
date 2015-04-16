@@ -224,10 +224,10 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         AnswerClass a9 = new AnswerClass("A003c", "Answer C", "Q003");
         this.addAnswer(a9);
 
-        AnswerClass a10 = new AnswerClass("A004a", "Answer A", "Q003");
+        AnswerClass a10 = new AnswerClass("A004a", "Answer A", "Q004");
         this.addAnswer(a10);
 
-        AnswerClass a11 = new AnswerClass("A004b", "Answer B", "Q003");
+        AnswerClass a11 = new AnswerClass("A004b", "Answer B", "Q004");
         this.addAnswer(a11);
 
         AnswerClass a12 = new AnswerClass("A004c", "Answer C", "Q004");
@@ -539,7 +539,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             levelobj.setLevelname(cursor.getString(1));
             levelobj.setLesson(cursor.getString(2));
             levelobj.setTip(cursor.getString(3));
-        } while (cursor.moveToNext());
+        }
         return levelobj;
     }
 
@@ -555,7 +555,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             scoreobj.setPoints(cursor.getInt(1));
             scoreobj.setWrong_percent(cursor.getInt(2));
             scoreobj.setLevel_id(cursor.getString(3));
-        } while (cursor.moveToNext());
+        }
         return scoreobj;
     }
 
@@ -583,14 +583,15 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         database = this.getReadableDatabase();
         cursor = database.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
-            QuestionClass levelQuestion = new QuestionClass();
-            levelQuestion.setQuestion_id(cursor.getString(0));
-            levelQuestion.setQuestion_text(cursor.getString(1));
-            levelQuestion.setLevel_id(cursor.getString(2));
-            levelQuestion.setRight_answer(cursor.getString(3));
-            questionsList.add(levelQuestion);
+            do {
+                QuestionClass levelQuestion = new QuestionClass();
+                levelQuestion.setQuestion_id(cursor.getString(0));
+                levelQuestion.setQuestion_text(cursor.getString(1));
+                levelQuestion.setLevel_id(cursor.getString(2));
+                levelQuestion.setRight_answer(cursor.getString(3));
+                questionsList.add(levelQuestion);
+            } while (cursor.moveToNext());
         }
-        while (cursor.moveToNext()) ;
 
         return questionsList;
     }
@@ -609,7 +610,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             values.put(COLUMN_POINTS, score);
             values.put(COLUMN_WRONG_PERCENT, cursor.getInt(2));
             values.put(COLUMN_LEVEL_ID, levelID);
-        } while (cursor.moveToNext());
+        }
 
         database = this.getWritableDatabase();
         database.update(TABLE_SCOREBOARD,values, COLUMN_USER_ID + "= ?" + UserString, null);

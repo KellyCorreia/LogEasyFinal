@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -22,7 +23,8 @@ public class HintActivity extends Activity {
     TextView txtHint, txtPoints;
     Button btnPlay;
     ImageView ImgAvatar;
-    LinearLayout layout, firstLayout, secondLayout;
+    RelativeLayout layout;
+    LinearLayout firstLayout;
     UserClass user;
     ScoreboardClass score;
     LevelClass seleclevel;
@@ -41,10 +43,9 @@ public class HintActivity extends Activity {
         txtPoints = (TextView)findViewById(R.id.txtPoints);
         txtHint =(TextView)findViewById(R.id.txtHint);
         btnPlay=(Button)findViewById(R.id.btnPlay);
-        ImgAvatar = (ImageView)findViewById(R.id.imvAvatarHint);
-        layout = (LinearLayout)findViewById(R.id.layoutHint);
-        firstLayout = (LinearLayout)findViewById(R.id.layoutHintTop);
-        secondLayout = (LinearLayout)findViewById(R.id.layoutHintMiddle);
+        ImgAvatar = (ImageView)findViewById(R.id.imgAvatarHint);
+        layout = (RelativeLayout)findViewById(R.id.layoutHint);
+        firstLayout = (LinearLayout)findViewById(R.id.layoutHintMiddle);
 
         setHintView();
 
@@ -74,8 +75,7 @@ public class HintActivity extends Activity {
 
         txtPoints.setText(Integer.toString(score.getPoints()));
         txtHint.setText(seleclevel.getTip());
-        secondLayout.setBackgroundResource(R.drawable.ballonlevel);
-        firstLayout.setBackgroundColor(Color.parseColor("#FF192030"));
+        firstLayout.setBackgroundResource(R.drawable.ballonlevel);
 
         switch (user.getAvatar()){
             case "Avatar1":
@@ -150,43 +150,43 @@ public class HintActivity extends Activity {
         switch(seleclevel.getLevel_id()){
             case "L01":
                 layout.setBackgroundResource(R.drawable.backgroundlevel1);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel);
+                btnPlay.setBackgroundResource(R.drawable.buttomhin1);
                 break;
             case "Level 2 Name":
                 layout.setBackgroundResource(R.drawable.backgroundlevel2);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel2);
+                btnPlay.setBackgroundResource(R.drawable.buttomhin2);
                 break;
             case "Level 3 Name":
                 layout.setBackgroundResource(R.drawable.backgroundlevel3);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel3);
+                btnPlay.setBackgroundResource(R.drawable.buttomhin3);
                 break;
             case "Level 4 Name":
                 layout.setBackgroundResource(R.drawable.backgroundlevel4);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel4);
+                btnPlay.setBackgroundResource(R.drawable.buttomhin4);
                 break;
             case "Level 5 Name":
                 layout.setBackgroundResource(R.drawable.backgroundlevel5);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel5);
+                btnPlay.setBackgroundResource(R.drawable.buttomhin5);
                 break;
             case "Level 6 Name":
                 layout.setBackgroundResource(R.drawable.backgroundlevel6);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel6);
+                btnPlay.setBackgroundResource(R.drawable.buttomhin6);
                 break;
             case "Level 7 Name":
                 layout.setBackgroundResource(R.drawable.backgroundlevel7);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel7);
+                btnPlay.setBackgroundResource(R.drawable.buttomhin7);
                 break;
             case "Level 8 Name":
                 layout.setBackgroundResource(R.drawable.backgroundlevel8);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel8);
+                btnPlay.setBackgroundResource(R.drawable.buttomhin8);
                 break;
             case "Level 9 Name":
                 layout.setBackgroundResource(R.drawable.backgroundlevel9);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel9);
+                btnPlay.setBackgroundResource(R.drawable.buttomhin9);
                 break;
             case "Level 10 Name":
                 layout.setBackgroundResource(R.drawable.backgroundlevel10);
-                btnPlay.setBackgroundResource(R.drawable.buttomlevel10);
+                btnPlay.setBackgroundResource(R.drawable.buttomhin10);
                 break;
         }
     }
