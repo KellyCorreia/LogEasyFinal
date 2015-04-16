@@ -195,7 +195,6 @@ public class LevelsActivity extends Activity {
 
     public boolean enoughPoints(int level){
         int valor = (level*50);
-        Toast.makeText(LevelsActivity.this, "Sorry, but you don't have enough points to access this level!"+Integer.toString(valor), Toast.LENGTH_SHORT).show();
 
         if (pointsU>=valor)
             return false;
