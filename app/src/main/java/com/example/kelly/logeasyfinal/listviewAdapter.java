@@ -87,7 +87,7 @@ public class listviewAdapter extends BaseAdapter
         holder.txtFirst.setText(scoreboard.getUserName());
         holder.txtSecond.setText(scoreboard.getLevelName());
         holder.txtThird.setText(Integer.toString(scoreboard.getPoints()));
-        holder.txtFourth.setText(Double.toString(scoreboard.getWrongPerc()));
+        holder.txtFourth.setText(Double.toString(scoreboard.getWrongPerc()) + "%");
 
         return convertView;
     }

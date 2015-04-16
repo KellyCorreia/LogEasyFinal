@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -39,9 +40,9 @@ public class Scoreboard_Activity extends Activity {
 
    private void populateList() {
        String userName, levelName;
-       int points, wrongNum, totalAnswers;
+       int points;
        long userId;
-       double wrongPerc;
+       double wrongPerc, wrongNum, totalAnswers;
 
        dbHelper = new MySQLiteHelper(this);
        userList = dbHelper.getAllUsers();
@@ -59,10 +60,12 @@ public class Scoreboard_Activity extends Activity {
            totalAnswers = wrongNum + (points/10);
            wrongPerc = 0.0;
            if(totalAnswers != 0){
-               wrongPerc = wrongNum/totalAnswers;
+               wrongPerc = (wrongNum/totalAnswers)*100;
+               wrongPerc = Double.parseDouble(new DecimalFormat("0.0").format(wrongPerc));
+              // Toast.makeText(Scoreboard_Activity.this, "num Erradas: " + wrongNum + " perc erradas: " + wrongPerc + "Total: " + totalAnswers, Toast.LENGTH_LONG).show();
            }
 
-           Toast.makeText(Scoreboard_Activity.this, "num Erradas: " + wrongNum + " perc erradas: " + wrongPerc + "Total: " + totalAnswers, Toast.LENGTH_LONG).show();
+           //Toast.makeText(Scoreboard_Activity.this, "num Erradas: " + wrongNum + " perc erradas: " + wrongPerc + "Total: " + totalAnswers, Toast.LENGTH_LONG).show();
            ScoreboardScreen scoreboard = new ScoreboardScreen(userName, levelName, points, wrongPerc);
 
            dbHelper.addScoreboardScreen(scoreboard);
