@@ -2,10 +2,7 @@ package com.example.kelly.logeasyfinal;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Handler;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -13,7 +10,6 @@ import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -176,11 +172,6 @@ public class QuizActivity extends Activity {
             case 50:
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Wind element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L02");
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
                 finish();
                 break;
 
@@ -188,64 +179,54 @@ public class QuizActivity extends Activity {
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Sound element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L03");
                 finish();
-                //startActivity(intent);
                 break;
 
             case 150:
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Metal element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L04");
                 finish();
-                //startActivity(intent);
                 break;
 
             case 200:
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Sand element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L05");
                 finish();
-
-                //startActivity(intent);
                 break;
 
             case 250:
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Snow element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L06");
                 finish();
-                startActivity(intent);
                 break;
 
             case 300:
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Plant element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L07");
                 finish();
-                //startActivity(intent);
                 break;
 
             case 350:
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Lighting element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L08");
                 finish();
-                //startActivity(intent);
                 break;
 
             case 400:
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Lava element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L09");
                 finish();
-                //startActivity(intent);
                 break;
 
             case 450:
                 Toast.makeText(QuizActivity.this, "Congratulations! You defeated the Dark City!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L10");
                 finish();
-                //startActivity(intent);
                 break;
 
             case 500:
                 Toast.makeText(QuizActivity.this, "Congratulations! You are the master of the World!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L10");
                 finish();
-                //startActivity(intent);
                 break;
 
             default:
