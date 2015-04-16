@@ -21,13 +21,12 @@ import java.util.Random;
 
 public class QuizActivity extends Activity {
     List<QuestionClass> qList = new ArrayList<>();
-    List<AnswerClass> aList;
+    List<AnswerClass> aList = new ArrayList<>();
     TextView txtQuest, txtPoints;
     RadioGroup grp;
     RadioButton rda, rdb, rdc;
     Button butNext, btnLesson, btnHint;
     RelativeLayout layout;
-    LinearLayout firstLayout;
     RadioButton rightAnswer,userAnswer;
     ScoreboardClass Score;
     UserClass User;
@@ -59,48 +58,39 @@ public class QuizActivity extends Activity {
         butNext=(Button)findViewById(R.id.btnNext);
         btnHint = (Button)findViewById(R.id.btnHint);
         btnLesson = (Button)findViewById(R.id.btnLesson);
-        layout = (RelativeLayout)findViewById(R.id.RelativeLayout);
-        firstLayout = (LinearLayout)findViewById(R.id.LinearLayout);
+        layout = (RelativeLayout)findViewById(R.id.layoutQuiz);
+
 
         setQuestionView();
+
+        for(int i = 0; i > qList.size(); i++){
+            Toast.makeText(QuizActivity.this, qList.get(i).getQuestion_text(), Toast.LENGTH_SHORT).show();
+        }
 
         butNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                userAnswer = (RadioButton)findViewById(grp.getCheckedRadioButtonId());
-                qList.remove(rdQ);
+                if ((rda.isChecked()) || (rdb.isChecked()) || (rdc.isChecked())) {
+                    userAnswer = (RadioButton) findViewById(grp.getCheckedRadioButtonId());
+                    qList.remove(rdQ);
 
-                if(userAnswer == rightAnswer){
-                    Toast.makeText(QuizActivity.this, "Right Answer!", Toast.LENGTH_SHORT).show();
-                    if(selecLevel.getLevel_id() == Score.getLevel_id()) {
-                        score += 10;
-                        setIntent();
+                    if (userAnswer == rightAnswer) {
+                        Toast.makeText(QuizActivity.this, "Right Answer!", Toast.LENGTH_SHORT).show();
+                        if (selecLevel.getLevel_id() == Score.getLevel_id()) {
+                            score += 10;
+                            setIntent();
+                        }
+                    } else {
+                        Toast.makeText(QuizActivity.this, "Wrong answer!", Toast.LENGTH_SHORT).show();
                     }
-                }else{
-                    Toast.makeText(QuizActivity.this, "Wrong answer!", Toast.LENGTH_SHORT).show();
-                }
-                setQuestionView();
-
-                //Log.d("yourans", curQuest.getRight_answer() + " " + answer.getText());
-                //if(curQuest.getRight_answer().equals(answer.getText()))
-                //{
-                  //  score++;
-                    //Log.d("score", "Your score" + score);
-                //}
-            }
-                /*if(qid<5){
-                    curQuest = qList.get(qid);
                     setQuestionView();
+                    grp.clearCheck();
                 }else{
-                    if(v.findViewById(R.id.btnLesson){}
-                    Intent intent = new Intent(QuizActivity.this, ResultActivity.class);
-                    Bundle bu = new Bundle();
-                    bu.putInt("score", score); //Your score
-                    intent.putExtras(bu); //Put your score to your next Intent
-                    startActivity(intent);
-                    finish();
-                 }*/
+                    Toast.makeText(QuizActivity.this, "Select one option!", Toast.LENGTH_SHORT).show();
+                }
+            }
         });
+
         btnHint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -136,7 +126,6 @@ public class QuizActivity extends Activity {
         rdQ = rd.nextInt(qList.size());
         aList = db.getAnswer(qList.get(rdQ).getQuestion_id());
 
-        firstLayout.setBackgroundColor(Color.parseColor("#FF192030"));
         switch(selecLevel.getLevel_id()){
             case "L01":
                 layout.setBackgroundResource(R.drawable.backgroundlevel1);

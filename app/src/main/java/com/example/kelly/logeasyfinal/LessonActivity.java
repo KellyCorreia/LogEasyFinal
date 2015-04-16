@@ -33,6 +33,8 @@ public class LessonActivity extends Activity {
     UserClass User;
     ScoreboardClass Score;
     Random rd = new Random();
+    List <QuestionClass> q = new ArrayList<>();
+    MySQLiteHelper bd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,9 @@ public class LessonActivity extends Activity {
         selecLevel = (LevelClass)extras.getParcelable("chosenLevel");
         Score = (ScoreboardClass)extras.getParcelable("userScore");
 
+
+        bd = new MySQLiteHelper(this);
+        q = bd.levelQuestion(selecLevel.getLevel_id());
         txtPoints = (TextView)findViewById(R.id.txtPoints);
         txtLesson =(TextView)findViewById(R.id.txtLesson);
         btnPlay=(Button)findViewById(R.id.btnPlay);
@@ -69,6 +74,8 @@ public class LessonActivity extends Activity {
 
     private void setLesson(){ //Method to take the lesson from the Level Class and from the User Class
         txtPoints.setText(Integer.toString(Score.getPoints()));
+        int re = rd.nextInt(q.size());
+        txtLesson.setText(q.get(re).getQuestion_text());
         txtLesson.setText(selecLevel.getLesson());
         secondLayout.setBackgroundResource(R.drawable.ballonlevel);
         firstLayout.setBackgroundColor(Color.parseColor("#FF192030"));

@@ -94,7 +94,7 @@
         <ImageView
             android:layout_width="140dp"
             android:layout_height="180dp"
-            android:id="@+id/imvAvatarHint"
+            android:id="@+id/imgAvatarHint"
             android:layout_gravity="left|bottom"
             android:layout_marginBottom="5dp"
             android:src="@drawable/avatar22"
