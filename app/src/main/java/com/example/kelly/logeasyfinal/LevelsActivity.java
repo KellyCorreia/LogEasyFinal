@@ -153,7 +153,7 @@ public class LevelsActivity extends Activity {
         });
 
         Button btnLogout = (Button) findViewById(R.id.btnLogout);
-        btnScore.setOnClickListener(new View.OnClickListener() {
+        btnLogout.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 AlertDialog alertDialog = new AlertDialog.Builder(LevelsActivity.this).create();
                 alertDialog.setTitle("Log Out");
@@ -163,7 +163,7 @@ public class LevelsActivity extends Activity {
                         finish();
                     }
                 });
-                alertDialog.setButton("No", new DialogInterface.OnClickListener() {
+                alertDialog.setButton2("No", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.cancel();
                     }
