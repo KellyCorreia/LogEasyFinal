@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     tools:context="com.example.kelly.logeasyfinal.Choose_Player"
     android:background="#ffffe48f"
     android:padding="15dp">
@@ -12,7 +12,6 @@
         android:orientation="vertical"
         android:layout_width="305dp"
         android:layout_height="61dp"
-        android:layout_alignParentStart="false"
         android:gravity="top|start|center_horizontal"
         android:layout_alignParentTop="true"
         android:id="@+id/layoutTopLogin"
@@ -27,12 +26,13 @@
         android:layout_gravity="center"
         android:gravity="center_vertical"
         android:id="@+id/layoutCenterLogin"
-        android:layout_centerVertical="true">
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/layoutTopLogin">
 
         <GridView xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/grid"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="300dp"
             android:columnWidth="150dp"
             android:numColumns="2"
             android:verticalSpacing="7dp"
@@ -40,7 +40,8 @@
             android:stretchMode="columnWidth"
             android:layout_gravity="top|center_horizontal"
             android:gravity="top"
-            android:background="#ffffffff" />
+            android:background="#ffffffff"
+            android:layout_marginTop="5dp" />
 
         <Button
             android:layout_width="95dp"
@@ -52,7 +53,7 @@
             android:layout_marginTop="20dp" />
     </LinearLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:orientation="vertical"
         android:layout_width="305dp"
         android:layout_height="61dp"
@@ -62,6 +63,6 @@
         android:layout_centerHorizontal="true"
         android:background="@drawable/bottomloginpage">
 
-    </LinearLayout>
+    </RelativeLayout>
 
 </RelativeLayout>

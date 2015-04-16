@@ -206,8 +206,7 @@ public class LevelsActivity extends Activity {
     public void setlevelView(){
 
         db = new MySQLiteHelper(this);
-        db.addUserActivities(user.getUser_id());
-        db.updatingScore(50, user, "L02");
+
         TextView pointsView;
         TextView levelView;
         TextView txtViewUsername;

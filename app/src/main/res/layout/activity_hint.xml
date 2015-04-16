@@ -49,24 +49,26 @@
         android:layout_weight="0.71"
         android:id="@+id/layoutHintMiddle"
         android:layout_alignParentRight="false"
-        android:gravity="left|center_vertical|center_horizontal"
+        android:gravity="center_vertical|center_horizontal"
         android:background="@drawable/ballonhint"
         android:layout_above="@+id/layoutHintBottom"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="30dp">
+        android:layout_marginLeft="40dp">
 
         <ScrollView
-            android:layout_width="210dp"
-            android:layout_height="210dp"
+            android:layout_width="220dp"
+            android:layout_height="190dp"
             android:id="@+id/scrollViewHint"
-            android:layout_weight="0.48"
-            android:fillViewport="false">
+            android:fillViewport="false"
+            android:layout_margin="10dp"
+            android:layout_gravity="top|center_horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="New Text"
-                android:id="@+id/txtHint" />
+                android:id="@+id/txtHint"
+                android:gravity="center_vertical|center|center_horizontal" />
         </ScrollView>
 
     </LinearLayout>
@@ -98,7 +100,7 @@
             android:layout_gravity="left|bottom"
             android:layout_marginBottom="5dp"
             android:src="@drawable/avatar22"
-            android:layout_marginLeft="20dp" />
+            android:layout_marginLeft="40dp" />
 
     </LinearLayout>
 

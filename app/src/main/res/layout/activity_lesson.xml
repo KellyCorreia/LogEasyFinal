@@ -49,22 +49,24 @@
         android:id="@+id/linearLayoutMiddle"
         android:layout_alignParentRight="true"
         android:layout_above="@+id/linearLayoutBottom"
-        android:layout_marginRight="10dp"
         android:gravity="center_vertical|right|center_horizontal"
-        android:background="@drawable/ballonlevel">
+        android:background="@drawable/ballonlevel"
+        android:layout_marginRight="20dp">
 
         <ScrollView
-            android:layout_width="210dp"
-            android:layout_height="210dp"
+            android:layout_width="220dp"
+            android:layout_height="190dp"
             android:id="@+id/scrollViewLesson"
-            android:layout_weight="0.48"
-            android:fillViewport="false">
+            android:fillViewport="false"
+            android:layout_margin="5dp"
+            android:layout_gravity="top|center_horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="New Text"
-                android:id="@+id/txtLesson" />
+                android:id="@+id/txtLesson"
+                android:gravity="center_vertical|center|center_horizontal" />
         </ScrollView>
 
     </LinearLayout>
@@ -94,8 +96,8 @@
             android:singleLine="false"
             android:layout_gravity="bottom|right"
             android:gravity="bottom|right"
-            android:layout_marginLeft="30dp"
-            android:layout_marginBottom="10dp" />
+            android:layout_marginLeft="40dp"
+            android:layout_marginBottom="5dp" />
     </LinearLayout>
 
 </RelativeLayout>
