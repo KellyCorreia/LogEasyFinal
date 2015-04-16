@@ -66,10 +66,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="New Text"
                 android:id="@+id/txtLesson"
-                android:gravity="center_vertical|center|center_horizontal"
-                android:textColor="#ff313745" />
+                android:gravity="fill_horizontal|fill_vertical"
+                android:textColor="#ff313745"
+                android:textAlignment="center" />
         </ScrollView>
 
     </LinearLayout>
