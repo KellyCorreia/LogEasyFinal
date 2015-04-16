@@ -10,9 +10,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
-
 public class LevelsActivity extends Activity {
+
     private UserClass user;
     private ScoreboardClass userScore;
     private LevelClass chosenLevel;
@@ -193,17 +192,23 @@ public class LevelsActivity extends Activity {
         Toast.makeText(LevelsActivity.this, "Sorry, but you don't have enough points to access this level!", Toast.LENGTH_SHORT).show();
         Toast.makeText(LevelsActivity.this, "Answer more question in the levels before!", Toast.LENGTH_SHORT).show();
     }
+
     public boolean enoughPoints(int level){
-        if ((level*50)>= pointsU)
-            return true;
-        else
+        int valor = (level*50);
+        Toast.makeText(LevelsActivity.this, "Sorry, but you don't have enough points to access this level!"+Integer.toString(valor), Toast.LENGTH_SHORT).show();
+
+        if (pointsU>=valor)
             return false;
+        else
+            return true;
     }
+
     public void setlevelView(){
 
         db = new MySQLiteHelper(this);
         db.addUserActivities(user.getUser_id());
-        db.updatingScore(50, user, "L02");TextView pointsView;
+        db.updatingScore(50, user, "L02");
+        TextView pointsView;
         TextView levelView;
         TextView txtViewUsername;
 
