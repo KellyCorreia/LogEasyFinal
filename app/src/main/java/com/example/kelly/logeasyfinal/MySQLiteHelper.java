@@ -182,10 +182,31 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     }
 
     private void addLevels(){
-        LevelClass l1 = new LevelClass("L01", "Level 1 Name", "Lesson 1", "Tip 1");
+        LevelClass l1 = new LevelClass("L01", "Level 1 - Wind","Hello! This is " +
+                "the first level of your power conquest. On this level you are going to " +
+                        "learn the concept of propositional logic and contradictory propositions. " +
+                        "In the end of this level you will have the wind power which is the first " +
+                        "step to get the air power, but to finish the level one you have to prove " +
+                        "your knowledge about wind by answering 5 questions. " + "\n" +
+                        "So, lets get started with the concepts:" + "\n" +
+                        "Propositional logics is also called “sentential logic” or “statement logic” " +
+                        "and it deals with logical relationship between propositions (also called: " +
+                        "claims, statement, sentences, assertions, ..) taken as wholes. A proposition " +
+                        "is a declarative sentence which has a True/False value and it is composed by a " +
+                        "subject term and a predicate term, for example:" + "\n" +
+                        "“The wind is cold”." + "\n" + "The wind= subject term" + "\n" + "“is cold” = " +
+                        "the predicate" + "\n" + "We symbolize the proposition using a single letter: " +
+                        "\n" + "j: “ Jill is wearing a red dress”." + "\n" + "\n" + "Contradictories, " +
+                        "operator \"not\":" + "The Contradictory of A is a claim that always has the " +
+                        "opposite truth value of A. In the case of a simple proposition just use a " +
+                        "negative word or expression (\"no\", \"not\", \"It is not true\", \"It is false\"...)" +
+                        " before the sentence, and you have the contradictory. The “not” operator can also be " +
+                        "represented by “¬”. For example:" + "\n" + "a: “The wind is blowing”" + "\n" +
+                        "¬a: “The wind is not blowing”" + "\n" + "Notice that ‘¬a’ is the contradictory claim " +
+                        "of ‘a’ and vice-versa. " + "\n", "Tip1");
         this.addLevel(l1);
 
-        LevelClass l2 = new LevelClass("L02", "Level 2 Name", "Lesson 2", "Tip 2");
+        LevelClass l2 = new LevelClass("L02", "Level 2 - Sound", "Lesson 2", "Tip2");
         this.addLevel(l2);
 
         LevelClass l3 = new LevelClass("L03", "Level 3 Name", "Lesson 3", "Tip 3");
