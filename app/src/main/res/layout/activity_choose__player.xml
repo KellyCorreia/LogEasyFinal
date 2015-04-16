@@ -50,7 +50,7 @@
             android:layout_gravity="bottom|center_horizontal"
             android:background="@drawable/buttonred"
             android:gravity="bottom"
-            android:layout_marginTop="20dp" />
+            android:layout_marginTop="10dp" />
     </LinearLayout>
 
     <RelativeLayout

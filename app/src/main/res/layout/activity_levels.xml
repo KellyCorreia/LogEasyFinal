@@ -9,10 +9,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/topLevelsPage"
-        android:layout_alignParentEnd="false"
-        android:layout_alignParentStart="true"
         android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true">
+        android:layout_alignParentTop="true"
+        android:gravity="center">
 
         <LinearLayout
             android:orientation="vertical"
@@ -59,7 +58,6 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
         android:background="@drawable/levelboard"
         android:id="@+id/boardLevel"
         android:layout_below="@+id/topLevelsPage"
@@ -95,22 +93,21 @@
             android:layout_height="60dp"
             android:id="@+id/imbLevel3"
             android:background="@drawable/level3"
-            android:layout_marginTop="13dp"
+            android:layout_marginTop="32dp"
             android:layout_alignTop="@+id/imbLevel2"
-            android:layout_toLeftOf="@+id/imbLevel6"
-            android:layout_toStartOf="@+id/imbLevel6" />
+            android:layout_toLeftOf="@+id/imbLevel8"
+            android:layout_toStartOf="@+id/imbLevel8" />
 
         <Button
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:id="@+id/imbLevel4"
             android:background="@drawable/level4"
-            android:layout_marginTop="18dp"
             android:layout_alignTop="@+id/imbLevel3"
             android:layout_toRightOf="@+id/imbLevel3"
             android:layout_toEndOf="@+id/imbLevel3"
-            android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp" />
+            android:layout_marginLeft="18dp"
+            android:layout_marginStart="18dp" />
 
         <Button
             android:layout_width="60dp"
@@ -118,38 +115,35 @@
             android:id="@+id/imbLevel5"
             android:background="@drawable/level5"
             android:layout_below="@+id/imbLevel4"
-            android:layout_toRightOf="@+id/imbLevel6"
-            android:layout_toEndOf="@+id/imbLevel6" />
+            android:layout_toRightOf="@+id/imbLevel4"
+            android:layout_toEndOf="@+id/imbLevel4"
+            android:layout_marginLeft="23dp"
+            android:layout_marginStart="23dp" />
 
         <Button
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:id="@+id/imbLevel6"
             android:background="@drawable/level6"
-            android:layout_alignTop="@+id/imbLevel5"
-            android:layout_toRightOf="@+id/imbLevel7"
-            android:layout_toEndOf="@+id/imbLevel7"
-            android:layout_marginTop="33dp" />
+            android:layout_below="@+id/imbLevel5"
+            android:layout_toLeftOf="@+id/imbLevel5"
+            android:layout_toStartOf="@+id/imbLevel5" />
 
         <Button
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:id="@+id/imbLevel7"
             android:background="@drawable/level7"
-            android:layout_marginLeft="19dp"
-            android:layout_marginStart="19dp"
-            android:layout_below="@+id/imbLevel5"
-            android:layout_toRightOf="@+id/imbLevel2"
-            android:layout_toEndOf="@+id/imbLevel2"
-            android:layout_marginTop="11dp" />
+            android:layout_below="@+id/imbLevel6"
+            android:layout_toLeftOf="@+id/imbLevel6"
+            android:layout_toStartOf="@+id/imbLevel6" />
 
         <Button
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:id="@+id/imbLevel8"
             android:background="@drawable/level8"
-            android:layout_marginTop="11dp"
-            android:layout_below="@+id/imbLevel7"
+            android:layout_above="@+id/imbLevel10"
             android:layout_centerHorizontal="true" />
 
         <Button
@@ -157,10 +151,10 @@
             android:layout_height="60dp"
             android:id="@+id/imbLevel9"
             android:background="@drawable/level9"
-            android:layout_marginBottom="22dp"
-            android:layout_alignBottom="@+id/imbLevel10"
-            android:layout_toRightOf="@+id/imbLevel8"
-            android:layout_toEndOf="@+id/imbLevel8" />
+            android:layout_marginTop="25dp"
+            android:layout_alignTop="@+id/imbLevel8"
+            android:layout_toRightOf="@+id/imbLevel4"
+            android:layout_toEndOf="@+id/imbLevel4" />
 
         <Button
             android:layout_width="60dp"
@@ -169,8 +163,7 @@
             android:background="@drawable/level10"
             android:layout_alignParentBottom="true"
             android:layout_toRightOf="@+id/imbLevel9"
-            android:layout_toEndOf="@+id/imbLevel9"
-            android:layout_marginBottom="12dp" />
+            android:layout_toEndOf="@+id/imbLevel9" />
 
     </RelativeLayout>
 
@@ -181,7 +174,8 @@
         android:id="@+id/bottomLevelsPage"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:gravity="center">
 
         <LinearLayout
             android:orientation="vertical"
@@ -215,13 +209,13 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="@string/scoreboard"
                 android:id="@+id/btnScoreboard"
                 android:background="#ffffe48f"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:typeface="monospace"
                 android:textColor="#ff192030"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:text="@string/scoreboard" />
         </LinearLayout>
     </LinearLayout>
 
