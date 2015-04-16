@@ -14,11 +14,21 @@
         android:gravity="center">
 
         <LinearLayout
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:layout_width="160dp"
             android:layout_height="34dp"
             android:id="@+id/LevelsPageUsername"
             android:background="#ff192030">
+
+            <Button
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:id="@+id/button"
+                android:background="@drawable/buttonlogout"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -28,9 +38,10 @@
                 android:layout_gravity="center"
                 android:gravity="center_vertical|center_horizontal"
                 android:typeface="monospace"
-                android:layout_marginTop="5dp"
                 android:hint="@string/username"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginLeft="5dp" />
+
         </LinearLayout>
 
         <LinearLayout
