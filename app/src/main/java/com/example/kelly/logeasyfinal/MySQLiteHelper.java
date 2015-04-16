@@ -429,7 +429,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
     public ArrayList<ScoreboardScreen> getScoreboardTable(){
         ArrayList<ScoreboardScreen> scoreList = new ArrayList<ScoreboardScreen>();
-        String selectQuery = "SELECT * FROM " + TABLE_SCOREBOARD_SCREEN + " ORDER BY " + COLUMN_POINTS_SCOREBOARD + " ASC, " + COLUMN_WRONGPERC_SCOREBOARD + " DESC ;";
+        String selectQuery = "SELECT * FROM " + TABLE_SCOREBOARD_SCREEN + " ORDER BY " + COLUMN_POINTS_SCOREBOARD + " DESC, " + COLUMN_WRONGPERC_SCOREBOARD + " ASC ;";
         database = this.getReadableDatabase();
         Cursor cursor = database.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
