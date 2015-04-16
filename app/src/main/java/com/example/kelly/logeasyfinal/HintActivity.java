@@ -41,10 +41,10 @@ public class HintActivity extends Activity {
         txtPoints = (TextView)findViewById(R.id.txtPoints);
         txtHint =(TextView)findViewById(R.id.txtHint);
         btnPlay=(Button)findViewById(R.id.btnPlay);
-        ImgAvatar = (ImageView)findViewById(R.id.imageAvatar);
-        layout = (LinearLayout)findViewById(R.id.linearLayout5);
-        firstLayout = (LinearLayout)findViewById(R.id.linearLayout3);
-        secondLayout = (LinearLayout)findViewById(R.id.linearLayout4);
+        ImgAvatar = (ImageView)findViewById(R.id.imvAvatarHint);
+        layout = (LinearLayout)findViewById(R.id.layoutHint);
+        firstLayout = (LinearLayout)findViewById(R.id.layoutHintTop);
+        secondLayout = (LinearLayout)findViewById(R.id.layoutHintMiddle);
 
         setHintView();
 

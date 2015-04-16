@@ -346,7 +346,6 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         this.addUser(user);
         user = new UserClass("user4","user4@gmail.com","444","Avatar4");
         this.addUser(user);
-        this.addUserActivities(user.getUser_id());
     }
 
     // Adding new question
@@ -503,18 +502,21 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     }
 
     public boolean lessonStart(String chosenLevelID, Long userID){
-        String selectQuery = "SELECT COUNT(*) FROM "+TABLE_USERS_ACT
+        //SELECT u._id FROM users_activity AS u INNER JOIN table_questions AS q ON u.Q_id = q.Q_id INNER JOIN table_level AS l ON q.L_id = l.L_id WHERE u.user_id = 1 AND l.L_id = 'L01';
+
+        String selectQuery = "SELECT u."+COLUMN_ID+" FROM "+TABLE_USERS_ACT
                 +" AS u INNER JOIN "+TABLE_QUESTIONS+" AS q ON u."
                 +COLUMN_QUESTION_ID+" = q."+COLUMN_QUESTION_ID
                 +" INNER JOIN "+TABLE_LEVEL+" AS l ON q."
                 +COLUMN_LEVEL_ID+" = l."+COLUMN_LEVEL_ID
-                +" WHERE u."+COLUMN_USER_ID+" = "+userID.toString()+" AND l."+COLUMN_LEVEL_ID+" = '"+chosenLevelID+"' ";
+                +" WHERE u."+COLUMN_USER_ID+" = "+userID.toString()+" AND l."+COLUMN_LEVEL_ID+" = '"+chosenLevelID+"' ;";
         database=this.getReadableDatabase();
         Cursor cursor = database.rawQuery(selectQuery, null);
-        if(cursor != null && cursor.getCount()>0){
+
+        if(cursor.getCount()>0){
             return true;
-        }else
-            return false;
+        }
+        return false;
     }
 ///fim
     public int rowcount(){

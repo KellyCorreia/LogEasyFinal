@@ -27,7 +27,7 @@ public class QuizActivity extends Activity {
     RadioButton rda, rdb, rdc;
     Button butNext, btnLesson, btnHint;
     RelativeLayout layout;
-    LinearLayout firstLayout;
+    RelativeLayout firstLayout;
     RadioButton rightAnswer,userAnswer;
     ScoreboardClass Score;
     UserClass User;
@@ -59,8 +59,8 @@ public class QuizActivity extends Activity {
         butNext=(Button)findViewById(R.id.btnNext);
         btnHint = (Button)findViewById(R.id.btnHint);
         btnLesson = (Button)findViewById(R.id.btnLesson);
-        layout = (RelativeLayout)findViewById(R.id.RelativeLayout);
-        firstLayout = (LinearLayout)findViewById(R.id.LinearLayout);
+        layout = (RelativeLayout)findViewById(R.id.layoutQuiz);
+        firstLayout = (RelativeLayout)findViewById(R.id.layoutQuizCenter);
 
         setQuestionView();
 
