@@ -613,7 +613,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         }
 
         database = this.getWritableDatabase();
-        database.update(TABLE_SCOREBOARD,values, COLUMN_USER_ID + "= ?" + UserString, null);
+        database.update(TABLE_SCOREBOARD,values, COLUMN_USER_ID + "= ?", new String[]{UserString});
         return true;
     }
 
