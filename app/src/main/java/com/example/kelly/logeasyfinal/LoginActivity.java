@@ -75,8 +75,6 @@ public class LoginActivity extends Activity {
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                db.addUserActivities(user.getUser_id());
-                db.updatingScore(60, user, "L02");
                 EditText mPasswordView;
                 mPasswordView = (EditText) findViewById(R.id.txtPassword);
                 //code to test the password

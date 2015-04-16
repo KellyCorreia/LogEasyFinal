@@ -320,8 +320,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         this.addUserActivity(userActivity);
         userActivity = new UserActivityClass(userID,"Q005","A005a","yes");
         this.addUserActivity(userActivity);
-        userActivity = new UserActivityClass(userID,"Q006","A005a","yes");
-        this.addUserActivity(userActivity);
+
     }
 
 

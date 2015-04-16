@@ -25,9 +25,12 @@ public class LevelsActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_levels);
+
         //Getting the object user from the previous screen
         Bundle extras = getIntent().getExtras();
         user = extras.getParcelable("chosenUser");
+
+
         setlevelView();
         Button btnLevels;
 
@@ -197,9 +200,10 @@ public class LevelsActivity extends Activity {
             return false;
     }
     public void setlevelView(){
-        db = new MySQLiteHelper(this);
 
-        TextView pointsView;
+        db = new MySQLiteHelper(this);
+        db.addUserActivities(user.getUser_id());
+        db.updatingScore(50, user, "L02");TextView pointsView;
         TextView levelView;
         TextView txtViewUsername;
 
@@ -208,7 +212,6 @@ public class LevelsActivity extends Activity {
 
         //Getting the scoreboard
         userScore = db.getScore(user.getUser_id());
-
         pointsU = userScore.getPoints();
         levelName =  db.getUserLevel(user.getUser_id());
 
