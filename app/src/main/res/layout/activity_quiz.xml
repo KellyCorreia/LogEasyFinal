@@ -70,7 +70,7 @@
             android:textAlignment="center"
             android:typeface="sans"
             android:gravity="center_horizontal"
-            android:textColor="#ff000000"
+            android:textColor="#ff1b2232"
             android:layout_marginTop="5dp" />
 
         <RadioGroup
