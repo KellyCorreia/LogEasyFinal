@@ -4,13 +4,6 @@ package com.example.kelly.logeasyfinal;
  * Created by Kelly on 15/04/2015.
  */
 
-import com.example.kelly.logeasyfinal.Constant;
-
-import static com.example.kelly.logeasyfinal.Constant.FIRST_COLUMN;
-import static com.example.kelly.logeasyfinal.Constant.SECOND_COLUMN;
-import static com.example.kelly.logeasyfinal.Constant.THIRD_COLUMN;
-import static com.example.kelly.logeasyfinal.Constant.FOURTH_COLUMN;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import android.app.Activity;
@@ -87,7 +80,7 @@ public class listviewAdapter extends BaseAdapter
         holder.txtFirst.setText(scoreboard.getUserName());
         holder.txtSecond.setText(scoreboard.getLevelName());
         holder.txtThird.setText(Integer.toString(scoreboard.getPoints()));
-        holder.txtFourth.setText(Double.toString(scoreboard.getWrongPerc()));
+        holder.txtFourth.setText(Double.toString(scoreboard.getWrongPerc()) + "%");
 
         return convertView;
     }

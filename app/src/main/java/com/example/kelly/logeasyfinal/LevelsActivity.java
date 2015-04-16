@@ -145,7 +145,6 @@ public class LevelsActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(LevelsActivity.this, Scoreboard_Activity.class);
                 startActivity(intent);
-                finish();
             }
         });
 
