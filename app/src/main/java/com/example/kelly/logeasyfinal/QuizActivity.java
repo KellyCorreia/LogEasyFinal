@@ -40,7 +40,7 @@ public class QuizActivity extends Activity {
         Bundle extras = getIntent().getExtras();
         User = (UserClass)extras.getParcelable("chosenUser");
         selecLevel = (LevelClass)extras.getParcelable("chosenLevel");
-        Score = (ScoreboardClass)extras.getParcelable("userscore");
+        Score = (ScoreboardClass)extras.getParcelable("userScore");
         score = Score.getPoints();
 
         txtPoints = (TextView)findViewById(R.id.txtPoints);
@@ -86,7 +86,7 @@ public class QuizActivity extends Activity {
                 intent.setClass(QuizActivity.this, HintActivity.class);
                 intent.putExtra("chosenUser", User);
                 intent.putExtra("chosenLevel", selecLevel);
-                intent.putExtra("userscore", Score);
+                intent.putExtra("userScore", Score);
                 startActivity(intent);
             }
         });
@@ -97,7 +97,7 @@ public class QuizActivity extends Activity {
                 intent.setClass(QuizActivity.this, LessonActivity.class);
                 intent.putExtra("chosenUser", User);
                 intent.putExtra("chosenLevel", selecLevel);
-                intent.putExtra("userscore", Score);
+                intent.putExtra("userScore", Score);
                 startActivity(intent);
             }
         });

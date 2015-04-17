@@ -38,7 +38,7 @@ public class HintActivity extends Activity {
         Bundle extras = getIntent().getExtras();
         user = (UserClass)extras.getParcelable("chosenUser");
         seleclevel = (LevelClass)extras.getParcelable("chosenLevel");
-        score = (ScoreboardClass)extras.getParcelable("userscore");
+        score = (ScoreboardClass)extras.getParcelable("userScore");
 
         txtPoints = (TextView)findViewById(R.id.txtPoints);
         txtHint =(TextView)findViewById(R.id.txtHint);
@@ -55,7 +55,7 @@ public class HintActivity extends Activity {
                 Intent intent = new Intent(HintActivity.this, QuizActivity.class);
                 intent.putExtra("chosenUser", user);
                 intent.putExtra("chosenLevel", seleclevel);
-                intent.putExtra("userscore", score);
+                intent.putExtra("userScore", score);
                 startActivity(intent);
                 finish();
             }
