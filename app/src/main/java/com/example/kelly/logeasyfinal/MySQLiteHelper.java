@@ -142,34 +142,43 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
     private void addQuestions()
     {
-        QuestionClass q1=new QuestionClass("Q001", "Test Question 1", "L01", "A001a");
+        QuestionClass q1=new QuestionClass("Q001", "Which one is the contradictory of the " +
+                "following claim: \n “Sometimes the wind is blowing hard.”", "L01", "A001c");
         this.addQuestion(q1);
 
-        QuestionClass q2=new QuestionClass("Q002", "Test Question 2", "L01", "A002a");
+        QuestionClass q2=new QuestionClass("Q002", "Which one is the contradictory of the " +
+                "following statement: \n “The wind is blowing all the time.”", "L01", "A002b");
         this.addQuestion(q2);
 
-        QuestionClass q3=new QuestionClass("Q003", "Test Question 3", "L01", "A003a");
+        QuestionClass q3=new QuestionClass("Q003", "Which one of the following sentences becomes " +
+                "true after applying the NOT operator.", "L01", "A003c");
         this.addQuestion(q3);
 
-        QuestionClass q4=new QuestionClass("Q004", "Test Question 4", "L01", "A004a");
+        QuestionClass q4=new QuestionClass("Q004", "Which one of the following affirmation becomes " +
+                "true after applying the NOT operator.", "L01", "A004b");
         this.addQuestion(q4);
 
-        QuestionClass q5=new QuestionClass("Q005", "Test Question 5", "L01", "A005a");
+        QuestionClass q5=new QuestionClass("Q005", "Which one of the following affirmation becomes " +
+                "true after applying the NOT operator.", "L01", "A005b");
         this.addQuestion(q5);
 
-        QuestionClass q6=new QuestionClass("Q006", "Test Question 6", "L02", "A006a");
+        QuestionClass q6=new QuestionClass("Q006", "Which one of the following affirmation becomes " +
+                "true after applying the NOT operator.", "L01", "A006a");
         this.addQuestion(q6);
 
-        QuestionClass q7=new QuestionClass("Q007", "Test Question 7", "L02", "A007a");
+        QuestionClass q7=new QuestionClass("Q007", "Which one of the following affirmation becomes " +
+                "true after applying the NOT operator.", "L01", "A007a");
         this.addQuestion(q7);
 
-        QuestionClass q8=new QuestionClass("Q008", "Test Question 8", "L02", "A008a");
+        QuestionClass q8=new QuestionClass("Q008", "Which one is the contradictory of the following" +
+                " statement: \n “The wind has no direction.”", "L01", "A008a");
         this.addQuestion(q8);
 
-        QuestionClass q9=new QuestionClass("Q009", "Test Question 9", "L02", "A009a");
+        QuestionClass q9=new QuestionClass("Q009", "Which one is the contradictory of the following" +
+                " claim: \n “The wind’s direction is North.”", "L01", "A009b");
         this.addQuestion(q9);
 
-        QuestionClass q10=new QuestionClass("Q010", "Test Question 10", "L02", "A010a");
+        QuestionClass q10=new QuestionClass("Q010", "Which one is the contradictory of the following sentence:", "L01", "A010a");
         this.addQuestion(q10);
 
         QuestionClass q11=new QuestionClass("Q011", "Test Question 11", "L02", "A011a");
@@ -236,94 +245,94 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     }
 
     private void addAnswers() {
-        AnswerClass a1 = new AnswerClass("A001a", "Answer A", "Q001");
+        AnswerClass a1 = new AnswerClass("A001a", "The wind is not blowing hard.", "Q001");
         this.addAnswer(a1);
 
-        AnswerClass a2 = new AnswerClass("A001b", "Answer B", "Q001");
+        AnswerClass a2 = new AnswerClass("A001b", "Sometimes the wind is not blowing hard.", "Q001");
         this.addAnswer(a2);
 
-        AnswerClass a3 = new AnswerClass("A001c", "Answer C", "Q001");
+        AnswerClass a3 = new AnswerClass("A001c", "The wind is never blowing hard.", "Q001");
         this.addAnswer(a3);
 
-        AnswerClass a4 = new AnswerClass("A002a", "Answer A", "Q002");
+        AnswerClass a4 = new AnswerClass("A002a", "The wind is not blowing.", "Q002");
         this.addAnswer(a4);
 
-        AnswerClass a5 = new AnswerClass("A002b", "Answer B", "Q002");
+        AnswerClass a5 = new AnswerClass("A002b", "Sometimes the wind is not blowing.", "Q002");
         this.addAnswer(a5);
 
-        AnswerClass a6 = new AnswerClass("A002c", "Answer C", "Q002");
+        AnswerClass a6 = new AnswerClass("A002c", "The wind is never blowing.", "Q002");
         this.addAnswer(a6);
 
-        AnswerClass a7 = new AnswerClass("A003a", "Answer A", "Q003");
+        AnswerClass a7 = new AnswerClass("A003a", "The wind can change directions.", "Q003");
         this.addAnswer(a7);
 
-        AnswerClass a8 = new AnswerClass("A003b", "Answer B", "Q003");
+        AnswerClass a8 = new AnswerClass("A003b", "The wind is blowing in the same direction.", "Q003");
         this.addAnswer(a8);
 
-        AnswerClass a9 = new AnswerClass("A003c", "Answer C", "Q003");
+        AnswerClass a9 = new AnswerClass("A003c", "The wind can never change directions.", "Q003");
         this.addAnswer(a9);
 
-        AnswerClass a10 = new AnswerClass("A004a", "Answer A", "Q004");
+        AnswerClass a10 = new AnswerClass("A004a", "The wind has the power to destroy houses", "Q004");
         this.addAnswer(a10);
 
-        AnswerClass a11 = new AnswerClass("A004b", "Answer B", "Q004");
+        AnswerClass a11 = new AnswerClass("A004b", "The wind can sometimes destroy houses.", "Q004");
         this.addAnswer(a11);
 
-        AnswerClass a12 = new AnswerClass("A004c", "Answer C", "Q004");
+        AnswerClass a12 = new AnswerClass("A004c", "The wind can destroy houses.", "Q004");
         this.addAnswer(a12);
 
-        AnswerClass a13 = new AnswerClass("A005a", "Answer A", "Q005");
+        AnswerClass a13 = new AnswerClass("A005a", "The wind can blow hard.", "Q005");
         this.addAnswer(a13);
 
-        AnswerClass a14 = new AnswerClass("A005b", "Answer B", "Q005");
+        AnswerClass a14 = new AnswerClass("A005b", "The wind blows hard all the time.", "Q005");
         this.addAnswer(a14);
 
-        AnswerClass a15 = new AnswerClass("A005c", "Answer C", "Q005");
+        AnswerClass a15 = new AnswerClass("A005c", "The wind is not blowing hard.", "Q005");
         this.addAnswer(a15);
 
-        AnswerClass a16 = new AnswerClass("A006a", "Answer A", "Q006");
+        AnswerClass a16 = new AnswerClass("A006a", "The houses may be destroyed by the wind.", "Q006");
         this.addAnswer(a16);
 
-        AnswerClass a17 = new AnswerClass("A006b", "Answer B", "Q006");
+        AnswerClass a17 = new AnswerClass("A006b", "Some houses may be destroyed by the wind.", "Q006");
         this.addAnswer(a17);
 
-        AnswerClass a18 = new AnswerClass("A006c", "Answer C", "Q006");
+        AnswerClass a18 = new AnswerClass("A006c", "Not all the houses can be destroyed by the wind.", "Q006");
         this.addAnswer(a18);
 
-        AnswerClass a19 = new AnswerClass("A007a", "Answer A", "Q007");
+        AnswerClass a19 = new AnswerClass("A007a", "The wind’s direction never changes.", "Q007");
         this.addAnswer(a19);
 
-        AnswerClass a20 = new AnswerClass("A007b", "Answer B", "Q007");
+        AnswerClass a20 = new AnswerClass("A007b", "The wind’s direction can change.", "Q007");
         this.addAnswer(a20);
 
-        AnswerClass a21 = new AnswerClass("A007c", "Answer C", "Q007");
+        AnswerClass a21 = new AnswerClass("A007c", "The wind’s direction can change sometimes.", "Q007");
         this.addAnswer(a21);
 
-        AnswerClass a22 = new AnswerClass("A008a", "Answer A", "Q008");
+        AnswerClass a22 = new AnswerClass("A008a", "The wind sometimes has a direction.", "Q008");
         this.addAnswer(a22);
 
-        AnswerClass a23 = new AnswerClass("A008b", "Answer B", "Q008");
+        AnswerClass a23 = new AnswerClass("A008b", "The wind doesn’t have a direction.", "Q008");
         this.addAnswer(a23);
 
-        AnswerClass a24 = new AnswerClass("A008c", "Answer C", "Q008");
+        AnswerClass a24 = new AnswerClass("A008c", "The wind’s direction exists.", "Q008");
         this.addAnswer(a24);
 
-        AnswerClass a25 = new AnswerClass("A009a", "Answer A", "Q009");
+        AnswerClass a25 = new AnswerClass("A009a", "The wind’s direction is South.", "Q009");
         this.addAnswer(a25);
 
-        AnswerClass a26 = new AnswerClass("A009b", "Answer B", "Q009");
+        AnswerClass a26 = new AnswerClass("A009b", "Sometimes the wind’s direction is not North.", "Q009");
         this.addAnswer(a26);
 
-        AnswerClass a27 = new AnswerClass("A009c", "Answer C", "Q009");
+        AnswerClass a27 = new AnswerClass("A009c", "The wind’s direction is different.", "Q009");
         this.addAnswer(a27);
 
-        AnswerClass a28 = new AnswerClass("A010a", "Answer A", "Q010");
+        AnswerClass a28 = new AnswerClass("A010a", "No breeze is a light wind.", "Q010");
         this.addAnswer(a28);
 
-        AnswerClass a29 = new AnswerClass("A010b", "Answer B", "Q010");
+        AnswerClass a29 = new AnswerClass("A010b", "A breeze is sometimes a light wind.", "Q010");
         this.addAnswer(a29);
 
-        AnswerClass a30 = new AnswerClass("A010c", "Answer C", "Q010");
+        AnswerClass a30 = new AnswerClass("A010c", "All breezes are light.", "Q010");
         this.addAnswer(a30);
 
         AnswerClass a31 = new AnswerClass("A011a", "Answer A", "Q011");
