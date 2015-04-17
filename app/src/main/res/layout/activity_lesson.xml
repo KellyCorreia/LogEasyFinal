@@ -12,7 +12,7 @@
         android:id="@+id/linearLayoutFirst"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
+        android:layout_alignParentStart="false"
         android:background="#ff192030">
 
         <LinearLayout
@@ -80,7 +80,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/linearLayoutBottom"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true">
+        android:layout_alignParentEnd="false">
 
         <ImageView
             android:layout_width="140dp"
@@ -91,16 +91,35 @@
             android:layout_marginBottom="5dp"
             android:src="@drawable/avatar22" />
 
-        <Button
-            android:layout_width="116dp"
-            android:layout_height="34dp"
-            android:id="@+id/btnPlay"
-            android:onClick= "OnClick"
-            android:singleLine="false"
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/layoutButtons"
             android:layout_gravity="bottom|right"
-            android:gravity="bottom|right"
-            android:layout_marginLeft="40dp"
-            android:layout_marginBottom="5dp" />
+            android:layout_marginBottom="10dp"
+            android:gravity="right"
+            android:layout_marginLeft="40dp">
+
+            <Button
+                android:layout_width="116dp"
+                android:layout_height="34dp"
+                android:id="@+id/btnPlay"
+                android:onClick= "OnClick"
+                android:singleLine="false"
+                android:gravity="bottom|right" />
+
+            <Button
+                android:layout_width="116dp"
+                android:layout_height="34dp"
+                android:id="@+id/btnLevels"
+                android:singleLine="false"
+                android:gravity="bottom|right"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/levelscore"
+                android:layout_marginBottom="5dp" />
+        </LinearLayout>
+
     </LinearLayout>
 
 </RelativeLayout>

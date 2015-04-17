@@ -407,6 +407,18 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
         return true;
     }
+    public long getUserID(UserClass user){
+        long userID = 0;
+
+        Cursor cursor;
+        String selectQuery = "SELECT * FROM " + TABLE_USERS + " WHERE " + COLUMN_EMAIL + " = '" + user.getEmail() + "' ; " ;
+        database = this.getReadableDatabase();
+        cursor = database.rawQuery(selectQuery, null);
+        if(cursor.moveToFirst()){
+            userID = cursor.getLong(0);
+        }
+        return userID;
+    }
 
     public boolean addScore(ScoreboardClass score){
 

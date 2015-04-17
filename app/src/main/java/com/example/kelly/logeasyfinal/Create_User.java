@@ -91,7 +91,12 @@ public class Create_User extends Activity {
            //Toast.makeText(Create_User.this, AvatarSelected + " , " + UserName + " , " + Email + " , " + Password, Toast.LENGTH_SHORT).show();
            NewUser = new UserClass(UserName, Email, Password, AvatarSelected);
            dbHelper = new MySQLiteHelper(this);
-           if (dbHelper.addUser(NewUser)) {
+           long userID;
+
+           if (dbHelper.addUser(NewUser) ) {
+               userID =dbHelper.getUserID(NewUser);
+               NewUser.setUser_id(userID);
+
                Intent intent = new Intent(Create_User.this, LoginActivity.class);
                intent.putExtra("chosenUser", NewUser);
                startActivity(intent);

@@ -29,19 +29,33 @@
         android:layout_centerInParent="true"
         android:layout_below="@+id/layoutTopLogin">
 
-        <GridView xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/grid"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:columnWidth="150dp"
-            android:numColumns="2"
-            android:verticalSpacing="7dp"
-            android:horizontalSpacing="7dp"
-            android:stretchMode="columnWidth"
-            android:layout_gravity="top|center_horizontal"
-            android:gravity="top"
-            android:background="#ffffffff"
-            android:layout_marginTop="5dp" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/layoutWhiteBack"
+            android:background="#ffffffff">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#ffffffff"
+                android:id="@+id/layoutGrid">
+
+                <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/grid"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:columnWidth="150dp"
+                    android:numColumns="2"
+                    android:verticalSpacing="7dp"
+                    android:horizontalSpacing="7dp"
+                    android:stretchMode="columnWidth"
+                    android:gravity="top"
+                    android:layout_marginTop="5dp" />
+            </LinearLayout>
+        </LinearLayout>
 
         <Button
             android:layout_width="95dp"

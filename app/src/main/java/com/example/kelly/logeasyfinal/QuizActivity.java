@@ -20,7 +20,7 @@ public class QuizActivity extends Activity {
     TextView txtQuest, txtPoints;
     RadioGroup grp;
     RadioButton rda, rdb, rdc;
-    Button butNext, btnLesson, btnHint;
+    Button butNext, btnLesson, btnHint,btnLevelsQ;
     RelativeLayout layout;
     RadioButton rightAnswer,userAnswer;
     ScoreboardClass Score;
@@ -52,6 +52,7 @@ public class QuizActivity extends Activity {
         butNext=(Button)findViewById(R.id.btnNext);
         btnHint = (Button)findViewById(R.id.btnHint);
         btnLesson = (Button)findViewById(R.id.btnLesson);
+        btnLevelsQ = (Button)findViewById(R.id.btnLevelsQ);
         layout = (RelativeLayout)findViewById(R.id.layoutQuiz);
 
         setQuestionView();
@@ -99,6 +100,12 @@ public class QuizActivity extends Activity {
                 intent.putExtra("chosenLevel", selecLevel);
                 intent.putExtra("userScore", Score);
                 startActivity(intent);
+            }
+        });
+        btnLevelsQ.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }

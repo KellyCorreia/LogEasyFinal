@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -85,6 +86,11 @@ public class Choose_Player extends Activity {
                 finish();
             }
         });
+        if(users.isEmpty()){
+            grid.setVisibility(View.INVISIBLE);
+            LinearLayout layoutBackground =(LinearLayout)findViewById(R.id.layoutGrid);
+            layoutBackground.setBackgroundResource(R.drawable.nouser);
+        }
     }
 
     @Override

@@ -19,7 +19,7 @@ import java.util.Random;
 public class LessonActivity extends Activity {
     TextView txtPoints;
     TextView txtLesson;
-    Button btnPlay;
+    Button btnPlay, btnLevels;
     ImageView ImgAvatar;
     RelativeLayout layout;
     LinearLayout firstLayout, secondLayout;
@@ -46,6 +46,7 @@ public class LessonActivity extends Activity {
         txtPoints = (TextView)findViewById(R.id.txtPoints);
         txtLesson =(TextView)findViewById(R.id.txtLesson);
         btnPlay=(Button)findViewById(R.id.btnPlay);
+        btnLevels=(Button)findViewById(R.id.btnLevels);
         ImgAvatar = (ImageView)findViewById(R.id.imageViewAvatar);
         layout = (RelativeLayout)findViewById(R.id.relativeLayoutLesson);
         firstLayout = (LinearLayout)findViewById(R.id.linearLayoutFirst);
@@ -61,6 +62,13 @@ public class LessonActivity extends Activity {
                 intent.putExtra("chosenLevel", selecLevel);
                 intent.putExtra("userScore", Score);
                 startActivity(intent);
+                finish();
+            }
+        });
+
+        btnLevels.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 finish();
             }
         });

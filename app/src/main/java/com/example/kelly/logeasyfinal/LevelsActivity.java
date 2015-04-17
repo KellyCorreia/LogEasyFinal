@@ -212,8 +212,7 @@ public class LevelsActivity extends Activity {
         startActivity(intent);
     }
     public void setToast(String levelBefore){
-        Toast.makeText(LevelsActivity.this, "Sorry, but you don't have enough points to access this level!", Toast.LENGTH_SHORT).show();
-        Toast.makeText(LevelsActivity.this, "Answer more question in the levels before!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(LevelsActivity.this, "Sorry, but you don't have enough points to access this level!  Answer more question in the levels before!", Toast.LENGTH_SHORT).show();
     }
 
     public boolean enoughPoints(int level){
