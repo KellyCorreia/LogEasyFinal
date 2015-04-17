@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -68,8 +69,7 @@ public class LessonActivity extends Activity {
     private void setLesson(){ //Method to take the lesson from the Level Class and from the User Class
         txtPoints.setText(Integer.toString(Score.getPoints()));
         int re = rd.nextInt(q.size());
-        txtLesson.setText(q.get(re).getQuestion_text());
-        txtLesson.setText(selecLevel.getLesson());
+        txtLesson.setText(Html.fromHtml(selecLevel.getLesson()));
         secondLayout.setBackgroundResource(R.drawable.ballonlevel);
         firstLayout.setBackgroundColor(Color.parseColor("#FF192030"));
 
