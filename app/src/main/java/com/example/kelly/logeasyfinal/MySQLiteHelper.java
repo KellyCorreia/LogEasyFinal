@@ -178,14 +178,54 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 " claim: \n “The wind’s direction is North.”", "L01", "A009b");
         this.addQuestion(q9);
 
-        QuestionClass q10=new QuestionClass("Q010", "Which one is the contradictory of the following sentence:", "L01", "A010a");
+        QuestionClass q10=new QuestionClass("Q010", "Which one is the contradictory of the following" +
+                " sentence: \n “Some breeze is a light wind.”", "L01", "A010a");
         this.addQuestion(q10);
 
-        QuestionClass q11=new QuestionClass("Q011", "Test Question 11", "L02", "A011a");
+        QuestionClass q11=new QuestionClass("Q011", "Given: a = “The sound is a vibration” is  " +
+                "true and b = “The sound is not a wave” is false. Which of the following is true:", "L02", "A011c");
         this.addQuestion(q11);
 
-        QuestionClass q12=new QuestionClass("Q012", "Test Question 12", "L03", "A012a");
+        QuestionClass q12=new QuestionClass("Q012", "Given: a = “The sound propagates through the air”" +
+                " is true. Which of the following is false:", "L02", "A012b");
         this.addQuestion(q12);
+
+        QuestionClass q13=new QuestionClass("Q013", "Given: a = “The sound propagates through solids”" +
+                " is true and b = “The sound is not a vibration” is false. Which of the following is true:", "L02", "A013b");
+        this.addQuestion(q13);
+
+        QuestionClass q14=new QuestionClass("Q014", "Given: “The speed of the sound is 972m/s” is " +
+                "true and “Sound propagates through the air”. Considering the exclusive “or”. Which " +
+                "of the following is true:", "L02", "A014c");
+        this.addQuestion(q14);
+
+        QuestionClass q15=new QuestionClass("Q012", "Given: a = “All sound come from a vibrating " +
+                "source” is true and b = “Sound can be heard” is true. Which os the following is true:", "L02", "A015a");
+        this.addQuestion(q15);
+
+        QuestionClass q16=new QuestionClass("Q012", "Given: a = “Sound cannot be heard” is false " +
+                "and b = “Sound is a current of air” is false. Which os the following is false:", "L02", "A016c");
+        this.addQuestion(q16);
+
+        QuestionClass q17=new QuestionClass("Q012", "Given: a = “Music is a combination of sounds”" +
+                " is true. Which os the following is false:", "L02", "A017b");
+        this.addQuestion(q17);
+
+        QuestionClass q18=new QuestionClass("Q012", "Given: a = “Music is a combination of sounds”" +
+                " is true,  b = “Sound is a current of air” is false and c = “All sound come from a" +
+                " vibrating source” is true. Which one of the following is true:", "L02", "A018b");
+        this.addQuestion(q18);
+
+        QuestionClass q19=new QuestionClass("Q012", "Given: a = “Sound cannot be heard” is false" +
+                " and b = “All sound come from a vibrating source” is true. Which of the following " +
+                "is true:", "L02", "A019c");
+        this.addQuestion(q19);
+
+        QuestionClass q20=new QuestionClass("Q012", "Given: a = “Music is a combination of sound " +
+                "and silence” is true, b = “A very strong sound forms a tornado” is false and c = " +
+                "“Sound is not a wave” is false. Which of the following is true:", "L02", "A020a");
+        this.addQuestion(q20);
+
     }
 
     private void addLevels(){
