@@ -183,54 +183,54 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
     private void addLevels(){
 
-        LevelClass l1 = new LevelClass("L01", "Level 1 - Wind","Hello! This is " +
+        LevelClass l1 = new LevelClass("L01", "Level 1 - Wind","<p><b>Hello!</b> This is " +
                 "the first level of your power conquest. On this level you are going to " +
-                        "learn the concept of propositional logic and contradictory propositions. " +
-                        "In the end of this level you will have the wind power which is the first " +
-                        "step to get the air power, but to finish the level one you have to prove " +
-                        "your knowledge about wind by answering 5 questions. " + "\n" +
-                        "So, lets get started with the concepts:" + "\n" +
-                        "Propositional logics is also called “sentential logic” or “statement logic” " +
+                        "learn the concept of <b>propositional logic</b> and <b>contradictory propositions.</b> " +
+                        "In the end of this level you will have the <b>wind power</b> which is the first " +
+                        "step to get the <b>air power</b>, but to finish the level one you have to prove " +
+                        "your knowledge about wind by answering 5 questions. " + "</p>" +
+                        "<p>So, lets get started with the concepts:" + "</p>" +
+                        "<p><b>Propositional logics</b> is also called <b>“sentential logic”</b> or <b>“statement logic”</b> " +
                         "and it deals with logical relationship between propositions (also called: " +
-                        "claims, statement, sentences, assertions, ..) taken as wholes. A proposition " +
-                        "is a declarative sentence which has a True/False value and it is composed by a " +
-                        "subject term and a predicate term, for example:" + "\n" +
-                        "“The wind is cold”." + "\n" + "The wind= subject term" + "\n" + "“is cold” = " +
-                        "the predicate" + "\n" + "We symbolize the proposition using a single letter: " +
-                        "\n" + "j: “ Jill is wearing a red dress”." + "\n" + "\n" + "Contradictories, " +
-                        "operator \"not\":" + "The Contradictory of A is a claim that always has the " +
+                        "<b>claims</b>, <b>statement</b>, <b>sentences</b>, <b>assertions</b>, ..) taken as wholes. A proposition " +
+                        "is a declarative sentence which has a <b>True/False</b> value and it is composed by a " +
+                        "subject term and a predicate term, for example:" + "</p>" +
+                        "<p>“The wind is cold”." + "</p>" + "<p>The wind= subject term" + "</p>" + "<p>“is cold” = " +
+                        "the predicate" + "</p>" + "<p>We symbolize the proposition using a single letter: " +
+                        "</p>" + "<p><b>j</b>: “ Jill is wearing a red dress”." + "</p>" + "<br />" + "<p><b>Contradictories,</b> " +
+                        "operator \"<b>not</b>\":" + "</p>" + "<p>The Contradictory of A is a claim that always has the " +
                         "opposite truth value of A. In the case of a simple proposition just use a " +
-                        "negative word or expression (\"no\", \"not\", \"It is not true\", \"It is false\"...)" +
-                        " before the sentence, and you have the contradictory. The “not” operator can also be " +
-                        "represented by “¬”. For example:" + "\n" + "a: “The wind is blowing”" + "\n" +
-                        "¬a: “The wind is not blowing”" + "\n" + "Notice that ‘¬a’ is the contradictory claim " +
-                        "of ‘a’ and vice-versa. " + "\n", "Tip1");
+                        "negative word or expression (<b>\"no\"</b>, <b>\"not\"</b>, <b>\"It is not true\"</b>, <b>\"It is false\"</b>...)" +
+                        " before the sentence, and you have the contradictory. The <b>“not”</b> operator can also be " +
+                        "represented by <b>“¬”</b>. For example:" + "</p>" + "<p><b>a</b>: “The wind is blowing”" + "</p>" +
+                        "<p><b>¬a</b>: “The wind is not blowing”" + "</p>" + "<p>Notice that <b>‘¬a’</b> is the contradictory claim " +
+                        "of <b>‘a’</b> and vice-versa. " + "</p>", "Tip1");
         this.addLevel(l1);
 
-        LevelClass l2 = new LevelClass("L02", "Level 2 - Sound", "Hello! This is the last level of " +
-                "your air power conquest. On this level you are going to learn the conjunctions. In " +
-                "the end of this level you will have the air power, but to finish the level 2 you have" +
-                " to prove your knowledge about sound as well as you proved about wind by answering 5" +
-                " questions right." + "\n" + "So, lets get started with the concepts:\n" + "The " +
-                "conjunctions use operators such as “and” or “but” to connect two simple propositions," +
-                " for example:" + "\n" + "“The wind is blowing hard and it is raining”." +  "\n" +
-                "To evaluate this proposition as true both propositions must be true, if one is false" +
-                " then the whole statement is false. The “and” operator can be also represented by “^”.\n", "Tip2");
+        LevelClass l2 = new LevelClass("L02", "Level 2 - Sound", "<p><b>Hello!</b> This is the last level of " +
+                "your air power conquest. On this level you are going to learn the <b>conjunctions</b>. In " +
+                "the end of this level you will have the <b>air power</b>, but to finish the level 2 you have" +
+                " to prove your knowledge about <b>sound</b> as well as you proved about wind by answering 5" +
+                " questions right." + "</p>" + "<p>So, lets get started with the concepts:</p>" + "<p>The " +
+                "<b>conjunctions</b> use operators such as <b>“and”</b> or <b>“but”</b> to connect two simple propositions," +
+                " for example:" + "</p>" + "<p>“The wind is blowing hard and it is raining”." +  "</p>" +
+                "<p>To evaluate this proposition as true <b>both</b> propositions must be <b>true</b>, if one is false" +
+                " then the whole statement is false. The <b>“and”</b> operator can be also represented by <b>“^”</b>.</p>", "Tip2");
         this.addLevel(l2);
 
-        LevelClass l3 = new LevelClass("L03", "Level 3 Name", "In order to master the Earth power " +
-                "you have to pass two levels (Metal and Sand). This is the first one that you have" +
-                " to pass, Metal. On this level you are going to learn the disjunctions and to " +
+        LevelClass l3 = new LevelClass("L03", "Level 3 Name", "<p>In order to master the <b>Earth power</b> " +
+                "you have to pass two levels (<b>Metal</b> and <b>Sand</b>). This is the first one that you have" +
+                " to pass, <b>Metal</b>. On this level you are going to learn the <b>disjunctions</b> and to " +
                 "complete the level 3 you have to prove your knowledge about metal by answering 5 " +
-                "questions right." + "\n" + "So, lets get started with the concepts:\n" + "The " +
-                "disjunctions use the “or” operator connects two simple propositions, for example:"+ "\n" +
-                "“Iron is a kind of metal or it is a kind of stone”. " + "\n" + "We have two kinds of " +
-                "disjunctions: Inclusive “or” and Exclusive “or”." + "\n" + "In the inclusive “or” the " +
-                "propositions are evaluated as true when any one of claims is true. The whole " +
-                "sentence will be false only if both propositions are false." + "\n" + "In the exclusive " +
-                "“or” the propositions are evaluated as true when only one of the claims is true. " +
+                "questions right." + "</p>" + "<p>So, lets get started with the concepts: </p>" + "<p>The " +
+                "<b>disjunctions</b> use the <b>“or”</b> operator to connect two simple propositions, for example:"+ "</p>" +
+                "<p>“Iron is a kind of metal or it is a kind of stone”. " + "</p>" + "<p>We have two kinds of " +
+                "disjunctions: <b>Inclusive “or”</b> and <b>Exclusive “or”</b>." + "</p>" + "<p>In the <b>inclusive “or”</b> the " +
+                "propositions are evaluated as true when <b>any one</b> of claims is <b>true</b>. The whole " +
+                "sentence will be false only if both propositions are false." + "</p>" + "<p>In the <b>exclusive " +
+                "“or”</b> the propositions are evaluated as true when <b>only one</b> of the claims is <b>true</b>. " +
                 "The whole statement is false when both claims have the same value, both false or " +
-                "both true." + "\n" + "The “or” operator can be also represented by “v”.\n", "Tip 3");
+                "both true." + "</p>" + "<p>The <b>“or”</b> operator can be also represented by <b>“v”</b>.</p>", "Tip 3");
         this.addLevel(l3);
 
         LevelClass l4 = new LevelClass("L04", "Level 4 Name", "Lesson 4", "Tip 4");
