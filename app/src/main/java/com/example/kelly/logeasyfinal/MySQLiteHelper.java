@@ -385,7 +385,6 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         database.insert(TABLE_LEVEL, null, values);
     }
 
-
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldV, int newV) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_USERS_ACT);
