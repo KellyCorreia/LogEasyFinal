@@ -138,8 +138,6 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         addQuestions();
         addAnswers();
         addLevels();
-        addUsers();
-        //db.close();
     }
 
     private void addQuestions()
@@ -349,22 +347,6 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
     }
 
-    public void addUserActivities(Long userID){
-        UserActivityClass userActivity;
-        userActivity = new UserActivityClass(userID,"Q001","A001a");
-        this.addUserActivity(userActivity);
-        userActivity = new UserActivityClass(userID,"Q002","A002a");
-        this.addUserActivity(userActivity);
-        userActivity = new UserActivityClass(userID,"Q003","A003a");
-        this.addUserActivity(userActivity);
-        userActivity = new UserActivityClass(userID,"Q004","A004a");
-        this.addUserActivity(userActivity);
-        userActivity = new UserActivityClass(userID,"Q005","A005a");
-        this.addUserActivity(userActivity);
-
-    }
-
-
     public boolean addUserActivity(UserActivityClass userActivity){
         ContentValues values = new ContentValues();
         values.put(COLUMN_USER_ID, userActivity.getUser_id());
@@ -373,18 +355,6 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         values.put(COLUMN_DATE, userActivity.getDate());
         database.insert(TABLE_USERS_ACT, null, values);
         return true;
-    }
-
-    private void addUsers(){
-        UserClass user;
-        user = new UserClass("user1","user1@gmail.com","111","Avatar2");
-        this.addUser(user);
-        user = new UserClass("user2","user2@gmail.com","222","Avatar3");
-        this.addUser(user);
-        user = new UserClass("user3","user3@gmail.com","333","Avatar1");
-        this.addUser(user);
-        user = new UserClass("user4","user4@gmail.com","444","Avatar4");
-        this.addUser(user);
     }
 
     // Adding new question
@@ -491,25 +461,6 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         return true;
     }
 
-
-    public List<QuestionClass> getAllQuestions() {
-        List<QuestionClass> qList = new ArrayList<>();
-        String selectQuery = "SELECT * FROM " + TABLE_QUESTIONS + ";";
-        database=this.getReadableDatabase();
-        Cursor cursor = database.rawQuery(selectQuery, null);
-        if (cursor.moveToFirst()) {
-            do {
-                QuestionClass q = new QuestionClass();
-                q.setQuestion_id(cursor.getString(0));
-                q.setQuestion_text(cursor.getString(1));
-                q.setRight_answer(cursor.getString(2));
-                q.setLevel_id(cursor.getString(3));
-                qList.add(q);
-            } while (cursor.moveToNext());
-        }
-        return qList;
-    }
-
     public List<UserClass> getAllUsers() {
         List<UserClass> usersList = new ArrayList<>();
         String selectQuery = "SELECT * FROM " + TABLE_USERS + ";";
@@ -528,6 +479,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         }
         return usersList;
     }
+
 ///inicio
     public String getUserLevel(Long userID){
         String selectQuery = "SELECT "+COLUMN_LEVEL_NAME+" FROM "+TABLE_LEVEL+" WHERE "+COLUMN_LEVEL_ID+" IN ( SELECT "+COLUMN_LEVEL_ID+" FROM "+TABLE_SCOREBOARD+" WHERE "+COLUMN_USER_ID+" = '"+ userID.toString()+"' );";
@@ -541,8 +493,6 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     }
 
     public boolean lessonStart(String chosenLevelID, Long userID){
-        //SELECT u._id FROM users_activity AS u INNER JOIN table_questions AS q ON u.Q_id = q.Q_id INNER JOIN table_level AS l ON q.L_id = l.L_id WHERE u.user_id = 1 AND l.L_id = 'L01';
-
         String selectQuery = "SELECT u."+COLUMN_ID+" FROM "+TABLE_USERS_ACT
                 +" AS u INNER JOIN "+TABLE_QUESTIONS+" AS q ON u."
                 +COLUMN_QUESTION_ID+" = q."+COLUMN_QUESTION_ID
@@ -558,14 +508,6 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         return false;
     }
 ///fim
-    public int rowcount(){
-        int row=0;
-        String selectQuery="SELECT * FROM " + TABLE_QUESTIONS + ";";
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor=db.rawQuery(selectQuery, null);
-        row=cursor.getCount();
-        return row;
-    }
 
     public LevelClass getLevel(String levelID){
         LevelClass levelobj = new LevelClass();
