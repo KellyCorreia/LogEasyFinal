@@ -262,5 +262,11 @@ public class QuizActivity extends Activity {
 
     }
 
+     /*public boolean onPause(){
+         super.onPause();
+         return true;
+
+    }*/
+
 
 }

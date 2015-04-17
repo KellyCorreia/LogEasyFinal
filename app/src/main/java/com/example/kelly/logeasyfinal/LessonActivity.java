@@ -1,6 +1,9 @@
 package com.example.kelly.logeasyfinal;
 
 import android.app.Activity;
+import android.app.ActivityManager;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -193,6 +196,16 @@ public class LessonActivity extends Activity {
                 break;
         }
 
+    }
+
+    public String getCurrentClass() {
+
+        ActivityManager manager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
+        List<ActivityManager.RunningTaskInfo> runningTaskInfo = manager.getRunningTasks(1);
+
+        ComponentName componentInfo = runningTaskInfo.get(0).topActivity;
+        String className = componentInfo.getClassName();
+        return className;
     }
 
 }

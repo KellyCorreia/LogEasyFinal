@@ -52,11 +52,6 @@ public class HintActivity extends Activity {
         btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HintActivity.this, QuizActivity.class);
-                intent.putExtra("chosenUser", user);
-                intent.putExtra("chosenLevel", seleclevel);
-                intent.putExtra("userScore", score);
-                startActivity(intent);
                 finish();
             }
         });
