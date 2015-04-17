@@ -60,35 +60,20 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Large Text"
             android:id="@+id/txtQuestion"
-            android:layout_alignParentLeft="false"
             android:layout_alignParentTop="true"
-            android:layout_centerInParent="true"
             android:textAlignment="center"
             android:typeface="sans"
-            android:gravity="center_horizontal"
             android:textColor="#ff1b2232"
-            android:layout_marginTop="10dp" />
-
-        <Button
-            android:layout_width="85dp"
-            android:layout_height="30dp"
-            android:id="@+id/btnNext"
-            android:layout_alignParentRight="true"
-            android:onClick= "OnClick"
-            android:layout_gravity="left|center_vertical"
-            android:background="@drawable/next"
-            android:layout_alignParentLeft="false"
-            android:layout_alignParentBottom="true"
-            android:layout_below="@+id/radioGroupAnswers" />
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="top|center_horizontal" />
 
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/radioGroupAnswers"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="false"
             android:layout_marginTop="10dp"
-            android:layout_alignParentBottom="false"
             android:layout_below="@+id/txtQuestion">
 
             <RadioButton
@@ -117,6 +102,19 @@
 
         </RadioGroup>
 
+        <Button
+            android:layout_width="85dp"
+            android:layout_height="30dp"
+            android:id="@+id/btnNext"
+            android:layout_alignParentRight="true"
+            android:onClick= "OnClick"
+            android:layout_gravity="left|center_vertical"
+            android:background="@drawable/next"
+            android:layout_alignParentBottom="false"
+            android:layout_below="@+id/radioGroupAnswers"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp" />
+
     </RelativeLayout>
 
     <LinearLayout
@@ -125,7 +123,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/layoutQuizBottom"
         android:layout_alignParentBottom="true"
-        android:gravity="center">
+        android:gravity="center"
+        android:layout_centerHorizontal="true">
 
         <Button
             android:layout_width="85dp"
