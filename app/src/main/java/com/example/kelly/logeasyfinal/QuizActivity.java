@@ -63,6 +63,7 @@ public class QuizActivity extends Activity {
                 if ((rda.isChecked()) || (rdb.isChecked()) || (rdc.isChecked())) {
                     userAnswer = (RadioButton) findViewById(grp.getCheckedRadioButtonId());
                     createUserActivity();
+                    Toast.makeText(QuizActivity.this, rightAnswer.getText(), Toast.LENGTH_SHORT).show();
 
                     if (userAnswer == rightAnswer) {
                         Toast.makeText(QuizActivity.this, "Right Answer!", Toast.LENGTH_SHORT).show();
@@ -159,14 +160,14 @@ public class QuizActivity extends Activity {
         rdb.setText(aList.get(1).getAnswer_text());
         rdc.setText(aList.get(2).getAnswer_text());
 
-        if(qList.get(0).getRight_answer() == aList.get(0).getAnswer_id()) {
+        if(qList.get(0).getRight_answer().equals(aList.get(0).getAnswer_id())) {
             rightAnswer = rda;
         }else {
-            if (qList.get(0).getRight_answer() == aList.get(1).getAnswer_id()) {
+            if (qList.get(0).getRight_answer().equals(aList.get(1).getAnswer_id())) {
                 rightAnswer = rdb;
             } else {
                 rightAnswer = rdc;
-             }
+            }
         }
     }
 
