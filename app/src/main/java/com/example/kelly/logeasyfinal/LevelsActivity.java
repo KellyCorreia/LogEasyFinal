@@ -39,7 +39,7 @@ public class LevelsActivity extends Activity {
         btnLevels.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setIntent(user, "L01");
+                setIntent("L01");
             }
         });
 
@@ -51,7 +51,7 @@ public class LevelsActivity extends Activity {
                 if (enoughPoints(1))
                     setToast("1 of Wind");
                 else
-                    setIntent(user, "L02");
+                    setIntent("L02");
             }
         });
 
@@ -62,7 +62,7 @@ public class LevelsActivity extends Activity {
                 if (enoughPoints(2)) {
                     setToast("2 of Sound");
                 }else
-                    setIntent(user, "L03");
+                    setIntent("L03");
             }
         });
 
@@ -73,7 +73,7 @@ public class LevelsActivity extends Activity {
                 if (enoughPoints(3))
                     setToast("3 of Metal");
                 else
-                    setIntent(user, "L04");
+                    setIntent("L04");
             }
         });
 
@@ -84,7 +84,7 @@ public class LevelsActivity extends Activity {
                 if (enoughPoints(4))
                     setToast("4 of Sand");
                 else
-                    setIntent(user, "L05");
+                    setIntent("L05");
             }
         });
 
@@ -95,7 +95,7 @@ public class LevelsActivity extends Activity {
                 if (enoughPoints(5))
                     setToast("5 of Snow");
                 else
-                    setIntent(user, "L06");
+                    setIntent("L06");
             }
         });
 
@@ -106,7 +106,7 @@ public class LevelsActivity extends Activity {
                 if (enoughPoints(6))
                     setToast("6 of Plant");
                 else
-                    setIntent(user, "L07");
+                    setIntent("L07");
             }
         });
 
@@ -117,7 +117,7 @@ public class LevelsActivity extends Activity {
                 if (enoughPoints(7))
                     setToast("7 of Lightning");
                 else
-                    setIntent(user, "L08");
+                    setIntent("L08");
             }
         });
 
@@ -128,7 +128,7 @@ public class LevelsActivity extends Activity {
                 if (enoughPoints(8))
                     setToast("8 of Lava");
                 else
-                    setIntent(user, "L09");
+                    setIntent("L09");
             }
         });
 
@@ -139,7 +139,7 @@ public class LevelsActivity extends Activity {
                 if (enoughPoints(9))
                     setToast("9 of Dark City");
                 else
-                    setIntent(user, "L010");
+                    setIntent("L010");
             }
         });
 
@@ -199,17 +199,23 @@ public class LevelsActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void setIntent(UserClass user, String chosenLevelID){
+    public void setIntent(String chosenLevelID){
         chosenLevel = db.getLevel(chosenLevelID);
-      if(db.lessonStart(chosenLevelID, user.getUser_id()))
-          intent = new Intent(LevelsActivity.this, QuizActivity.class);
-        else
-          intent = new Intent(LevelsActivity.this, LessonActivity.class);
 
+
+
+      if(db.lessonStart(chosenLevelID, user.getUser_id())) {
+          intent = new Intent(LevelsActivity.this, QuizActivity.class);
+      }else {
+          intent = new Intent(LevelsActivity.this, LessonActivity.class);
+      }
         intent.putExtra("chosenUser", user);
         intent.putExtra("chosenLevel", chosenLevel);
         intent.putExtra("userScore", userScore);
         startActivity(intent);
+
+
+
     }
     public void setToast(String levelBefore){
         Toast.makeText(LevelsActivity.this, "Sorry, but you don't have enough points to access this level!  Answer more question in the levels before!", Toast.LENGTH_SHORT).show();

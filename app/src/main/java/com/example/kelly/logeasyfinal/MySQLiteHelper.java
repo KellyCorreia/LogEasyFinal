@@ -178,70 +178,54 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 " claim: \n “The wind’s direction is North.”", "L01", "A009b");
         this.addQuestion(q9);
 
-        QuestionClass q10=new QuestionClass("Q010", "Which one is the contradictory of the following sentence:", "L01", "A010a");
+        QuestionClass q10=new QuestionClass("Q010", "Which one is the contradictory of the following" +
+                " sentence: \n “Some breeze is a light wind.”", "L01", "A010a");
         this.addQuestion(q10);
 
-        QuestionClass q11=new QuestionClass("Q011", "Test Question 11", "L02", "A011a");
+        QuestionClass q11=new QuestionClass("Q011", "Given: a = “The sound is a vibration” is  " +
+                "true and b = “The sound is not a wave” is false. Which of the following is true:", "L02", "A011c");
         this.addQuestion(q11);
 
-        QuestionClass q12=new QuestionClass("Q012", "Test Question 12", "L03", "A012a");
+        QuestionClass q12=new QuestionClass("Q012", "Given: a = “The sound propagates through the air”" +
+                " is true. Which of the following is false:", "L02", "A012b");
         this.addQuestion(q12);
-    }
 
-    private void addLevels(){
+        QuestionClass q13=new QuestionClass("Q013", "Given: a = “The sound propagates through solids”" +
+                " is true and b = “The sound is not a vibration” is false. Which of the following is true:", "L02", "A013b");
+        this.addQuestion(q13);
 
-        LevelClass l1 = new LevelClass("L01", "Level 1 - Wind","<p><b>Hello!</b> This is " +
-                "the first level of your power conquest. On this level you are going to " +
-                        "learn the concept of <b>propositional logic</b> and <b>contradictory propositions.</b> " +
-                        "In the end of this level you will have the <b>wind power</b> which is the first " +
-                        "step to get the <b>air power</b>, but to finish the level one you have to prove " +
-                        "your knowledge about wind by answering 5 questions. " + "</p>" +
-                        "<p>So, lets get started with the concepts:" + "</p>" +
-                        "<p><b>Propositional logics</b> is also called <b>“sentential logic”</b> or <b>“statement logic”</b> " +
-                        "and it deals with logical relationship between propositions (also called: " +
-                        "<b>claims</b>, <b>statement</b>, <b>sentences</b>, <b>assertions</b>, ..) taken as wholes. A proposition " +
-                        "is a declarative sentence which has a <b>True/False</b> value and it is composed by a " +
-                        "subject term and a predicate term, for example:" + "</p>" +
-                        "<p>“The wind is cold”." + "</p>" + "<p>The wind= subject term" + "</p>" + "<p>“is cold” = " +
-                        "the predicate" + "</p>" + "<p>We symbolize the proposition using a single letter: " +
-                        "</p>" + "<p><b>j</b>: “ Jill is wearing a red dress”." + "</p>" + "<br />" + "<p><b>Contradictories,</b> " +
-                        "operator \"<b>not</b>\":" + "</p>" + "<p>The Contradictory of A is a claim that always has the " +
-                        "opposite truth value of A. In the case of a simple proposition just use a " +
-                        "negative word or expression (<b>\"no\"</b>, <b>\"not\"</b>, <b>\"It is not true\"</b>, <b>\"It is false\"</b>...)" +
-                        " before the sentence, and you have the contradictory. The <b>“not”</b> operator can also be " +
-                        "represented by <b>“¬”</b>. For example:" + "</p>" + "<p><b>a</b>: “The wind is blowing”" + "</p>" +
-                        "<p><b>¬a</b>: “The wind is not blowing”" + "</p>" + "<p>Notice that <b>‘¬a’</b> is the contradictory claim " +
-                        "of <b>‘a’</b> and vice-versa. " + "</p>", "Tip1");
-        this.addLevel(l1);
+        QuestionClass q14=new QuestionClass("Q014", "Given: “The speed of the sound is 972m/s” is " +
+                "true and “Sound propagates through the air”. Considering the exclusive “or”. Which " +
+                "of the following is true:", "L02", "A014c");
+        this.addQuestion(q14);
 
-        LevelClass l2 = new LevelClass("L02", "Level 2 - Sound", "<p><b>Hello!</b> This is the last level of " +
-                "your air power conquest. On this level you are going to learn the <b>conjunctions</b>. In " +
-                "the end of this level you will have the <b>air power</b>, but to finish the level 2 you have" +
-                " to prove your knowledge about <b>sound</b> as well as you proved about wind by answering 5" +
-                " questions right." + "</p>" + "<p>So, lets get started with the concepts:</p>" + "<p>The " +
-                "<b>conjunctions</b> use operators such as <b>“and”</b> or <b>“but”</b> to connect two simple propositions," +
-                " for example:" + "</p>" + "<p>“The wind is blowing hard and it is raining”." +  "</p>" +
-                "<p>To evaluate this proposition as true <b>both</b> propositions must be <b>true</b>, if one is false" +
-                " then the whole statement is false. The <b>“and”</b> operator can be also represented by <b>“^”</b>.</p>", "Tip2");
-        this.addLevel(l2);
+        QuestionClass q15=new QuestionClass("Q015", "Given: a = “All sound come from a vibrating " +
+                "source” is true and b = “Sound can be heard” is true. Which os the following is true:", "L02", "A015a");
+        this.addQuestion(q15);
 
-        LevelClass l3 = new LevelClass("L03", "Level 3 Name", "<p>In order to master the <b>Earth power</b> " +
-                "you have to pass two levels (<b>Metal</b> and <b>Sand</b>). This is the first one that you have" +
-                " to pass, <b>Metal</b>. On this level you are going to learn the <b>disjunctions</b> and to " +
-                "complete the level 3 you have to prove your knowledge about metal by answering 5 " +
-                "questions right." + "</p>" + "<p>So, lets get started with the concepts: </p>" + "<p>The " +
-                "<b>disjunctions</b> use the <b>“or”</b> operator to connect two simple propositions, for example:"+ "</p>" +
-                "<p>“Iron is a kind of metal or it is a kind of stone”. " + "</p>" + "<p>We have two kinds of " +
-                "disjunctions: <b>Inclusive “or”</b> and <b>Exclusive “or”</b>." + "</p>" + "<p>In the <b>inclusive “or”</b> the " +
-                "propositions are evaluated as true when <b>any one</b> of claims is <b>true</b>. The whole " +
-                "sentence will be false only if both propositions are false." + "</p>" + "<p>In the <b>exclusive " +
-                "“or”</b> the propositions are evaluated as true when <b>only one</b> of the claims is <b>true</b>. " +
-                "The whole statement is false when both claims have the same value, both false or " +
-                "both true." + "</p>" + "<p>The <b>“or”</b> operator can be also represented by <b>“v”</b>.</p>", "Tip 3");
-        this.addLevel(l3);
+        QuestionClass q16=new QuestionClass("Q016", "Given: a = “Sound cannot be heard” is false " +
+                "and b = “Sound is a current of air” is false. Which os the following is false:", "L02", "A016c");
+        this.addQuestion(q16);
 
-        LevelClass l4 = new LevelClass("L04", "Level 4 Name", "Lesson 4", "Tip 4");
-        this.addLevel(l4);
+        QuestionClass q17=new QuestionClass("Q017", "Given: a = “Music is a combination of sounds”" +
+                " is true. Which os the following is false:", "L02", "A017b");
+        this.addQuestion(q17);
+
+        QuestionClass q18=new QuestionClass("Q018", "Given: a = “Music is a combination of sounds”" +
+                " is true,  b = “Sound is a current of air” is false and c = “All sound come from a" +
+                " vibrating source” is true. Which one of the following is true:", "L02", "A018b");
+        this.addQuestion(q18);
+
+        QuestionClass q19=new QuestionClass("Q019", "Given: a = “Sound cannot be heard” is false" +
+                " and b = “All sound come from a vibrating source” is true. Which of the following " +
+                "is true:", "L02", "A019c");
+        this.addQuestion(q19);
+
+        QuestionClass q20=new QuestionClass("Q020", "Given: a = “Music is a combination of sound " +
+                "and silence” is true, b = “A very strong sound forms a tornado” is false and c = " +
+                "“Sound is not a wave” is false. Which of the following is true:", "L02", "A020a");
+        this.addQuestion(q20);
+
     }
 
     private void addAnswers() {
@@ -355,6 +339,64 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
 
     }
+
+
+    private void addLevels(){
+
+        LevelClass l1 = new LevelClass("L01", "Level 1 - Wind","<p><b>Hello!</b> This is " +
+                "the first level of your power conquest. On this level you are going to " +
+                        "learn the concept of <b>propositional logic</b> and <b>contradictory propositions.</b> " +
+                        "In the end of this level you will have the <b>wind power</b> which is the first " +
+                        "step to get the <b>air power</b>, but to finish the level one you have to prove " +
+                        "your knowledge about wind by answering 5 questions. " + "</p>" +
+                        "<p>So, lets get started with the concepts:" + "</p>" +
+                        "<p><b>Propositional logics</b> is also called <b>“sentential logic”</b> or <b>“statement logic”</b> " +
+                        "and it deals with logical relationship between propositions (also called: " +
+                        "<b>claims</b>, <b>statement</b>, <b>sentences</b>, <b>assertions</b>, ..) taken as wholes. A proposition " +
+                        "is a declarative sentence which has a <b>True/False</b> value and it is composed by a " +
+                        "subject term and a predicate term, for example:" + "</p>" +
+                        "<p>“The wind is cold”." + "</p>" + "<p>The wind= subject term" + "</p>" + "<p>“is cold” = " +
+                        "the predicate" + "</p>" + "<p>We symbolize the proposition using a single letter: " +
+                        "</p>" + "<p><b>j</b>: “ Jill is wearing a red dress”." + "</p>" + "<br />" + "<p><b>Contradictories,</b> " +
+                        "operator \"<b>not</b>\":" + "</p>" + "<p>The Contradictory of A is a claim that always has the " +
+                        "opposite truth value of A. In the case of a simple proposition just use a " +
+                        "negative word or expression (<b>\"no\"</b>, <b>\"not\"</b>, <b>\"It is not true\"</b>, <b>\"It is false\"</b>...)" +
+                        " before the sentence, and you have the contradictory. The <b>“not”</b> operator can also be " +
+                        "represented by <b>“¬”</b>. For example:" + "</p>" + "<p><b>a</b>: “The wind is blowing”" + "</p>" +
+                        "<p><b>¬a</b>: “The wind is not blowing”" + "</p>" + "<p>Notice that <b>‘¬a’</b> is the contradictory claim " +
+                        "of <b>‘a’</b> and vice-versa. " + "</p>", "Tip1");
+        this.addLevel(l1);
+
+        LevelClass l2 = new LevelClass("L02", "Level 2 - Sound", "<p><b>Hello!</b> This is the last level of " +
+                "your air power conquest. On this level you are going to learn the <b>conjunctions</b>. In " +
+                "the end of this level you will have the <b>air power</b>, but to finish the level 2 you have" +
+                " to prove your knowledge about <b>sound</b> as well as you proved about wind by answering 5" +
+                " questions right." + "</p>" + "<p>So, lets get started with the concepts:</p>" + "<p>The " +
+                "<b>conjunctions</b> use operators such as <b>“and”</b> or <b>“but”</b> to connect two simple propositions," +
+                " for example:" + "</p>" + "<p>“The wind is blowing hard and it is raining”." +  "</p>" +
+                "<p>To evaluate this proposition as true <b>both</b> propositions must be <b>true</b>, if one is false" +
+                " then the whole statement is false. The <b>“and”</b> operator can be also represented by <b>“^”</b>.</p>", "Tip2");
+        this.addLevel(l2);
+
+        LevelClass l3 = new LevelClass("L03", "Level 3 Name", "<p>In order to master the <b>Earth power</b> " +
+                "you have to pass two levels (<b>Metal</b> and <b>Sand</b>). This is the first one that you have" +
+                " to pass, <b>Metal</b>. On this level you are going to learn the <b>disjunctions</b> and to " +
+                "complete the level 3 you have to prove your knowledge about metal by answering 5 " +
+                "questions right." + "</p>" + "<p>So, lets get started with the concepts: </p>" + "<p>The " +
+                "<b>disjunctions</b> use the <b>“or”</b> operator to connect two simple propositions, for example:"+ "</p>" +
+                "<p>“Iron is a kind of metal or it is a kind of stone”. " + "</p>" + "<p>We have two kinds of " +
+                "disjunctions: <b>Inclusive “or”</b> and <b>Exclusive “or”</b>." + "</p>" + "<p>In the <b>inclusive “or”</b> the " +
+                "propositions are evaluated as true when <b>any one</b> of claims is <b>true</b>. The whole " +
+                "sentence will be false only if both propositions are false." + "</p>" + "<p>In the <b>exclusive " +
+                "“or”</b> the propositions are evaluated as true when <b>only one</b> of the claims is <b>true</b>. " +
+                "The whole statement is false when both claims have the same value, both false or " +
+                "both true." + "</p>" + "<p>The <b>“or”</b> operator can be also represented by <b>“v”</b>.</p>", "Tip 3");
+        this.addLevel(l3);
+
+        LevelClass l4 = new LevelClass("L04", "Level 4 Name", "Lesson 4", "Tip 4");
+        this.addLevel(l4);
+    }
+
 
     public boolean addUserActivity(UserActivityClass userActivity){
         ContentValues values = new ContentValues();

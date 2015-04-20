@@ -99,7 +99,7 @@ public class QuizActivity extends Activity {
                 intent.putExtra("chosenUser", User);
                 intent.putExtra("chosenLevel", selecLevel);
                 intent.putExtra("userScore", Score);
-                startActivity(intent);
+                startActivityForResult(intent,0);
             }
         });
         btnLevelsQ.setOnClickListener(new View.OnClickListener() {
@@ -159,14 +159,14 @@ public class QuizActivity extends Activity {
         rdb.setText(aList.get(1).getAnswer_text());
         rdc.setText(aList.get(2).getAnswer_text());
 
-        if(qList.get(0).getRight_answer() == aList.get(0).getAnswer_id()) {
+        if(qList.get(0).getRight_answer().equals(aList.get(0).getAnswer_id())) {
             rightAnswer = rda;
         }else {
-            if (qList.get(0).getRight_answer() == aList.get(1).getAnswer_id()) {
+            if (qList.get(0).getRight_answer().equals(aList.get(1).getAnswer_id())) {
                 rightAnswer = rdb;
             } else {
                 rightAnswer = rdc;
-             }
+            }
         }
     }
 
@@ -261,6 +261,5 @@ public class QuizActivity extends Activity {
         qList.remove(0);
 
     }
-
 
 }
