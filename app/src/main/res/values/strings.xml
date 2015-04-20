@@ -22,5 +22,6 @@
     <string name="error_duplicated_username">Username already registered!</string>
     <string name="error_duplicated_email">Email already registered!</string>
     <string name="title_activity_scoreboard_">Scoreboard_Activity</string>
+    <string name="title_activity_info">InfoActivity</string>
 
 </resources>

@@ -19,10 +19,6 @@
             android:windowSoftInputMode="adjustResize|stateVisible" >
         </activity>
         <activity
-            android:name=".ResultActivity"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
             android:name=".LessonActivity"
             android:label="@string/app_name" >
         </activity>
@@ -58,6 +54,10 @@
         <activity
             android:name=".Scoreboard_Activity"
             android:label="@string/title_activity_scoreboard_" >
+        </activity>
+        <activity
+            android:name=".InfoActivity"
+            android:label="@string/title_activity_info" >
         </activity>
     </application>
 
