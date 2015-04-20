@@ -172,75 +172,124 @@ public class QuizActivity extends Activity {
 
     private void setScoreBoard(){
 
-        intent.setClass(QuizActivity.this, LevelsActivity.class);
-        intent.putExtra("chosenUser", User);
+        intent.setClass(QuizActivity.this, LessonActivity.class);
 
         switch(score) {
             case 50:
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Wind element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L02");
+                Score = db.getScore(User.getUser_id());
+                intent.putExtra("chosenUser", User);
+                intent.putExtra("chosenLevel", selecLevel);
+                intent.putExtra("userScore", Score);
+                startActivity(intent);
                 finish();
                 break;
 
             case 100:
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Sound element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L03");
+                Score = db.getScore(User.getUser_id());
+                intent.putExtra("chosenUser", User);
+                intent.putExtra("chosenLevel", selecLevel);
+                intent.putExtra("userScore", Score);
+                startActivity(intent);
                 finish();
                 break;
 
             case 150:
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Metal element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L04");
+                Score = db.getScore(User.getUser_id());
+                intent.putExtra("chosenUser", User);
+                intent.putExtra("chosenLevel", selecLevel);
+                intent.putExtra("userScore", Score);
+                startActivity(intent);
                 finish();
                 break;
 
             case 200:
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Sand element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L05");
+                Score = db.getScore(User.getUser_id());
+                intent.putExtra("chosenUser", User);
+                intent.putExtra("chosenLevel", selecLevel);
+                intent.putExtra("userScore", Score);
+                startActivity(intent);
                 finish();
                 break;
 
             case 250:
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Snow element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L06");
+                Score = db.getScore(User.getUser_id());
+                intent.putExtra("chosenUser", User);
+                intent.putExtra("chosenLevel", selecLevel);
+                intent.putExtra("userScore", Score);
+                startActivity(intent);
                 finish();
                 break;
 
             case 300:
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Plant element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L07");
+                Score = db.getScore(User.getUser_id());
+                intent.putExtra("chosenUser", User);
+                intent.putExtra("chosenLevel", selecLevel);
+                intent.putExtra("userScore", Score);
+                startActivity(intent);
                 finish();
                 break;
 
             case 350:
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Lighting element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L08");
+                Score = db.getScore(User.getUser_id());
+                intent.putExtra("chosenUser", User);
+                intent.putExtra("chosenLevel", selecLevel);
+                intent.putExtra("userScore", Score);
+                startActivity(intent);
                 finish();
                 break;
 
             case 400:
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Lava element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L09");
+                Score = db.getScore(User.getUser_id());
+                intent.putExtra("chosenUser", User);
+                intent.putExtra("chosenLevel", selecLevel);
+                intent.putExtra("userScore", Score);
+                startActivity(intent);
                 finish();
                 break;
 
             case 450:
                 Toast.makeText(QuizActivity.this, "Congratulations! You defeated the Dark City!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L10");
+                Score = db.getScore(User.getUser_id());
+                intent.putExtra("chosenUser", User);
+                intent.putExtra("chosenLevel", selecLevel);
+                intent.putExtra("userScore", Score);
+                startActivity(intent);
                 finish();
                 break;
 
             case 500:
                 Toast.makeText(QuizActivity.this, "Congratulations! You are the master of the World!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L10");
+                Score = db.getScore(User.getUser_id());
+                intent.putExtra("chosenUser", User);
+                intent.putExtra("chosenLevel", selecLevel);
+                intent.putExtra("userScore", Score);
+                startActivity(intent);
                 finish();
                 break;
 
             default:
                 db.updatingScore(score, User, Score.getLevel_id());
+                Score = db.getScore(User.getUser_id());
                 break;
         }
-        Score = db.getScore(User.getUser_id());
     }
 
     private void createUserActivity(){
