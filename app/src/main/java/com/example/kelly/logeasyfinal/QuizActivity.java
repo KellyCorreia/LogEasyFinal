@@ -63,7 +63,6 @@ public class QuizActivity extends Activity {
                 if ((rda.isChecked()) || (rdb.isChecked()) || (rdc.isChecked())) {
                     userAnswer = (RadioButton) findViewById(grp.getCheckedRadioButtonId());
                     createUserActivity();
-                    Toast.makeText(QuizActivity.this, rightAnswer.getText(), Toast.LENGTH_SHORT).show();
 
                     if (userAnswer == rightAnswer) {
                         Toast.makeText(QuizActivity.this, "Right Answer!", Toast.LENGTH_SHORT).show();
@@ -100,7 +99,7 @@ public class QuizActivity extends Activity {
                 intent.putExtra("chosenUser", User);
                 intent.putExtra("chosenLevel", selecLevel);
                 intent.putExtra("userScore", Score);
-                startActivity(intent);
+                startActivityForResult(intent,0);
             }
         });
         btnLevelsQ.setOnClickListener(new View.OnClickListener() {

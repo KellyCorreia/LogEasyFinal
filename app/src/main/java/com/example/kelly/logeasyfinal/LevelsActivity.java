@@ -202,17 +202,17 @@ public class LevelsActivity extends Activity {
     public void setIntent(String chosenLevelID){
         chosenLevel = db.getLevel(chosenLevelID);
 
-        intent.putExtra("chosenUser", user);
-        intent.putExtra("chosenLevel", chosenLevel);
-        intent.putExtra("userScore", userScore);
+
 
       if(db.lessonStart(chosenLevelID, user.getUser_id())) {
           intent = new Intent(LevelsActivity.this, QuizActivity.class);
-          startActivity(intent);
       }else {
           intent = new Intent(LevelsActivity.this, LessonActivity.class);
-          startActivity(intent);
       }
+        intent.putExtra("chosenUser", user);
+        intent.putExtra("chosenLevel", chosenLevel);
+        intent.putExtra("userScore", userScore);
+        startActivity(intent);
 
 
 

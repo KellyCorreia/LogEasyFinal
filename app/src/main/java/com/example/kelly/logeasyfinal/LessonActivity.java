@@ -60,14 +60,14 @@ public class LessonActivity extends Activity {
         btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(getCallingActivity() == null){
-                    finish();
-                }else {
+                if(getCallingActivity() == null) {
                     Intent intent = new Intent(LessonActivity.this, QuizActivity.class);
                     intent.putExtra("chosenUser", User);
                     intent.putExtra("chosenLevel", selecLevel);
                     intent.putExtra("userScore", Score);
                     startActivity(intent);
+                    finish();
+                }else{
                     finish();
                 }
             }
