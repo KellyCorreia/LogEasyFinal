@@ -179,8 +179,9 @@ public class QuizActivity extends Activity {
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Wind element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L02");
                 Score = db.getScore(User.getUser_id());
+                selecLevel = db.getLevel("L02");
                 intent.putExtra("chosenUser", User);
-                intent.putExtra("chosenLevel", "L02");
+                intent.putExtra("chosenLevel", selecLevel);
                 intent.putExtra("userScore", Score);
                 startActivity(intent);
                 finish();
@@ -190,8 +191,9 @@ public class QuizActivity extends Activity {
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Sound element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L03");
                 Score = db.getScore(User.getUser_id());
+                selecLevel = db.getLevel("L03");
                 intent.putExtra("chosenUser", User);
-                intent.putExtra("chosenLevel", "L03");
+                intent.putExtra("chosenLevel", selecLevel);
                 intent.putExtra("userScore", Score);
                 startActivity(intent);
                 finish();
@@ -201,8 +203,9 @@ public class QuizActivity extends Activity {
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Metal element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L04");
                 Score = db.getScore(User.getUser_id());
+                selecLevel = db.getLevel("L04");
                 intent.putExtra("chosenUser", User);
-                intent.putExtra("chosenLevel", "L04");
+                intent.putExtra("chosenLevel", selecLevel);
                 intent.putExtra("userScore", Score);
                 startActivity(intent);
                 finish();
@@ -212,8 +215,9 @@ public class QuizActivity extends Activity {
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Sand element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L05");
                 Score = db.getScore(User.getUser_id());
+                selecLevel = db.getLevel("L05");
                 intent.putExtra("chosenUser", User);
-                intent.putExtra("chosenLevel", "L05");
+                intent.putExtra("chosenLevel", selecLevel);
                 intent.putExtra("userScore", Score);
                 startActivity(intent);
                 finish();
@@ -223,8 +227,9 @@ public class QuizActivity extends Activity {
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Snow element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L06");
                 Score = db.getScore(User.getUser_id());
+                selecLevel = db.getLevel("L06");
                 intent.putExtra("chosenUser", User);
-                intent.putExtra("chosenLevel", "L06");
+                intent.putExtra("chosenLevel", selecLevel);
                 intent.putExtra("userScore", Score);
                 startActivity(intent);
                 finish();
@@ -234,8 +239,9 @@ public class QuizActivity extends Activity {
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Plant element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L07");
                 Score = db.getScore(User.getUser_id());
+                selecLevel = db.getLevel("L07");
                 intent.putExtra("chosenUser", User);
-                intent.putExtra("chosenLevel", "L07");
+                intent.putExtra("chosenLevel", selecLevel);
                 intent.putExtra("userScore", Score);
                 startActivity(intent);
                 finish();
@@ -245,8 +251,9 @@ public class QuizActivity extends Activity {
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Lighting element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L08");
                 Score = db.getScore(User.getUser_id());
+                selecLevel = db.getLevel("L08");
                 intent.putExtra("chosenUser", User);
-                intent.putExtra("chosenLevel", "L08");
+                intent.putExtra("chosenLevel", selecLevel);
                 intent.putExtra("userScore", Score);
                 startActivity(intent);
                 finish();
@@ -256,8 +263,9 @@ public class QuizActivity extends Activity {
                 Toast.makeText(QuizActivity.this, "Congratulations! You master the Lava element!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L09");
                 Score = db.getScore(User.getUser_id());
+                selecLevel = db.getLevel("L09");
                 intent.putExtra("chosenUser", User);
-                intent.putExtra("chosenLevel", "L09");
+                intent.putExtra("chosenLevel", selecLevel);
                 intent.putExtra("userScore", Score);
                 startActivity(intent);
                 finish();
@@ -267,8 +275,9 @@ public class QuizActivity extends Activity {
                 Toast.makeText(QuizActivity.this, "Congratulations! You defeated the Dark City!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L10");
                 Score = db.getScore(User.getUser_id());
+                selecLevel = db.getLevel("L10");
                 intent.putExtra("chosenUser", User);
-                intent.putExtra("chosenLevel", "L10");
+                intent.putExtra("chosenLevel", selecLevel);
                 intent.putExtra("userScore", Score);
                 startActivity(intent);
                 finish();
