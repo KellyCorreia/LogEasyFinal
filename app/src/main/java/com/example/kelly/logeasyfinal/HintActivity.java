@@ -20,7 +20,7 @@ import java.util.Random;
 
 
 public class HintActivity extends Activity {
-    TextView txtHint, txtPoints;
+    TextView txtPoints;
     Button btnPlay;
     ImageView ImgAvatar;
     ImageView ImgHint;
