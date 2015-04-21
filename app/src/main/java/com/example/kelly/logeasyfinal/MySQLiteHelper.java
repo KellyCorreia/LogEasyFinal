@@ -306,6 +306,46 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 "children cannot play with sand or water. Find the compound claim B:", "L04", "A040a");
         this.addQuestion(q40);
 
+        QuestionClass q41=new QuestionClass("Q041", "Which one of the following is the contradictory " +
+                "of A: Precipitations can fall in form of ice crystals or in snow.", "L05", "A041a");
+        this.addQuestion(q41);
+
+        QuestionClass q42=new QuestionClass("Q042", "Which one of the following is the contradictory " +
+                "of C: not (A or B). A: Snow has a fluffy structure. B: Snow is composed of small ice particles.", "L05", "A042b");
+        this.addQuestion(q42);
+
+        QuestionClass q43=new QuestionClass("Q043", "Given: A: Snow has an open and soft structure." +
+                " Which one of the following is the contradictory of A:", "L05", "A043c");
+        this.addQuestion(q43);
+
+        QuestionClass q44=new QuestionClass("Q044", "Given: A: not (B or C); B: Snow is precipitation in form of " +
+                "ice flakes; C: Snow has a soft structure.  Which one of the following represents A:", "L05", "A044c");
+        this.addQuestion(q44);
+
+        QuestionClass q45=new QuestionClass("Q045", "Given: ¬(A v B): Water cannot fall from the clouds in form of " +
+                "snow neither ice crystals. Which of the following represents A and B:", "L05", "A045a");
+        this.addQuestion(q45);
+
+        QuestionClass q46=new QuestionClass("Q046", "Which one of the following is the contradictory of AvB. " +
+                "Given: A: Snow is formed by small ice particles; B: Snowflakes come in a variety of sizes and shapes.", "L05", "A046a");
+        this.addQuestion(q46);
+
+        QuestionClass q47=new QuestionClass("Q047", "Which one of the following is the contradictory " +
+                "of A. Given: A: Snow has an open or soft structure.", "L05", "A047c");
+        this.addQuestion(q47);
+
+        QuestionClass q48=new QuestionClass("Q048", "Which one of the following is the contradictory of A: " +
+                "Snow falls from the clouds or the process of precipitating snow is called snowfall.", "L05", "A048a");
+        this.addQuestion(q48);
+
+        QuestionClass q49=new QuestionClass("Q049", "Which one of the following is the contradictory of A: " +
+                "Snow does not fall from the clouds or the process of precipitating snow is not called snowfall.", "L05", "A049b");
+        this.addQuestion(q49);
+
+        QuestionClass q50=new QuestionClass("Q050", "Which one of the following is the contradictory A: " +
+                "Snow has a fluffy structure or it is composed of small ice particles.", "L05", "A050c");
+        this.addQuestion(q50);
+
     }
 
     private void addAnswers() {
@@ -669,7 +709,95 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         AnswerClass a120 = new AnswerClass("A040c", "In the back garden, children can play with sand or water.", "Q040");
         this.addAnswer(a120);
 
+        AnswerClass a121 = new AnswerClass("A041a", "Precipitation cannot fall in form of ice crystals neither in form of snow.", "Q041");
+        this.addAnswer(a121);
 
+        AnswerClass a122 = new AnswerClass("A041b", "Precipitations cannot fall in form of ice or in form of snow.", "Q041");
+        this.addAnswer(a122);
+
+        AnswerClass a123 = new AnswerClass("A041c", "Precipitation can fall in form of snow but not ice crystals.", "Q041");
+        this.addAnswer(a123);
+
+        AnswerClass a124 = new AnswerClass("A042a", "Snow has a fluffy structure and it is composed of small ice particles.", "Q042");
+        this.addAnswer(a124);
+
+        AnswerClass a125 = new AnswerClass("A042b", "Snow is composed of small ice particles or it has a fluffy structure.", "Q042");
+        this.addAnswer(a125);
+
+        AnswerClass a126 = new AnswerClass("A042c", "Snow does not have a fluffy structure neither is composed of small ice particles.", "Q042");
+        this.addAnswer(a126);
+
+        AnswerClass a127 = new AnswerClass("A043a", "Snow does not have an open structure.", "Q043");
+        this.addAnswer(a127);
+
+        AnswerClass a128 = new AnswerClass("A043b", "Snow does not have a soft and open structure.", "Q043");
+        this.addAnswer(a128);
+
+        AnswerClass a129 = new AnswerClass("A043c", "Snow does not have a soft neither an open structure.", "Q043");
+        this.addAnswer(a129);
+
+        AnswerClass a130 = new AnswerClass("A044a", "Snow is not precipitation in form of ice flakes and it has no soft structure.", "Q044");
+        this.addAnswer(a130);
+
+        AnswerClass a131 = new AnswerClass("A044b", "Snow is precipitation in form of ice flakes and it has a soft structure.\n", "Q044");
+        this.addAnswer(a131);
+
+        AnswerClass a132 = new AnswerClass("A044c", "The structure of snow is not soft and it is not precipitation in form of ice flakes.", "Q044");
+        this.addAnswer(a132);
+
+        AnswerClass a133 = new AnswerClass("A045a", "Water can fall from the clouds in form of snow and ice crystals.", "Q045");
+        this.addAnswer(a133);
+
+        AnswerClass a134 = new AnswerClass("A045b", "Water can fall from the clouds in form of snow or ice crystals.", "Q045");
+        this.addAnswer(a134);
+
+        AnswerClass a135 = new AnswerClass("A045c", "Water cannot fall from the clouds in form of snow and ice crystals.", "Q045");
+        this.addAnswer(a135);
+
+        AnswerClass a136 = new AnswerClass("A046a", "Snowflakes do not come in a variety of sizes and shapes neither snow is formed by small ice particles.", "Q046");
+        this.addAnswer(a136);
+
+        AnswerClass a137 = new AnswerClass("A046b", "Snowflakes do not come in a variety of sizes and shapes and snow is formed by small ice particles.", "Q046");
+        this.addAnswer(a137);
+
+        AnswerClass a138 = new AnswerClass("A046c", "Snowflakes do not come in a variety of sizes and shapes or snow is formed by small ice particles.", "Q046");
+        this.addAnswer(a138);
+
+        AnswerClass a139 = new AnswerClass("A047a", "Snow does not have an open and soft structure.", "Q047");
+        this.addAnswer(a139);
+
+        AnswerClass a140 = new AnswerClass("A047b", "Snow does not have a soft structure.", "Q047");
+        this.addAnswer(a140);
+
+        AnswerClass a141 = new AnswerClass("A047c", "Snow does not have an open neither a soft structure.", "Q047");
+        this.addAnswer(a141);
+
+        AnswerClass a142 = new AnswerClass("A048a", "Snow does not fall from the clouds and the process of precipitating snow is not called snowfall.", "Q048");
+        this.addAnswer(a142);
+
+        AnswerClass a143 = new AnswerClass("A048b", "The process of precipitating snow is not called snowfall or snow does not fall from the clouds.", "Q048");
+        this.addAnswer(a143);
+
+        AnswerClass a144 = new AnswerClass("A048c", "The process of precipitating snow is not called snowfall and snow fall from the clouds.", "Q048");
+        this.addAnswer(a144);
+
+        AnswerClass a145 = new AnswerClass("A049a", "Snow does not fall from the clouds and the process of precipitating snow is not called snowfall.\n", "Q049");
+        this.addAnswer(a145);
+
+        AnswerClass a146 = new AnswerClass("A049b", "Snow falls from the clouds and the process of precipitating snow is called snowfall.", "Q049");
+        this.addAnswer(a146);
+
+        AnswerClass a147 = new AnswerClass("A049c", "The process of precipitating snow is called snowfall.", "Q049");
+        this.addAnswer(a147);
+
+        AnswerClass a148 = new AnswerClass("A050a", "Snow has a fluffy structure and it is composed of small ice particles.", "Q050");
+        this.addAnswer(a148);
+
+        AnswerClass a149 = new AnswerClass("A050b", "Snow is composed of small ice particles or it has a fluffy structure.", "Q050");
+        this.addAnswer(a149);
+
+        AnswerClass a150 = new AnswerClass("A050c", "Snow does not have a fluffy structure and it is not composed of small ice particles.", "Q050");
+        this.addAnswer(a150);
     }
 
 
