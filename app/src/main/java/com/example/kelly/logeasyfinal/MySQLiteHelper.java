@@ -266,6 +266,9 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 "and “Silver is a metal” is true. Which one of the following is false:", "L03", "A030c");
         this.addQuestion(q30);
 
+        QuestionClass q31=new QuestionClass("Q031", "", "L04", "A031a");
+        this.addQuestion(q31);
+
     }
 
     private void addAnswers() {
