@@ -4,8 +4,7 @@
     tools:context="com.example.kelly.logeasyfinal.LevelsActivity"
     android:background="#fff7ebcf">
 
-    <LinearLayout
-        android:orientation="horizontal"
+    <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/topLevelsPage"
@@ -13,58 +12,63 @@
         android:layout_alignParentTop="true"
         android:gravity="center">
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="160dp"
-            android:layout_height="34dp"
-            android:id="@+id/LevelsPageUsername"
-            android:background="#ff192030">
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-            <Button
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:id="@+id/btnLogout"
-                android:background="@drawable/buttonlogout"
-                android:gravity="center_vertical"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="5dp" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="180dp"
+                android:layout_height="34dp"
+                android:id="@+id/LevelsPageUsername"
+                android:background="#ff192030">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:id="@+id/txtvUsername"
-                android:layout_gravity="center"
-                android:gravity="center_vertical|center_horizontal"
-                android:typeface="monospace"
-                android:hint="@string/username"
-                android:textStyle="bold"
-                android:layout_marginLeft="5dp" />
+                <Button
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:id="@+id/btnLogout"
+                    android:background="@drawable/buttonlogout"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp" />
 
-        </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:id="@+id/txtvUsername"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:typeface="monospace"
+                    android:hint="@string/username"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp" />
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="160dp"
-            android:layout_height="34dp"
-            android:id="@+id/LevelsPageLevel"
-            android:background="#ff214726">
+            </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:hint="@string/levels"
-                android:id="@+id/txtvLevel"
-                android:layout_gravity="center"
-                android:gravity="center_vertical|center_horizontal"
-                android:typeface="monospace"
-                android:layout_marginTop="5dp"
-                android:textStyle="bold" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="180dp"
+                android:layout_height="34dp"
+                android:id="@+id/LevelsPageLevel"
+                android:background="#ff214726">
 
-        </LinearLayout>
-    </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:hint="@string/levels"
+                    android:id="@+id/txtvLevel"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:typeface="monospace"
+                    android:layout_marginTop="5dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </TableRow>
+    </TableLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -178,8 +182,7 @@
 
     </RelativeLayout>
 
-    <LinearLayout
-        android:orientation="horizontal"
+    <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/bottomLevelsPage"
@@ -188,46 +191,54 @@
         android:layout_alignParentBottom="true"
         android:gravity="center">
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="160dp"
-            android:layout_height="34dp"
-            android:id="@+id/LevelsPagePoints"
-            android:longClickable="false"
-            android:background="#ff8c0000">
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#ffffe593">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:id="@+id/txtvPoints"
-                android:layout_gravity="center"
-                android:gravity="center_vertical|center_horizontal"
-                android:typeface="monospace"
-                android:layout_marginTop="5dp"
-                android:textColor="#ffffffff"
-                android:hint="@string/points"
-                android:textStyle="bold" />
-        </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="180dp"
+                android:layout_height="34dp"
+                android:id="@+id/LevelsPagePoints"
+                android:longClickable="false"
+                android:background="#ff8c0000">
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="160dp"
-            android:layout_height="34dp"
-            android:id="@+id/LevelsPageScoreboard"
-            android:background="#ffffe48f">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:id="@+id/txtvPoints"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:typeface="monospace"
+                    android:textColor="#ffffffff"
+                    android:hint="@string/points"
+                    android:textStyle="bold"
+                    android:layout_marginTop="6dp" />
+            </LinearLayout>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/btnScoreboard"
-                android:background="#ffffe48f"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:typeface="monospace"
-                android:textColor="#ff192030"
-                android:textStyle="bold"
-                android:text="@string/scoreboard" />
-        </LinearLayout>
-    </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="180dp"
+                android:layout_height="34dp"
+                android:id="@+id/LevelsPageScoreboard"
+                android:background="#ffffe594"
+                android:gravity="center">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnScoreboard"
+                    android:background="#ffffe48f"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:typeface="monospace"
+                    android:textColor="#ff192030"
+                    android:textStyle="bold"
+                    android:text="@string/scoreboard"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+        </TableRow>
+    </TableLayout>
 
 </RelativeLayout>
