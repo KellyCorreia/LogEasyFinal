@@ -354,8 +354,70 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 ": True. Which one of the following is false:", "L06", "A052a");
         this.addQuestion(q52);
 
-        /*QuestionClass q61=new QuestionClass("Q061", "", "L07", "A061a");
-        this.addQuestion(q61);*/
+        QuestionClass q53=new QuestionClass("Q053", "Consider A: Plants obtain energy if exposed to " +
+                "sunlight. Please select the false statement from the following:", "L06", "A053c");
+        this.addQuestion(q53);
+
+        QuestionClass q54=new QuestionClass("Q054", "Please select the antecedent from the following" +
+                " claim: B = Otherwise, plants will not survive on this planet.", "L06", "A054b");
+        this.addQuestion(q54);
+
+        QuestionClass q55=new QuestionClass("Q055", "Please select the antecedent from the following" +
+                " claim: C = Don’t water the flowers for a month and you won’t have them anymore.", "L06", "A055c");
+        this.addQuestion(q55);
+
+        QuestionClass q56=new QuestionClass("Q056", "Please select the consequent from the following" +
+                " claim: A = Anyone who loves plants deserves a planthouse.", "L06", "A056b");
+        this.addQuestion(q56);
+
+        QuestionClass q57=new QuestionClass("Q057", "Please select the consequent from the following" +
+                " claim: B = Visit us and you will get a free green plant pot.", "L06", "A057a");
+        this.addQuestion(q57);
+
+        QuestionClass q58=new QuestionClass("Q058", "Consider A: House plants won’t grow if over-watered" +
+                " or under-watered. Please select the false statement from the following:", "L06", "A058a");
+        this.addQuestion(q58);
+        //two questions skipped
+
+        QuestionClass q61=new QuestionClass("Q061", "Please select the contradictory of A: If lightning" +
+                " strikes then you can hear it.", "L07", "A061a");
+        this.addQuestion(q61);
+
+        QuestionClass q62=new QuestionClass("Q062", "Please select the contradictory of A: If the electric" +
+                " field is strong enough, a positive streamer can develop from those points.", "L07", "A062b");
+        this.addQuestion(q62);
+
+        QuestionClass q63=new QuestionClass("Q063", "Which one of the following is the contradictory of C:" +
+                " If a lightning hits an object on the ground it is called a strike.", "L07", "A063a");
+        this.addQuestion(q63);
+
+        QuestionClass q64=new QuestionClass("Q064", "Which one of the following is the contradictory" +
+                " of A: If a lightning hits an object, the object will burn.", "L07", "A064c");
+        this.addQuestion(q64);
+
+        QuestionClass q65=new QuestionClass("Q065", "Which one of the following is the contradictory" +
+                " of B: If the house is on fire then only fire department can save lives.", "L07", "A065c");
+        this.addQuestion(q65);
+
+        QuestionClass q66=new QuestionClass("Q066", "Which one of the following is the contradictory " +
+                "of C: If there is a storm then some lightnings are pretty spectacular.", "L07", "A066c");
+        this.addQuestion(q66);
+
+        QuestionClass q67=new QuestionClass("Q067", "Which one of the following is the contradictory of " +
+                "B: If lightning strikes a person, it is usually fatal.", "L07", "A067a");
+        this.addQuestion(q67);
+
+        QuestionClass q68=new QuestionClass("Q068", "Which one of the following is the contradictory " +
+                "of A: If somebody has a fear of thunder or lightning, they may have astraphobia.", "L07", "A068b");
+        this.addQuestion(q68);
+
+        QuestionClass q69=new QuestionClass("Q069", "Which one of the following is the contradictory of " +
+                "C: You will learn more about lightning if you study fulminology.", "L07", "A069c");
+        this.addQuestion(q69);
+
+        QuestionClass q70=new QuestionClass("Q070", "Which one of the following is the contradictory " +
+                "of A: Some people can hear the thunder if the distance is less than 20 kilometres.", "L07", "A070A");
+        this.addQuestion(q70);
 
     }
 
@@ -810,26 +872,169 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         AnswerClass a150 = new AnswerClass("A050c", "Snow does not have a fluffy structure and it is not composed of small ice particles.", "Q050");
         this.addAnswer(a150);
 
-        AnswerClass a151 = new AnswerClass("A051a", "", "Q051");
+        AnswerClass a151 = new AnswerClass("A051a", "The plants grow fast because Amy waters them everyday.", "Q051");
         this.addAnswer(a151);
 
-        AnswerClass a152 = new AnswerClass("A051b", "", "Q051");
+        AnswerClass a152 = new AnswerClass("A051b", "The plants do not grow fast if Amy does not waters them everyday.", "Q051");
         this.addAnswer(a152);
 
-        AnswerClass a153 = new AnswerClass("A051c", "", "Q051");
+        AnswerClass a153 = new AnswerClass("A051c", "If Amy waters the plants everyday then the plants grow fast. ", "Q051");
         this.addAnswer(a153);
 
-        AnswerClass a154 = new AnswerClass("A052a", "", "Q052");
+        AnswerClass a154 = new AnswerClass("A052a", "Flowers grow from seeds and they are not plants.", "Q052");
         this.addAnswer(a154);
 
-        AnswerClass a155 = new AnswerClass("A052b", "", "Q052");
+        AnswerClass a155 = new AnswerClass("A052b", "Flowers do not grow from seeds or they are not plants.", "Q052");
         this.addAnswer(a155);
 
-        AnswerClass a156 = new AnswerClass("A052c", "", "Q052");
+        AnswerClass a156 = new AnswerClass("A052c", "Flowers are plants if they grow from seeds.", "Q052");
         this.addAnswer(a156);
 
-        /*AnswerClass a180 = new AnswerClass("A061a", "", "Q061");
-        this.addAnswer(a180);*/
+        AnswerClass a157 = new AnswerClass("A053a", "If exposed to sunlight, plants will not obtain energy.", "Q053");
+        this.addAnswer(a157);
+
+        AnswerClass a158 = new AnswerClass("A053b", "Plants obtain energy if not exposed to sunlight.", "Q053");
+        this.addAnswer(a158);
+
+        AnswerClass a159 = new AnswerClass("A053c", "Plants won’t obtain energy if exposed to sunlight.", "Q053");
+        this.addAnswer(a159);
+
+        AnswerClass a160 = new AnswerClass("A054a", "Plants", "Q054");
+        this.addAnswer(a160);
+
+        AnswerClass a161 = new AnswerClass("A054b", "Otherwise", "Q054");
+        this.addAnswer(a161);
+
+        AnswerClass a162 = new AnswerClass("A054c", "will not survive", "Q054");
+        this.addAnswer(a162);
+
+        AnswerClass a163 = new AnswerClass("A055a", "You won’t have them anymore", "Q055");
+        this.addAnswer(a163);
+
+        AnswerClass a164 = new AnswerClass("A055b", "Don’t water", "Q055");
+        this.addAnswer(a164);
+
+        AnswerClass a165 = new AnswerClass("A055c", "Don’t water the flowers for a month", "Q055");
+        this.addAnswer(a165);
+
+        AnswerClass a166 = new AnswerClass("A056a", "loves plants", "Q056");
+        this.addAnswer(a166);
+
+        AnswerClass a167 = new AnswerClass("A056b", "deserves a planthouse", "Q056");
+        this.addAnswer(a167);
+
+        AnswerClass a168 = new AnswerClass("A056c", "anyone who loves plants", "Q056");
+        this.addAnswer(a168);
+
+        AnswerClass a169 = new AnswerClass("A057a", "you will get a free green pot ", "Q057");
+        this.addAnswer(a169);
+
+        AnswerClass a170 = new AnswerClass("A057b", "green plant pot", "Q057");
+        this.addAnswer(a170);
+
+        AnswerClass a171 = new AnswerClass("A057c", "visit us", "Q057");
+        this.addAnswer(a171);
+
+        AnswerClass a172 = new AnswerClass("A058a", "House plants will grow if over-watered or under-watered.", "Q058");
+        this.addAnswer(a172);
+
+        AnswerClass a173 = new AnswerClass("A058b", "House plants won’t grow if not over-watered or under-watered.", "Q058");
+        this.addAnswer(a173);
+
+        AnswerClass a174 = new AnswerClass("A058c", "House plants will grow if not over-watered or under-watered.", "Q058");
+        this.addAnswer(a174);
+        //two questions skipped
+
+        AnswerClass a181 = new AnswerClass("A061a", "Lighting strikes and you can not hear it.", "Q061");
+        this.addAnswer(a181);
+
+        AnswerClass a182 = new AnswerClass("A061b", "Lightning strikes or you can not hear it.", "Q061");
+        this.addAnswer(a182);
+
+        AnswerClass a183 = new AnswerClass("A061c", "Lightning does not strike and you can not hear it.", "Q061");
+        this.addAnswer(a183);
+
+        AnswerClass a184 = new AnswerClass("A062a", "The electric field is not strong enough and a positive streamer develops from those points.", "Q062");
+        this.addAnswer(a184);
+
+        AnswerClass a185 = new AnswerClass("A062b", "The electric field is strong enough and a positive streamer can not develop from those points.", "Q062");
+        this.addAnswer(a185);
+
+        AnswerClass a186 = new AnswerClass("A062c", " If the electric field is strong enough, a positive streamer can not develop from those points.", "Q062");
+        this.addAnswer(a186);
+
+        AnswerClass a187 = new AnswerClass("A063a", "A lightning hits an object on the ground and it is not called a strike.", "Q063");
+        this.addAnswer(a187);
+
+        AnswerClass a188 = new AnswerClass("A063b", "A lightning does not hit an object on the ground and it is not called a strike.", "Q063");
+        this.addAnswer(a188);
+
+        AnswerClass a189 = new AnswerClass("A063c", "A lightning hits an object on the ground and it is called a strike.", "Q063");
+        this.addAnswer(a189);
+
+        AnswerClass a190 = new AnswerClass("A064a", "A lightning hits an object or the object will not burn.", "Q064");
+        this.addAnswer(a190);
+
+        AnswerClass a191 = new AnswerClass("A064b", "A lightning hits an object and the object will burn.", "Q064");
+        this.addAnswer(a191);
+
+        AnswerClass a192 = new AnswerClass("A064c", "A lightning hits an object and the object will not burn.", "Q064");
+        this.addAnswer(a192);
+
+        AnswerClass a193 = new AnswerClass("A065a", "The house is on fire and only the fire department can save lives.", "Q065");
+        this.addAnswer(a193);
+
+        AnswerClass a194 = new AnswerClass("A065b", "The house is not on fire and not only the fire department can save lives.", "Q065");
+        this.addAnswer(a194);
+
+        AnswerClass a195 = new AnswerClass("A065c", "The house is on fire and some lives can be saved by someone outside fire department.", "Q065");
+        this.addAnswer(a195);
+
+        AnswerClass a196 = new AnswerClass("A066a", "There is a storm and some lightnings are not pretty spectacular.", "Q066");
+        this.addAnswer(a196);
+
+        AnswerClass a197 = new AnswerClass("A066b", "There is a storm and all lightnings aren’t pretty spectacular.", "Q066");
+        this.addAnswer(a197);
+
+        AnswerClass a198 = new AnswerClass("A066c", "There is a storm and no lightnings are pretty spectacular.", "Q066");
+        this.addAnswer(a198);
+
+        AnswerClass a199 = new AnswerClass("A067a", "Lightning strikes a person and it is not usually fatal.", "Q067");
+        this.addAnswer(a199);
+
+        AnswerClass a200 = new AnswerClass("A067b", "If lightning strikes a person, it is not usually fatal.", "Q067");
+        this.addAnswer(a200);
+
+        AnswerClass a201 = new AnswerClass("A067c", "If lightning strikes a person, it is not fatal.", "Q067");
+        this.addAnswer(a201);
+
+        AnswerClass a203 = new AnswerClass("A068a", "If somebody does not have a fear of thunder or lightning and they may have astraphobia.", "Q068");
+        this.addAnswer(a203);
+
+        AnswerClass a204 = new AnswerClass("A068b", "Somebody has a fear of thunder or lightning and they may not have astraphobia.", "Q068");
+        this.addAnswer(a204);
+
+        AnswerClass a205 = new AnswerClass("A068c", "If somebody does have a fear of thunder and lightning, they may have astraphobia.", "Q068");
+        this.addAnswer(a205);
+
+        AnswerClass a206 = new AnswerClass("A069a", "You will learn more about lightning if you don’t study fulminology.", "Q069");
+        this.addAnswer(a206);
+
+        AnswerClass a207 = new AnswerClass("A069b", "You will not learn more about lightning if you study fulminology.", "Q069");
+        this.addAnswer(a207);
+
+        AnswerClass a208 = new AnswerClass("A069c", "You study fulminology and won’t learn more about lightning.", "Q069");
+        this.addAnswer(a208);
+
+        AnswerClass a209 = new AnswerClass("A070a", "The distance is less than 20 kilometres and no one can hear the thunder.", "Q070");
+        this.addAnswer(a209);
+
+        AnswerClass a210 = new AnswerClass("A070b", "The distance is less than 20 kilometres and some can’t hear the thunder.", "Q070");
+        this.addAnswer(a210);
+
+        AnswerClass a211 = new AnswerClass("A070c", "The distance is less than 20 kilometres and everyone can hear the thunder.", "Q070");
+        this.addAnswer(a211);
+
     }
 
 
