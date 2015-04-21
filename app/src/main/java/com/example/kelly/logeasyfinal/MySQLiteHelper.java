@@ -354,6 +354,9 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 ": True. Which one of the following is false:", "L06", "A052a");
         this.addQuestion(q52);
 
+        /*QuestionClass q61=new QuestionClass("Q061", "", "L07", "A061a");
+        this.addQuestion(q61);*/
+
     }
 
     private void addAnswers() {
@@ -806,6 +809,27 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
         AnswerClass a150 = new AnswerClass("A050c", "Snow does not have a fluffy structure and it is not composed of small ice particles.", "Q050");
         this.addAnswer(a150);
+
+        AnswerClass a151 = new AnswerClass("A051a", "", "Q051");
+        this.addAnswer(a151);
+
+        AnswerClass a152 = new AnswerClass("A051b", "", "Q051");
+        this.addAnswer(a152);
+
+        AnswerClass a153 = new AnswerClass("A051c", "", "Q051");
+        this.addAnswer(a153);
+
+        AnswerClass a154 = new AnswerClass("A052a", "", "Q052");
+        this.addAnswer(a154);
+
+        AnswerClass a155 = new AnswerClass("A052b", "", "Q052");
+        this.addAnswer(a155);
+
+        AnswerClass a156 = new AnswerClass("A052c", "", "Q052");
+        this.addAnswer(a156);
+
+        /*AnswerClass a180 = new AnswerClass("A061a", "", "Q061");
+        this.addAnswer(a180);*/
     }
 
 
