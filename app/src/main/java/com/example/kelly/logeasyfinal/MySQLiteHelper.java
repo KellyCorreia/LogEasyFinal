@@ -226,6 +226,46 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 "“Sound is not a wave” is false. Which of the following is true:", "L02", "A020a");
         this.addQuestion(q20);
 
+        QuestionClass q21=new QuestionClass("Q021", "Given:  a = “The earth is full of metals” is" +
+                " true and b = “Gold is a metal” is true.  Which of the following is false:", "L03", "A021c");
+        this.addQuestion(q21);
+
+        QuestionClass q22=new QuestionClass("Q022", "Which one of the following propositions is true:", "L03", "A022b");
+        this.addQuestion(q22);
+
+        QuestionClass q23=new QuestionClass("Q023", "Given: a = “All metals are found in the earth”" +
+                " is true and b = “Silver is a crystal” is false. Which one of the following is false.", "L03", "A023b");
+        this.addQuestion(q23);
+
+        QuestionClass q24=new QuestionClass("Q024", "Given: a = “Gold is more expensive than silver”" +
+                " is true and b = “Both gold and silver are metals” is true. Which one of the following" +
+                " is true.", "L03", "A024b");
+        this.addQuestion(q24);
+
+        QuestionClass q25=new QuestionClass("Q025", "Given: a = “Gold is a gemstone” and  b = “Ruby" +
+                " is a metal” both are false. Which one of the following is true:", "L03", "A025a");
+        this.addQuestion(q25);
+
+        QuestionClass q26=new QuestionClass("Q026", "Given: a = “Silver is a stone” is false and b" +
+                " = “All metals are found in the earth” is true. Which one of the following is false:", "L03", "A026c");
+        this.addQuestion(q26);
+
+        QuestionClass q27=new QuestionClass("Q027", "Given: “All metals are found in the earth and " +
+                "gold is a metal” is true and “Ruby is a stone or gold is a stone” is true. Which one of " +
+                "the following is true:", "L03", "A027b");
+        this.addQuestion(q27);
+
+        QuestionClass q28=new QuestionClass("Q028", "Given: “Silver is a precious metal and gold is not" +
+                " a stone” is true. Which one of the following is true:", "L03", "A028a");
+        this.addQuestion(q28);
+
+        QuestionClass q29=new QuestionClass("Q029", "Given: “Iron is a metal”  is true. Which one of the following is false:", "L03", "A029a");
+        this.addQuestion(q29);
+
+        QuestionClass q30=new QuestionClass("Q030", "Given: “Gold is the most expensive metal” is true " +
+                "and “Silver is a metal” is true. Which one of the following is false:", "L03", "A030c");
+        this.addQuestion(q30);
+
     }
 
     private void addAnswers() {
@@ -319,23 +359,185 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         AnswerClass a30 = new AnswerClass("A010c", "All breezes are light.", "Q010");
         this.addAnswer(a30);
 
-        AnswerClass a31 = new AnswerClass("A011a", "Answer A", "Q011");
+        AnswerClass a31 = new AnswerClass("A011a", "The sound is a vibration and it is not a wave.", "Q011");
         this.addAnswer(a31);
 
-        AnswerClass a32 = new AnswerClass("A011b", "Answer B", "Q011");
+        AnswerClass a32 = new AnswerClass("A011b", "The sound is not a vibration, but it is a wave.", "Q011");
         this.addAnswer(a32);
 
-        AnswerClass a33 = new AnswerClass("A011c", "Answer C", "Q011");
+        AnswerClass a33 = new AnswerClass("A011c", "The sound is a vibration and it is a wave.", "Q011");
         this.addAnswer(a33);
 
-        AnswerClass a34 = new AnswerClass("A012a", "Answer A", "Q012");
+        AnswerClass a34 = new AnswerClass("A012a", "The sound propagates through the air or it is not a wave.", "Q012");
         this.addAnswer(a34);
 
-        AnswerClass a35 = new AnswerClass("A012b", "Answer B", "Q012");
+        AnswerClass a35 = new AnswerClass("A012b", "The sound doesn’t propagates through the air and it is a wave.", "Q012");
         this.addAnswer(a35);
 
-        AnswerClass a36 = new AnswerClass("A012c", "Answer C", "Q012");
+        AnswerClass a36 = new AnswerClass("A012c", "The sound propagates through the air and it is a vibration.", "Q012");
         this.addAnswer(a36);
+
+        AnswerClass a37 = new AnswerClass("A013a", "a ^ b", "Q013");
+        this.addAnswer(a37);
+
+        AnswerClass a38 = new AnswerClass("A013b", "a ^ ¬b", "Q013");
+        this.addAnswer(a38);
+
+        AnswerClass a39 = new AnswerClass("A013c", "¬a ^ b", "Q013");
+        this.addAnswer(a39);
+
+        AnswerClass a40 = new AnswerClass("A014a", "The speed of the sound is 972m/s or it propagates through the air.", "Q014");
+        this.addAnswer(a40);
+
+        AnswerClass a41 = new AnswerClass("A014b", "The speed of the sound is not 972m/s or it does not propagates through the air.", "Q014");
+        this.addAnswer(a41);
+
+        AnswerClass a42 = new AnswerClass("A014c", "The speed of the sound is 972m/s or it does not propagates through the air.", "Q014");
+        this.addAnswer(a42);
+
+        AnswerClass a43 = new AnswerClass("A015a", "a ^ b", "Q015");
+        this.addAnswer(a43);
+
+        AnswerClass a44 = new AnswerClass("A015b", "¬a ^ b", "Q015");
+        this.addAnswer(a44);
+
+        AnswerClass a45 = new AnswerClass("A015c", "a ^ ¬b", "Q015");
+        this.addAnswer(a45);
+
+        AnswerClass a46 = new AnswerClass("A016a", "a ^ b", "Q016");
+        this.addAnswer(a46);
+
+        AnswerClass a47 = new AnswerClass("A016b", "¬a ^ b", "Q016");
+        this.addAnswer(a47);
+
+        AnswerClass a48 = new AnswerClass("A016c", "¬a ^ ¬b", "Q016");
+        this.addAnswer(a48);
+
+        AnswerClass a49 = new AnswerClass("A017a", "Music is a combination of sounds and sound is a current of air.", "Q017");
+        this.addAnswer(a49);
+
+        AnswerClass a50 = new AnswerClass("A017b", "Music is not a combination of sounds and sound is a vibration. ", "Q017");
+        this.addAnswer(a50);
+
+        AnswerClass a51 = new AnswerClass("A017c", "Music is a combination of sounds and sound cannot be heard.", "Q017");
+        this.addAnswer(a51);
+
+        AnswerClass a52 = new AnswerClass("A018a", "a ^ b ^ c", "Q018");
+        this.addAnswer(a52);
+
+        AnswerClass a53 = new AnswerClass("A018b", "a ^ ¬b ^ c", "Q018");
+        this.addAnswer(a53);
+
+        AnswerClass a54 = new AnswerClass("A018c", "a ^ b ^ ¬c", "Q018");
+        this.addAnswer(a54);
+
+        AnswerClass a55 = new AnswerClass("A019a", "Sound can be heard and some sounds do not come from a vibrating source.", "Q019");
+        this.addAnswer(a55);
+
+        AnswerClass a56 = new AnswerClass("A019b", "All sound come from a vibrating source and sound cannot be heard.", "Q019");
+        this.addAnswer(a56);
+
+        AnswerClass a57 = new AnswerClass("A019c", "All sound come from a vibrating source and sound can be heard.", "Q019");
+        this.addAnswer(a57);
+
+        AnswerClass a58 = new AnswerClass("A020a", "Sound is a wave and a very strong sound does not form a tornado. ", "Q020");
+        this.addAnswer(a58);
+
+        AnswerClass a59 = new AnswerClass("A020b", "Music is a combination of sound and silence and a very strong sound forms a tornado.", "Q020");
+        this.addAnswer(a59);
+
+        AnswerClass a60 = new AnswerClass("A020c", "Sound is not a wave and music is a combination of sound and silence.", "Q020");
+        this.addAnswer(a60);
+
+        AnswerClass a61 = new AnswerClass("A021a", "a v b", "Q021");
+        this.addAnswer(a61);
+
+        AnswerClass a62 = new AnswerClass("A021b", "a v ¬b", "Q021");
+        this.addAnswer(a62);
+
+        AnswerClass a63 = new AnswerClass("A021c", "¬a v ¬b", "Q021");
+        this.addAnswer(a63);
+
+        AnswerClass a64 = new AnswerClass("A022a", "Gold is a metal and silver is not a metal.", "Q022");
+        this.addAnswer(a64);
+
+        AnswerClass a65 = new AnswerClass("A022b", "Gold is a metal or silver is not a metal.", "Q022");
+        this.addAnswer(a65);
+
+        AnswerClass a66 = new AnswerClass("A022c", "Gold is not a metal or silver is not a metal.", "Q022");
+        this.addAnswer(a66);
+
+        AnswerClass a67 = new AnswerClass("A023a", "Some metals are not found in the earth or silver is not a crystal.", "Q023");
+        this.addAnswer(a67);
+
+        AnswerClass a68 = new AnswerClass("A023b", "Some metals are not found in the earth or silver is a crystal. ", "Q023");
+        this.addAnswer(a68);
+
+        AnswerClass a69 = new AnswerClass("A023c", "Silver is a metal and all metal are found in the earth.", "Q023");
+        this.addAnswer(a69);
+
+        AnswerClass a70 = new AnswerClass("A024a", "Gold and silver are metals and silver is more expensive than gold.", "Q024");
+        this.addAnswer(a70);
+
+        AnswerClass a71 = new AnswerClass("A024b", "Gold is more expensive than silver or silver is not a metal.", "Q024");
+        this.addAnswer(a71);
+
+        AnswerClass a72 = new AnswerClass("A024c", "Silver is more expensive than gold or gold is not a metal.", "Q024");
+        this.addAnswer(a72);
+
+        AnswerClass a73 = new AnswerClass("A025a", "Gold is not a gemstone or ruby is a metal.", "Q025");
+        this.addAnswer(a73);
+
+        AnswerClass a74 = new AnswerClass("A025b", "Gold is a gemstone or ruby is a metal.", "Q025");
+        this.addAnswer(a74);
+
+        AnswerClass a75 = new AnswerClass("A025c", "Gold and Ruby are metals.", "Q025");
+        this.addAnswer(a75);
+
+        AnswerClass a76 = new AnswerClass("A026a", "¬a ^ b", "Q026");
+        this.addAnswer(a76);
+
+        AnswerClass a77 = new AnswerClass("A026b", "a v b", "Q026");
+        this.addAnswer(a77);
+
+        AnswerClass a78 = new AnswerClass("A026c", "a ^ b", "Q026");
+        this.addAnswer(a78);
+
+        AnswerClass a79 = new AnswerClass("A027a", "All metals are found in the earth and ruby is a stone.\n", "Q027");
+        this.addAnswer(a79);
+
+        AnswerClass a80 = new AnswerClass("A027b", "Gold is a metal or gold is stone.", "Q027");
+        this.addAnswer(a80);
+
+        AnswerClass a81 = new AnswerClass("A027c", "Gold is not a metal or a stone.", "Q027");
+        this.addAnswer(a81);
+
+        AnswerClass a82 = new AnswerClass("A028a", "Silver is a precious metal or gold is a stone.", "Q028");
+        this.addAnswer(a82);
+
+        AnswerClass a83 = new AnswerClass("A028b", "Silver is not a metal or gold is a stone.", "Q028");
+        this.addAnswer(a83);
+
+        AnswerClass a84 = new AnswerClass("A028c", "Gold and silver are metals.", "Q028");
+        this.addAnswer(a84);
+
+        AnswerClass a85 = new AnswerClass("A029a", "Gold is a metal, but iron is not.", "Q029");
+        this.addAnswer(a85);
+
+        AnswerClass a86 = new AnswerClass("A029b", "Iron is not a metal or gold is a metal", "Q029");
+        this.addAnswer(a86);
+
+        AnswerClass a87 = new AnswerClass("A029c", "Iron is a metal or gold is a metal.", "Q029");
+        this.addAnswer(a87);
+
+        AnswerClass a88 = new AnswerClass("A030a", "Or silver or gold is the most expensive metal.", "Q030");
+        this.addAnswer(a88);
+
+        AnswerClass a89 = new AnswerClass("A030b", "Gold and silver are the most expensive metals.", "Q030");
+        this.addAnswer(a89);
+
+        AnswerClass a90 = new AnswerClass("A030c", "Gold is not the most expensive metal or silver is not a metal.", "Q030");
+        this.addAnswer(a90);
 
 
     }
@@ -378,7 +580,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 " then the whole statement is false. The <b>“and”</b> operator can be also represented by <b>“^”</b>.</p>", "Tip2");
         this.addLevel(l2);
 
-        LevelClass l3 = new LevelClass("L03", "Level 3 Name", "<p>In order to master the <b>Earth power</b> " +
+        LevelClass l3 = new LevelClass("L03", "Level 3 - Metal", "<p>In order to master the <b>Earth power</b> " +
                 "you have to pass two levels (<b>Metal</b> and <b>Sand</b>). This is the first one that you have" +
                 " to pass, <b>Metal</b>. On this level you are going to learn the <b>disjunctions</b> and to " +
                 "complete the level 3 you have to prove your knowledge about metal by answering 5 " +
@@ -393,8 +595,42 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 "both true." + "</p>" + "<p>The <b>“or”</b> operator can be also represented by <b>“v”</b>.</p>", "Tip 3");
         this.addLevel(l3);
 
-        LevelClass l4 = new LevelClass("L04", "Level 4 Name", "Lesson 4", "Tip 4");
+        LevelClass l4 = new LevelClass("L04", "Level 4 - Sand", "<p>Hello! This is Level 4, the last step you have to go through" +
+                " to get the <b>Earth</b> power. On this level you are going to learn about the <b>contradictory of a conjunction" +
+                "</b> and to complete the level 4 you have to prove your knowledge about Sand by answering 5 questions right. </p>" +
+                "<p>So, lets get started with the concepts:</p>" +
+                "<p>The <b>Contradictory</b> of A is a claim that <b>always</b> has the <b>opposite</b> truth value of A.</p>" +
+                "<p>Remember the conjunction is the compound claim that has the operator “OR” present. In order to write the " +
+                "contradictory of a conjunction, you need to know the following rule:<p>" +
+                "<p>not(A and B) = notA or notB</p>", "Tip 4");
         this.addLevel(l4);
+
+        LevelClass l5 = new LevelClass("L05", "Level 5 - Snow", "<p>Hello! This is Level 5, the first step you have to go through" +
+                " to get the <b>Water</b> power. On this level you are going to learn about the <b>contradictory of a disjunction</b>" +
+                " and to complete the level 5 you have to prove your knowledge about <b>sand</b> by answering 5 questions right. </p>" +
+                "<p>So, lets get started with the concepts:</p>" +
+                "<p>Remember that the Contradictory of A is a claim that always has the opposite truth value of A.</p>" +
+                "<p>And also remember that the conjunction is the compound claim that has the operator “OR” present. In order " +
+                "to write the contradictory of a conjunction, you need to know the following rule:</p>" +
+                "<p>not(A or B) = notA and notB</p>", "Tip 5");
+        this.addLevel(l5);
+
+        LevelClass l6 = new LevelClass("L06", "Level 6 - Plant", "<p>Hello! This is Level 6, the last step you have to go through" +
+                " to get the <b>Water</b> power. On this level you are going to learn about the <b>conditional propositions</b>" +
+                " and to complete the level 6 you have to prove your knowledge about <b>plants</b> by answering 5 questions right." +
+                "</p>" + "<p>So, lets get started with the concepts:</p>" + "<p>The conditional proposition is represented in the " +
+                "format: <b>if A then B</b>. Where A = antecedent and B = consequent. A conditional claim is False when the antecedent" +
+                " is True but the consequent is False. When A is False or both A and B are True the proposition is True. Other way of" +
+                " addressing this:</>p" + "<p>B if A = if A then B</p>", "Tip 6");
+        this.addLevel(l6);
+
+        LevelClass l7 = new LevelClass("L07", "Level 7 - Lightning", "<p>Hello! This is Level 7, the first step you have to go through" +
+                " to get the <b>Fire</b> power. On this level you are going to learn about the <b>contradictory of conditionals</b> and," +
+                "in order to complete this level, you have to prove your knowledge about Lightning by answering 5 questions right.</p>" +
+                "<p>So, lets get started with the concepts:</p>" +
+                "<p>The contradictory of a conditional - NOT(if A then B) is a conjunction. This compound claim is True if antecedent is" +
+                " true (A) but the consequence (B) is false. </p>" + "<p>not (if A then B) = A and not-B = A but not-B <> if A then not-B</p>", "Tip 7");
+        this.addLevel(l7);
     }
 
 
