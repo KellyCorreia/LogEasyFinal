@@ -180,7 +180,7 @@ public class QuizActivity extends Activity {
                 db.updatingScore(score, User, "L02");
                 Score = db.getScore(User.getUser_id());
                 intent.putExtra("chosenUser", User);
-                intent.putExtra("chosenLevel", selecLevel);
+                intent.putExtra("chosenLevel", "L02");
                 intent.putExtra("userScore", Score);
                 startActivity(intent);
                 finish();
@@ -191,7 +191,7 @@ public class QuizActivity extends Activity {
                 db.updatingScore(score, User, "L03");
                 Score = db.getScore(User.getUser_id());
                 intent.putExtra("chosenUser", User);
-                intent.putExtra("chosenLevel", selecLevel);
+                intent.putExtra("chosenLevel", "L03");
                 intent.putExtra("userScore", Score);
                 startActivity(intent);
                 finish();
@@ -202,7 +202,7 @@ public class QuizActivity extends Activity {
                 db.updatingScore(score, User, "L04");
                 Score = db.getScore(User.getUser_id());
                 intent.putExtra("chosenUser", User);
-                intent.putExtra("chosenLevel", selecLevel);
+                intent.putExtra("chosenLevel", "L04");
                 intent.putExtra("userScore", Score);
                 startActivity(intent);
                 finish();
@@ -213,7 +213,7 @@ public class QuizActivity extends Activity {
                 db.updatingScore(score, User, "L05");
                 Score = db.getScore(User.getUser_id());
                 intent.putExtra("chosenUser", User);
-                intent.putExtra("chosenLevel", selecLevel);
+                intent.putExtra("chosenLevel", "L05");
                 intent.putExtra("userScore", Score);
                 startActivity(intent);
                 finish();
@@ -224,7 +224,7 @@ public class QuizActivity extends Activity {
                 db.updatingScore(score, User, "L06");
                 Score = db.getScore(User.getUser_id());
                 intent.putExtra("chosenUser", User);
-                intent.putExtra("chosenLevel", selecLevel);
+                intent.putExtra("chosenLevel", "L06");
                 intent.putExtra("userScore", Score);
                 startActivity(intent);
                 finish();
@@ -235,7 +235,7 @@ public class QuizActivity extends Activity {
                 db.updatingScore(score, User, "L07");
                 Score = db.getScore(User.getUser_id());
                 intent.putExtra("chosenUser", User);
-                intent.putExtra("chosenLevel", selecLevel);
+                intent.putExtra("chosenLevel", "L07");
                 intent.putExtra("userScore", Score);
                 startActivity(intent);
                 finish();
@@ -246,7 +246,7 @@ public class QuizActivity extends Activity {
                 db.updatingScore(score, User, "L08");
                 Score = db.getScore(User.getUser_id());
                 intent.putExtra("chosenUser", User);
-                intent.putExtra("chosenLevel", selecLevel);
+                intent.putExtra("chosenLevel", "L08");
                 intent.putExtra("userScore", Score);
                 startActivity(intent);
                 finish();
@@ -257,7 +257,7 @@ public class QuizActivity extends Activity {
                 db.updatingScore(score, User, "L09");
                 Score = db.getScore(User.getUser_id());
                 intent.putExtra("chosenUser", User);
-                intent.putExtra("chosenLevel", selecLevel);
+                intent.putExtra("chosenLevel", "L09");
                 intent.putExtra("userScore", Score);
                 startActivity(intent);
                 finish();
@@ -268,7 +268,7 @@ public class QuizActivity extends Activity {
                 db.updatingScore(score, User, "L10");
                 Score = db.getScore(User.getUser_id());
                 intent.putExtra("chosenUser", User);
-                intent.putExtra("chosenLevel", selecLevel);
+                intent.putExtra("chosenLevel", "L10");
                 intent.putExtra("userScore", Score);
                 startActivity(intent);
                 finish();
@@ -278,10 +278,6 @@ public class QuizActivity extends Activity {
                 Toast.makeText(QuizActivity.this, "Congratulations! You are the master of the World!", Toast.LENGTH_SHORT).show();
                 db.updatingScore(score, User, "L10");
                 Score = db.getScore(User.getUser_id());
-                intent.putExtra("chosenUser", User);
-                intent.putExtra("chosenLevel", selecLevel);
-                intent.putExtra("userScore", Score);
-                startActivity(intent);
                 finish();
                 break;
 
