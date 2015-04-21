@@ -266,8 +266,45 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 "and “Silver is a metal” is true. Which one of the following is false:", "L03", "A030c");
         this.addQuestion(q30);
 
-        QuestionClass q31=new QuestionClass("Q031", "", "L04", "A031a");
+        QuestionClass q31=new QuestionClass("Q031", "Which one of the following is the contradictory" +
+                " of A: Sandy soil is ideal for crops and farming.", "L04", "A031a");
         this.addQuestion(q31);
+
+        QuestionClass q32=new QuestionClass("Q032", "Which one of the following is the contradictory " +
+                "of A: Wild beaches are undiscovered and you can’t find any hotels nearby.", "L04", "A032b");
+        this.addQuestion(q32);
+
+        QuestionClass q33=new QuestionClass("Q033", "Which one of the following is the contradictory" +
+                " of A: Some beaches are formed along an ocean and they don’t have life guards posts.", "L04", "A033c");
+        this.addQuestion(q33);
+
+        QuestionClass q34=new QuestionClass("Q034", "Which of the following is the contradictory of A:" +
+                " Performance artists draw images in sand and this type of art is called sand animation.", "L04", "A034a");
+        this.addQuestion(q34);
+
+        QuestionClass q35=new QuestionClass("Q035", "Which of the following is the contradictory" +
+                " of A: Sand is composed by rock and mineral particles.\n", "L04", "A035c");
+        this.addQuestion(q35);
+
+        QuestionClass q36=new QuestionClass("Q036", "Given A: Only the sandy beaches are visited by" +
+                " tourist and this is a fact. - true. Which one is the contradictory of A from the following:", "L04", "A036b");
+        this.addQuestion(q36);
+
+        QuestionClass q37=new QuestionClass("Q037", "Given A: Sand is finer than gravel and coarser " +
+                "than silt. Which one is the contradictory of A from the following compound claims:", "L04", "A037c");
+        this.addQuestion(q37);
+
+        QuestionClass q38=new QuestionClass("Q038", "Given the contradictory of A: A common type of " +
+                "sand was not created by coral or shellfish. Please choose A from the following:", "L04", "A038b");
+        this.addQuestion(q38);
+
+        QuestionClass q39=new QuestionClass("Q039", "Given the contradictory of B: Sand and water table " +
+                "are fun in the back garden or in the livingroom . Find the compound claim B:", "L04", "A039b");
+        this.addQuestion(q39);
+
+        QuestionClass q40=new QuestionClass("Q040", "Given the contradictory of B: In the back garden, " +
+                "children cannot play with sand or water. Find the compound claim B:", "L04", "A040a");
+        this.addQuestion(q40);
 
     }
 
@@ -541,6 +578,96 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
         AnswerClass a90 = new AnswerClass("A030c", "Gold is not the most expensive metal or silver is not a metal.", "Q030");
         this.addAnswer(a90);
+
+        AnswerClass a91 = new AnswerClass("A031a", "Sandy soil is not ideal for crops or for farming.", "Q031");
+        this.addAnswer(a91);
+
+        AnswerClass a92 = new AnswerClass("A031b", "Soil that is not sandy is ideal for crops or farming.", "Q031");
+        this.addAnswer(a92);
+
+        AnswerClass a93 = new AnswerClass("A031c", "Sandy soil is not ideal for crops nor for farming.", "Q031");
+        this.addAnswer(a93);
+
+        AnswerClass a94 = new AnswerClass("A032a", "Wild beaches are not undiscovered and you can’t find any hotels nearby.", "Q032");
+        this.addAnswer(a94);
+
+        AnswerClass a95 = new AnswerClass("A032b", "Wild beaches are not undiscovered but you can find some hotels nearby", "Q032");
+        this.addAnswer(a95);
+
+        AnswerClass a96 = new AnswerClass("A032c", "Beaches that are not wild are discovered or you can find hotels nearby.", "Q032");
+        this.addAnswer(a96);
+
+        AnswerClass a97 = new AnswerClass("A033a", "No beaches are formed along an ocean nor they have lifeguards posts.", "Q033");
+        this.addAnswer(a97);
+
+        AnswerClass a98 = new AnswerClass("A033b", "Some beaches are not formed along an ocean or do they have lifeguards posts.", "Q033");
+        this.addAnswer(a98);
+
+        AnswerClass a99 = new AnswerClass("A033c", "No beaches are formed along an ocean or they have lifeguards posts.", "Q033");
+        this.addAnswer(a99);
+
+        AnswerClass a100 = new AnswerClass("A034a", "Some performance artists do not draw images in sand or this type of art isn’t called sand animation.", "Q034");
+        this.addAnswer(a100);
+
+        AnswerClass a101 = new AnswerClass("A034b", "Some performance artists draw images in sand or this type of art  is not called sand animation.", "Q034");
+        this.addAnswer(a101);
+
+        AnswerClass a102 = new AnswerClass("A034c", "Performance artists don’t draw images in sand nor they called it sand animation.", "Q034");
+        this.addAnswer(a102);
+
+        AnswerClass a103 = new AnswerClass("A035a", "Sand is not composed by rock particles.", "Q035");
+        this.addAnswer(a103);
+
+        AnswerClass a104 = new AnswerClass("A035b", "Sand is composed by something else except rock and mineral particles.", "Q035");
+        this.addAnswer(a104);
+
+        AnswerClass a105 = new AnswerClass("A035c", "Sand is not composed by rock or by mineral particles. ", "Q035");
+        this.addAnswer(a105);
+
+        AnswerClass a106 = new AnswerClass("A036a", "No sandy beaches are visited and this is not a fact.", "Q036");
+        this.addAnswer(a106);
+
+        AnswerClass a107 = new AnswerClass("A036b", "Some tourists do not visit sandy beaches or this is not a fact. ", "Q036");
+        this.addAnswer(a107);
+
+        AnswerClass a108 = new AnswerClass("A036c", "Some tourists visit sandy beaches or this is a fact.", "Q036");
+        this.addAnswer(a108);
+
+        AnswerClass a109 = new AnswerClass("A037a", "Sand is not finer than gravel and coarser than silt.", "Q037");
+        this.addAnswer(a109);
+
+        AnswerClass a110 = new AnswerClass("A037b", "Sand is gravel than finer or silt than coarser.", "Q037");
+        this.addAnswer(a110);
+
+        AnswerClass a111 = new AnswerClass("A037c", "Sand is not finer than gravel or it is not coarser than silt.", "Q037");
+        this.addAnswer(a111);
+
+        AnswerClass a112 = new AnswerClass("A038a", "An uncommon type of sand was created by coral and shellfish.", "Q038");
+        this.addAnswer(a112);
+
+        AnswerClass a113 = new AnswerClass("A038b", "A common type of sand was created by coral and shellfish.", "Q038");
+        this.addAnswer(a113);
+
+        AnswerClass a114 = new AnswerClass("A038c", "A common type of sand was not created by coral or shellfish.", "Q038");
+        this.addAnswer(a114);
+
+        AnswerClass a115 = new AnswerClass("A039a", "Sand or water table are not fun in the back garden or in the livingroom.", "Q039");
+        this.addAnswer(a115);
+
+        AnswerClass a116 = new AnswerClass("A039b", "Sand and water table are not fun in the back garden and in the livingroom.", "Q039");
+        this.addAnswer(a116);
+
+        AnswerClass a117 = new AnswerClass("A039c", "Sand or water table are fun in the back garden or in the livingroom.", "Q039");
+        this.addAnswer(a117);
+
+        AnswerClass a118 = new AnswerClass("A040a", "In the back garden, children can play with sand and water.", "Q040");
+        this.addAnswer(a118);
+
+        AnswerClass a119 = new AnswerClass("A040b", "In the back garden, children cannot play with sand and water.", "Q040");
+        this.addAnswer(a119);
+
+        AnswerClass a120 = new AnswerClass("A040c", "In the back garden, children can play with sand or water.", "Q040");
+        this.addAnswer(a120);
 
 
     }
