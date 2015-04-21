@@ -226,6 +226,126 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 "“Sound is not a wave” is false. Which of the following is true:", "L02", "A020a");
         this.addQuestion(q20);
 
+        QuestionClass q21=new QuestionClass("Q021", "Given:  a = “The earth is full of metals” is" +
+                " true and b = “Gold is a metal” is true.  Which of the following is false:", "L03", "A021c");
+        this.addQuestion(q21);
+
+        QuestionClass q22=new QuestionClass("Q022", "Which one of the following propositions is true:", "L03", "A022b");
+        this.addQuestion(q22);
+
+        QuestionClass q23=new QuestionClass("Q023", "Given: a = “All metals are found in the earth”" +
+                " is true and b = “Silver is a crystal” is false. Which one of the following is false.", "L03", "A023b");
+        this.addQuestion(q23);
+
+        QuestionClass q24=new QuestionClass("Q024", "Given: a = “Gold is more expensive than silver”" +
+                " is true and b = “Both gold and silver are metals” is true. Which one of the following" +
+                " is true.", "L03", "A024b");
+        this.addQuestion(q24);
+
+        QuestionClass q25=new QuestionClass("Q025", "Given: a = “Gold is a gemstone” and  b = “Ruby" +
+                " is a metal” both are false. Which one of the following is true:", "L03", "A025a");
+        this.addQuestion(q25);
+
+        QuestionClass q26=new QuestionClass("Q026", "Given: a = “Silver is a stone” is false and b" +
+                " = “All metals are found in the earth” is true. Which one of the following is false:", "L03", "A026c");
+        this.addQuestion(q26);
+
+        QuestionClass q27=new QuestionClass("Q027", "Given: “All metals are found in the earth and " +
+                "gold is a metal” is true and “Ruby is a stone or gold is a stone” is true. Which one of " +
+                "the following is true:", "L03", "A027b");
+        this.addQuestion(q27);
+
+        QuestionClass q28=new QuestionClass("Q028", "Given: “Silver is a precious metal and gold is not" +
+                " a stone” is true. Which one of the following is true:", "L03", "A028a");
+        this.addQuestion(q28);
+
+        QuestionClass q29=new QuestionClass("Q029", "Given: “Iron is a metal”  is true. Which one of the following is false:", "L03", "A029a");
+        this.addQuestion(q29);
+
+        QuestionClass q30=new QuestionClass("Q030", "Given: “Gold is the most expensive metal” is true " +
+                "and “Silver is a metal” is true. Which one of the following is false:", "L03", "A030c");
+        this.addQuestion(q30);
+
+        QuestionClass q31=new QuestionClass("Q031", "Which one of the following is the contradictory" +
+                " of A: Sandy soil is ideal for crops and farming.", "L04", "A031a");
+        this.addQuestion(q31);
+
+        QuestionClass q32=new QuestionClass("Q032", "Which one of the following is the contradictory " +
+                "of A: Wild beaches are undiscovered and you can’t find any hotels nearby.", "L04", "A032b");
+        this.addQuestion(q32);
+
+        QuestionClass q33=new QuestionClass("Q033", "Which one of the following is the contradictory" +
+                " of A: Some beaches are formed along an ocean and they don’t have life guards posts.", "L04", "A033c");
+        this.addQuestion(q33);
+
+        QuestionClass q34=new QuestionClass("Q034", "Which of the following is the contradictory of A:" +
+                " Performance artists draw images in sand and this type of art is called sand animation.", "L04", "A034a");
+        this.addQuestion(q34);
+
+        QuestionClass q35=new QuestionClass("Q035", "Which of the following is the contradictory" +
+                " of A: Sand is composed by rock and mineral particles.\n", "L04", "A035c");
+        this.addQuestion(q35);
+
+        QuestionClass q36=new QuestionClass("Q036", "Given A: Only the sandy beaches are visited by" +
+                " tourist and this is a fact. - true. Which one is the contradictory of A from the following:", "L04", "A036b");
+        this.addQuestion(q36);
+
+        QuestionClass q37=new QuestionClass("Q037", "Given A: Sand is finer than gravel and coarser " +
+                "than silt. Which one is the contradictory of A from the following compound claims:", "L04", "A037c");
+        this.addQuestion(q37);
+
+        QuestionClass q38=new QuestionClass("Q038", "Given the contradictory of A: A common type of " +
+                "sand was not created by coral or shellfish. Please choose A from the following:", "L04", "A038b");
+        this.addQuestion(q38);
+
+        QuestionClass q39=new QuestionClass("Q039", "Given the contradictory of B: Sand and water table " +
+                "are fun in the back garden or in the livingroom . Find the compound claim B:", "L04", "A039b");
+        this.addQuestion(q39);
+
+        QuestionClass q40=new QuestionClass("Q040", "Given the contradictory of B: In the back garden, " +
+                "children cannot play with sand or water. Find the compound claim B:", "L04", "A040a");
+        this.addQuestion(q40);
+
+        QuestionClass q41=new QuestionClass("Q041", "Which one of the following is the contradictory " +
+                "of A: Precipitations can fall in form of ice crystals or in snow.", "L05", "A041a");
+        this.addQuestion(q41);
+
+        QuestionClass q42=new QuestionClass("Q042", "Which one of the following is the contradictory " +
+                "of C: not (A or B). A: Snow has a fluffy structure. B: Snow is composed of small ice particles.", "L05", "A042b");
+        this.addQuestion(q42);
+
+        QuestionClass q43=new QuestionClass("Q043", "Given: A: Snow has an open and soft structure." +
+                " Which one of the following is the contradictory of A:", "L05", "A043c");
+        this.addQuestion(q43);
+
+        QuestionClass q44=new QuestionClass("Q044", "Given: A: not (B or C); B: Snow is precipitation in form of " +
+                "ice flakes; C: Snow has a soft structure.  Which one of the following represents A:", "L05", "A044c");
+        this.addQuestion(q44);
+
+        QuestionClass q45=new QuestionClass("Q045", "Given: ¬(A v B): Water cannot fall from the clouds in form of " +
+                "snow neither ice crystals. Which of the following represents A and B:", "L05", "A045a");
+        this.addQuestion(q45);
+
+        QuestionClass q46=new QuestionClass("Q046", "Which one of the following is the contradictory of AvB. " +
+                "Given: A: Snow is formed by small ice particles; B: Snowflakes come in a variety of sizes and shapes.", "L05", "A046a");
+        this.addQuestion(q46);
+
+        QuestionClass q47=new QuestionClass("Q047", "Which one of the following is the contradictory " +
+                "of A. Given: A: Snow has an open or soft structure.", "L05", "A047c");
+        this.addQuestion(q47);
+
+        QuestionClass q48=new QuestionClass("Q048", "Which one of the following is the contradictory of A: " +
+                "Snow falls from the clouds or the process of precipitating snow is called snowfall.", "L05", "A048a");
+        this.addQuestion(q48);
+
+        QuestionClass q49=new QuestionClass("Q049", "Which one of the following is the contradictory of A: " +
+                "Snow does not fall from the clouds or the process of precipitating snow is not called snowfall.", "L05", "A049b");
+        this.addQuestion(q49);
+
+        QuestionClass q50=new QuestionClass("Q050", "Which one of the following is the contradictory A: " +
+                "Snow has a fluffy structure or it is composed of small ice particles.", "L05", "A050c");
+        this.addQuestion(q50);
+
     }
 
     private void addAnswers() {
@@ -319,25 +439,365 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         AnswerClass a30 = new AnswerClass("A010c", "All breezes are light.", "Q010");
         this.addAnswer(a30);
 
-        AnswerClass a31 = new AnswerClass("A011a", "Answer A", "Q011");
+        AnswerClass a31 = new AnswerClass("A011a", "The sound is a vibration and it is not a wave.", "Q011");
         this.addAnswer(a31);
 
-        AnswerClass a32 = new AnswerClass("A011b", "Answer B", "Q011");
+        AnswerClass a32 = new AnswerClass("A011b", "The sound is not a vibration, but it is a wave.", "Q011");
         this.addAnswer(a32);
 
-        AnswerClass a33 = new AnswerClass("A011c", "Answer C", "Q011");
+        AnswerClass a33 = new AnswerClass("A011c", "The sound is a vibration and it is a wave.", "Q011");
         this.addAnswer(a33);
 
-        AnswerClass a34 = new AnswerClass("A012a", "Answer A", "Q012");
+        AnswerClass a34 = new AnswerClass("A012a", "The sound propagates through the air or it is not a wave.", "Q012");
         this.addAnswer(a34);
 
-        AnswerClass a35 = new AnswerClass("A012b", "Answer B", "Q012");
+        AnswerClass a35 = new AnswerClass("A012b", "The sound doesn’t propagates through the air and it is a wave.", "Q012");
         this.addAnswer(a35);
 
-        AnswerClass a36 = new AnswerClass("A012c", "Answer C", "Q012");
+        AnswerClass a36 = new AnswerClass("A012c", "The sound propagates through the air and it is a vibration.", "Q012");
         this.addAnswer(a36);
 
+        AnswerClass a37 = new AnswerClass("A013a", "a ^ b", "Q013");
+        this.addAnswer(a37);
 
+        AnswerClass a38 = new AnswerClass("A013b", "a ^ ¬b", "Q013");
+        this.addAnswer(a38);
+
+        AnswerClass a39 = new AnswerClass("A013c", "¬a ^ b", "Q013");
+        this.addAnswer(a39);
+
+        AnswerClass a40 = new AnswerClass("A014a", "The speed of the sound is 972m/s or it propagates through the air.", "Q014");
+        this.addAnswer(a40);
+
+        AnswerClass a41 = new AnswerClass("A014b", "The speed of the sound is not 972m/s or it does not propagates through the air.", "Q014");
+        this.addAnswer(a41);
+
+        AnswerClass a42 = new AnswerClass("A014c", "The speed of the sound is 972m/s or it does not propagates through the air.", "Q014");
+        this.addAnswer(a42);
+
+        AnswerClass a43 = new AnswerClass("A015a", "a ^ b", "Q015");
+        this.addAnswer(a43);
+
+        AnswerClass a44 = new AnswerClass("A015b", "¬a ^ b", "Q015");
+        this.addAnswer(a44);
+
+        AnswerClass a45 = new AnswerClass("A015c", "a ^ ¬b", "Q015");
+        this.addAnswer(a45);
+
+        AnswerClass a46 = new AnswerClass("A016a", "a ^ b", "Q016");
+        this.addAnswer(a46);
+
+        AnswerClass a47 = new AnswerClass("A016b", "¬a ^ b", "Q016");
+        this.addAnswer(a47);
+
+        AnswerClass a48 = new AnswerClass("A016c", "¬a ^ ¬b", "Q016");
+        this.addAnswer(a48);
+
+        AnswerClass a49 = new AnswerClass("A017a", "Music is a combination of sounds and sound is a current of air.", "Q017");
+        this.addAnswer(a49);
+
+        AnswerClass a50 = new AnswerClass("A017b", "Music is not a combination of sounds and sound is a vibration. ", "Q017");
+        this.addAnswer(a50);
+
+        AnswerClass a51 = new AnswerClass("A017c", "Music is a combination of sounds and sound cannot be heard.", "Q017");
+        this.addAnswer(a51);
+
+        AnswerClass a52 = new AnswerClass("A018a", "a ^ b ^ c", "Q018");
+        this.addAnswer(a52);
+
+        AnswerClass a53 = new AnswerClass("A018b", "a ^ ¬b ^ c", "Q018");
+        this.addAnswer(a53);
+
+        AnswerClass a54 = new AnswerClass("A018c", "a ^ b ^ ¬c", "Q018");
+        this.addAnswer(a54);
+
+        AnswerClass a55 = new AnswerClass("A019a", "Sound can be heard and some sounds do not come from a vibrating source.", "Q019");
+        this.addAnswer(a55);
+
+        AnswerClass a56 = new AnswerClass("A019b", "All sound come from a vibrating source and sound cannot be heard.", "Q019");
+        this.addAnswer(a56);
+
+        AnswerClass a57 = new AnswerClass("A019c", "All sound come from a vibrating source and sound can be heard.", "Q019");
+        this.addAnswer(a57);
+
+        AnswerClass a58 = new AnswerClass("A020a", "Sound is a wave and a very strong sound does not form a tornado. ", "Q020");
+        this.addAnswer(a58);
+
+        AnswerClass a59 = new AnswerClass("A020b", "Music is a combination of sound and silence and a very strong sound forms a tornado.", "Q020");
+        this.addAnswer(a59);
+
+        AnswerClass a60 = new AnswerClass("A020c", "Sound is not a wave and music is a combination of sound and silence.", "Q020");
+        this.addAnswer(a60);
+
+        AnswerClass a61 = new AnswerClass("A021a", "a v b", "Q021");
+        this.addAnswer(a61);
+
+        AnswerClass a62 = new AnswerClass("A021b", "a v ¬b", "Q021");
+        this.addAnswer(a62);
+
+        AnswerClass a63 = new AnswerClass("A021c", "¬a v ¬b", "Q021");
+        this.addAnswer(a63);
+
+        AnswerClass a64 = new AnswerClass("A022a", "Gold is a metal and silver is not a metal.", "Q022");
+        this.addAnswer(a64);
+
+        AnswerClass a65 = new AnswerClass("A022b", "Gold is a metal or silver is not a metal.", "Q022");
+        this.addAnswer(a65);
+
+        AnswerClass a66 = new AnswerClass("A022c", "Gold is not a metal or silver is not a metal.", "Q022");
+        this.addAnswer(a66);
+
+        AnswerClass a67 = new AnswerClass("A023a", "Some metals are not found in the earth or silver is not a crystal.", "Q023");
+        this.addAnswer(a67);
+
+        AnswerClass a68 = new AnswerClass("A023b", "Some metals are not found in the earth or silver is a crystal. ", "Q023");
+        this.addAnswer(a68);
+
+        AnswerClass a69 = new AnswerClass("A023c", "Silver is a metal and all metal are found in the earth.", "Q023");
+        this.addAnswer(a69);
+
+        AnswerClass a70 = new AnswerClass("A024a", "Gold and silver are metals and silver is more expensive than gold.", "Q024");
+        this.addAnswer(a70);
+
+        AnswerClass a71 = new AnswerClass("A024b", "Gold is more expensive than silver or silver is not a metal.", "Q024");
+        this.addAnswer(a71);
+
+        AnswerClass a72 = new AnswerClass("A024c", "Silver is more expensive than gold or gold is not a metal.", "Q024");
+        this.addAnswer(a72);
+
+        AnswerClass a73 = new AnswerClass("A025a", "Gold is not a gemstone or ruby is a metal.", "Q025");
+        this.addAnswer(a73);
+
+        AnswerClass a74 = new AnswerClass("A025b", "Gold is a gemstone or ruby is a metal.", "Q025");
+        this.addAnswer(a74);
+
+        AnswerClass a75 = new AnswerClass("A025c", "Gold and Ruby are metals.", "Q025");
+        this.addAnswer(a75);
+
+        AnswerClass a76 = new AnswerClass("A026a", "¬a ^ b", "Q026");
+        this.addAnswer(a76);
+
+        AnswerClass a77 = new AnswerClass("A026b", "a v b", "Q026");
+        this.addAnswer(a77);
+
+        AnswerClass a78 = new AnswerClass("A026c", "a ^ b", "Q026");
+        this.addAnswer(a78);
+
+        AnswerClass a79 = new AnswerClass("A027a", "All metals are found in the earth and ruby is a stone.\n", "Q027");
+        this.addAnswer(a79);
+
+        AnswerClass a80 = new AnswerClass("A027b", "Gold is a metal or gold is stone.", "Q027");
+        this.addAnswer(a80);
+
+        AnswerClass a81 = new AnswerClass("A027c", "Gold is not a metal or a stone.", "Q027");
+        this.addAnswer(a81);
+
+        AnswerClass a82 = new AnswerClass("A028a", "Silver is a precious metal or gold is a stone.", "Q028");
+        this.addAnswer(a82);
+
+        AnswerClass a83 = new AnswerClass("A028b", "Silver is not a metal or gold is a stone.", "Q028");
+        this.addAnswer(a83);
+
+        AnswerClass a84 = new AnswerClass("A028c", "Gold and silver are metals.", "Q028");
+        this.addAnswer(a84);
+
+        AnswerClass a85 = new AnswerClass("A029a", "Gold is a metal, but iron is not.", "Q029");
+        this.addAnswer(a85);
+
+        AnswerClass a86 = new AnswerClass("A029b", "Iron is not a metal or gold is a metal", "Q029");
+        this.addAnswer(a86);
+
+        AnswerClass a87 = new AnswerClass("A029c", "Iron is a metal or gold is a metal.", "Q029");
+        this.addAnswer(a87);
+
+        AnswerClass a88 = new AnswerClass("A030a", "Or silver or gold is the most expensive metal.", "Q030");
+        this.addAnswer(a88);
+
+        AnswerClass a89 = new AnswerClass("A030b", "Gold and silver are the most expensive metals.", "Q030");
+        this.addAnswer(a89);
+
+        AnswerClass a90 = new AnswerClass("A030c", "Gold is not the most expensive metal or silver is not a metal.", "Q030");
+        this.addAnswer(a90);
+
+        AnswerClass a91 = new AnswerClass("A031a", "Sandy soil is not ideal for crops or for farming.", "Q031");
+        this.addAnswer(a91);
+
+        AnswerClass a92 = new AnswerClass("A031b", "Soil that is not sandy is ideal for crops or farming.", "Q031");
+        this.addAnswer(a92);
+
+        AnswerClass a93 = new AnswerClass("A031c", "Sandy soil is not ideal for crops nor for farming.", "Q031");
+        this.addAnswer(a93);
+
+        AnswerClass a94 = new AnswerClass("A032a", "Wild beaches are not undiscovered and you can’t find any hotels nearby.", "Q032");
+        this.addAnswer(a94);
+
+        AnswerClass a95 = new AnswerClass("A032b", "Wild beaches are not undiscovered but you can find some hotels nearby", "Q032");
+        this.addAnswer(a95);
+
+        AnswerClass a96 = new AnswerClass("A032c", "Beaches that are not wild are discovered or you can find hotels nearby.", "Q032");
+        this.addAnswer(a96);
+
+        AnswerClass a97 = new AnswerClass("A033a", "No beaches are formed along an ocean nor they have lifeguards posts.", "Q033");
+        this.addAnswer(a97);
+
+        AnswerClass a98 = new AnswerClass("A033b", "Some beaches are not formed along an ocean or do they have lifeguards posts.", "Q033");
+        this.addAnswer(a98);
+
+        AnswerClass a99 = new AnswerClass("A033c", "No beaches are formed along an ocean or they have lifeguards posts.", "Q033");
+        this.addAnswer(a99);
+
+        AnswerClass a100 = new AnswerClass("A034a", "Some performance artists do not draw images in sand or this type of art isn’t called sand animation.", "Q034");
+        this.addAnswer(a100);
+
+        AnswerClass a101 = new AnswerClass("A034b", "Some performance artists draw images in sand or this type of art  is not called sand animation.", "Q034");
+        this.addAnswer(a101);
+
+        AnswerClass a102 = new AnswerClass("A034c", "Performance artists don’t draw images in sand nor they called it sand animation.", "Q034");
+        this.addAnswer(a102);
+
+        AnswerClass a103 = new AnswerClass("A035a", "Sand is not composed by rock particles.", "Q035");
+        this.addAnswer(a103);
+
+        AnswerClass a104 = new AnswerClass("A035b", "Sand is composed by something else except rock and mineral particles.", "Q035");
+        this.addAnswer(a104);
+
+        AnswerClass a105 = new AnswerClass("A035c", "Sand is not composed by rock or by mineral particles. ", "Q035");
+        this.addAnswer(a105);
+
+        AnswerClass a106 = new AnswerClass("A036a", "No sandy beaches are visited and this is not a fact.", "Q036");
+        this.addAnswer(a106);
+
+        AnswerClass a107 = new AnswerClass("A036b", "Some tourists do not visit sandy beaches or this is not a fact. ", "Q036");
+        this.addAnswer(a107);
+
+        AnswerClass a108 = new AnswerClass("A036c", "Some tourists visit sandy beaches or this is a fact.", "Q036");
+        this.addAnswer(a108);
+
+        AnswerClass a109 = new AnswerClass("A037a", "Sand is not finer than gravel and coarser than silt.", "Q037");
+        this.addAnswer(a109);
+
+        AnswerClass a110 = new AnswerClass("A037b", "Sand is gravel than finer or silt than coarser.", "Q037");
+        this.addAnswer(a110);
+
+        AnswerClass a111 = new AnswerClass("A037c", "Sand is not finer than gravel or it is not coarser than silt.", "Q037");
+        this.addAnswer(a111);
+
+        AnswerClass a112 = new AnswerClass("A038a", "An uncommon type of sand was created by coral and shellfish.", "Q038");
+        this.addAnswer(a112);
+
+        AnswerClass a113 = new AnswerClass("A038b", "A common type of sand was created by coral and shellfish.", "Q038");
+        this.addAnswer(a113);
+
+        AnswerClass a114 = new AnswerClass("A038c", "A common type of sand was not created by coral or shellfish.", "Q038");
+        this.addAnswer(a114);
+
+        AnswerClass a115 = new AnswerClass("A039a", "Sand or water table are not fun in the back garden or in the livingroom.", "Q039");
+        this.addAnswer(a115);
+
+        AnswerClass a116 = new AnswerClass("A039b", "Sand and water table are not fun in the back garden and in the livingroom.", "Q039");
+        this.addAnswer(a116);
+
+        AnswerClass a117 = new AnswerClass("A039c", "Sand or water table are fun in the back garden or in the livingroom.", "Q039");
+        this.addAnswer(a117);
+
+        AnswerClass a118 = new AnswerClass("A040a", "In the back garden, children can play with sand and water.", "Q040");
+        this.addAnswer(a118);
+
+        AnswerClass a119 = new AnswerClass("A040b", "In the back garden, children cannot play with sand and water.", "Q040");
+        this.addAnswer(a119);
+
+        AnswerClass a120 = new AnswerClass("A040c", "In the back garden, children can play with sand or water.", "Q040");
+        this.addAnswer(a120);
+
+        AnswerClass a121 = new AnswerClass("A041a", "Precipitation cannot fall in form of ice crystals neither in form of snow.", "Q041");
+        this.addAnswer(a121);
+
+        AnswerClass a122 = new AnswerClass("A041b", "Precipitations cannot fall in form of ice or in form of snow.", "Q041");
+        this.addAnswer(a122);
+
+        AnswerClass a123 = new AnswerClass("A041c", "Precipitation can fall in form of snow but not ice crystals.", "Q041");
+        this.addAnswer(a123);
+
+        AnswerClass a124 = new AnswerClass("A042a", "Snow has a fluffy structure and it is composed of small ice particles.", "Q042");
+        this.addAnswer(a124);
+
+        AnswerClass a125 = new AnswerClass("A042b", "Snow is composed of small ice particles or it has a fluffy structure.", "Q042");
+        this.addAnswer(a125);
+
+        AnswerClass a126 = new AnswerClass("A042c", "Snow does not have a fluffy structure neither is composed of small ice particles.", "Q042");
+        this.addAnswer(a126);
+
+        AnswerClass a127 = new AnswerClass("A043a", "Snow does not have an open structure.", "Q043");
+        this.addAnswer(a127);
+
+        AnswerClass a128 = new AnswerClass("A043b", "Snow does not have a soft and open structure.", "Q043");
+        this.addAnswer(a128);
+
+        AnswerClass a129 = new AnswerClass("A043c", "Snow does not have a soft neither an open structure.", "Q043");
+        this.addAnswer(a129);
+
+        AnswerClass a130 = new AnswerClass("A044a", "Snow is not precipitation in form of ice flakes and it has no soft structure.", "Q044");
+        this.addAnswer(a130);
+
+        AnswerClass a131 = new AnswerClass("A044b", "Snow is precipitation in form of ice flakes and it has a soft structure.\n", "Q044");
+        this.addAnswer(a131);
+
+        AnswerClass a132 = new AnswerClass("A044c", "The structure of snow is not soft and it is not precipitation in form of ice flakes.", "Q044");
+        this.addAnswer(a132);
+
+        AnswerClass a133 = new AnswerClass("A045a", "Water can fall from the clouds in form of snow and ice crystals.", "Q045");
+        this.addAnswer(a133);
+
+        AnswerClass a134 = new AnswerClass("A045b", "Water can fall from the clouds in form of snow or ice crystals.", "Q045");
+        this.addAnswer(a134);
+
+        AnswerClass a135 = new AnswerClass("A045c", "Water cannot fall from the clouds in form of snow and ice crystals.", "Q045");
+        this.addAnswer(a135);
+
+        AnswerClass a136 = new AnswerClass("A046a", "Snowflakes do not come in a variety of sizes and shapes neither snow is formed by small ice particles.", "Q046");
+        this.addAnswer(a136);
+
+        AnswerClass a137 = new AnswerClass("A046b", "Snowflakes do not come in a variety of sizes and shapes and snow is formed by small ice particles.", "Q046");
+        this.addAnswer(a137);
+
+        AnswerClass a138 = new AnswerClass("A046c", "Snowflakes do not come in a variety of sizes and shapes or snow is formed by small ice particles.", "Q046");
+        this.addAnswer(a138);
+
+        AnswerClass a139 = new AnswerClass("A047a", "Snow does not have an open and soft structure.", "Q047");
+        this.addAnswer(a139);
+
+        AnswerClass a140 = new AnswerClass("A047b", "Snow does not have a soft structure.", "Q047");
+        this.addAnswer(a140);
+
+        AnswerClass a141 = new AnswerClass("A047c", "Snow does not have an open neither a soft structure.", "Q047");
+        this.addAnswer(a141);
+
+        AnswerClass a142 = new AnswerClass("A048a", "Snow does not fall from the clouds and the process of precipitating snow is not called snowfall.", "Q048");
+        this.addAnswer(a142);
+
+        AnswerClass a143 = new AnswerClass("A048b", "The process of precipitating snow is not called snowfall or snow does not fall from the clouds.", "Q048");
+        this.addAnswer(a143);
+
+        AnswerClass a144 = new AnswerClass("A048c", "The process of precipitating snow is not called snowfall and snow fall from the clouds.", "Q048");
+        this.addAnswer(a144);
+
+        AnswerClass a145 = new AnswerClass("A049a", "Snow does not fall from the clouds and the process of precipitating snow is not called snowfall.\n", "Q049");
+        this.addAnswer(a145);
+
+        AnswerClass a146 = new AnswerClass("A049b", "Snow falls from the clouds and the process of precipitating snow is called snowfall.", "Q049");
+        this.addAnswer(a146);
+
+        AnswerClass a147 = new AnswerClass("A049c", "The process of precipitating snow is called snowfall.", "Q049");
+        this.addAnswer(a147);
+
+        AnswerClass a148 = new AnswerClass("A050a", "Snow has a fluffy structure and it is composed of small ice particles.", "Q050");
+        this.addAnswer(a148);
+
+        AnswerClass a149 = new AnswerClass("A050b", "Snow is composed of small ice particles or it has a fluffy structure.", "Q050");
+        this.addAnswer(a149);
+
+        AnswerClass a150 = new AnswerClass("A050c", "Snow does not have a fluffy structure and it is not composed of small ice particles.", "Q050");
+        this.addAnswer(a150);
     }
 
 
@@ -378,7 +838,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 " then the whole statement is false. The <b>“and”</b> operator can be also represented by <b>“^”</b>.</p>", "Tip2");
         this.addLevel(l2);
 
-        LevelClass l3 = new LevelClass("L03", "Level 3 Name", "<p>In order to master the <b>Earth power</b> " +
+        LevelClass l3 = new LevelClass("L03", "Level 3 - Metal", "<p>In order to master the <b>Earth power</b> " +
                 "you have to pass two levels (<b>Metal</b> and <b>Sand</b>). This is the first one that you have" +
                 " to pass, <b>Metal</b>. On this level you are going to learn the <b>disjunctions</b> and to " +
                 "complete the level 3 you have to prove your knowledge about metal by answering 5 " +
@@ -393,8 +853,42 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 "both true." + "</p>" + "<p>The <b>“or”</b> operator can be also represented by <b>“v”</b>.</p>", "Tip 3");
         this.addLevel(l3);
 
-        LevelClass l4 = new LevelClass("L04", "Level 4 Name", "Lesson 4", "Tip 4");
+        LevelClass l4 = new LevelClass("L04", "Level 4 - Sand", "<p>Hello! This is Level 4, the last step you have to go through" +
+                " to get the <b>Earth</b> power. On this level you are going to learn about the <b>contradictory of a conjunction" +
+                "</b> and to complete the level 4 you have to prove your knowledge about Sand by answering 5 questions right. </p>" +
+                "<p>So, lets get started with the concepts:</p>" +
+                "<p>The <b>Contradictory</b> of A is a claim that <b>always</b> has the <b>opposite</b> truth value of A.</p>" +
+                "<p>Remember the conjunction is the compound claim that has the operator “OR” present. In order to write the " +
+                "contradictory of a conjunction, you need to know the following rule:<p>" +
+                "<p>not(A and B) = notA or notB</p>", "Tip 4");
         this.addLevel(l4);
+
+        LevelClass l5 = new LevelClass("L05", "Level 5 - Snow", "<p>Hello! This is Level 5, the first step you have to go through" +
+                " to get the <b>Water</b> power. On this level you are going to learn about the <b>contradictory of a disjunction</b>" +
+                " and to complete the level 5 you have to prove your knowledge about <b>sand</b> by answering 5 questions right. </p>" +
+                "<p>So, lets get started with the concepts:</p>" +
+                "<p>Remember that the Contradictory of A is a claim that always has the opposite truth value of A.</p>" +
+                "<p>And also remember that the conjunction is the compound claim that has the operator “OR” present. In order " +
+                "to write the contradictory of a conjunction, you need to know the following rule:</p>" +
+                "<p>not(A or B) = notA and notB</p>", "Tip 5");
+        this.addLevel(l5);
+
+        LevelClass l6 = new LevelClass("L06", "Level 6 - Plant", "<p>Hello! This is Level 6, the last step you have to go through" +
+                " to get the <b>Water</b> power. On this level you are going to learn about the <b>conditional propositions</b>" +
+                " and to complete the level 6 you have to prove your knowledge about <b>plants</b> by answering 5 questions right." +
+                "</p>" + "<p>So, lets get started with the concepts:</p>" + "<p>The conditional proposition is represented in the " +
+                "format: <b>if A then B</b>. Where A = antecedent and B = consequent. A conditional claim is False when the antecedent" +
+                " is True but the consequent is False. When A is False or both A and B are True the proposition is True. Other way of" +
+                " addressing this:</>p" + "<p>B if A = if A then B</p>", "Tip 6");
+        this.addLevel(l6);
+
+        LevelClass l7 = new LevelClass("L07", "Level 7 - Lightning", "<p>Hello! This is Level 7, the first step you have to go through" +
+                " to get the <b>Fire</b> power. On this level you are going to learn about the <b>contradictory of conditionals</b> and," +
+                "in order to complete this level, you have to prove your knowledge about Lightning by answering 5 questions right.</p>" +
+                "<p>So, lets get started with the concepts:</p>" +
+                "<p>The contradictory of a conditional - NOT(if A then B) is a conjunction. This compound claim is True if antecedent is" +
+                " true (A) but the consequence (B) is false. </p>" + "<p>not (if A then B) = A and not-B = A but not-B <> if A then not-B</p>", "Tip 7");
+        this.addLevel(l7);
     }
 
 
