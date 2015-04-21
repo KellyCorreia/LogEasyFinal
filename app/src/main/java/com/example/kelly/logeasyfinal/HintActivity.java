@@ -70,7 +70,6 @@ public class HintActivity extends Activity {
         MySQLiteHelper db = new MySQLiteHelper(this);
 
         txtPoints.setText(Integer.toString(score.getPoints()));
-        txtHint.setText(seleclevel.getTip());
 
         switch (user.getAvatar()){
             case "Avatar1":
@@ -148,46 +147,46 @@ public class HintActivity extends Activity {
                 btnPlay.setBackgroundResource(R.drawable.buttomhin1);
                 ImgHint.setImageResource(R.drawable.level1hint);
                 break;
-            case "Level 2 Name":
+            case "L02":
                 layout.setBackgroundResource(R.drawable.backgroundlevel2);
                 btnPlay.setBackgroundResource(R.drawable.buttomhin2);
                 ImgHint.setImageResource(R.drawable.level2hint);
                 break;
-            case "Level 3 Name":
+            case "L03":
                 layout.setBackgroundResource(R.drawable.backgroundlevel3);
                 btnPlay.setBackgroundResource(R.drawable.buttomhin3);
                 ImgHint.setImageResource(R.drawable.level3hint);
                 break;
-            case "Level 4 Name":
+            case "L04":
                 layout.setBackgroundResource(R.drawable.backgroundlevel4);
                 btnPlay.setBackgroundResource(R.drawable.buttomhin4);
                 ImgHint.setImageResource(R.drawable.level4hint);
                 break;
-            case "Level 5 Name":
+            case "L05":
                 layout.setBackgroundResource(R.drawable.backgroundlevel5);
                 btnPlay.setBackgroundResource(R.drawable.buttomhin5);
                 ImgHint.setImageResource(R.drawable.level5hint);
                 break;
-            case "Level 6 Name":
+            case "L06":
                 layout.setBackgroundResource(R.drawable.backgroundlevel6);
                 btnPlay.setBackgroundResource(R.drawable.buttomhin6);
                 ImgHint.setImageResource(R.drawable.level6hint);
                 break;
-            case "Level 7 Name":
+            case "L07":
                 layout.setBackgroundResource(R.drawable.backgroundlevel7);
                 btnPlay.setBackgroundResource(R.drawable.buttomhin7);
                 ImgHint.setImageResource(R.drawable.level7hint);
                 break;
-            case "Level 8 Name":
+            case "L08":
                 layout.setBackgroundResource(R.drawable.backgroundlevel8);
                 btnPlay.setBackgroundResource(R.drawable.buttomhin8);
                 ImgHint.setImageResource(R.drawable.level8hint);
-            case "Level 9 Name":
+            case "L09":
                 layout.setBackgroundResource(R.drawable.backgroundlevel9);
                 btnPlay.setBackgroundResource(R.drawable.buttomhin9);
                 ImgHint.setImageResource(R.drawable.level9hint);
                 break;
-            case "Level 10 Name":
+            case "L10":
                 layout.setBackgroundResource(R.drawable.backgroundlevel10);
                 btnPlay.setBackgroundResource(R.drawable.buttomhin10);
                 ImgHint.setImageResource(R.drawable.level10hint);
