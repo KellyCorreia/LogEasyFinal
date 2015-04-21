@@ -346,6 +346,14 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 "Snow has a fluffy structure or it is composed of small ice particles.", "L05", "A050c");
         this.addQuestion(q50);
 
+        QuestionClass q51=new QuestionClass("Q051", "Given: A: The plants grow fast. and B: Amy waters" +
+                " the plants everyday. Which of the following represents if A then B:", "L06", "A051c");
+        this.addQuestion(q51);
+
+        QuestionClass q52=new QuestionClass("Q052", "Given: A: If flowers grow from seeds then they are plants " +
+                ": True. Which one of the following is false:", "L06", "A052a");
+        this.addQuestion(q52);
+
     }
 
     private void addAnswers() {
@@ -889,6 +897,15 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 "<p>The contradictory of a conditional - NOT(if A then B) is a conjunction. This compound claim is True if antecedent is" +
                 " true (A) but the consequence (B) is false. </p>" + "<p>not (if A then B) = A and not-B = A but not-B <> if A then not-B</p>", "Tip 7");
         this.addLevel(l7);
+
+        LevelClass l8 = new LevelClass("L08", "Level 8 - Lava", "<p>Hello! This is Level 8, the last step you have to go through to get the " +
+                "<b>Fire</b> Power. On this level you are going to learn about the <b>equivalence</b> and, in order to complete this level, you have" +
+                " to prove your knowledge about <b>Lava<b> by answering 5 questions right.</p>" + "<p>So, lets get started with the concepts:</p>" +
+                "<p>Only If rule: A only if B = if A then B </p>" + "<p>Biconditional rule (conjoining two conditionals):</p>" +
+                "<p>A if and only if B = (A if B) and (A only if B)</p>" + "<p>written as: A if and only if B = A iff B = A=B</p>" +
+                "<p>or (if B then A) and (if A then B)</p>" + "<p>In this case, the claims A and B always have the same truth value: " +
+                "if A is true then B is true and vice versa. We symbolize the logical equivalence of statement p and q by p ≡ q ( pq ).</p>", "Tip 8");
+        this.addLevel(l8);
     }
 
 
