@@ -416,8 +416,75 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         this.addQuestion(q69);
 
         QuestionClass q70=new QuestionClass("Q070", "Which one of the following is the contradictory " +
-                "of A: Some people can hear the thunder if the distance is less than 20 kilometres.", "L07", "A070A");
+                "of A: Some people can hear the thunder if the distance is less than 20 kilometres.", "L07", "A070a");
         this.addQuestion(q70);
+
+        QuestionClass q71=new QuestionClass("Q071", "Please select the false relationship for the following " +
+                "compound claim: Lava is expelled only if a volcano erupts.", "L08", "A071b");
+        this.addQuestion(q71);
+
+        QuestionClass q72=new QuestionClass("Q072", "Please select the false relationship for the following" +
+                " compound claim: Lava stops moving if and only if it solidifies.", "L08", "A072c");
+        this.addQuestion(q72);
+
+        QuestionClass q73=new QuestionClass("Q073", "Please select the true relationship for the following" +
+                " compound claim: The speed of the lava is higher if and only if the viscosity is lower.", "L08", "A073a");
+        this.addQuestion(q73);
+
+        QuestionClass q74=new QuestionClass("Q074", "Given: Magma becomes lava if and only if it is exposed" +
+                " to the surface. Please fill in the dots with the adecvate statement. \n \tIf magma becomes" +
+                " lava then it is exposed to the surface and …", "L08", "A074a");
+        this.addQuestion(q74);
+
+        QuestionClass q75=new QuestionClass("Q075", "Please select the equivalence statement:\n" +
+                "\tRocks melt if they reach the melting point and when they reach the melting point, rocks melt.", "L08", "A075a");
+        this.addQuestion(q75);
+        //5 questions skipped
+
+        QuestionClass q81=new QuestionClass("Q081", "Please select the contrapositive for the following " +
+                "statement: In order to save the forest you must stop the wildfire spreading. ", "L09", "A081c");
+        this.addQuestion(q81);
+
+        QuestionClass q82=new QuestionClass("Q082", "Please select the statement that has the following" +
+                " contrapositive: If predators did not existed then the village would have been safe.", "L09", "A082a");
+        this.addQuestion(q82);
+
+        QuestionClass q83=new QuestionClass("Q083", "Please select the contrapositive for the following statement:" +
+                " Battle training is crucial in order to win the war.", "L09", "A083a");
+        this.addQuestion(q83);
+
+        QuestionClass q84=new QuestionClass("Q084", "Please select the statement that has the following contrapositive:" +
+                " If no flooding occurred then the village is not in danger.", "L09", "A084b");
+        this.addQuestion(q84);
+
+        QuestionClass q85=new QuestionClass("Q085", "Please select the statement that has the following contrapositive:" +
+                " If some villages are not under attack then the world is safe.", "L09", "A085a");
+        this.addQuestion(q85);
+
+        QuestionClass q86=new QuestionClass("Q086", "Please select the contrapositive for the following statement:" +
+                " If somebody will help them, the village people won’t lose everything.", "L09", "A086c");
+        this.addQuestion(q86);
+        //4 questions skipped
+
+        QuestionClass q91=new QuestionClass("Q091", "Please select the inference that derive from the following premises:\n" +
+                "p: Heroes are people.\n" + "q: People are giving random acts of kindness.", "L10", "A091a");
+        this.addQuestion(q91);
+
+        QuestionClass q92=new QuestionClass("Q092", "Please select the inference that derive from the following premises:\n" +
+                "p: In order to save the world you need to be a hero.\n" + "q. Everyone can be a hero", "L10", "A092b");
+        this.addQuestion(q92);
+
+        QuestionClass q93=new QuestionClass("Q093", "Please select the inference that derive from the following premises:\n" +
+                "p: If the world is threatened then superheroes will react.\n" + "q: Superheroes are not reacting.\n", "L10", "A093c");
+        this.addQuestion(q93);
+
+        QuestionClass q94=new QuestionClass("Q094", "Please select the inference that derive from the following premises:\n" +
+                "p: If you have super powers you are a superhero.\n" + "q: If you don’t have super powers than you are human.\n" +
+                "r: If you are a superhero then you need to save the world.", "L10", "A094b");
+        this.addQuestion(q94);
+
+
+
 
     }
 
@@ -1035,6 +1102,143 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         AnswerClass a211 = new AnswerClass("A070c", "The distance is less than 20 kilometres and everyone can hear the thunder.", "Q070");
         this.addAnswer(a211);
 
+        AnswerClass a212 = new AnswerClass("A071a", "If a volcano erupts then lava is expelled.", "Q071");
+        this.addAnswer(a212);
+
+        AnswerClass a213 = new AnswerClass("A071b", "A volcano erupts and lava is not expelled.", "Q071");
+        this.addAnswer(a213);
+
+        AnswerClass a214 = new AnswerClass("A071c", "If lava is expelled then a volcano erupts.", "Q071");
+        this.addAnswer(a214);
+
+        AnswerClass a215 = new AnswerClass("A072a", "If lava stops moving then it solidifies.", "Q072");
+        this.addAnswer(a215);
+
+        AnswerClass a216 = new AnswerClass("A072b", "Lava solidifies only when it stops moving.", "Q072");
+        this.addAnswer(a216);
+
+        AnswerClass a217 = new AnswerClass("A072c", "Lava starts moving when it solidifies.", "Q072");
+        this.addAnswer(a217);
+
+        AnswerClass a218 = new AnswerClass("A073a", "If the speed of the lava is higher then the viscosity is lower.", "Q073");
+        this.addAnswer(a218);
+
+        AnswerClass a219 = new AnswerClass("A073b", "If the speed of the lava is higher then the viscosity is higher.", "Q073");
+        this.addAnswer(a219);
+
+        AnswerClass a220 = new AnswerClass("A073c", "If the speed of the lava is lower then the viscosity is lower.", "Q073");
+        this.addAnswer(a220);
+
+        AnswerClass a221 = new AnswerClass("A074a", "If exposed to the surface then magma becomes lava.", "Q074");
+        this.addAnswer(a221);
+
+        AnswerClass a222 = new AnswerClass("A074b", "If exposed to the surface then lava becomes magma.", "Q074");
+        this.addAnswer(a222);
+
+        AnswerClass a223 = new AnswerClass("A074c", "If not exposed to the surface then magma becomes lava.", "Q074");
+        this.addAnswer(a223);
+
+        AnswerClass a224 = new AnswerClass("A075a", "Rocks melt if and only if they do not reach the melting point.", "Q075");
+        this.addAnswer(a224);
+
+        AnswerClass a225 = new AnswerClass("A075b", "Rocks melt if they reach the melting point.", "Q075");
+        this.addAnswer(a225);
+
+        AnswerClass a226 = new AnswerClass("A075c", "When rocks rich the melting point, they melt.", "Q075");
+        this.addAnswer(a226);
+        //5 questions skipped
+
+        AnswerClass a242 = new AnswerClass("A081a", "You will save the forest if and only if you stop the wildfire spreading.", "Q081");
+        this.addAnswer(a242);
+
+        AnswerClass a243 = new AnswerClass("A081b", "Stopping the wildfire spreading you will save the forest.", "Q081");
+        this.addAnswer(a243);
+
+        AnswerClass a244 = new AnswerClass("A081c", "If you do not stop the wildfire spreading then you won’t save the forest.", "Q081");
+        this.addAnswer(a244);
+
+        AnswerClass a245 = new AnswerClass("A082a", "If the village is not safe then predators exist.", "Q082");
+        this.addAnswer(a245);
+
+        AnswerClass a246 = new AnswerClass("A082b", "If the village was safe then predators did not existed.", "Q082");
+        this.addAnswer(a246);
+
+        AnswerClass a247 = new AnswerClass("A082c", "If predators existed, the village is not safe.", "Q082");
+        this.addAnswer(a247);
+
+        AnswerClass a248 = new AnswerClass("A083a", "If the war was lost, then battle training is not crucial", "Q083");
+        this.addAnswer(a248);
+
+        AnswerClass a249 = new AnswerClass("A083b", "If the battle training is crucial then they will win the war.", "Q083");
+        this.addAnswer(a249);
+
+        AnswerClass a250 = new AnswerClass("A083c", "Battle training is not crucial in order to win the war.", "Q083");
+        this.addAnswer(a250);
+
+        AnswerClass a251 = new AnswerClass("A084a", "The village is in danger if no flooding occurred.", "Q084");
+        this.addAnswer(a251);
+
+        AnswerClass a252 = new AnswerClass("A084b", "The village is in danger if some flooring occurred.", "Q084");
+        this.addAnswer(a252);
+
+        AnswerClass a253 = new AnswerClass("A084c", "The village is not in danger if no flooring occurred.", "Q084");
+        this.addAnswer(a253);
+
+        AnswerClass a254 = new AnswerClass("A085a", "The world is not safe if all villages are under attack", "Q085");
+        this.addAnswer(a254);
+
+        AnswerClass a255 = new AnswerClass("A085b", "The world is safe if no village is under attack.", "Q085");
+        this.addAnswer(a255);
+
+        AnswerClass a256 = new AnswerClass("A085c", "The world is not safe if some villages are under attack.", "Q085");
+        this.addAnswer(a256);
+
+        AnswerClass a257 = new AnswerClass("A086a", "If village people will lose something, then nobody helped them.", "Q086");
+        this.addAnswer(a257);
+
+        AnswerClass a258 = new AnswerClass("A086b", "If village people will lose everything, then somebody did not helped them.", "Q086");
+        this.addAnswer(a258);
+
+        AnswerClass a259 = new AnswerClass("A086c", "If village people will lose everything, then nobody helped them.", "Q086");
+        this.addAnswer(a259);
+        //4 questions skipped
+
+        AnswerClass a272 = new AnswerClass("A091a", "Heroes are giving random acts of kindness.", "Q091");
+        this.addAnswer(a272);
+
+        AnswerClass a273 = new AnswerClass("A091b", "People are heroes.", "Q091");
+        this.addAnswer(a273);
+
+        AnswerClass a274 = new AnswerClass("A091c", "Random acts of kindness are given by some people.", "Q091");
+        this.addAnswer(a274);
+
+        AnswerClass a275 = new AnswerClass("A092a", "Only heroes can save the world.", "Q092");
+        this.addAnswer(a275);
+
+        AnswerClass a276 = new AnswerClass("A092b", "Everyone can save the world.", "Q092");
+        this.addAnswer(a276);
+
+        AnswerClass a277 = new AnswerClass("A092c", "Not everyone can save the world.", "Q092");
+        this.addAnswer(a277);
+
+        AnswerClass a278 = new AnswerClass("A093a", "The world is threatened.", "Q093");
+        this.addAnswer(a278);
+
+        AnswerClass a279 = new AnswerClass("A093b", "Superheroes are reacting.", "Q093");
+        this.addAnswer(a279);
+
+        AnswerClass a280 = new AnswerClass("A093c", "The world is not threatened.", "Q093");
+        this.addAnswer(a280);
+
+        AnswerClass a281 = new AnswerClass("A094a", "Superheroes are not humans.", "Q094");
+        this.addAnswer(a281);
+
+        AnswerClass a282 = new AnswerClass("A094b", "Humans don’t need to save the world.", "Q094");
+        this.addAnswer(a282);
+
+        AnswerClass a283 = new AnswerClass("A094c", "Humans need to save the world.", "Q094");
+        this.addAnswer(a283);
+
     }
 
 
@@ -1133,8 +1337,21 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 "<p>Only If rule: A only if B = if A then B </p>" + "<p>Biconditional rule (conjoining two conditionals):</p>" +
                 "<p>A if and only if B = (A if B) and (A only if B)</p>" + "<p>written as: A if and only if B = A iff B = A=B</p>" +
                 "<p>or (if B then A) and (if A then B)</p>" + "<p>In this case, the claims A and B always have the same truth value: " +
-                "if A is true then B is true and vice versa. We symbolize the logical equivalence of statement p and q by p ≡ q ( pq ).</p>", "Tip 8");
+                "if A is true then B is true and vice versa. We symbolize the logical equivalence of statement p and q by p ≡ q ( p <--> q ).</p>", "Tip 8");
         this.addLevel(l8);
+
+        LevelClass l9 = new LevelClass("L09", "Level 9 - Protect the village", "</p>Hello! This is Level 9, the first step you have to go through in order" +
+                " to become a <b>Hero!</b> On this level you are going to learn about the <b>contrapositive</b> and, in order to complete this level, you have to " +
+                "protect the village by answering 5 questions right.</p> <p>So, lets get started with the concepts:</p>" + "<p>General rule: if A then B = if not-B " +
+                "then not-A</p>" + "<p>ex: Conditional: (A: You won’t become a good player) if (B: you don’t practice)</p>" + "<p>where A: consequent and B: antecedent</p>" +
+                "<p>Contrapositive: If you become a good player then you practiced.</p>", "Tip 9");
+        this.addLevel(l9);
+
+        LevelClass l10 = new LevelClass("L10", "Level 10 - Save the WORLD", "<p><b>Congratulation!</b> This is Level 10, the last step you have to go through in order to become " +
+                "a <b>Superhero!</b> On this level you are going to learn about <b>inference</b> and, in order to complete this level, you have to save the world by answering" +
+                " 5 questions right.</p>" + "<p>So, lets get started with the concepts:</p>" + "<p>The rule: true statements stand as premises and they can derive in conclusions" +
+                " (respecting the rules learned by now and the semantics). </p>" + "<p>A→B</p>" + "<p>A/B</p>", "Tip 10");
+        this.addLevel(l10);
     }
 
 
