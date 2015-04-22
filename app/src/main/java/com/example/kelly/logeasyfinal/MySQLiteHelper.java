@@ -346,6 +346,146 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 "Snow has a fluffy structure or it is composed of small ice particles.", "L05", "A050c");
         this.addQuestion(q50);
 
+        QuestionClass q51=new QuestionClass("Q051", "Given: A: The plants grow fast. and B: Amy waters" +
+                " the plants everyday. Which of the following represents if A then B:", "L06", "A051c");
+        this.addQuestion(q51);
+
+        QuestionClass q52=new QuestionClass("Q052", "Given: A: If flowers grow from seeds then they are plants " +
+                ": True. Which one of the following is false:", "L06", "A052a");
+        this.addQuestion(q52);
+
+        QuestionClass q53=new QuestionClass("Q053", "Consider A: Plants obtain energy if exposed to " +
+                "sunlight. Please select the false statement from the following:", "L06", "A053c");
+        this.addQuestion(q53);
+
+        QuestionClass q54=new QuestionClass("Q054", "Please select the antecedent from the following" +
+                " claim: B = Otherwise, plants will not survive on this planet.", "L06", "A054b");
+        this.addQuestion(q54);
+
+        QuestionClass q55=new QuestionClass("Q055", "Please select the antecedent from the following" +
+                " claim: C = Don’t water the flowers for a month and you won’t have them anymore.", "L06", "A055c");
+        this.addQuestion(q55);
+
+        QuestionClass q56=new QuestionClass("Q056", "Please select the consequent from the following" +
+                " claim: A = Anyone who loves plants deserves a planthouse.", "L06", "A056b");
+        this.addQuestion(q56);
+
+        QuestionClass q57=new QuestionClass("Q057", "Please select the consequent from the following" +
+                " claim: B = Visit us and you will get a free green plant pot.", "L06", "A057a");
+        this.addQuestion(q57);
+
+        QuestionClass q58=new QuestionClass("Q058", "Consider A: House plants won’t grow if over-watered" +
+                " or under-watered. Please select the false statement from the following:", "L06", "A058a");
+        this.addQuestion(q58);
+        //two questions skipped
+
+        QuestionClass q61=new QuestionClass("Q061", "Please select the contradictory of A: If lightning" +
+                " strikes then you can hear it.", "L07", "A061a");
+        this.addQuestion(q61);
+
+        QuestionClass q62=new QuestionClass("Q062", "Please select the contradictory of A: If the electric" +
+                " field is strong enough, a positive streamer can develop from those points.", "L07", "A062b");
+        this.addQuestion(q62);
+
+        QuestionClass q63=new QuestionClass("Q063", "Which one of the following is the contradictory of C:" +
+                " If a lightning hits an object on the ground it is called a strike.", "L07", "A063a");
+        this.addQuestion(q63);
+
+        QuestionClass q64=new QuestionClass("Q064", "Which one of the following is the contradictory" +
+                " of A: If a lightning hits an object, the object will burn.", "L07", "A064c");
+        this.addQuestion(q64);
+
+        QuestionClass q65=new QuestionClass("Q065", "Which one of the following is the contradictory" +
+                " of B: If the house is on fire then only fire department can save lives.", "L07", "A065c");
+        this.addQuestion(q65);
+
+        QuestionClass q66=new QuestionClass("Q066", "Which one of the following is the contradictory " +
+                "of C: If there is a storm then some lightnings are pretty spectacular.", "L07", "A066c");
+        this.addQuestion(q66);
+
+        QuestionClass q67=new QuestionClass("Q067", "Which one of the following is the contradictory of " +
+                "B: If lightning strikes a person, it is usually fatal.", "L07", "A067a");
+        this.addQuestion(q67);
+
+        QuestionClass q68=new QuestionClass("Q068", "Which one of the following is the contradictory " +
+                "of A: If somebody has a fear of thunder or lightning, they may have astraphobia.", "L07", "A068b");
+        this.addQuestion(q68);
+
+        QuestionClass q69=new QuestionClass("Q069", "Which one of the following is the contradictory of " +
+                "C: You will learn more about lightning if you study fulminology.", "L07", "A069c");
+        this.addQuestion(q69);
+
+        QuestionClass q70=new QuestionClass("Q070", "Which one of the following is the contradictory " +
+                "of A: Some people can hear the thunder if the distance is less than 20 kilometres.", "L07", "A070a");
+        this.addQuestion(q70);
+
+        QuestionClass q71=new QuestionClass("Q071", "Please select the false relationship for the following " +
+                "compound claim: Lava is expelled only if a volcano erupts.", "L08", "A071b");
+        this.addQuestion(q71);
+
+        QuestionClass q72=new QuestionClass("Q072", "Please select the false relationship for the following" +
+                " compound claim: Lava stops moving if and only if it solidifies.", "L08", "A072c");
+        this.addQuestion(q72);
+
+        QuestionClass q73=new QuestionClass("Q073", "Please select the true relationship for the following" +
+                " compound claim: The speed of the lava is higher if and only if the viscosity is lower.", "L08", "A073a");
+        this.addQuestion(q73);
+
+        QuestionClass q74=new QuestionClass("Q074", "Given: Magma becomes lava if and only if it is exposed" +
+                " to the surface. Please fill in the dots with the adecvate statement. \n \tIf magma becomes" +
+                " lava then it is exposed to the surface and …", "L08", "A074a");
+        this.addQuestion(q74);
+
+        QuestionClass q75=new QuestionClass("Q075", "Please select the equivalence statement:\n" +
+                "\tRocks melt if they reach the melting point and when they reach the melting point, rocks melt.", "L08", "A075a");
+        this.addQuestion(q75);
+        //5 questions skipped
+
+        QuestionClass q81=new QuestionClass("Q081", "Please select the contrapositive for the following " +
+                "statement: In order to save the forest you must stop the wildfire spreading. ", "L09", "A081c");
+        this.addQuestion(q81);
+
+        QuestionClass q82=new QuestionClass("Q082", "Please select the statement that has the following" +
+                " contrapositive: If predators did not existed then the village would have been safe.", "L09", "A082a");
+        this.addQuestion(q82);
+
+        QuestionClass q83=new QuestionClass("Q083", "Please select the contrapositive for the following statement:" +
+                " Battle training is crucial in order to win the war.", "L09", "A083a");
+        this.addQuestion(q83);
+
+        QuestionClass q84=new QuestionClass("Q084", "Please select the statement that has the following contrapositive:" +
+                " If no flooding occurred then the village is not in danger.", "L09", "A084b");
+        this.addQuestion(q84);
+
+        QuestionClass q85=new QuestionClass("Q085", "Please select the statement that has the following contrapositive:" +
+                " If some villages are not under attack then the world is safe.", "L09", "A085a");
+        this.addQuestion(q85);
+
+        QuestionClass q86=new QuestionClass("Q086", "Please select the contrapositive for the following statement:" +
+                " If somebody will help them, the village people won’t lose everything.", "L09", "A086c");
+        this.addQuestion(q86);
+        //4 questions skipped
+
+        QuestionClass q91=new QuestionClass("Q091", "Please select the inference that derive from the following premises:\n" +
+                "p: Heroes are people.\n" + "q: People are giving random acts of kindness.", "L10", "A091a");
+        this.addQuestion(q91);
+
+        QuestionClass q92=new QuestionClass("Q092", "Please select the inference that derive from the following premises:\n" +
+                "p: In order to save the world you need to be a hero.\n" + "q. Everyone can be a hero", "L10", "A092b");
+        this.addQuestion(q92);
+
+        QuestionClass q93=new QuestionClass("Q093", "Please select the inference that derive from the following premises:\n" +
+                "p: If the world is threatened then superheroes will react.\n" + "q: Superheroes are not reacting.\n", "L10", "A093c");
+        this.addQuestion(q93);
+
+        QuestionClass q94=new QuestionClass("Q094", "Please select the inference that derive from the following premises:\n" +
+                "p: If you have super powers you are a superhero.\n" + "q: If you don’t have super powers than you are human.\n" +
+                "r: If you are a superhero then you need to save the world.", "L10", "A094b");
+        this.addQuestion(q94);
+
+
+
+
     }
 
     private void addAnswers() {
@@ -798,6 +938,309 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
         AnswerClass a150 = new AnswerClass("A050c", "Snow does not have a fluffy structure and it is not composed of small ice particles.", "Q050");
         this.addAnswer(a150);
+
+        AnswerClass a151 = new AnswerClass("A051a", "The plants grow fast because Amy waters them everyday.", "Q051");
+        this.addAnswer(a151);
+
+        AnswerClass a152 = new AnswerClass("A051b", "The plants do not grow fast if Amy does not waters them everyday.", "Q051");
+        this.addAnswer(a152);
+
+        AnswerClass a153 = new AnswerClass("A051c", "If Amy waters the plants everyday then the plants grow fast. ", "Q051");
+        this.addAnswer(a153);
+
+        AnswerClass a154 = new AnswerClass("A052a", "Flowers grow from seeds and they are not plants.", "Q052");
+        this.addAnswer(a154);
+
+        AnswerClass a155 = new AnswerClass("A052b", "Flowers do not grow from seeds or they are not plants.", "Q052");
+        this.addAnswer(a155);
+
+        AnswerClass a156 = new AnswerClass("A052c", "Flowers are plants if they grow from seeds.", "Q052");
+        this.addAnswer(a156);
+
+        AnswerClass a157 = new AnswerClass("A053a", "If exposed to sunlight, plants will not obtain energy.", "Q053");
+        this.addAnswer(a157);
+
+        AnswerClass a158 = new AnswerClass("A053b", "Plants obtain energy if not exposed to sunlight.", "Q053");
+        this.addAnswer(a158);
+
+        AnswerClass a159 = new AnswerClass("A053c", "Plants won’t obtain energy if exposed to sunlight.", "Q053");
+        this.addAnswer(a159);
+
+        AnswerClass a160 = new AnswerClass("A054a", "Plants", "Q054");
+        this.addAnswer(a160);
+
+        AnswerClass a161 = new AnswerClass("A054b", "Otherwise", "Q054");
+        this.addAnswer(a161);
+
+        AnswerClass a162 = new AnswerClass("A054c", "will not survive", "Q054");
+        this.addAnswer(a162);
+
+        AnswerClass a163 = new AnswerClass("A055a", "You won’t have them anymore", "Q055");
+        this.addAnswer(a163);
+
+        AnswerClass a164 = new AnswerClass("A055b", "Don’t water", "Q055");
+        this.addAnswer(a164);
+
+        AnswerClass a165 = new AnswerClass("A055c", "Don’t water the flowers for a month", "Q055");
+        this.addAnswer(a165);
+
+        AnswerClass a166 = new AnswerClass("A056a", "loves plants", "Q056");
+        this.addAnswer(a166);
+
+        AnswerClass a167 = new AnswerClass("A056b", "deserves a planthouse", "Q056");
+        this.addAnswer(a167);
+
+        AnswerClass a168 = new AnswerClass("A056c", "anyone who loves plants", "Q056");
+        this.addAnswer(a168);
+
+        AnswerClass a169 = new AnswerClass("A057a", "you will get a free green pot ", "Q057");
+        this.addAnswer(a169);
+
+        AnswerClass a170 = new AnswerClass("A057b", "green plant pot", "Q057");
+        this.addAnswer(a170);
+
+        AnswerClass a171 = new AnswerClass("A057c", "visit us", "Q057");
+        this.addAnswer(a171);
+
+        AnswerClass a172 = new AnswerClass("A058a", "House plants will grow if over-watered or under-watered.", "Q058");
+        this.addAnswer(a172);
+
+        AnswerClass a173 = new AnswerClass("A058b", "House plants won’t grow if not over-watered or under-watered.", "Q058");
+        this.addAnswer(a173);
+
+        AnswerClass a174 = new AnswerClass("A058c", "House plants will grow if not over-watered or under-watered.", "Q058");
+        this.addAnswer(a174);
+        //two questions skipped
+
+        AnswerClass a181 = new AnswerClass("A061a", "Lighting strikes and you can not hear it.", "Q061");
+        this.addAnswer(a181);
+
+        AnswerClass a182 = new AnswerClass("A061b", "Lightning strikes or you can not hear it.", "Q061");
+        this.addAnswer(a182);
+
+        AnswerClass a183 = new AnswerClass("A061c", "Lightning does not strike and you can not hear it.", "Q061");
+        this.addAnswer(a183);
+
+        AnswerClass a184 = new AnswerClass("A062a", "The electric field is not strong enough and a positive streamer develops from those points.", "Q062");
+        this.addAnswer(a184);
+
+        AnswerClass a185 = new AnswerClass("A062b", "The electric field is strong enough and a positive streamer can not develop from those points.", "Q062");
+        this.addAnswer(a185);
+
+        AnswerClass a186 = new AnswerClass("A062c", " If the electric field is strong enough, a positive streamer can not develop from those points.", "Q062");
+        this.addAnswer(a186);
+
+        AnswerClass a187 = new AnswerClass("A063a", "A lightning hits an object on the ground and it is not called a strike.", "Q063");
+        this.addAnswer(a187);
+
+        AnswerClass a188 = new AnswerClass("A063b", "A lightning does not hit an object on the ground and it is not called a strike.", "Q063");
+        this.addAnswer(a188);
+
+        AnswerClass a189 = new AnswerClass("A063c", "A lightning hits an object on the ground and it is called a strike.", "Q063");
+        this.addAnswer(a189);
+
+        AnswerClass a190 = new AnswerClass("A064a", "A lightning hits an object or the object will not burn.", "Q064");
+        this.addAnswer(a190);
+
+        AnswerClass a191 = new AnswerClass("A064b", "A lightning hits an object and the object will burn.", "Q064");
+        this.addAnswer(a191);
+
+        AnswerClass a192 = new AnswerClass("A064c", "A lightning hits an object and the object will not burn.", "Q064");
+        this.addAnswer(a192);
+
+        AnswerClass a193 = new AnswerClass("A065a", "The house is on fire and only the fire department can save lives.", "Q065");
+        this.addAnswer(a193);
+
+        AnswerClass a194 = new AnswerClass("A065b", "The house is not on fire and not only the fire department can save lives.", "Q065");
+        this.addAnswer(a194);
+
+        AnswerClass a195 = new AnswerClass("A065c", "The house is on fire and some lives can be saved by someone outside fire department.", "Q065");
+        this.addAnswer(a195);
+
+        AnswerClass a196 = new AnswerClass("A066a", "There is a storm and some lightnings are not pretty spectacular.", "Q066");
+        this.addAnswer(a196);
+
+        AnswerClass a197 = new AnswerClass("A066b", "There is a storm and all lightnings aren’t pretty spectacular.", "Q066");
+        this.addAnswer(a197);
+
+        AnswerClass a198 = new AnswerClass("A066c", "There is a storm and no lightnings are pretty spectacular.", "Q066");
+        this.addAnswer(a198);
+
+        AnswerClass a199 = new AnswerClass("A067a", "Lightning strikes a person and it is not usually fatal.", "Q067");
+        this.addAnswer(a199);
+
+        AnswerClass a200 = new AnswerClass("A067b", "If lightning strikes a person, it is not usually fatal.", "Q067");
+        this.addAnswer(a200);
+
+        AnswerClass a201 = new AnswerClass("A067c", "If lightning strikes a person, it is not fatal.", "Q067");
+        this.addAnswer(a201);
+
+        AnswerClass a203 = new AnswerClass("A068a", "If somebody does not have a fear of thunder or lightning and they may have astraphobia.", "Q068");
+        this.addAnswer(a203);
+
+        AnswerClass a204 = new AnswerClass("A068b", "Somebody has a fear of thunder or lightning and they may not have astraphobia.", "Q068");
+        this.addAnswer(a204);
+
+        AnswerClass a205 = new AnswerClass("A068c", "If somebody does have a fear of thunder and lightning, they may have astraphobia.", "Q068");
+        this.addAnswer(a205);
+
+        AnswerClass a206 = new AnswerClass("A069a", "You will learn more about lightning if you don’t study fulminology.", "Q069");
+        this.addAnswer(a206);
+
+        AnswerClass a207 = new AnswerClass("A069b", "You will not learn more about lightning if you study fulminology.", "Q069");
+        this.addAnswer(a207);
+
+        AnswerClass a208 = new AnswerClass("A069c", "You study fulminology and won’t learn more about lightning.", "Q069");
+        this.addAnswer(a208);
+
+        AnswerClass a209 = new AnswerClass("A070a", "The distance is less than 20 kilometres and no one can hear the thunder.", "Q070");
+        this.addAnswer(a209);
+
+        AnswerClass a210 = new AnswerClass("A070b", "The distance is less than 20 kilometres and some can’t hear the thunder.", "Q070");
+        this.addAnswer(a210);
+
+        AnswerClass a211 = new AnswerClass("A070c", "The distance is less than 20 kilometres and everyone can hear the thunder.", "Q070");
+        this.addAnswer(a211);
+
+        AnswerClass a212 = new AnswerClass("A071a", "If a volcano erupts then lava is expelled.", "Q071");
+        this.addAnswer(a212);
+
+        AnswerClass a213 = new AnswerClass("A071b", "A volcano erupts and lava is not expelled.", "Q071");
+        this.addAnswer(a213);
+
+        AnswerClass a214 = new AnswerClass("A071c", "If lava is expelled then a volcano erupts.", "Q071");
+        this.addAnswer(a214);
+
+        AnswerClass a215 = new AnswerClass("A072a", "If lava stops moving then it solidifies.", "Q072");
+        this.addAnswer(a215);
+
+        AnswerClass a216 = new AnswerClass("A072b", "Lava solidifies only when it stops moving.", "Q072");
+        this.addAnswer(a216);
+
+        AnswerClass a217 = new AnswerClass("A072c", "Lava starts moving when it solidifies.", "Q072");
+        this.addAnswer(a217);
+
+        AnswerClass a218 = new AnswerClass("A073a", "If the speed of the lava is higher then the viscosity is lower.", "Q073");
+        this.addAnswer(a218);
+
+        AnswerClass a219 = new AnswerClass("A073b", "If the speed of the lava is higher then the viscosity is higher.", "Q073");
+        this.addAnswer(a219);
+
+        AnswerClass a220 = new AnswerClass("A073c", "If the speed of the lava is lower then the viscosity is lower.", "Q073");
+        this.addAnswer(a220);
+
+        AnswerClass a221 = new AnswerClass("A074a", "If exposed to the surface then magma becomes lava.", "Q074");
+        this.addAnswer(a221);
+
+        AnswerClass a222 = new AnswerClass("A074b", "If exposed to the surface then lava becomes magma.", "Q074");
+        this.addAnswer(a222);
+
+        AnswerClass a223 = new AnswerClass("A074c", "If not exposed to the surface then magma becomes lava.", "Q074");
+        this.addAnswer(a223);
+
+        AnswerClass a224 = new AnswerClass("A075a", "Rocks melt if and only if they do not reach the melting point.", "Q075");
+        this.addAnswer(a224);
+
+        AnswerClass a225 = new AnswerClass("A075b", "Rocks melt if they reach the melting point.", "Q075");
+        this.addAnswer(a225);
+
+        AnswerClass a226 = new AnswerClass("A075c", "When rocks rich the melting point, they melt.", "Q075");
+        this.addAnswer(a226);
+        //5 questions skipped
+
+        AnswerClass a242 = new AnswerClass("A081a", "You will save the forest if and only if you stop the wildfire spreading.", "Q081");
+        this.addAnswer(a242);
+
+        AnswerClass a243 = new AnswerClass("A081b", "Stopping the wildfire spreading you will save the forest.", "Q081");
+        this.addAnswer(a243);
+
+        AnswerClass a244 = new AnswerClass("A081c", "If you do not stop the wildfire spreading then you won’t save the forest.", "Q081");
+        this.addAnswer(a244);
+
+        AnswerClass a245 = new AnswerClass("A082a", "If the village is not safe then predators exist.", "Q082");
+        this.addAnswer(a245);
+
+        AnswerClass a246 = new AnswerClass("A082b", "If the village was safe then predators did not existed.", "Q082");
+        this.addAnswer(a246);
+
+        AnswerClass a247 = new AnswerClass("A082c", "If predators existed, the village is not safe.", "Q082");
+        this.addAnswer(a247);
+
+        AnswerClass a248 = new AnswerClass("A083a", "If the war was lost, then battle training is not crucial", "Q083");
+        this.addAnswer(a248);
+
+        AnswerClass a249 = new AnswerClass("A083b", "If the battle training is crucial then they will win the war.", "Q083");
+        this.addAnswer(a249);
+
+        AnswerClass a250 = new AnswerClass("A083c", "Battle training is not crucial in order to win the war.", "Q083");
+        this.addAnswer(a250);
+
+        AnswerClass a251 = new AnswerClass("A084a", "The village is in danger if no flooding occurred.", "Q084");
+        this.addAnswer(a251);
+
+        AnswerClass a252 = new AnswerClass("A084b", "The village is in danger if some flooring occurred.", "Q084");
+        this.addAnswer(a252);
+
+        AnswerClass a253 = new AnswerClass("A084c", "The village is not in danger if no flooring occurred.", "Q084");
+        this.addAnswer(a253);
+
+        AnswerClass a254 = new AnswerClass("A085a", "The world is not safe if all villages are under attack", "Q085");
+        this.addAnswer(a254);
+
+        AnswerClass a255 = new AnswerClass("A085b", "The world is safe if no village is under attack.", "Q085");
+        this.addAnswer(a255);
+
+        AnswerClass a256 = new AnswerClass("A085c", "The world is not safe if some villages are under attack.", "Q085");
+        this.addAnswer(a256);
+
+        AnswerClass a257 = new AnswerClass("A086a", "If village people will lose something, then nobody helped them.", "Q086");
+        this.addAnswer(a257);
+
+        AnswerClass a258 = new AnswerClass("A086b", "If village people will lose everything, then somebody did not helped them.", "Q086");
+        this.addAnswer(a258);
+
+        AnswerClass a259 = new AnswerClass("A086c", "If village people will lose everything, then nobody helped them.", "Q086");
+        this.addAnswer(a259);
+        //4 questions skipped
+
+        AnswerClass a272 = new AnswerClass("A091a", "Heroes are giving random acts of kindness.", "Q091");
+        this.addAnswer(a272);
+
+        AnswerClass a273 = new AnswerClass("A091b", "People are heroes.", "Q091");
+        this.addAnswer(a273);
+
+        AnswerClass a274 = new AnswerClass("A091c", "Random acts of kindness are given by some people.", "Q091");
+        this.addAnswer(a274);
+
+        AnswerClass a275 = new AnswerClass("A092a", "Only heroes can save the world.", "Q092");
+        this.addAnswer(a275);
+
+        AnswerClass a276 = new AnswerClass("A092b", "Everyone can save the world.", "Q092");
+        this.addAnswer(a276);
+
+        AnswerClass a277 = new AnswerClass("A092c", "Not everyone can save the world.", "Q092");
+        this.addAnswer(a277);
+
+        AnswerClass a278 = new AnswerClass("A093a", "The world is threatened.", "Q093");
+        this.addAnswer(a278);
+
+        AnswerClass a279 = new AnswerClass("A093b", "Superheroes are reacting.", "Q093");
+        this.addAnswer(a279);
+
+        AnswerClass a280 = new AnswerClass("A093c", "The world is not threatened.", "Q093");
+        this.addAnswer(a280);
+
+        AnswerClass a281 = new AnswerClass("A094a", "Superheroes are not humans.", "Q094");
+        this.addAnswer(a281);
+
+        AnswerClass a282 = new AnswerClass("A094b", "Humans don’t need to save the world.", "Q094");
+        this.addAnswer(a282);
+
+        AnswerClass a283 = new AnswerClass("A094c", "Humans need to save the world.", "Q094");
+        this.addAnswer(a283);
+
+        //end =)
+
     }
 
 
@@ -879,7 +1322,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 "</p>" + "<p>So, lets get started with the concepts:</p>" + "<p>The conditional proposition is represented in the " +
                 "format: <b>if A then B</b>. Where A = antecedent and B = consequent. A conditional claim is False when the antecedent" +
                 " is True but the consequent is False. When A is False or both A and B are True the proposition is True. Other way of" +
-                " addressing this:</>p" + "<p>B if A = if A then B</p>", "Tip 6");
+                " addressing this:</p>" + "<p>B if A = if A then B</p>", "Tip 6");
         this.addLevel(l6);
 
         LevelClass l7 = new LevelClass("L07", "Level 7 - Lightning", "<p>Hello! This is Level 7, the first step you have to go through" +
@@ -889,6 +1332,28 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 "<p>The contradictory of a conditional - NOT(if A then B) is a conjunction. This compound claim is True if antecedent is" +
                 " true (A) but the consequence (B) is false. </p>" + "<p>not (if A then B) = A and not-B = A but not-B <> if A then not-B</p>", "Tip 7");
         this.addLevel(l7);
+
+        LevelClass l8 = new LevelClass("L08", "Level 8 - Lava", "<p>Hello! This is Level 8, the last step you have to go through to get the " +
+                "<b>Fire</b> Power. On this level you are going to learn about the <b>equivalence</b> and, in order to complete this level, you have" +
+                " to prove your knowledge about <b>Lava</b> by answering 5 questions right.</p>" + "<p>So, lets get started with the concepts:</p>" +
+                "<p>Only If rule: A only if B = if A then B </p>" + "<p>Biconditional rule (conjoining two conditionals):</p>" +
+                "<p>A if and only if B = (A if B) and (A only if B)</p>" + "<p>written as: A if and only if B = A iff B = A=B</p>" +
+                "<p>or (if B then A) and (if A then B)</p>" + "<p>In this case, the claims A and B always have the same truth value: " +
+                "if A is true then B is true and vice versa. We symbolize the logical equivalence of statement p and q by p ≡ q ( p <--> q ).</p>", "Tip 8");
+        this.addLevel(l8);
+
+        LevelClass l9 = new LevelClass("L09", "Level 9 - Dark City", "</p>Hello! This is Level 9, the first step you have to go through in order" +
+                " to become a <b>Hero!</b>. On this level you are going to learn about the <b>contrapositive</b> and, in order to complete this level, you have to " +
+                "protect your people from attack of the <b>Dark City</b> by answering 5 questions right.</p> <p>So, lets get started with the concepts:</p>" + "<p>General rule: if A then B = if not-B " +
+                "then not-A</p>" + "<p>ex: Conditional: (A: You won’t become a good player) if (B: you don’t practice)</p>" + "<p>where A: consequent and B: antecedent</p>" +
+                "<p>Contrapositive: If you become a good player then you practiced.</p>", "Tip 9");
+        this.addLevel(l9);
+
+        LevelClass l10 = new LevelClass("L10", "Level 10 - WORLD Master", "<p><b>Congratulation!</b> This is Level 10, the last step you have to go through in order to become " +
+                "a <b>The World Master</b> On this level you are going to learn about <b>inference</b> and, in order to complete this level, you have to save the world by answering" +
+                " 5 questions right.</p>" + "<p>So, lets get started with the concepts:</p>" + "<p>The rule: true statements stand as premises and they can derive in conclusions" +
+                " (respecting the rules learned by now and the semantics). </p>" + "<p>A→B</p>" + "<p>A/B</p>", "Tip 10");
+        this.addLevel(l10);
     }
 
 
