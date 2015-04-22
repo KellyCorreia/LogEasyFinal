@@ -44,7 +44,7 @@
 
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="245dp"
+        android:layout_width="310dp"
         android:layout_height="235dp"
         android:layout_weight="0.71"
         android:id="@+id/layoutHintMiddle"
@@ -56,7 +56,7 @@
         android:layout_marginLeft="40dp">
 
         <ScrollView
-            android:layout_width="220dp"
+            android:layout_width="290dp"
             android:layout_height="190dp"
             android:id="@+id/scrollViewHint"
             android:fillViewport="false"

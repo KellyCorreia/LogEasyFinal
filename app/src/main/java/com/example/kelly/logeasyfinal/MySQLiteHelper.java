@@ -19,106 +19,83 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     public static final String COLUMN_QUESTION_TEXT = "Q_text";
     public static final String COLUMN_RIGHT_ANSWER = "right_A";
     public static final String COLUMN_LEVEL_ID = "L_id";
-
-
+    private static final String QUESTIONS_DATABASE_CREATE = "create table "
+            + TABLE_QUESTIONS + "(" + COLUMN_QUESTION_ID
+            + " text primary key, " + COLUMN_QUESTION_TEXT
+            + " text not null, " + COLUMN_LEVEL_ID
+            + " text not null, " + COLUMN_RIGHT_ANSWER
+            + " text not null);";
     public static final String TABLE_USERS_ACT = "users_activity";
     public static final String COLUMN_ID = "_id";
     public static final String COLUMN_USER_ID = "user_id";
     // + Q_id
     public static final String COLUMN_WRONG_YN = "wrong_YN";
     public static final String COLUMN_DATE = "date";
-
-
     public static final String TABLE_ANSWERS = "table_answers";
-    public static final String COLUMN_ANSWER_ID= "A_id";
+    public static final String COLUMN_ANSWER_ID = "A_id";
+    private static final String USERS_ACT_DATABASE_CREATE = "CREATE TABLE "
+            + TABLE_USERS_ACT + "(" + COLUMN_ID
+            + " integer primary key autoincrement, " + COLUMN_USER_ID
+            + " integer not null, " + COLUMN_QUESTION_ID
+            + " text, " + COLUMN_ANSWER_ID
+            + " text, " + COLUMN_DATE
+            + " text);";
     // + Q_id
-    public static final String COLUMN_ANSWER_TEXT="A_text";
-
-    public static final String TABLE_USERS="table_users";
+    public static final String COLUMN_ANSWER_TEXT = "A_text";
+    private static final String ANSWERS_DATABASE_CREATE = "CREATE TABLE "
+            + TABLE_ANSWERS + "(" + COLUMN_ANSWER_ID
+            + " text primary key, " + COLUMN_ANSWER_TEXT
+            + " text not null, " + COLUMN_QUESTION_ID
+            + " text not null);";
+    public static final String TABLE_USERS = "table_users";
     //user_id;
-    public static final String COLUMN_USERNAME="username";
-    public static final String COLUMN_EMAIL="email";
-    public static final String COLUMN_PASS="password";
-    public static final String COLUMN_POINTS="points";
-    public static final String COLUMN_WRONG_PERCENT="wrong_percent";
-
-
-    public static final String COLUMN_AVATAR="avatar";
-    public static final String TABLE_SCOREBOARD="table_scoreboard";
-
-    public static final String TABLE_LEVEL="table_level";
-    public static final String COLUMN_LEVEL_NAME="l_name";
-    public static final String COLUMN_LESSON="lesson";
-    public static final String COLUMN_TIP="tip";
-
-    public static final String TABLE_SCOREBOARD_SCREEN="table_scoreboard_screen";
-    public static final String COLUMN_USERNAME_SCOREBOARD="user_name";
-    public static final String COLUMN_LEVELNAME_SCOREBOARD="level_name";
-    public static final String COLUMN_POINTS_SCOREBOARD="user_points";
-    public static final String COLUMN_WRONGPERC_SCOREBOARD="user_wrongperc";
-
-
-    private static final String DATABASE_NAME = "database.db";
-    private static final int DATABASE_VERSION = 1;
+    public static final String COLUMN_USERNAME = "username";
+    public static final String COLUMN_EMAIL = "email";
+    public static final String COLUMN_PASS = "password";
+    public static final String COLUMN_POINTS = "points";
+    public static final String COLUMN_WRONG_PERCENT = "wrong_percent";
+    public static final String COLUMN_AVATAR = "avatar";
+    private static final String USERS_DATABASE_CREATE = "CREATE TABLE "
+            + TABLE_USERS + "(" + COLUMN_USER_ID
+            + " integer primary key autoincrement, " + COLUMN_USERNAME
+            + " text not null, " + COLUMN_EMAIL
+            + " text not null, " + COLUMN_PASS
+            + " text not null, " + COLUMN_AVATAR
+            + " text);";
+    public static final String TABLE_SCOREBOARD = "table_scoreboard";
+    private static final String SCOREBOARD_DATABASE_CREATE = "CREATE TABLE "
+            + TABLE_SCOREBOARD + "(" + COLUMN_USER_ID
+            + " integer primary key, " + COLUMN_POINTS
+            + " integer, " + COLUMN_WRONG_PERCENT
+            + " integer, " + COLUMN_LEVEL_ID
+            + " text);";
+    public static final String TABLE_LEVEL = "table_level";
+    public static final String COLUMN_LEVEL_NAME = "l_name";
+    public static final String COLUMN_LESSON = "lesson";
+    public static final String COLUMN_TIP = "tip";
+    private static final String LEVEL_DATABASE_CREATE = "CREATE TABLE "
+            + TABLE_LEVEL + "(" + COLUMN_LEVEL_ID
+            + " text primary key, " + COLUMN_LEVEL_NAME
+            + " text not null, " + COLUMN_LESSON
+            + " text," + COLUMN_TIP
+            + " text);";
+    public static final String TABLE_SCOREBOARD_SCREEN = "table_scoreboard_screen";
 
     // Database creation sql statement
-
+    public static final String COLUMN_USERNAME_SCOREBOARD = "user_name";
+    public static final String COLUMN_LEVELNAME_SCOREBOARD = "level_name";
+    public static final String COLUMN_POINTS_SCOREBOARD = "user_points";
+    public static final String COLUMN_WRONGPERC_SCOREBOARD = "user_wrongperc";
     private static final String SCOREBOARD_SCREEN_DATABASE_CREATE = "create table "
             + TABLE_SCOREBOARD_SCREEN + "(" + COLUMN_USERNAME_SCOREBOARD
             + " text primary key, " + COLUMN_LEVELNAME_SCOREBOARD
-            + " text, "+ COLUMN_POINTS_SCOREBOARD
-            + " text, "+ COLUMN_WRONGPERC_SCOREBOARD
+            + " text, " + COLUMN_POINTS_SCOREBOARD
+            + " text, " + COLUMN_WRONGPERC_SCOREBOARD
             + " text);";
-
-    private static final String QUESTIONS_DATABASE_CREATE = "create table "
-            + TABLE_QUESTIONS + "(" + COLUMN_QUESTION_ID
-            + " text primary key, " + COLUMN_QUESTION_TEXT
-            + " text not null, "+ COLUMN_LEVEL_ID
-            + " text not null, "+ COLUMN_RIGHT_ANSWER
-            + " text not null);";
-
-    private static final String USERS_ACT_DATABASE_CREATE ="CREATE TABLE "
-            + TABLE_USERS_ACT + "(" + COLUMN_ID
-            + " integer primary key autoincrement, " + COLUMN_USER_ID
-            + " integer not null, "+ COLUMN_QUESTION_ID
-            + " text, "+ COLUMN_ANSWER_ID
-            + " text, "+ COLUMN_DATE
-            + " text);";
-
-
-    private static final String ANSWERS_DATABASE_CREATE="CREATE TABLE "
-            + TABLE_ANSWERS + "(" + COLUMN_ANSWER_ID
-            + " text primary key, " + COLUMN_ANSWER_TEXT
-            + " text not null, "+ COLUMN_QUESTION_ID
-            + " text not null);";
-
-
-    private static final String USERS_DATABASE_CREATE="CREATE TABLE "
-            + TABLE_USERS +"(" + COLUMN_USER_ID
-            + " integer primary key autoincrement, "+ COLUMN_USERNAME
-            + " text not null, "+ COLUMN_EMAIL
-            + " text not null, "+ COLUMN_PASS
-            + " text not null, "+ COLUMN_AVATAR
-            + " text);";
-
-
-    private static final String SCOREBOARD_DATABASE_CREATE="CREATE TABLE "
-            + TABLE_SCOREBOARD +"("+ COLUMN_USER_ID
-            +" integer primary key, "+ COLUMN_POINTS
-            +" integer, "+ COLUMN_WRONG_PERCENT
-            +" integer, "+ COLUMN_LEVEL_ID
-            +" text);";
-
-    private static final String LEVEL_DATABASE_CREATE="CREATE TABLE "
-            + TABLE_LEVEL +"("+ COLUMN_LEVEL_ID
-            +" text primary key, "+ COLUMN_LEVEL_NAME
-            +" text not null, "+ COLUMN_LESSON
-            +" text,"+ COLUMN_TIP
-            +" text);";
-
-
+    private static final String DATABASE_NAME = "database.db";
+    private static final int DATABASE_VERSION = 1;
     //OR:     private SQLiteDatabase dbase;
-    public SQLiteDatabase database=this.getWritableDatabase();
+    public SQLiteDatabase database = this.getWritableDatabase();
 
 
     public MySQLiteHelper(Context context) {
@@ -127,7 +104,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        database=db;
+        database = db;
         db.execSQL(QUESTIONS_DATABASE_CREATE);
         db.execSQL(USERS_ACT_DATABASE_CREATE);
         db.execSQL(USERS_DATABASE_CREATE);
@@ -140,350 +117,347 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         addLevels();
     }
 
-    private void addQuestions()
-    {
-        QuestionClass q1=new QuestionClass("Q001", "Which one is the contradictory of the " +
+    private void addQuestions() {
+        QuestionClass q1 = new QuestionClass("Q001", "Which one is the contradictory of the " +
                 "following claim: \n “Sometimes the wind is blowing hard.”", "L01", "A001c");
         this.addQuestion(q1);
 
-        QuestionClass q2=new QuestionClass("Q002", "Which one is the contradictory of the " +
+        QuestionClass q2 = new QuestionClass("Q002", "Which one is the contradictory of the " +
                 "following statement: \n “The wind is blowing all the time.”", "L01", "A002b");
         this.addQuestion(q2);
 
-        QuestionClass q3=new QuestionClass("Q003", "Which one of the following sentences becomes " +
+        QuestionClass q3 = new QuestionClass("Q003", "Which one of the following sentences becomes " +
                 "true after applying the NOT operator.", "L01", "A003c");
         this.addQuestion(q3);
 
-        QuestionClass q4=new QuestionClass("Q004", "Which one of the following affirmation becomes " +
+        QuestionClass q4 = new QuestionClass("Q004", "Which one of the following affirmation becomes " +
                 "true after applying the NOT operator.", "L01", "A004b");
         this.addQuestion(q4);
 
-        QuestionClass q5=new QuestionClass("Q005", "Which one of the following affirmation becomes " +
+        QuestionClass q5 = new QuestionClass("Q005", "Which one of the following affirmation becomes " +
                 "true after applying the NOT operator.", "L01", "A005b");
         this.addQuestion(q5);
 
-        QuestionClass q6=new QuestionClass("Q006", "Which one of the following affirmation becomes " +
+        QuestionClass q6 = new QuestionClass("Q006", "Which one of the following affirmation becomes " +
                 "true after applying the NOT operator.", "L01", "A006a");
         this.addQuestion(q6);
 
-        QuestionClass q7=new QuestionClass("Q007", "Which one of the following affirmation becomes " +
+        QuestionClass q7 = new QuestionClass("Q007", "Which one of the following affirmation becomes " +
                 "true after applying the NOT operator.", "L01", "A007a");
         this.addQuestion(q7);
 
-        QuestionClass q8=new QuestionClass("Q008", "Which one is the contradictory of the following" +
+        QuestionClass q8 = new QuestionClass("Q008", "Which one is the contradictory of the following" +
                 " statement: \n “The wind has no direction.”", "L01", "A008a");
         this.addQuestion(q8);
 
-        QuestionClass q9=new QuestionClass("Q009", "Which one is the contradictory of the following" +
+        QuestionClass q9 = new QuestionClass("Q009", "Which one is the contradictory of the following" +
                 " claim: \n “The wind’s direction is North.”", "L01", "A009b");
         this.addQuestion(q9);
 
-        QuestionClass q10=new QuestionClass("Q010", "Which one is the contradictory of the following" +
+        QuestionClass q10 = new QuestionClass("Q010", "Which one is the contradictory of the following" +
                 " sentence: \n “Some breeze is a light wind.”", "L01", "A010a");
         this.addQuestion(q10);
 
-        QuestionClass q11=new QuestionClass("Q011", "Given: a = “The sound is a vibration” is  " +
+        QuestionClass q11 = new QuestionClass("Q011", "Given: a = “The sound is a vibration” is  " +
                 "true and b = “The sound is not a wave” is false. Which of the following is true:", "L02", "A011c");
         this.addQuestion(q11);
 
-        QuestionClass q12=new QuestionClass("Q012", "Given: a = “The sound propagates through the air”" +
+        QuestionClass q12 = new QuestionClass("Q012", "Given: a = “The sound propagates through the air”" +
                 " is true. Which of the following is false:", "L02", "A012b");
         this.addQuestion(q12);
 
-        QuestionClass q13=new QuestionClass("Q013", "Given: a = “The sound propagates through solids”" +
+        QuestionClass q13 = new QuestionClass("Q013", "Given: a = “The sound propagates through solids”" +
                 " is true and b = “The sound is not a vibration” is false. Which of the following is true:", "L02", "A013b");
         this.addQuestion(q13);
 
-        QuestionClass q14=new QuestionClass("Q014", "Given: “The speed of the sound is 972m/s” is " +
+        QuestionClass q14 = new QuestionClass("Q014", "Given: “The speed of the sound is 972m/s” is " +
                 "true and “Sound propagates through the air”. Considering the exclusive “or”. Which " +
                 "of the following is true:", "L02", "A014c");
         this.addQuestion(q14);
 
-        QuestionClass q15=new QuestionClass("Q015", "Given: a = “All sound come from a vibrating " +
+        QuestionClass q15 = new QuestionClass("Q015", "Given: a = “All sound come from a vibrating " +
                 "source” is true and b = “Sound can be heard” is true. Which os the following is true:", "L02", "A015a");
         this.addQuestion(q15);
 
-        QuestionClass q16=new QuestionClass("Q016", "Given: a = “Sound cannot be heard” is false " +
+        QuestionClass q16 = new QuestionClass("Q016", "Given: a = “Sound cannot be heard” is false " +
                 "and b = “Sound is a current of air” is false. Which os the following is false:", "L02", "A016c");
         this.addQuestion(q16);
 
-        QuestionClass q17=new QuestionClass("Q017", "Given: a = “Music is a combination of sounds”" +
+        QuestionClass q17 = new QuestionClass("Q017", "Given: a = “Music is a combination of sounds”" +
                 " is true. Which os the following is false:", "L02", "A017b");
         this.addQuestion(q17);
 
-        QuestionClass q18=new QuestionClass("Q018", "Given: a = “Music is a combination of sounds”" +
+        QuestionClass q18 = new QuestionClass("Q018", "Given: a = “Music is a combination of sounds”" +
                 " is true,  b = “Sound is a current of air” is false and c = “All sound come from a" +
                 " vibrating source” is true. Which one of the following is true:", "L02", "A018b");
         this.addQuestion(q18);
 
-        QuestionClass q19=new QuestionClass("Q019", "Given: a = “Sound cannot be heard” is false" +
+        QuestionClass q19 = new QuestionClass("Q019", "Given: a = “Sound cannot be heard” is false" +
                 " and b = “All sound come from a vibrating source” is true. Which of the following " +
                 "is true:", "L02", "A019c");
         this.addQuestion(q19);
 
-        QuestionClass q20=new QuestionClass("Q020", "Given: a = “Music is a combination of sound " +
+        QuestionClass q20 = new QuestionClass("Q020", "Given: a = “Music is a combination of sound " +
                 "and silence” is true, b = “A very strong sound forms a tornado” is false and c = " +
                 "“Sound is not a wave” is false. Which of the following is true:", "L02", "A020a");
         this.addQuestion(q20);
 
-        QuestionClass q21=new QuestionClass("Q021", "Given:  a = “The earth is full of metals” is" +
+        QuestionClass q21 = new QuestionClass("Q021", "Given:  a = “The earth is full of metals” is" +
                 " true and b = “Gold is a metal” is true.  Which of the following is false:", "L03", "A021c");
         this.addQuestion(q21);
 
-        QuestionClass q22=new QuestionClass("Q022", "Which one of the following propositions is true:", "L03", "A022b");
+        QuestionClass q22 = new QuestionClass("Q022", "Which one of the following propositions is true:", "L03", "A022b");
         this.addQuestion(q22);
 
-        QuestionClass q23=new QuestionClass("Q023", "Given: a = “All metals are found in the earth”" +
+        QuestionClass q23 = new QuestionClass("Q023", "Given: a = “All metals are found in the earth”" +
                 " is true and b = “Silver is a crystal” is false. Which one of the following is false.", "L03", "A023b");
         this.addQuestion(q23);
 
-        QuestionClass q24=new QuestionClass("Q024", "Given: a = “Gold is more expensive than silver”" +
+        QuestionClass q24 = new QuestionClass("Q024", "Given: a = “Gold is more expensive than silver”" +
                 " is true and b = “Both gold and silver are metals” is true. Which one of the following" +
                 " is true.", "L03", "A024b");
         this.addQuestion(q24);
 
-        QuestionClass q25=new QuestionClass("Q025", "Given: a = “Gold is a gemstone” and  b = “Ruby" +
+        QuestionClass q25 = new QuestionClass("Q025", "Given: a = “Gold is a gemstone” and  b = “Ruby" +
                 " is a metal” both are false. Which one of the following is true:", "L03", "A025a");
         this.addQuestion(q25);
 
-        QuestionClass q26=new QuestionClass("Q026", "Given: a = “Silver is a stone” is false and b" +
+        QuestionClass q26 = new QuestionClass("Q026", "Given: a = “Silver is a stone” is false and b" +
                 " = “All metals are found in the earth” is true. Which one of the following is false:", "L03", "A026c");
         this.addQuestion(q26);
 
-        QuestionClass q27=new QuestionClass("Q027", "Given: “All metals are found in the earth and " +
+        QuestionClass q27 = new QuestionClass("Q027", "Given: “All metals are found in the earth and " +
                 "gold is a metal” is true and “Ruby is a stone or gold is a stone” is true. Which one of " +
                 "the following is true:", "L03", "A027b");
         this.addQuestion(q27);
 
-        QuestionClass q28=new QuestionClass("Q028", "Given: “Silver is a precious metal and gold is not" +
+        QuestionClass q28 = new QuestionClass("Q028", "Given: “Silver is a precious metal and gold is not" +
                 " a stone” is true. Which one of the following is true:", "L03", "A028a");
         this.addQuestion(q28);
 
-        QuestionClass q29=new QuestionClass("Q029", "Given: “Iron is a metal”  is true. Which one of the following is false:", "L03", "A029a");
+        QuestionClass q29 = new QuestionClass("Q029", "Given: “Iron is a metal”  is true. Which one of the following is false:", "L03", "A029a");
         this.addQuestion(q29);
 
-        QuestionClass q30=new QuestionClass("Q030", "Given: “Gold is the most expensive metal” is true " +
+        QuestionClass q30 = new QuestionClass("Q030", "Given: “Gold is the most expensive metal” is true " +
                 "and “Silver is a metal” is true. Which one of the following is false:", "L03", "A030c");
         this.addQuestion(q30);
 
-        QuestionClass q31=new QuestionClass("Q031", "Which one of the following is the contradictory" +
+        QuestionClass q31 = new QuestionClass("Q031", "Which one of the following is the contradictory" +
                 " of A: Sandy soil is ideal for crops and farming.", "L04", "A031a");
         this.addQuestion(q31);
 
-        QuestionClass q32=new QuestionClass("Q032", "Which one of the following is the contradictory " +
+        QuestionClass q32 = new QuestionClass("Q032", "Which one of the following is the contradictory " +
                 "of A: Wild beaches are undiscovered and you can’t find any hotels nearby.", "L04", "A032b");
         this.addQuestion(q32);
 
-        QuestionClass q33=new QuestionClass("Q033", "Which one of the following is the contradictory" +
+        QuestionClass q33 = new QuestionClass("Q033", "Which one of the following is the contradictory" +
                 " of A: Some beaches are formed along an ocean and they don’t have life guards posts.", "L04", "A033c");
         this.addQuestion(q33);
 
-        QuestionClass q34=new QuestionClass("Q034", "Which of the following is the contradictory of A:" +
+        QuestionClass q34 = new QuestionClass("Q034", "Which of the following is the contradictory of A:" +
                 " Performance artists draw images in sand and this type of art is called sand animation.", "L04", "A034a");
         this.addQuestion(q34);
 
-        QuestionClass q35=new QuestionClass("Q035", "Which of the following is the contradictory" +
+        QuestionClass q35 = new QuestionClass("Q035", "Which of the following is the contradictory" +
                 " of A: Sand is composed by rock and mineral particles.\n", "L04", "A035c");
         this.addQuestion(q35);
 
-        QuestionClass q36=new QuestionClass("Q036", "Given A: Only the sandy beaches are visited by" +
+        QuestionClass q36 = new QuestionClass("Q036", "Given A: Only the sandy beaches are visited by" +
                 " tourist and this is a fact. - true. Which one is the contradictory of A from the following:", "L04", "A036b");
         this.addQuestion(q36);
 
-        QuestionClass q37=new QuestionClass("Q037", "Given A: Sand is finer than gravel and coarser " +
+        QuestionClass q37 = new QuestionClass("Q037", "Given A: Sand is finer than gravel and coarser " +
                 "than silt. Which one is the contradictory of A from the following compound claims:", "L04", "A037c");
         this.addQuestion(q37);
 
-        QuestionClass q38=new QuestionClass("Q038", "Given the contradictory of A: A common type of " +
+        QuestionClass q38 = new QuestionClass("Q038", "Given the contradictory of A: A common type of " +
                 "sand was not created by coral or shellfish. Please choose A from the following:", "L04", "A038b");
         this.addQuestion(q38);
 
-        QuestionClass q39=new QuestionClass("Q039", "Given the contradictory of B: Sand and water table " +
+        QuestionClass q39 = new QuestionClass("Q039", "Given the contradictory of B: Sand and water table " +
                 "are fun in the back garden or in the livingroom . Find the compound claim B:", "L04", "A039b");
         this.addQuestion(q39);
 
-        QuestionClass q40=new QuestionClass("Q040", "Given the contradictory of B: In the back garden, " +
+        QuestionClass q40 = new QuestionClass("Q040", "Given the contradictory of B: In the back garden, " +
                 "children cannot play with sand or water. Find the compound claim B:", "L04", "A040a");
         this.addQuestion(q40);
 
-        QuestionClass q41=new QuestionClass("Q041", "Which one of the following is the contradictory " +
+        QuestionClass q41 = new QuestionClass("Q041", "Which one of the following is the contradictory " +
                 "of A: Precipitations can fall in form of ice crystals or in snow.", "L05", "A041a");
         this.addQuestion(q41);
 
-        QuestionClass q42=new QuestionClass("Q042", "Which one of the following is the contradictory " +
+        QuestionClass q42 = new QuestionClass("Q042", "Which one of the following is the contradictory " +
                 "of C: not (A or B). A: Snow has a fluffy structure. B: Snow is composed of small ice particles.", "L05", "A042b");
         this.addQuestion(q42);
 
-        QuestionClass q43=new QuestionClass("Q043", "Given: A: Snow has an open and soft structure." +
+        QuestionClass q43 = new QuestionClass("Q043", "Given: A: Snow has an open and soft structure." +
                 " Which one of the following is the contradictory of A:", "L05", "A043c");
         this.addQuestion(q43);
 
-        QuestionClass q44=new QuestionClass("Q044", "Given: A: not (B or C); B: Snow is precipitation in form of " +
+        QuestionClass q44 = new QuestionClass("Q044", "Given: A: not (B or C); B: Snow is precipitation in form of " +
                 "ice flakes; C: Snow has a soft structure.  Which one of the following represents A:", "L05", "A044c");
         this.addQuestion(q44);
 
-        QuestionClass q45=new QuestionClass("Q045", "Given: ¬(A v B): Water cannot fall from the clouds in form of " +
+        QuestionClass q45 = new QuestionClass("Q045", "Given: ¬(A v B): Water cannot fall from the clouds in form of " +
                 "snow neither ice crystals. Which of the following represents A and B:", "L05", "A045a");
         this.addQuestion(q45);
 
-        QuestionClass q46=new QuestionClass("Q046", "Which one of the following is the contradictory of AvB. " +
+        QuestionClass q46 = new QuestionClass("Q046", "Which one of the following is the contradictory of AvB. " +
                 "Given: A: Snow is formed by small ice particles; B: Snowflakes come in a variety of sizes and shapes.", "L05", "A046a");
         this.addQuestion(q46);
 
-        QuestionClass q47=new QuestionClass("Q047", "Which one of the following is the contradictory " +
+        QuestionClass q47 = new QuestionClass("Q047", "Which one of the following is the contradictory " +
                 "of A. Given: A: Snow has an open or soft structure.", "L05", "A047c");
         this.addQuestion(q47);
 
-        QuestionClass q48=new QuestionClass("Q048", "Which one of the following is the contradictory of A: " +
+        QuestionClass q48 = new QuestionClass("Q048", "Which one of the following is the contradictory of A: " +
                 "Snow falls from the clouds or the process of precipitating snow is called snowfall.", "L05", "A048a");
         this.addQuestion(q48);
 
-        QuestionClass q49=new QuestionClass("Q049", "Which one of the following is the contradictory of A: " +
+        QuestionClass q49 = new QuestionClass("Q049", "Which one of the following is the contradictory of A: " +
                 "Snow does not fall from the clouds or the process of precipitating snow is not called snowfall.", "L05", "A049b");
         this.addQuestion(q49);
 
-        QuestionClass q50=new QuestionClass("Q050", "Which one of the following is the contradictory A: " +
+        QuestionClass q50 = new QuestionClass("Q050", "Which one of the following is the contradictory A: " +
                 "Snow has a fluffy structure or it is composed of small ice particles.", "L05", "A050c");
         this.addQuestion(q50);
 
-        QuestionClass q51=new QuestionClass("Q051", "Given: A: The plants grow fast. and B: Amy waters" +
+        QuestionClass q51 = new QuestionClass("Q051", "Given: A: The plants grow fast. and B: Amy waters" +
                 " the plants everyday. Which of the following represents if A then B:", "L06", "A051c");
         this.addQuestion(q51);
 
-        QuestionClass q52=new QuestionClass("Q052", "Given: A: If flowers grow from seeds then they are plants " +
+        QuestionClass q52 = new QuestionClass("Q052", "Given: A: If flowers grow from seeds then they are plants " +
                 ": True. Which one of the following is false:", "L06", "A052a");
         this.addQuestion(q52);
 
-        QuestionClass q53=new QuestionClass("Q053", "Consider A: Plants obtain energy if exposed to " +
+        QuestionClass q53 = new QuestionClass("Q053", "Consider A: Plants obtain energy if exposed to " +
                 "sunlight. Please select the false statement from the following:", "L06", "A053c");
         this.addQuestion(q53);
 
-        QuestionClass q54=new QuestionClass("Q054", "Please select the antecedent from the following" +
+        QuestionClass q54 = new QuestionClass("Q054", "Please select the antecedent from the following" +
                 " claim: B = Otherwise, plants will not survive on this planet.", "L06", "A054b");
         this.addQuestion(q54);
 
-        QuestionClass q55=new QuestionClass("Q055", "Please select the antecedent from the following" +
+        QuestionClass q55 = new QuestionClass("Q055", "Please select the antecedent from the following" +
                 " claim: C = Don’t water the flowers for a month and you won’t have them anymore.", "L06", "A055c");
         this.addQuestion(q55);
 
-        QuestionClass q56=new QuestionClass("Q056", "Please select the consequent from the following" +
+        QuestionClass q56 = new QuestionClass("Q056", "Please select the consequent from the following" +
                 " claim: A = Anyone who loves plants deserves a planthouse.", "L06", "A056b");
         this.addQuestion(q56);
 
-        QuestionClass q57=new QuestionClass("Q057", "Please select the consequent from the following" +
+        QuestionClass q57 = new QuestionClass("Q057", "Please select the consequent from the following" +
                 " claim: B = Visit us and you will get a free green plant pot.", "L06", "A057a");
         this.addQuestion(q57);
 
-        QuestionClass q58=new QuestionClass("Q058", "Consider A: House plants won’t grow if over-watered" +
+        QuestionClass q58 = new QuestionClass("Q058", "Consider A: House plants won’t grow if over-watered" +
                 " or under-watered. Please select the false statement from the following:", "L06", "A058a");
         this.addQuestion(q58);
         //two questions skipped
 
-        QuestionClass q61=new QuestionClass("Q061", "Please select the contradictory of A: If lightning" +
+        QuestionClass q61 = new QuestionClass("Q061", "Please select the contradictory of A: If lightning" +
                 " strikes then you can hear it.", "L07", "A061a");
         this.addQuestion(q61);
 
-        QuestionClass q62=new QuestionClass("Q062", "Please select the contradictory of A: If the electric" +
+        QuestionClass q62 = new QuestionClass("Q062", "Please select the contradictory of A: If the electric" +
                 " field is strong enough, a positive streamer can develop from those points.", "L07", "A062b");
         this.addQuestion(q62);
 
-        QuestionClass q63=new QuestionClass("Q063", "Which one of the following is the contradictory of C:" +
+        QuestionClass q63 = new QuestionClass("Q063", "Which one of the following is the contradictory of C:" +
                 " If a lightning hits an object on the ground it is called a strike.", "L07", "A063a");
         this.addQuestion(q63);
 
-        QuestionClass q64=new QuestionClass("Q064", "Which one of the following is the contradictory" +
+        QuestionClass q64 = new QuestionClass("Q064", "Which one of the following is the contradictory" +
                 " of A: If a lightning hits an object, the object will burn.", "L07", "A064c");
         this.addQuestion(q64);
 
-        QuestionClass q65=new QuestionClass("Q065", "Which one of the following is the contradictory" +
+        QuestionClass q65 = new QuestionClass("Q065", "Which one of the following is the contradictory" +
                 " of B: If the house is on fire then only fire department can save lives.", "L07", "A065c");
         this.addQuestion(q65);
 
-        QuestionClass q66=new QuestionClass("Q066", "Which one of the following is the contradictory " +
+        QuestionClass q66 = new QuestionClass("Q066", "Which one of the following is the contradictory " +
                 "of C: If there is a storm then some lightnings are pretty spectacular.", "L07", "A066c");
         this.addQuestion(q66);
 
-        QuestionClass q67=new QuestionClass("Q067", "Which one of the following is the contradictory of " +
+        QuestionClass q67 = new QuestionClass("Q067", "Which one of the following is the contradictory of " +
                 "B: If lightning strikes a person, it is usually fatal.", "L07", "A067a");
         this.addQuestion(q67);
 
-        QuestionClass q68=new QuestionClass("Q068", "Which one of the following is the contradictory " +
+        QuestionClass q68 = new QuestionClass("Q068", "Which one of the following is the contradictory " +
                 "of A: If somebody has a fear of thunder or lightning, they may have astraphobia.", "L07", "A068b");
         this.addQuestion(q68);
 
-        QuestionClass q69=new QuestionClass("Q069", "Which one of the following is the contradictory of " +
+        QuestionClass q69 = new QuestionClass("Q069", "Which one of the following is the contradictory of " +
                 "C: You will learn more about lightning if you study fulminology.", "L07", "A069c");
         this.addQuestion(q69);
 
-        QuestionClass q70=new QuestionClass("Q070", "Which one of the following is the contradictory " +
+        QuestionClass q70 = new QuestionClass("Q070", "Which one of the following is the contradictory " +
                 "of A: Some people can hear the thunder if the distance is less than 20 kilometres.", "L07", "A070a");
         this.addQuestion(q70);
 
-        QuestionClass q71=new QuestionClass("Q071", "Please select the false relationship for the following " +
+        QuestionClass q71 = new QuestionClass("Q071", "Please select the false relationship for the following " +
                 "compound claim: Lava is expelled only if a volcano erupts.", "L08", "A071b");
         this.addQuestion(q71);
 
-        QuestionClass q72=new QuestionClass("Q072", "Please select the false relationship for the following" +
+        QuestionClass q72 = new QuestionClass("Q072", "Please select the false relationship for the following" +
                 " compound claim: Lava stops moving if and only if it solidifies.", "L08", "A072c");
         this.addQuestion(q72);
 
-        QuestionClass q73=new QuestionClass("Q073", "Please select the true relationship for the following" +
+        QuestionClass q73 = new QuestionClass("Q073", "Please select the true relationship for the following" +
                 " compound claim: The speed of the lava is higher if and only if the viscosity is lower.", "L08", "A073a");
         this.addQuestion(q73);
 
-        QuestionClass q74=new QuestionClass("Q074", "Given: Magma becomes lava if and only if it is exposed" +
+        QuestionClass q74 = new QuestionClass("Q074", "Given: Magma becomes lava if and only if it is exposed" +
                 " to the surface. Please fill in the dots with the adecvate statement. \n \tIf magma becomes" +
                 " lava then it is exposed to the surface and …", "L08", "A074a");
         this.addQuestion(q74);
 
-        QuestionClass q75=new QuestionClass("Q075", "Please select the equivalence statement:\n" +
+        QuestionClass q75 = new QuestionClass("Q075", "Please select the equivalence statement:\n" +
                 "\tRocks melt if they reach the melting point and when they reach the melting point, rocks melt.", "L08", "A075a");
         this.addQuestion(q75);
         //5 questions skipped
 
-        QuestionClass q81=new QuestionClass("Q081", "Please select the contrapositive for the following " +
+        QuestionClass q81 = new QuestionClass("Q081", "Please select the contrapositive for the following " +
                 "statement: In order to save the forest you must stop the wildfire spreading. ", "L09", "A081c");
         this.addQuestion(q81);
 
-        QuestionClass q82=new QuestionClass("Q082", "Please select the statement that has the following" +
+        QuestionClass q82 = new QuestionClass("Q082", "Please select the statement that has the following" +
                 " contrapositive: If predators did not existed then the village would have been safe.", "L09", "A082a");
         this.addQuestion(q82);
 
-        QuestionClass q83=new QuestionClass("Q083", "Please select the contrapositive for the following statement:" +
+        QuestionClass q83 = new QuestionClass("Q083", "Please select the contrapositive for the following statement:" +
                 " Battle training is crucial in order to win the war.", "L09", "A083a");
         this.addQuestion(q83);
 
-        QuestionClass q84=new QuestionClass("Q084", "Please select the statement that has the following contrapositive:" +
+        QuestionClass q84 = new QuestionClass("Q084", "Please select the statement that has the following contrapositive:" +
                 " If no flooding occurred then the village is not in danger.", "L09", "A084b");
         this.addQuestion(q84);
 
-        QuestionClass q85=new QuestionClass("Q085", "Please select the statement that has the following contrapositive:" +
+        QuestionClass q85 = new QuestionClass("Q085", "Please select the statement that has the following contrapositive:" +
                 " If some villages are not under attack then the world is safe.", "L09", "A085a");
         this.addQuestion(q85);
 
-        QuestionClass q86=new QuestionClass("Q086", "Please select the contrapositive for the following statement:" +
+        QuestionClass q86 = new QuestionClass("Q086", "Please select the contrapositive for the following statement:" +
                 " If somebody will help them, the village people won’t lose everything.", "L09", "A086c");
         this.addQuestion(q86);
         //4 questions skipped
 
-        QuestionClass q91=new QuestionClass("Q091", "Please select the inference that derive from the following premises:\n" +
+        QuestionClass q91 = new QuestionClass("Q091", "Please select the inference that derive from the following premises:\n" +
                 "p: Heroes are people.\n" + "q: People are giving random acts of kindness.", "L10", "A091a");
         this.addQuestion(q91);
 
-        QuestionClass q92=new QuestionClass("Q092", "Please select the inference that derive from the following premises:\n" +
+        QuestionClass q92 = new QuestionClass("Q092", "Please select the inference that derive from the following premises:\n" +
                 "p: In order to save the world you need to be a hero.\n" + "q. Everyone can be a hero", "L10", "A092b");
         this.addQuestion(q92);
 
-        QuestionClass q93=new QuestionClass("Q093", "Please select the inference that derive from the following premises:\n" +
+        QuestionClass q93 = new QuestionClass("Q093", "Please select the inference that derive from the following premises:\n" +
                 "p: If the world is threatened then superheroes will react.\n" + "q: Superheroes are not reacting.\n", "L10", "A093c");
         this.addQuestion(q93);
 
-        QuestionClass q94=new QuestionClass("Q094", "Please select the inference that derive from the following premises:\n" +
+        QuestionClass q94 = new QuestionClass("Q094", "Please select the inference that derive from the following premises:\n" +
                 "p: If you have super powers you are a superhero.\n" + "q: If you don’t have super powers than you are human.\n" +
                 "r: If you are a superhero then you need to save the world.", "L10", "A094b");
         this.addQuestion(q94);
-
-
 
 
     }
@@ -1244,30 +1218,30 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     }
 
 
-    private void addLevels(){
+    private void addLevels() {
 
-        LevelClass l1 = new LevelClass("L01", "Level 1 - Wind","<p><b>Hello!</b> This is " +
+        LevelClass l1 = new LevelClass("L01", "Level 1 - Wind", "<p><b>Hello!</b> This is " +
                 "the first level of your power conquest. On this level you are going to " +
-                        "learn the concept of <b>propositional logic</b> and <b>contradictory propositions.</b> " +
-                        "In the end of this level you will have the <b>wind power</b> which is the first " +
-                        "step to get the <b>air power</b>, but to finish the level one you have to prove " +
-                        "your knowledge about wind by answering 5 questions. " + "</p>" +
-                        "<p>So, lets get started with the concepts:" + "</p>" +
-                        "<p><b>Propositional logics</b> is also called <b>“sentential logic”</b> or <b>“statement logic”</b> " +
-                        "and it deals with logical relationship between propositions (also called: " +
-                        "<b>claims</b>, <b>statement</b>, <b>sentences</b>, <b>assertions</b>, ..) taken as wholes. A proposition " +
-                        "is a declarative sentence which has a <b>True/False</b> value and it is composed by a " +
-                        "subject term and a predicate term, for example:" + "</p>" +
-                        "<p>“The wind is cold”." + "</p>" + "<p>The wind= subject term" + "</p>" + "<p>“is cold” = " +
-                        "the predicate" + "</p>" + "<p>We symbolize the proposition using a single letter: " +
-                        "</p>" + "<p><b>j</b>: “ Jill is wearing a red dress”." + "</p>" + "<br />" + "<p><b>Contradictories,</b> " +
-                        "operator \"<b>not</b>\":" + "</p>" + "<p>The Contradictory of A is a claim that always has the " +
-                        "opposite truth value of A. In the case of a simple proposition just use a " +
-                        "negative word or expression (<b>\"no\"</b>, <b>\"not\"</b>, <b>\"It is not true\"</b>, <b>\"It is false\"</b>...)" +
-                        " before the sentence, and you have the contradictory. The <b>“not”</b> operator can also be " +
-                        "represented by <b>“¬”</b>. For example:" + "</p>" + "<p><b>a</b>: “The wind is blowing”" + "</p>" +
-                        "<p><b>¬a</b>: “The wind is not blowing”" + "</p>" + "<p>Notice that <b>‘¬a’</b> is the contradictory claim " +
-                        "of <b>‘a’</b> and vice-versa. " + "</p>", "Tip1");
+                "learn the concept of <b>propositional logic</b> and <b>contradictory propositions.</b> " +
+                "In the end of this level you will have the <b>wind power</b> which is the first " +
+                "step to get the <b>air power</b>, but to finish the level one you have to prove " +
+                "your knowledge about wind by answering 5 questions. " + "</p>" +
+                "<p>So, lets get started with the concepts:" + "</p>" +
+                "<p><b>Propositional logics</b> is also called <b>“sentential logic”</b> or <b>“statement logic”</b> " +
+                "and it deals with logical relationship between propositions (also called: " +
+                "<b>claims</b>, <b>statement</b>, <b>sentences</b>, <b>assertions</b>, ..) taken as wholes. A proposition " +
+                "is a declarative sentence which has a <b>True/False</b> value and it is composed by a " +
+                "subject term and a predicate term, for example:" + "</p>" +
+                "<p>“The wind is cold”." + "</p>" + "<p>The wind= subject term" + "</p>" + "<p>“is cold” = " +
+                "the predicate" + "</p>" + "<p>We symbolize the proposition using a single letter: " +
+                "</p>" + "<p><b>j</b>: “ Jill is wearing a red dress”." + "</p>" + "<br />" + "<p><b>Contradictories,</b> " +
+                "operator \"<b>not</b>\":" + "</p>" + "<p>The Contradictory of A is a claim that always has the " +
+                "opposite truth value of A. In the case of a simple proposition just use a " +
+                "negative word or expression (<b>\"no\"</b>, <b>\"not\"</b>, <b>\"It is not true\"</b>, <b>\"It is false\"</b>...)" +
+                " before the sentence, and you have the contradictory. The <b>“not”</b> operator can also be " +
+                "represented by <b>“¬”</b>. For example:" + "</p>" + "<p><b>a</b>: “The wind is blowing”" + "</p>" +
+                "<p><b>¬a</b>: “The wind is not blowing”" + "</p>" + "<p>Notice that <b>‘¬a’</b> is the contradictory claim " +
+                "of <b>‘a’</b> and vice-versa. " + "</p>", "Tip1");
         this.addLevel(l1);
 
         LevelClass l2 = new LevelClass("L02", "Level 2 - Sound", "<p><b>Hello!</b> This is the last level of " +
@@ -1276,7 +1250,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 " to prove your knowledge about <b>sound</b> as well as you proved about wind by answering 5" +
                 " questions right." + "</p>" + "<p>So, lets get started with the concepts:</p>" + "<p>The " +
                 "<b>conjunctions</b> use operators such as <b>“and”</b> or <b>“but”</b> to connect two simple propositions," +
-                " for example:" + "</p>" + "<p>“The wind is blowing hard and it is raining”." +  "</p>" +
+                " for example:" + "</p>" + "<p>“The wind is blowing hard and it is raining”." + "</p>" +
                 "<p>To evaluate this proposition as true <b>both</b> propositions must be <b>true</b>, if one is false" +
                 " then the whole statement is false. The <b>“and”</b> operator can be also represented by <b>“^”</b>.</p>", "Tip2");
         this.addLevel(l2);
@@ -1286,7 +1260,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 " to pass, <b>Metal</b>. On this level you are going to learn the <b>disjunctions</b> and to " +
                 "complete the level 3 you have to prove your knowledge about metal by answering 5 " +
                 "questions right." + "</p>" + "<p>So, lets get started with the concepts: </p>" + "<p>The " +
-                "<b>disjunctions</b> use the <b>“or”</b> operator to connect two simple propositions, for example:"+ "</p>" +
+                "<b>disjunctions</b> use the <b>“or”</b> operator to connect two simple propositions, for example:" + "</p>" +
                 "<p>“Iron is a kind of metal or it is a kind of stone”. " + "</p>" + "<p>We have two kinds of " +
                 "disjunctions: <b>Inclusive “or”</b> and <b>Exclusive “or”</b>." + "</p>" + "<p>In the <b>inclusive “or”</b> the " +
                 "propositions are evaluated as true when <b>any one</b> of claims is <b>true</b>. The whole " +
@@ -1357,7 +1331,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     }
 
 
-    public boolean addUserActivity(UserActivityClass userActivity){
+    public boolean addUserActivity(UserActivityClass userActivity) {
         ContentValues values = new ContentValues();
         values.put(COLUMN_USER_ID, userActivity.getUser_id());
         values.put(COLUMN_QUESTION_ID, userActivity.getQuestion_id());
@@ -1368,7 +1342,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     }
 
     // Adding new question
-    public void addQuestion(QuestionClass q){
+    public void addQuestion(QuestionClass q) {
         ContentValues values = new ContentValues();
         values.put(COLUMN_QUESTION_ID, q.getQuestion_id());
         values.put(COLUMN_QUESTION_TEXT, q.getQuestion_text());
@@ -1378,7 +1352,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     }
 
     // Adding new answer
-    public void addAnswer(AnswerClass a){
+    public void addAnswer(AnswerClass a) {
         ContentValues values = new ContentValues();
         values.put(COLUMN_ANSWER_ID, a.getAnswer_id());
         values.put(COLUMN_ANSWER_TEXT, a.getAnswer_text());
@@ -1386,7 +1360,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         database.insert(TABLE_ANSWERS, null, values);
     }
 
-    public void addLevel(LevelClass l){
+    public void addLevel(LevelClass l) {
         ContentValues values = new ContentValues();
         values.put(COLUMN_LEVEL_ID, l.getLevel_id());
         values.put(COLUMN_LEVEL_NAME, l.getLevelname());
@@ -1403,7 +1377,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     }
 
 
-    public boolean addUser(UserClass user){
+    public boolean addUser(UserClass user) {
         ContentValues values = new ContentValues();
         values.put(COLUMN_USERNAME, user.getUsername());
         values.put(COLUMN_EMAIL, user.getEmail());
@@ -1412,24 +1386,25 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
         long iduser = database.insert(TABLE_USERS, null, values);
 
-        ScoreboardClass score = new ScoreboardClass((int)iduser, 00, 00, "L01");
+        ScoreboardClass score = new ScoreboardClass((int) iduser, 00, 00, "L01");
         this.addScore(score);
 
         return true;
     }
-    public long getUserID(UserClass user){
+
+    public long getUserID(UserClass user) {
         long userID = 0;
         Cursor cursor;
-        String selectQuery = "SELECT * FROM " + TABLE_USERS + " WHERE " + COLUMN_EMAIL + " = '" + user.getEmail() + "' ; " ;
+        String selectQuery = "SELECT * FROM " + TABLE_USERS + " WHERE " + COLUMN_EMAIL + " = '" + user.getEmail() + "' ; ";
         database = this.getReadableDatabase();
         cursor = database.rawQuery(selectQuery, null);
-        if(cursor.moveToFirst()){
+        if (cursor.moveToFirst()) {
             userID = cursor.getLong(0);
         }
         return userID;
     }
 
-    public boolean addScore(ScoreboardClass score){
+    public boolean addScore(ScoreboardClass score) {
 
         ContentValues values;
         values = new ContentValues();
@@ -1442,7 +1417,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         return true;
     }
 
-    public boolean addScoreboardScreen(ScoreboardScreen scoreboard){
+    public boolean addScoreboardScreen(ScoreboardScreen scoreboard) {
 
         ContentValues values;
         values = new ContentValues();
@@ -1455,7 +1430,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         return true;
     }
 
-    public ArrayList<ScoreboardScreen> getScoreboardTable(){
+    public ArrayList<ScoreboardScreen> getScoreboardTable() {
         ArrayList<ScoreboardScreen> scoreList = new ArrayList<ScoreboardScreen>();
         String selectQuery = "SELECT * FROM " + TABLE_SCOREBOARD_SCREEN + " ORDER BY " + COLUMN_POINTS_SCOREBOARD + " DESC, " + COLUMN_WRONGPERC_SCOREBOARD + " ASC ;";
         database = this.getReadableDatabase();
@@ -1473,7 +1448,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         return scoreList;
     }
 
-    public boolean deleteScoreboardTable(){
+    public boolean deleteScoreboardTable() {
         //String deleteQuery = "DELETE FROM " + TABLE_SCOREBOARD_SCREEN + ";";
         //database = this.getReadableDatabase();
         database.delete(TABLE_SCOREBOARD_SCREEN, null, null);
@@ -1484,7 +1459,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     public List<UserClass> getAllUsers() {
         List<UserClass> usersList = new ArrayList<>();
         String selectQuery = "SELECT * FROM " + TABLE_USERS + ";";
-        database=this.getReadableDatabase();
+        database = this.getReadableDatabase();
         Cursor cursor = database.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
             do {
@@ -1500,10 +1475,10 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         return usersList;
     }
 
-///inicio
-    public String getUserLevel(Long userID){
-        String selectQuery = "SELECT "+COLUMN_LEVEL_NAME+" FROM "+TABLE_LEVEL+" WHERE "+COLUMN_LEVEL_ID+" IN ( SELECT "+COLUMN_LEVEL_ID+" FROM "+TABLE_SCOREBOARD+" WHERE "+COLUMN_USER_ID+" = '"+ userID.toString()+"' );";
-        database=this.getReadableDatabase();
+    ///inicio
+    public String getUserLevel(Long userID) {
+        String selectQuery = "SELECT " + COLUMN_LEVEL_NAME + " FROM " + TABLE_LEVEL + " WHERE " + COLUMN_LEVEL_ID + " IN ( SELECT " + COLUMN_LEVEL_ID + " FROM " + TABLE_SCOREBOARD + " WHERE " + COLUMN_USER_ID + " = '" + userID.toString() + "' );";
+        database = this.getReadableDatabase();
         Cursor cursor = database.rawQuery(selectQuery, null);
         String levelName = "vazio";
         if (cursor.moveToFirst()) {
@@ -1512,30 +1487,30 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         return levelName;
     }
 
-    public boolean lessonStart(String chosenLevelID, Long userID){
-        String selectQuery = "SELECT u."+COLUMN_ID+" FROM "+TABLE_USERS_ACT
-                +" AS u INNER JOIN "+TABLE_QUESTIONS+" AS q ON u."
-                +COLUMN_QUESTION_ID+" = q."+COLUMN_QUESTION_ID
-                +" INNER JOIN "+TABLE_LEVEL+" AS l ON q."
-                +COLUMN_LEVEL_ID+" = l."+COLUMN_LEVEL_ID
-                +" WHERE u."+COLUMN_USER_ID+" = "+userID.toString()+" AND l."+COLUMN_LEVEL_ID+" = '"+chosenLevelID+"' ;";
-        database=this.getReadableDatabase();
+    public boolean lessonStart(String chosenLevelID, Long userID) {
+        String selectQuery = "SELECT u." + COLUMN_ID + " FROM " + TABLE_USERS_ACT
+                + " AS u INNER JOIN " + TABLE_QUESTIONS + " AS q ON u."
+                + COLUMN_QUESTION_ID + " = q." + COLUMN_QUESTION_ID
+                + " INNER JOIN " + TABLE_LEVEL + " AS l ON q."
+                + COLUMN_LEVEL_ID + " = l." + COLUMN_LEVEL_ID
+                + " WHERE u." + COLUMN_USER_ID + " = " + userID.toString() + " AND l." + COLUMN_LEVEL_ID + " = '" + chosenLevelID + "' ;";
+        database = this.getReadableDatabase();
         Cursor cursor = database.rawQuery(selectQuery, null);
 
-        if(cursor.getCount()>0){
+        if (cursor.getCount() > 0) {
             return true;
         }
         return false;
     }
 ///fim
 
-    public LevelClass getLevel(String levelID){
+    public LevelClass getLevel(String levelID) {
         LevelClass levelobj = new LevelClass();
         Cursor cursor;
-        String selectQuery = "SELECT * FROM " + TABLE_LEVEL + " WHERE " + COLUMN_LEVEL_ID + " = '" + (String)levelID + "' ; " ;
+        String selectQuery = "SELECT * FROM " + TABLE_LEVEL + " WHERE " + COLUMN_LEVEL_ID + " = '" + (String) levelID + "' ; ";
         database = this.getReadableDatabase();
         cursor = database.rawQuery(selectQuery, null);
-        if(cursor.moveToFirst()){
+        if (cursor.moveToFirst()) {
             levelobj.setLevel_id(cursor.getString(0));
             levelobj.setLevelname(cursor.getString(1));
             levelobj.setLesson(cursor.getString(2));
@@ -1544,14 +1519,14 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         return levelobj;
     }
 
-    public ScoreboardClass getScore(long UserID){
+    public ScoreboardClass getScore(long UserID) {
         ScoreboardClass scoreobj = new ScoreboardClass();
         Cursor cursor;
-        String UserString = Integer.toString((int)UserID);
+        String UserString = Integer.toString((int) UserID);
         String selectQuery = "SELECT * FROM " + TABLE_SCOREBOARD + " WHERE " + COLUMN_USER_ID + " = '" + UserString + "' ;";
         database = this.getReadableDatabase();
         cursor = database.rawQuery(selectQuery, null);
-        if(cursor.moveToFirst()){
+        if (cursor.moveToFirst()) {
             scoreobj.setUser_id(cursor.getInt(0));
             scoreobj.setPoints(cursor.getInt(1));
             scoreobj.setWrong_percent(cursor.getInt(2));
@@ -1560,10 +1535,10 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         return scoreobj;
     }
 
-    public List<AnswerClass> getAnswer(String qid){
+    public List<AnswerClass> getAnswer(String qid) {
         List<AnswerClass> Answerlist = new ArrayList<>();
         String selectQuery = "SELECT * FROM " + TABLE_ANSWERS + " WHERE " + COLUMN_QUESTION_ID + " = '" + qid + "' ;";
-        database=this.getReadableDatabase();
+        database = this.getReadableDatabase();
         Cursor cursor = database.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
             do {
@@ -1598,15 +1573,15 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     }
 
 
-    public boolean updatingScore(Integer score, UserClass User, String levelID){
+    public boolean updatingScore(Integer score, UserClass User, String levelID) {
         Cursor cursor;
-        String UserString = Integer.toString((int)User.getUser_id());
+        String UserString = Integer.toString((int) User.getUser_id());
         String selectQuery = "SELECT * FROM " + TABLE_SCOREBOARD + " WHERE " + COLUMN_USER_ID + " = '" + UserString + "' ";
         database = this.getReadableDatabase();
         cursor = database.rawQuery(selectQuery, null);
         ContentValues values;
         values = new ContentValues();
-        if(cursor.moveToFirst()){
+        if (cursor.moveToFirst()) {
             values.put(COLUMN_USER_ID, cursor.getInt(0));
             values.put(COLUMN_POINTS, score);
             values.put(COLUMN_WRONG_PERCENT, cursor.getInt(2));
@@ -1614,7 +1589,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         }
 
         database = this.getWritableDatabase();
-        database.update(TABLE_SCOREBOARD,values, COLUMN_USER_ID + "= ?", new String[]{UserString});
+        database.update(TABLE_SCOREBOARD, values, COLUMN_USER_ID + "= ?", new String[]{UserString});
         return true;
     }
 
