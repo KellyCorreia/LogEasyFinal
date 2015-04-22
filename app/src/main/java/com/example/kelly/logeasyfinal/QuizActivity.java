@@ -72,9 +72,10 @@ public class QuizActivity extends Activity {
                         }
                     }else {
                         Toast.makeText(QuizActivity.this, "Wrong answer!", Toast.LENGTH_SHORT).show();
+                        setQuestionView();
                     }
                     grp.clearCheck();
-                    setQuestionView();
+
                 }else{
                     Toast.makeText(QuizActivity.this, "Select one option!", Toast.LENGTH_SHORT).show();
                 }
@@ -293,6 +294,7 @@ public class QuizActivity extends Activity {
             default:
                 db.updatingScore(score, User, Score.getLevel_id());
                 Score = db.getScore(User.getUser_id());
+                setQuestionView();
                 break;
         }
     }
