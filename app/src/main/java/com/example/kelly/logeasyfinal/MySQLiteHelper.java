@@ -1333,22 +1333,22 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
         LevelClass l8 = new LevelClass("L08", "Level 8 - Lava", "<p>Hello! This is Level 8, the last step you have to go through to get the " +
                 "<b>Fire</b> Power. On this level you are going to learn about the <b>equivalence</b> and, in order to complete this level, you have" +
-                " to prove your knowledge about <b>Lava<b> by answering 5 questions right.</p>" + "<p>So, lets get started with the concepts:</p>" +
+                " to prove your knowledge about <b>Lava</b> by answering 5 questions right.</p>" + "<p>So, lets get started with the concepts:</p>" +
                 "<p>Only If rule: A only if B = if A then B </p>" + "<p>Biconditional rule (conjoining two conditionals):</p>" +
                 "<p>A if and only if B = (A if B) and (A only if B)</p>" + "<p>written as: A if and only if B = A iff B = A=B</p>" +
                 "<p>or (if B then A) and (if A then B)</p>" + "<p>In this case, the claims A and B always have the same truth value: " +
                 "if A is true then B is true and vice versa. We symbolize the logical equivalence of statement p and q by p ≡ q ( p <--> q ).</p>", "Tip 8");
         this.addLevel(l8);
 
-        LevelClass l9 = new LevelClass("L09", "Level 9 - Protect the village", "</p>Hello! This is Level 9, the first step you have to go through in order" +
-                " to become a <b>Hero!</b> On this level you are going to learn about the <b>contrapositive</b> and, in order to complete this level, you have to " +
-                "protect the village by answering 5 questions right.</p> <p>So, lets get started with the concepts:</p>" + "<p>General rule: if A then B = if not-B " +
+        LevelClass l9 = new LevelClass("L09", "Level 9 - Dark City", "</p>Hello! This is Level 9, the first step you have to go through in order" +
+                " to become a <b>Hero!</b>. On this level you are going to learn about the <b>contrapositive</b> and, in order to complete this level, you have to " +
+                "protect your people from attack of the <b>Dark City</b> by answering 5 questions right.</p> <p>So, lets get started with the concepts:</p>" + "<p>General rule: if A then B = if not-B " +
                 "then not-A</p>" + "<p>ex: Conditional: (A: You won’t become a good player) if (B: you don’t practice)</p>" + "<p>where A: consequent and B: antecedent</p>" +
                 "<p>Contrapositive: If you become a good player then you practiced.</p>", "Tip 9");
         this.addLevel(l9);
 
-        LevelClass l10 = new LevelClass("L10", "Level 10 - Save the WORLD", "<p><b>Congratulation!</b> This is Level 10, the last step you have to go through in order to become " +
-                "a <b>Superhero!</b> On this level you are going to learn about <b>inference</b> and, in order to complete this level, you have to save the world by answering" +
+        LevelClass l10 = new LevelClass("L10", "Level 10 - WORLD Master", "<p><b>Congratulation!</b> This is Level 10, the last step you have to go through in order to become " +
+                "a <b>The World Master</b> On this level you are going to learn about <b>inference</b> and, in order to complete this level, you have to save the world by answering" +
                 " 5 questions right.</p>" + "<p>So, lets get started with the concepts:</p>" + "<p>The rule: true statements stand as premises and they can derive in conclusions" +
                 " (respecting the rules learned by now and the semantics). </p>" + "<p>A→B</p>" + "<p>A/B</p>", "Tip 10");
         this.addLevel(l10);
