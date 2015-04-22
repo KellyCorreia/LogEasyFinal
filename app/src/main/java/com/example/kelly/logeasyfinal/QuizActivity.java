@@ -29,7 +29,7 @@ public class QuizActivity extends Activity {
     Intent intent = new Intent();
     MySQLiteHelper db;
 
-    int score;
+    int score, wScore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +42,7 @@ public class QuizActivity extends Activity {
         selecLevel = (LevelClass)extras.getParcelable("chosenLevel");
         Score = (ScoreboardClass)extras.getParcelable("userScore");
         score = Score.getPoints();
+        wScore = Score.getWrong_percent();
 
         txtPoints = (TextView)findViewById(R.id.txtPoints);
         txtQuest =(TextView)findViewById(R.id.txtQuestion);
@@ -63,7 +64,6 @@ public class QuizActivity extends Activity {
                 if ((rda.isChecked()) || (rdb.isChecked()) || (rdc.isChecked())) {
                     userAnswer = (RadioButton) findViewById(grp.getCheckedRadioButtonId());
                     createUserActivity();
-
                     if (userAnswer == rightAnswer) {
                         Toast.makeText(QuizActivity.this, "Right Answer!", Toast.LENGTH_SHORT).show();
                         if (selecLevel.getLevel_id().equals(Score.getLevel_id())) {
@@ -73,9 +73,10 @@ public class QuizActivity extends Activity {
                     }else {
                         Toast.makeText(QuizActivity.this, "Wrong answer!", Toast.LENGTH_SHORT).show();
                         setQuestionView();
+                        wScore += 1;
+                        db.updatingWrongScore(wScore,User);
                     }
                     grp.clearCheck();
-
                 }else{
                     Toast.makeText(QuizActivity.this, "Select one option!", Toast.LENGTH_SHORT).show();
                 }
@@ -169,6 +170,9 @@ public class QuizActivity extends Activity {
                 rightAnswer = rdc;
             }
         }
+
+        score = Score.getPoints();
+        wScore = Score.getWrong_percent();
     }
 
     private void setScoreBoard(){

@@ -1593,5 +1593,26 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         return true;
     }
 
+    public boolean updatingWrongScore(Integer wScore, UserClass User){
+        Cursor cursor;
+        String UserString = Integer.toString((int) User.getUser_id());
+        String selectQuery = "SELECT * FROM " + TABLE_SCOREBOARD + " WHERE " + COLUMN_USER_ID + " = '" + UserString + "' ";
+        database = this.getReadableDatabase();
+        cursor = database.rawQuery(selectQuery, null);
+        ContentValues values;
+        values = new ContentValues();
+        if (cursor.moveToFirst()) {
+            values.put(COLUMN_USER_ID, cursor.getInt(0));
+            values.put(COLUMN_POINTS, cursor.getInt(1));
+            values.put(COLUMN_WRONG_PERCENT, wScore);
+            values.put(COLUMN_LEVEL_ID, cursor.getString(3));
+        }
+
+        database = this.getWritableDatabase();
+        database.update(TABLE_SCOREBOARD, values, COLUMN_USER_ID + "= ?", new String[]{UserString});
+        return true;
+
+    }
+
 }
 
