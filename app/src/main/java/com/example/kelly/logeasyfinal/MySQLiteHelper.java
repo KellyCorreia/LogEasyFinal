@@ -1320,7 +1320,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 "</p>" + "<p>So, lets get started with the concepts:</p>" + "<p>The conditional proposition is represented in the " +
                 "format: <b>if A then B</b>. Where A = antecedent and B = consequent. A conditional claim is False when the antecedent" +
                 " is True but the consequent is False. When A is False or both A and B are True the proposition is True. Other way of" +
-                " addressing this:</>p" + "<p>B if A = if A then B</p>", "Tip 6");
+                " addressing this:</p>" + "<p>B if A = if A then B</p>", "Tip 6");
         this.addLevel(l6);
 
         LevelClass l7 = new LevelClass("L07", "Level 7 - Lightning", "<p>Hello! This is Level 7, the first step you have to go through" +
